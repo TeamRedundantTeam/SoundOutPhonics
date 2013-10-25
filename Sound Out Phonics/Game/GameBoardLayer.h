@@ -10,7 +10,7 @@
 
 #import "cocos2d.h"
 #import "SpritePicture.h"
-//#import "TextToSpeech.h"
+#import "TextToSpeech.h"
 
 @interface GameBoardLayer : CCLayer {
     SpritePicture *picture; // Image of the word the user is trying to spell
@@ -22,6 +22,6 @@
 +(CCScene *) sceneWithParamaters:(NSString*) gameLevel;
 
 @property (retain) SpritePicture *picture;
-//@property (retain) TextToSpeech *tts;
+@property (retain) TextToSpeech *tts;
 @property (retain) NSString *level;
 @end

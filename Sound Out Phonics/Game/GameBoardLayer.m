@@ -16,7 +16,7 @@
 // GameBoardLayer implementation
 @implementation GameBoardLayer
 @synthesize picture;
-//@synthesize tts;
+@synthesize tts;
 @synthesize level;
 
 
@@ -56,7 +56,7 @@
         [self addChild:picture];
 
         // Add text to speech object
-        //self.tts = [[TextToSpeech alloc] init];
+        self.tts = [[TextToSpeech alloc] init];
 
     }
     return self;
@@ -82,7 +82,7 @@
     
     // If the picture is selected the level name will be played out
     if(CGRectContainsPoint(picture.boundingBox, touchLocation)) {
-        //[tts playWord:level];
+        [tts playWord:level];
     }
 }
 

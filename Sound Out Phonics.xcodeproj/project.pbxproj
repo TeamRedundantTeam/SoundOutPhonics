@@ -11,6 +11,7 @@
 		7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
 		7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
 		7C68511C1819FCE400A52AAA /* Lvl1-Apple-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C68511B1819FCE400A52AAA /* Lvl1-Apple-Sprite.png */; };
+		7C753E22181A41650081BC90 /* GameBoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C753E21181A41650081BC90 /* GameBoardLayer.m */; };
 		7CF098141818BD280043FD9F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098131818BD280043FD9F /* QuartzCore.framework */; };
 		7CF098161818BD280043FD9F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098151818BD280043FD9F /* OpenGLES.framework */; };
 		7CF098181818BD280043FD9F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098171818BD280043FD9F /* OpenAL.framework */; };
@@ -147,7 +148,6 @@
 		7CF19055181A3AE000528907 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF19052181A3AE000528907 /* OpenEars.framework */; };
 		7CF19056181A3AE000528907 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF19053181A3AE000528907 /* Slt.framework */; };
 		7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF19059181A3B0900528907 /* TextToSpeech.m */; };
-		7CF1905C181A3BA100528907 /* GameBoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1905B181A3BA100528907 /* GameBoardLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,6 +158,8 @@
 		7C6851141819FC8200A52AAA /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
 		7C6851151819FC8200A52AAA /* MenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLayer.m; sourceTree = "<group>"; };
 		7C68511B1819FCE400A52AAA /* Lvl1-Apple-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl1-Apple-Sprite.png"; sourceTree = "<group>"; };
+		7C753E20181A41650081BC90 /* GameBoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoardLayer.h; sourceTree = "<group>"; };
+		7C753E21181A41650081BC90 /* GameBoardLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardLayer.m; sourceTree = "<group>"; };
 		7CF098101818BD280043FD9F /* Sound Out Phonics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sound Out Phonics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF098131818BD280043FD9F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7CF098151818BD280043FD9F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -440,8 +442,6 @@
 		7CF19053181A3AE000528907 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Slt.framework; path = "Sound Out Phonics/libs/OpenEars/Slt.framework"; sourceTree = "<group>"; };
 		7CF19058181A3B0900528907 /* TextToSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextToSpeech.h; sourceTree = "<group>"; };
 		7CF19059181A3B0900528907 /* TextToSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextToSpeech.m; sourceTree = "<group>"; };
-		7CF1905B181A3BA100528907 /* GameBoardLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameBoardLayer.m; path = "../../../Sound-Out-Phonics/Sound Out Phonics/Game/GameBoardLayer.m"; sourceTree = "<group>"; };
-		7CF1905D181A3BA700528907 /* GameBoardLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameBoardLayer.h; path = "../../../Sound-Out-Phonics/Sound Out Phonics/Game/GameBoardLayer.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,8 +470,8 @@
 		7C68510B1819FC8200A52AAA /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				7CF1905D181A3BA700528907 /* GameBoardLayer.h */,
-				7CF1905B181A3BA100528907 /* GameBoardLayer.m */,
+				7C753E20181A41650081BC90 /* GameBoardLayer.h */,
+				7C753E21181A41650081BC90 /* GameBoardLayer.m */,
 				7C68510E1819FC8200A52AAA /* SpritePicture.h */,
 				7C68510F1819FC8200A52AAA /* SpritePicture.m */,
 			);
@@ -1043,7 +1043,7 @@
 				7CF099651818BD2F0043FD9F /* TransformUtils.m in Sources */,
 				7CF098B21818BD2B0043FD9F /* CCNode+Debug.m in Sources */,
 				7CF0988D1818BD2A0043FD9F /* ccFPSImages.m in Sources */,
-				7CF1905C181A3BA100528907 /* GameBoardLayer.m in Sources */,
+				7C753E22181A41650081BC90 /* GameBoardLayer.m in Sources */,
 				7CF099131818BD2D0043FD9F /* CCTMXXMLParser.m in Sources */,
 				7CF099AA1818BD310043FD9F /* ray2.c in Sources */,
 				7CF099451818BD2F0043FD9F /* base64.c in Sources */,
