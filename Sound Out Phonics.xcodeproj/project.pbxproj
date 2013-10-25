@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C6851161819FC8200A52AAA /* GameBoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C68510D1819FC8200A52AAA /* GameBoardLayer.m */; };
 		7C6851171819FC8200A52AAA /* SpritePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C68510F1819FC8200A52AAA /* SpritePicture.m */; };
 		7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
 		7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
@@ -144,11 +143,14 @@
 		7CF099B21818BD310043FD9F /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099B11818BD310043FD9F /* vec4.c */; };
 		7CF099B71818BD310043FD9F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099B61818BD310043FD9F /* main.m */; };
 		7CF099BA1818BD310043FD9F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099B91818BD310043FD9F /* AppDelegate.m */; };
+		7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7CF19051181A3AE000528907 /* AcousticModelEnglish.bundle */; };
+		7CF19055181A3AE000528907 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF19052181A3AE000528907 /* OpenEars.framework */; };
+		7CF19056181A3AE000528907 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF19053181A3AE000528907 /* Slt.framework */; };
+		7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF19059181A3B0900528907 /* TextToSpeech.m */; };
+		7CF1905C181A3BA100528907 /* GameBoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF1905B181A3BA100528907 /* GameBoardLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7C68510C1819FC8200A52AAA /* GameBoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoardLayer.h; sourceTree = "<group>"; };
-		7C68510D1819FC8200A52AAA /* GameBoardLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardLayer.m; sourceTree = "<group>"; };
 		7C68510E1819FC8200A52AAA /* SpritePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpritePicture.h; sourceTree = "<group>"; };
 		7C68510F1819FC8200A52AAA /* SpritePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpritePicture.m; sourceTree = "<group>"; };
 		7C6851111819FC8200A52AAA /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
@@ -433,6 +435,13 @@
 		7CF099B61818BD310043FD9F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7CF099B81818BD310043FD9F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "Sound Out Phonics/AppDelegate.h"; sourceTree = "<group>"; };
 		7CF099B91818BD310043FD9F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "Sound Out Phonics/AppDelegate.m"; sourceTree = "<group>"; };
+		7CF19051181A3AE000528907 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AcousticModelEnglish.bundle; path = "Sound Out Phonics/libs/OpenEars/AcousticModelEnglish.bundle"; sourceTree = "<group>"; };
+		7CF19052181A3AE000528907 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEars.framework; path = "Sound Out Phonics/libs/OpenEars/OpenEars.framework"; sourceTree = "<group>"; };
+		7CF19053181A3AE000528907 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Slt.framework; path = "Sound Out Phonics/libs/OpenEars/Slt.framework"; sourceTree = "<group>"; };
+		7CF19058181A3B0900528907 /* TextToSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextToSpeech.h; sourceTree = "<group>"; };
+		7CF19059181A3B0900528907 /* TextToSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextToSpeech.m; sourceTree = "<group>"; };
+		7CF1905B181A3BA100528907 /* GameBoardLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameBoardLayer.m; path = "../../../Sound-Out-Phonics/Sound Out Phonics/Game/GameBoardLayer.m"; sourceTree = "<group>"; };
+		7CF1905D181A3BA700528907 /* GameBoardLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameBoardLayer.h; path = "../../../Sound-Out-Phonics/Sound Out Phonics/Game/GameBoardLayer.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +449,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CF19056181A3AE000528907 /* Slt.framework in Frameworks */,
 				7CF098181818BD280043FD9F /* OpenAL.framework in Frameworks */,
 				7CF0981E1818BD280043FD9F /* UIKit.framework in Frameworks */,
 				7CF098141818BD280043FD9F /* QuartzCore.framework in Frameworks */,
@@ -448,6 +458,7 @@
 				7CF098241818BD280043FD9F /* CoreText.framework in Frameworks */,
 				7CF098161818BD280043FD9F /* OpenGLES.framework in Frameworks */,
 				7CF098201818BD280043FD9F /* Foundation.framework in Frameworks */,
+				7CF19055181A3AE000528907 /* OpenEars.framework in Frameworks */,
 				7CF0981A1818BD280043FD9F /* AudioToolbox.framework in Frameworks */,
 				7CF098261818BD280043FD9F /* GameKit.framework in Frameworks */,
 			);
@@ -459,8 +470,8 @@
 		7C68510B1819FC8200A52AAA /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				7C68510C1819FC8200A52AAA /* GameBoardLayer.h */,
-				7C68510D1819FC8200A52AAA /* GameBoardLayer.m */,
+				7CF1905D181A3BA700528907 /* GameBoardLayer.h */,
+				7CF1905B181A3BA100528907 /* GameBoardLayer.m */,
 				7C68510E1819FC8200A52AAA /* SpritePicture.h */,
 				7C68510F1819FC8200A52AAA /* SpritePicture.m */,
 			);
@@ -517,6 +528,9 @@
 		7CF098121818BD280043FD9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7CF19051181A3AE000528907 /* AcousticModelEnglish.bundle */,
+				7CF19052181A3AE000528907 /* OpenEars.framework */,
+				7CF19053181A3AE000528907 /* Slt.framework */,
 				7CF098131818BD280043FD9F /* QuartzCore.framework */,
 				7CF098151818BD280043FD9F /* OpenGLES.framework */,
 				7CF098171818BD280043FD9F /* OpenAL.framework */,
@@ -919,6 +933,7 @@
 		7CF099C71818BDA00043FD9F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7CF19057181A3B0900528907 /* Helpers */,
 				7C68510B1819FC8200A52AAA /* Game */,
 				7C6851101819FC8200A52AAA /* Intro */,
 				7C6851131819FC8200A52AAA /* Menu */,
@@ -929,6 +944,16 @@
 				7CF099B91818BD310043FD9F /* AppDelegate.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		7CF19057181A3B0900528907 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7CF19058181A3B0900528907 /* TextToSpeech.h */,
+				7CF19059181A3B0900528907 /* TextToSpeech.m */,
+			);
+			name = Helpers;
+			path = "Sound Out Phonics/Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -995,6 +1020,7 @@
 				7CF098301818BD280043FD9F /* Default-Landscape~ipad.png in Resources */,
 				7CF0982E1818BD280043FD9F /* Default-568h@2x.png in Resources */,
 				7CF0983C1818BD280043FD9F /* Icon@2x.png in Resources */,
+				7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1012,17 +1038,18 @@
 				7CF0990A1818BD2D0043FD9F /* CCTMXLayer.m in Sources */,
 				7CF099A21818BD310043FD9F /* mat4.c in Sources */,
 				7CF0987E1818BD2A0043FD9F /* ccDeprecated.m in Sources */,
-				7C6851161819FC8200A52AAA /* GameBoardLayer.m in Sources */,
 				7CF099391818BD2E0043FD9F /* CCDirectorMac.m in Sources */,
 				7CF098931818BD2A0043FD9F /* ccGLStateCache.m in Sources */,
 				7CF099651818BD2F0043FD9F /* TransformUtils.m in Sources */,
 				7CF098B21818BD2B0043FD9F /* CCNode+Debug.m in Sources */,
 				7CF0988D1818BD2A0043FD9F /* ccFPSImages.m in Sources */,
+				7CF1905C181A3BA100528907 /* GameBoardLayer.m in Sources */,
 				7CF099131818BD2D0043FD9F /* CCTMXXMLParser.m in Sources */,
 				7CF099AA1818BD310043FD9F /* ray2.c in Sources */,
 				7CF099451818BD2F0043FD9F /* base64.c in Sources */,
 				7CF098681818BD290043FD9F /* CCActionTween.m in Sources */,
 				7CF0989F1818BD2B0043FD9F /* CCLabelBMFont.m in Sources */,
+				7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */,
 				7CF0994C1818BD2F0043FD9F /* ccCArray.m in Sources */,
 				7CF099761818BD300043FD9F /* CDXMacOSXSupport.m in Sources */,
 				7CF0996A1818BD300043FD9F /* ZipUtils.m in Sources */,
@@ -1170,6 +1197,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Storage/Git/SoundOutPhonics/Sound\\ Out\\ Phonics/libs/OpenEars",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sound Out Phonics/Prefix.pch";
@@ -1190,6 +1221,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Storage/Git/SoundOutPhonics/Sound\\ Out\\ Phonics/libs/OpenEars",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sound Out Phonics/Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"Sound Out Phonics/libs/kazmath/include\"";
