@@ -16,12 +16,16 @@
     SpritePicture *picture; // Image of the word the user is trying to spell
     TextToSpeech *tts; // Text To Speech library
     NSString *level; // The word that the players are trying to spell
+    NSMutableArray *graphymes; // Graphymes that the player will move around in the gameboard layer
+    CCLabelTTF *selectedLabel;
 }
 
 // returns a CCScene that contains the GameBoardLayer as the only child and takes paramater gameLevel
-+(CCScene *) sceneWithParamaters:(NSString*) gameLevel;
++(CCScene *) sceneWithParamaters:(NSString*) gameLevel :(NSString*)levelGraphymes;
 
 @property (retain) SpritePicture *picture;
 @property (retain) TextToSpeech *tts;
 @property (retain) NSString *level;
+@property (retain) NSMutableArray *graphymes;
+@property (retain) CCLabelTTF *selectedLabel;
 @end
