@@ -1199,12 +1199,14 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Volumes/Storage/Git/SoundOutPhonics/Sound\\ Out\\ Phonics/libs/OpenEars",
+					"\"Sound Out Phonics/libs/OpenEars\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sound Out Phonics/Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"Sound Out Phonics/libs/kazmath/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"Sound Out Phonics/libs/kazmath/include\"",
+				);
 				INFOPLIST_FILE = "Sound Out Phonics/Resources/Info.plist";
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -1223,11 +1225,13 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Volumes/Storage/Git/SoundOutPhonics/Sound\\ Out\\ Phonics/libs/OpenEars",
+					"\"Sound Out Phonics/libs/OpenEars\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sound Out Phonics/Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"Sound Out Phonics/libs/kazmath/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"Sound Out Phonics/libs/kazmath/include\"",
+				);
 				INFOPLIST_FILE = "Sound Out Phonics/Resources/Info.plist";
 				OTHER_LDFLAGS = (
 					"-lz",
