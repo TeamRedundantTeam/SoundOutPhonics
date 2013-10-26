@@ -14,7 +14,7 @@
 
 @interface GameBoardLayer : CCLayer {
     SpritePicture *picture; // Image of the word the user is trying to spell
-    //TextToSpeech *tts; // Text To Speech library
+    TextToSpeech *tts; // Text To Speech library
     NSString *level; // The word that the players are trying to spell
 }
 

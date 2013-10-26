@@ -53,10 +53,13 @@
         
         // Add picture sprite object
         self.picture = [[SpritePicture alloc] initWithPosition:ccp(screenSize.width/5.5, screenSize.height - screenSize.height/4.5)];
+        
         [self addChild:picture];
 
         // Add text to speech object
         self.tts = [[TextToSpeech alloc] init];
+        
+        
 
     }
     return self;
@@ -66,6 +69,7 @@
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
+    [tts release];
     [level release];
     [picture release];
 	[super dealloc];
