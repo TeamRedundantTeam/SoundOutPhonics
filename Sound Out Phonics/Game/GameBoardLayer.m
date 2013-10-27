@@ -196,11 +196,9 @@
     if (selectedLabel) {
         [selectedLabel stopAllActions];
         [selectedLabel runAction:[CCRotateTo actionWithDuration:0.1 angle:0]];
-        
-        [self checkSlots:releaseLocation];
+        [self placeGraphyme:releaseLocation];
+        [self checkSubmitButton];
     }
-    [self checkSubmitButton];
-    
 
 }
 // Event that is called when the touch has began
@@ -257,96 +255,57 @@
 }
 
 // A helper function that determines if a object can be placed into the slot
-- (void)checkSlots:(CGPoint)releaseLocation {
-    for (Slots *slot in slots) {
-        if (selectedLabel) {
+- (void)placeGraphyme:(CGPoint)releaseLocation {
+    Slots *destinationSlot = nil;
+    Slots *sourceSlot = nil;
+    
+    for(Slots *s in slots)
+        if (CGRectContainsPoint(s.boundingBox, releaseLocation)){
+            destinationSlot = s;
+            //Don't look at the other slots
+            break;
+        }
+    
+    for(Slots *s in slots)
+        if (s.graphyme == selectedLabel){
+            sourceSlot = s;
+            break;
+        }
+
+    
+    //Graphyms is being placed over a slot
+    if(destinationSlot!=nil){
+        //Destination doesn't have a graphyme on it
+        if (destinationSlot.graphyme == nil) {
+            destinationSlot.graphyme = selectedLabel;
+            destinationSlot.scale = 0.8;
+            selectedLabel.position = ccp(destinationSlot.position.x, destinationSlot.position.y);
             
-            // Check if the selected item is on top of a slot
-            if (CGRectContainsPoint(slot.boundingBox, releaseLocation)) {
-                
-                // If the slot doesn't have any graphymes in it then add the selected graphyme to the slot
-                if (slot.graphyme == nil) {
-                    slot.graphyme = selectedLabel;
-                    slot.scale = 0.8;
-                    selectedLabel.position = ccp(slot.position.x, slot.position.y);
-                    
-                    // Loop through the other slots to make sure that none of them had the inserted graphyme
-                    for (Slots *s in slots) {
-                        if (s != slot) {
-                            
-                            // The other slot had the graphyme remove it from it
-                            if (selectedLabel == s.graphyme) {
-                                s.graphyme = nil;
-                                s.scale = 1;
-                                break;
-                            }
-                        }
-                    }
-                    selectedLabel = nil;
-                }
-                else { // Graphyme is on top of a full slot
-                    bool slotFound = false;
-                    
-                    // Move the graphyme back to it's original slot since we do not want to put graphamy in already full slot
-                    for (Slots *s in slots) {
-                        if (s.graphyme == selectedLabel) {
-                            selectedLabel.position = ccp(s.position.x, s.position.y);
-                            selectedLabel = nil;
-                            slotFound = true;
-                        }
-                    }
-                    // We didn't find the slot in the case the user tries to drag a graphyme that is not attached to a slot. Put that graphyme back to it's original position.
-                    if (!slotFound) {
-                        selectedLabel.position = selectedLabelLastPosition;
-                        selectedLabel = nil;
-                    }
-                }
+
+            // If we came from a slot remove our graphyme
+            if (sourceSlot != nil) {
+                sourceSlot.graphyme = nil;
+                sourceSlot.scale = 1;
             }
-            else { //The case in which the graphyme is not on top of any slots
-                
-                // The case in which the graphyme was taken from a slot
-                if (slot.graphyme == selectedLabel) {
-                    bool slotFound = false;
-                    
-                    // The case in which the graphyme is dragged over a slot that hasn't been looked at yet.
-                    // Example: Dragging a graphyme from the first slot to the second one. The iterator would still be on the first slot and is not aware of the second slot.
-                    for (Slots *s in slots) {
-                        if (s != slot) {
-                            // check if the graphyme is over another slot
-                            if (CGRectContainsPoint(s.boundingBox, releaseLocation)) {
-                                
-                                // The new slot already has a graphyme, move the selected graphyme back to its original slot
-                                if (s.graphyme)
-                                {
-                                    selectedLabel.position = ccp(slot.position.x, slot.position.y);
-                                    selectedLabel = nil;
-                                    slotFound = true;
-                                }
-                                else // The new slot doesn't have a graphyme move the graphyme to this new slot
-                                {
-                                    s.graphyme = selectedLabel;
-                                    s.scale = 0.8;
-                                    selectedLabel.position = ccp(s.position.x, s.position.y);
-                                    selectedLabel = nil;
-                                    slot.graphyme = nil;
-                                    slot.scale = 1.0;
-                                    slotFound = true;
-                                }
-                                break;
-                            }
-                        }
-                    }
-                    
-                    // The graphyme was dragged outside of any slots
-                    if (!slotFound) {
-                        slot.graphyme = nil;
-                        slot.scale = 1;
-                        selectedLabel = nil;
-                    }
-                }
+ 
+        } else { //Graphyme is being placed on a full slot
+            if (sourceSlot.graphyme == selectedLabel) {
+                selectedLabel.position = ccp(sourceSlot.position.x, sourceSlot.position.y);
+            } else {
+                selectedLabel.position = selectedLabelLastPosition;
             }
         }
+    } else {
+        //Graphyme came from another slot
+        if (sourceSlot != nil) {
+            sourceSlot.graphyme = nil;
+            sourceSlot.scale = 1.0;
+        }
+        
+        selectedLabel.position = releaseLocation;
     }
+    selectedLabel = nil;
+
 }
 @end
 
