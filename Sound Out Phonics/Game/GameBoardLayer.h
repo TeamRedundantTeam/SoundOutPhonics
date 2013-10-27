@@ -11,6 +11,8 @@
 #import "cocos2d.h"
 #import "SpritePicture.h"
 #import "TextToSpeech.h"
+#import "Slots.h"
+#import "SubmitButton.h"
 
 @interface GameBoardLayer : CCLayer {
     SpritePicture *picture; // Image of the word the user is trying to spell
@@ -18,6 +20,9 @@
     NSString *level; // The word that the players are trying to spell
     NSMutableArray *graphymes; // Graphymes that the player will move around in the gameboard layer
     CCLabelTTF *selectedLabel;
+    CGPoint selectedLabelLastPosition;
+    NSMutableArray *slots;
+    SubmitButton *submitButton;
 }
 
 // returns a CCScene that contains the GameBoardLayer as the only child and takes paramater gameLevel
@@ -28,4 +33,6 @@
 @property (retain) NSString *level;
 @property (retain) NSMutableArray *graphymes;
 @property (retain) CCLabelTTF *selectedLabel;
+@property (retain) NSMutableArray *slots;
+@property (retain) SubmitButton *submitButton;
 @end
