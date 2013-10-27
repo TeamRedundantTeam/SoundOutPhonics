@@ -185,6 +185,14 @@
         for (Slots *slot in slots) {
             userInput = [userInput stringByAppendingString:[slot.graphyme string]];
         }
+        
+        if ([userInput isEqualToString:level])
+        {
+            ccColor4B c = {100,100,0,100};
+            VictoryLayer * vl = [[[VictoryLayer alloc]initWithColor:c]autorelease];
+            [self.parent addChild:vl z:10];
+            [self onExit];
+        }
         [tts playWord:userInput];
     }
 

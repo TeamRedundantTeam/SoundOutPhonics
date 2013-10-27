@@ -13,6 +13,7 @@
 #import "TextToSpeech.h"
 #import "Slots.h"
 #import "SubmitButton.h"
+#import "VictoryLayer.h"
 
 @interface GameBoardLayer : CCLayer {
     SpritePicture *picture; // Image of the word the user is trying to spell
@@ -23,6 +24,7 @@
     CGPoint selectedLabelLastPosition;
     NSMutableArray *slots;
     SubmitButton *submitButton;
+
 }
 
 // returns a CCScene that contains the GameBoardLayer as the only child and takes paramater gameLevel
@@ -35,4 +37,5 @@
 @property (retain) CCLabelTTF *selectedLabel;
 @property (retain) NSMutableArray *slots;
 @property (retain) SubmitButton *submitButton;
+@property (retain) GameBoardLayer *KGameLayer;
 @end
