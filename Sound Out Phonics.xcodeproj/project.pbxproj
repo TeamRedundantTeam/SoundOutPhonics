@@ -11,7 +11,7 @@
 		7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
 		7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
 		7C68511C1819FCE400A52AAA /* Lvl1-Apple-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C68511B1819FCE400A52AAA /* Lvl1-Apple-Sprite.png */; };
-		7C753E22181A41650081BC90 /* GameBoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C753E21181A41650081BC90 /* GameBoardLayer.m */; };
+		7C753E22181A41650081BC90 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C753E21181A41650081BC90 /* GameLayer.m */; };
 		7C7D35DD181C8A7000CC2C02 /* SubmitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C7D35DC181C8A7000CC2C02 /* SubmitButton.png */; };
 		7C7D35E0181CA9DB00CC2C02 /* SubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D35DF181CA9DB00CC2C02 /* SubmitButton.m */; };
 		7C7D35E6181CF91100CC2C02 /* VictoryLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D35E5181CF91100CC2C02 /* VictoryLayer.m */; };
@@ -151,9 +151,9 @@
 		7CF19055181A3AE000528907 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF19052181A3AE000528907 /* OpenEars.framework */; };
 		7CF19056181A3AE000528907 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF19053181A3AE000528907 /* Slt.framework */; };
 		7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF19059181A3B0900528907 /* TextToSpeech.m */; };
-		7CF3D9D4181C73A4003DC0E5 /* Slots.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3D9D3181C73A4003DC0E5 /* Slots.m */; };
-		7CF3D9D6181C7964003DC0E5 /* Slots.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF3D9D5181C7964003DC0E5 /* Slots.png */; };
-		E27B99AE181D8B370084389E /* main-menu-background.png in Resources */ = {isa = PBXBuildFile; fileRef = E27B99AD181D8B370084389E /* main-menu-background.png */; };
+		7CF3D9D4181C73A4003DC0E5 /* Slot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3D9D3181C73A4003DC0E5 /* Slot.m */; };
+		7CF83BFD181DCCCE00F8D095 /* Slot.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF83BFC181DCCCE00F8D095 /* Slot.png */; };
+		7CF83BFF181DCCDA00F8D095 /* main-menu-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF83BFE181DCCDA00F8D095 /* main-menu-background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,8 +164,8 @@
 		7C6851141819FC8200A52AAA /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
 		7C6851151819FC8200A52AAA /* MenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLayer.m; sourceTree = "<group>"; };
 		7C68511B1819FCE400A52AAA /* Lvl1-Apple-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl1-Apple-Sprite.png"; sourceTree = "<group>"; };
-		7C753E20181A41650081BC90 /* GameBoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoardLayer.h; sourceTree = "<group>"; };
-		7C753E21181A41650081BC90 /* GameBoardLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardLayer.m; sourceTree = "<group>"; };
+		7C753E20181A41650081BC90 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
+		7C753E21181A41650081BC90 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		7C7D35DC181C8A7000CC2C02 /* SubmitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SubmitButton.png; path = Resources/SubmitButton.png; sourceTree = "<group>"; };
 		7C7D35DE181CA9DB00CC2C02 /* SubmitButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitButton.h; sourceTree = "<group>"; };
 		7C7D35DF181CA9DB00CC2C02 /* SubmitButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitButton.m; sourceTree = "<group>"; };
@@ -453,10 +453,10 @@
 		7CF19053181A3AE000528907 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Slt.framework; path = "Sound Out Phonics/libs/OpenEars/Slt.framework"; sourceTree = "<group>"; };
 		7CF19058181A3B0900528907 /* TextToSpeech.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextToSpeech.h; sourceTree = "<group>"; };
 		7CF19059181A3B0900528907 /* TextToSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextToSpeech.m; sourceTree = "<group>"; };
-		7CF3D9D2181C73A4003DC0E5 /* Slots.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slots.h; sourceTree = "<group>"; };
-		7CF3D9D3181C73A4003DC0E5 /* Slots.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Slots.m; sourceTree = "<group>"; };
-		7CF3D9D5181C7964003DC0E5 /* Slots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Slots.png; path = Resources/Slots.png; sourceTree = "<group>"; };
-		E27B99AD181D8B370084389E /* main-menu-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-menu-background.png"; sourceTree = "<group>"; };
+		7CF3D9D2181C73A4003DC0E5 /* Slot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slot.h; sourceTree = "<group>"; };
+		7CF3D9D3181C73A4003DC0E5 /* Slot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Slot.m; sourceTree = "<group>"; };
+		7CF83BFC181DCCCE00F8D095 /* Slot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Slot.png; path = Resources/Slot.png; sourceTree = "<group>"; };
+		7CF83BFE181DCCDA00F8D095 /* main-menu-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "main-menu-background.png"; path = "Resources/main-menu-background.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,12 +485,12 @@
 		7C68510B1819FC8200A52AAA /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				7C753E20181A41650081BC90 /* GameBoardLayer.h */,
-				7C753E21181A41650081BC90 /* GameBoardLayer.m */,
+				7C753E20181A41650081BC90 /* GameLayer.h */,
+				7C753E21181A41650081BC90 /* GameLayer.m */,
 				7C68510E1819FC8200A52AAA /* SpritePicture.h */,
 				7C68510F1819FC8200A52AAA /* SpritePicture.m */,
-				7CF3D9D2181C73A4003DC0E5 /* Slots.h */,
-				7CF3D9D3181C73A4003DC0E5 /* Slots.m */,
+				7CF3D9D2181C73A4003DC0E5 /* Slot.h */,
+				7CF3D9D3181C73A4003DC0E5 /* Slot.m */,
 				7C7D35DE181CA9DB00CC2C02 /* SubmitButton.h */,
 				7C7D35DF181CA9DB00CC2C02 /* SubmitButton.m */,
 				7C7D35E4181CF91100CC2C02 /* VictoryLayer.h */,
@@ -569,10 +569,10 @@
 		7CF098281818BD280043FD9F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E27B99AD181D8B370084389E /* main-menu-background.png */,
 				7C68511A1819FCE400A52AAA /* LevelSprites */,
 				7C7D35DC181C8A7000CC2C02 /* SubmitButton.png */,
-				7CF3D9D5181C7964003DC0E5 /* Slots.png */,
+				7CF83BFE181DCCDA00F8D095 /* main-menu-background.png */,
+				7CF83BFC181DCCCE00F8D095 /* Slot.png */,
 				7CF098291818BD280043FD9F /* Default.png */,
 				7CF0982B1818BD280043FD9F /* Default@2x.png */,
 				7CF0982D1818BD280043FD9F /* Default-568h@2x.png */,
@@ -1008,6 +1008,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Team Redundant Team";
+				TargetAttributes = {
+					7CF0980F1818BD280043FD9F = {
+						DevelopmentTeam = XM6475YHW9;
+					};
+				};
 			};
 			buildConfigurationList = 7CF0980B1818BD280043FD9F /* Build configuration list for PBXProject "Sound Out Phonics" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1038,14 +1043,14 @@
 				7CF098361818BD280043FD9F /* Icon-Small.png in Resources */,
 				7CF098321818BD280043FD9F /* Icon-72.png in Resources */,
 				7CF0982A1818BD280043FD9F /* Default.png in Resources */,
-				E27B99AE181D8B370084389E /* main-menu-background.png in Resources */,
 				7CF098341818BD280043FD9F /* Icon-Small-50.png in Resources */,
 				7C68511C1819FCE400A52AAA /* Lvl1-Apple-Sprite.png in Resources */,
 				7CF0983F1818BD280043FD9F /* iTunesArtwork in Resources */,
 				7CF098381818BD280043FD9F /* Icon-Small@2x.png in Resources */,
 				7CF098301818BD280043FD9F /* Default-Landscape~ipad.png in Resources */,
-				7CF3D9D6181C7964003DC0E5 /* Slots.png in Resources */,
 				7CF0982E1818BD280043FD9F /* Default-568h@2x.png in Resources */,
+				7CF83BFF181DCCDA00F8D095 /* main-menu-background.png in Resources */,
+				7CF83BFD181DCCCE00F8D095 /* Slot.png in Resources */,
 				7CF0983C1818BD280043FD9F /* Icon@2x.png in Resources */,
 				7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */,
 			);
@@ -1070,11 +1075,11 @@
 				7CF099651818BD2F0043FD9F /* TransformUtils.m in Sources */,
 				7CF098B21818BD2B0043FD9F /* CCNode+Debug.m in Sources */,
 				7CF0988D1818BD2A0043FD9F /* ccFPSImages.m in Sources */,
-				7C753E22181A41650081BC90 /* GameBoardLayer.m in Sources */,
+				7C753E22181A41650081BC90 /* GameLayer.m in Sources */,
 				7C7D35E6181CF91100CC2C02 /* VictoryLayer.m in Sources */,
 				7CF099131818BD2D0043FD9F /* CCTMXXMLParser.m in Sources */,
 				7CF099AA1818BD310043FD9F /* ray2.c in Sources */,
-				7CF3D9D4181C73A4003DC0E5 /* Slots.m in Sources */,
+				7CF3D9D4181C73A4003DC0E5 /* Slot.m in Sources */,
 				7CF099451818BD2F0043FD9F /* base64.c in Sources */,
 				7CF098681818BD290043FD9F /* CCActionTween.m in Sources */,
 				7C7D35E0181CA9DB00CC2C02 /* SubmitButton.m in Sources */,
@@ -1226,6 +1231,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1250,6 +1256,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

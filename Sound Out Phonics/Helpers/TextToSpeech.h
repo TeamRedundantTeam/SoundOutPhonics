@@ -2,7 +2,10 @@
 //  TTS.h
 //  Sound Out Phonics
 //
-//  Created by Oleg M on 2013-10-24.
+//  Purpose: Helper class that enables the text to speech functionality using OpenEars library
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Helpers/TextToSpeech.h
+//
+//  Created by Oleg Matvejev on 2013-10-24.
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
@@ -16,7 +19,7 @@
     Slt *slt;
 }
 
-- (void) playWord : (NSString*)input;
+- (void)playWord:(NSString*)input;
 @property (strong, nonatomic) FliteController *fliteController;
 @property (strong, nonatomic) Slt *slt;
 @end

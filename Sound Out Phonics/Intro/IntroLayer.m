@@ -2,15 +2,16 @@
 //  IntroLayer.m
 //  Sound Out Phonics
 //
-//  Created by Oleg M on 2013-10-23.
-//  Copyright Team Redundant Team 2013. All rights reserved.
+//  Purpose: Intro layer and scene that is played when the application just starts. The layer then creates the menu scene
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Intro/IntroLayer.m
+//
+//  Created by Oleg Matvejev on 2013-10-24.
+//  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
 
 // Import the interfaces
 #import "IntroLayer.h"
-#import "MenuLayer.h"
-
 
 #pragma mark - IntroLayer
 
@@ -18,7 +19,7 @@
 @implementation IntroLayer
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
-+(CCScene *) scene
++ (CCScene *)scene
 {
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
@@ -33,17 +34,17 @@
 	return scene;
 }
 
-// 
--(id) init
-{
-	if( (self=[super init])) {
+// Initialization of the Introl Layer
+- (id)init {
+	if ((self = [super init])) {
 
 		// ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
 
 		CCSprite *background;
 		
-		if( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ) {
+        // Determins which intor image to play
+		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
 			background = [CCSprite spriteWithFile:@"Default.png"];
 			background.rotation = 90;
 		} else {
@@ -51,16 +52,14 @@
 		}
 		background.position = ccp(size.width/2, size.height/2);
 
-		// add the label as a child to this Layer
+		// Add the label as a child to this Layer
 		[self addChild: background];
 	}
-	
 	return self;
 }
 
--(void) onEnter
-{
+- (void)onEnter {
 	[super onEnter];
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene] ]];
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
 }
 @end

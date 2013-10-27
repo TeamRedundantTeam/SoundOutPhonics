@@ -2,8 +2,11 @@
 //  AppDelegate.h
 //  Sound Out Phonics
 //
-//  Created by Oleg M on 2013-10-23.
-//  Copyright Team Redundant Team 2013. All rights reserved.
+//  Purpose: Main controller of the application
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/AppDelegate.h
+//
+//  Created by Oleg Matvejev on 2013-10-23.
+//  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -13,8 +16,7 @@
 @interface MyNavigationController : UINavigationController <CCDirectorDelegate>
 @end
 
-@interface AppController : NSObject <UIApplicationDelegate>
-{
+@interface AppController : NSObject <UIApplicationDelegate> {
 	UIWindow *window_;
 	MyNavigationController *navController_;
 

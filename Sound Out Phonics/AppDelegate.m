@@ -2,8 +2,11 @@
 //  AppDelegate.m
 //  Sound Out Phonics
 //
-//  Created by Oleg M on 2013-10-23.
-//  Copyright Team Redundant Team 2013. All rights reserved.
+//  Purpose: Main controller of the application
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/AppDelegate.m
+//
+//  Created by Oleg Matvejev on 2013-10-23.
+//  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
 #import "cocos2d.h"
@@ -16,10 +19,10 @@
 // The available orientations should be defined in the Info.plist file.
 // And in iOS 6+ only, you can override it in the Root View controller in the "supportedInterfaceOrientations" method.
 // Only valid for iOS 6+. NOT VALID for iOS 4 / 5.
--(NSUInteger)supportedInterfaceOrientations {
+- (NSUInteger)supportedInterfaceOrientations {
 	
 	// iPhone only
-	if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
+	if([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
 		return UIInterfaceOrientationMaskLandscape;
 	
 	// iPad only
@@ -42,9 +45,9 @@
 // This is needed for iOS4 and iOS5 in order to ensure
 // that the 1st scene has the correct dimensions
 // This is not needed on iOS6 and could be added to the application:didFinish...
--(void) directorDidReshapeProjection:(CCDirector*)director
+- (void)directorDidReshapeProjection:(CCDirector*)director
 {
-	if(director.runningScene == nil) {
+	if (director.runningScene == nil) {
 		// Add the first scene to the stack. The director will draw it immediately into the framebuffer. (Animation is started automatically when the view is displayed.)
 		// and add the scene to the stack. The director will run it when it automatically when the view is displayed.
 		[director runWithScene: [IntroLayer scene]];
@@ -57,8 +60,7 @@
 
 @synthesize window=window_, navController=navController_, director=director_;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Create the main window
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
@@ -140,51 +142,44 @@
 }
 
 // getting a call, pause the game
--(void) applicationWillResignActive:(UIApplication *)application
-{
-	if( [navController_ visibleViewController] == director_ )
+- (void)applicationWillResignActive:(UIApplication *)application {
+	if([navController_ visibleViewController] == director_)
 		[director_ pause];
 }
 
 // call got rejected
--(void) applicationDidBecomeActive:(UIApplication *)application
-{
+- (void)applicationDidBecomeActive:(UIApplication *)application {
 	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];	
-	if( [navController_ visibleViewController] == director_ )
+	if([navController_ visibleViewController] == director_)
 		[director_ resume];
 }
 
--(void) applicationDidEnterBackground:(UIApplication*)application
-{
-	if( [navController_ visibleViewController] == director_ )
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+	if([navController_ visibleViewController] == director_)
 		[director_ stopAnimation];
 }
 
--(void) applicationWillEnterForeground:(UIApplication*)application
-{
-	if( [navController_ visibleViewController] == director_ )
-		[director_ startAnimation];
+-( void)applicationWillEnterForeground:(UIApplication*)application {
+	if([navController_ visibleViewController] == director_)
+        [director_ startAnimation];
 }
 
 // application will be killed
-- (void)applicationWillTerminate:(UIApplication *)application
-{
+- (void)applicationWillTerminate:(UIApplication *)application {
 	CC_DIRECTOR_END();
 }
 
 // purge memory
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
-{
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
 	[[CCDirector sharedDirector] purgeCachedData];
 }
 
 // next delta time will be zero
--(void) applicationSignificantTimeChange:(UIApplication *)application
-{
+- (void)applicationSignificantTimeChange:(UIApplication *)application {
 	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
 }
 
-- (void) dealloc
+- (void)dealloc
 {
 	[window_ release];
 	[navController_ release];
