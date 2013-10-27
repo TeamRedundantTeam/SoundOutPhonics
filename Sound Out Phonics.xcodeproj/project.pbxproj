@@ -153,6 +153,7 @@
 		7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF19059181A3B0900528907 /* TextToSpeech.m */; };
 		7CF3D9D4181C73A4003DC0E5 /* Slots.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3D9D3181C73A4003DC0E5 /* Slots.m */; };
 		7CF3D9D6181C7964003DC0E5 /* Slots.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF3D9D5181C7964003DC0E5 /* Slots.png */; };
+		E27B99AE181D8B370084389E /* main-menu-background.png in Resources */ = {isa = PBXBuildFile; fileRef = E27B99AD181D8B370084389E /* main-menu-background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -455,6 +456,7 @@
 		7CF3D9D2181C73A4003DC0E5 /* Slots.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slots.h; sourceTree = "<group>"; };
 		7CF3D9D3181C73A4003DC0E5 /* Slots.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Slots.m; sourceTree = "<group>"; };
 		7CF3D9D5181C7964003DC0E5 /* Slots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Slots.png; path = Resources/Slots.png; sourceTree = "<group>"; };
+		E27B99AD181D8B370084389E /* main-menu-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-menu-background.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -567,6 +569,7 @@
 		7CF098281818BD280043FD9F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E27B99AD181D8B370084389E /* main-menu-background.png */,
 				7C68511A1819FCE400A52AAA /* LevelSprites */,
 				7C7D35DC181C8A7000CC2C02 /* SubmitButton.png */,
 				7CF3D9D5181C7964003DC0E5 /* Slots.png */,
@@ -1035,6 +1038,7 @@
 				7CF098361818BD280043FD9F /* Icon-Small.png in Resources */,
 				7CF098321818BD280043FD9F /* Icon-72.png in Resources */,
 				7CF0982A1818BD280043FD9F /* Default.png in Resources */,
+				E27B99AE181D8B370084389E /* main-menu-background.png in Resources */,
 				7CF098341818BD280043FD9F /* Icon-Small-50.png in Resources */,
 				7C68511C1819FCE400A52AAA /* Lvl1-Apple-Sprite.png in Resources */,
 				7CF0983F1818BD280043FD9F /* iTunesArtwork in Resources */,

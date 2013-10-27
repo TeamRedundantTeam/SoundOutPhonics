@@ -46,11 +46,17 @@
 		// ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
         
+        // create and initialize a background
+        CCSprite *background = [CCSprite spriteWithFile:@"main-menu-background.png"];
+        background.position = ccp(size.width/2, size.height/2);
+        
 		label.position =  ccp( size.width /2 , size.height/2 + 50 );
 		
 		// add the label as a child to this Layer
 		[self addChild: label];
-		
+		// add the background as a child to this layer
+        [self addChild: background];
+        
         // Play Options
         [CCMenuItemFont setFontSize:28];
         
