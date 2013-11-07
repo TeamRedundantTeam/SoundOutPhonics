@@ -7,16 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
+		7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C039AC1182A326B00E38FA1 /* Singleton.m */; };
 		7C6851171819FC8200A52AAA /* SpritePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C68510F1819FC8200A52AAA /* SpritePicture.m */; };
 		7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
 		7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
 		7C753E22181A41650081BC90 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C753E21181A41650081BC90 /* GameLayer.m */; };
 		7C7D35E0181CA9DB00CC2C02 /* SubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D35DF181CA9DB00CC2C02 /* SubmitButton.m */; };
 		7C7D35E6181CF91100CC2C02 /* VictoryLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D35E5181CF91100CC2C02 /* VictoryLayer.m */; };
+		7C948AA9182B6D0300543508 /* SelectedPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C948AA8182B6D0300543508 /* SelectedPortrait.png */; };
 		7CA72C65181E41740085ADFC /* Submit-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA72C64181E41740085ADFC /* Submit-Button.png */; };
 		7CA72C69181E41800085ADFC /* Slot.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA72C68181E41800085ADFC /* Slot.png */; };
 		7CA72C6B181E41860085ADFC /* Lvl1-Apple-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA72C6A181E41860085ADFC /* Lvl1-Apple-Sprite.png */; };
 		7CA72C73181E43030085ADFC /* Main-Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA72C72181E43030085ADFC /* Main-Menu.png */; };
+		7CED9B271829908E008BA73B /* LoginLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CED9B261829908E008BA73B /* LoginLayer.m */; };
+		7CED9B2918299DBC008BA73B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CED9B2818299DBC008BA73B /* libsqlite3.dylib */; };
+		7CED9B381829AA9D008BA73B /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CED9B351829AA9D008BA73B /* Account.m */; };
+		7CED9B391829AA9D008BA73B /* SOPDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CED9B371829AA9D008BA73B /* SOPDatabase.m */; };
+		7CED9B3B1829B2C4008BA73B /* EmptyPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CED9B3A1829B2C4008BA73B /* EmptyPortrait.png */; };
 		7CF098141818BD280043FD9F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098131818BD280043FD9F /* QuartzCore.framework */; };
 		7CF098161818BD280043FD9F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098151818BD280043FD9F /* OpenGLES.framework */; };
 		7CF098181818BD280043FD9F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098171818BD280043FD9F /* OpenAL.framework */; };
@@ -157,6 +165,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = sop.sqlite3; path = Resources/sop.sqlite3; sourceTree = "<group>"; };
+		7C039AC0182A326B00E38FA1 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		7C039AC1182A326B00E38FA1 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		7C68510E1819FC8200A52AAA /* SpritePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpritePicture.h; sourceTree = "<group>"; };
 		7C68510F1819FC8200A52AAA /* SpritePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpritePicture.m; sourceTree = "<group>"; };
 		7C6851111819FC8200A52AAA /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
@@ -169,10 +180,19 @@
 		7C7D35DF181CA9DB00CC2C02 /* SubmitButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitButton.m; sourceTree = "<group>"; };
 		7C7D35E4181CF91100CC2C02 /* VictoryLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VictoryLayer.h; sourceTree = "<group>"; };
 		7C7D35E5181CF91100CC2C02 /* VictoryLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VictoryLayer.m; sourceTree = "<group>"; };
+		7C948AA8182B6D0300543508 /* SelectedPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SelectedPortrait.png; path = Resources/SelectedPortrait.png; sourceTree = "<group>"; };
 		7CA72C64181E41740085ADFC /* Submit-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Submit-Button.png"; path = "Resources/Submit-Button.png"; sourceTree = "<group>"; };
 		7CA72C68181E41800085ADFC /* Slot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Slot.png; path = Resources/Slot.png; sourceTree = "<group>"; };
 		7CA72C6A181E41860085ADFC /* Lvl1-Apple-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl1-Apple-Sprite.png"; sourceTree = "<group>"; };
 		7CA72C72181E43030085ADFC /* Main-Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Main-Menu.png"; path = "Resources/Main-Menu.png"; sourceTree = "<group>"; };
+		7CED9B251829908E008BA73B /* LoginLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginLayer.h; sourceTree = "<group>"; };
+		7CED9B261829908E008BA73B /* LoginLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginLayer.m; sourceTree = "<group>"; };
+		7CED9B2818299DBC008BA73B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		7CED9B341829AA9D008BA73B /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		7CED9B351829AA9D008BA73B /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		7CED9B361829AA9D008BA73B /* SOPDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOPDatabase.h; sourceTree = "<group>"; };
+		7CED9B371829AA9D008BA73B /* SOPDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOPDatabase.m; sourceTree = "<group>"; };
+		7CED9B3A1829B2C4008BA73B /* EmptyPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = EmptyPortrait.png; path = Resources/EmptyPortrait.png; sourceTree = "<group>"; };
 		7CF098101818BD280043FD9F /* Sound Out Phonics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sound Out Phonics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF098131818BD280043FD9F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7CF098151818BD280043FD9F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -464,6 +484,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CED9B2918299DBC008BA73B /* libsqlite3.dylib in Frameworks */,
 				7CF19056181A3AE000528907 /* Slt.framework in Frameworks */,
 				7CF098181818BD280043FD9F /* OpenAL.framework in Frameworks */,
 				7CF0981E1818BD280043FD9F /* UIKit.framework in Frameworks */,
@@ -515,6 +536,8 @@
 			children = (
 				7C6851141819FC8200A52AAA /* MenuLayer.h */,
 				7C6851151819FC8200A52AAA /* MenuLayer.m */,
+				7CED9B251829908E008BA73B /* LoginLayer.h */,
+				7CED9B261829908E008BA73B /* LoginLayer.m */,
 			);
 			name = Menu;
 			path = "Sound Out Phonics/Menu";
@@ -527,6 +550,20 @@
 			);
 			name = LevelSprites;
 			path = Resources/LevelSprites;
+			sourceTree = "<group>";
+		};
+		7CED9B331829AA9D008BA73B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7CED9B341829AA9D008BA73B /* Account.h */,
+				7CED9B351829AA9D008BA73B /* Account.m */,
+				7CED9B361829AA9D008BA73B /* SOPDatabase.h */,
+				7CED9B371829AA9D008BA73B /* SOPDatabase.m */,
+				7C039AC0182A326B00E38FA1 /* Singleton.h */,
+				7C039AC1182A326B00E38FA1 /* Singleton.m */,
+			);
+			name = Shared;
+			path = "Sound Out Phonics/Shared";
 			sourceTree = "<group>";
 		};
 		7CF098071818BD280043FD9F = {
@@ -549,6 +586,7 @@
 		7CF098121818BD280043FD9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7CED9B2818299DBC008BA73B /* libsqlite3.dylib */,
 				7CF19051181A3AE000528907 /* AcousticModelEnglish.bundle */,
 				7CF19052181A3AE000528907 /* OpenEars.framework */,
 				7CF19053181A3AE000528907 /* Slt.framework */,
@@ -569,6 +607,9 @@
 		7CF098281818BD280043FD9F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7C948AA8182B6D0300543508 /* SelectedPortrait.png */,
+				7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */,
+				7CED9B3A1829B2C4008BA73B /* EmptyPortrait.png */,
 				7CA72C72181E43030085ADFC /* Main-Menu.png */,
 				7CA72C68181E41800085ADFC /* Slot.png */,
 				7CA72C64181E41740085ADFC /* Submit-Button.png */,
@@ -957,6 +998,7 @@
 		7CF099C71818BDA00043FD9F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7CED9B331829AA9D008BA73B /* Shared */,
 				7CF19057181A3B0900528907 /* Helpers */,
 				7C68510B1819FC8200A52AAA /* Game */,
 				7C6851101819FC8200A52AAA /* Intro */,
@@ -1040,8 +1082,10 @@
 				7CF099981818BD310043FD9F /* ChangeLog in Resources */,
 				7CF0982C1818BD280043FD9F /* Default@2x.png in Resources */,
 				7CA72C65181E41740085ADFC /* Submit-Button.png in Resources */,
+				7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */,
 				7CF098361818BD280043FD9F /* Icon-Small.png in Resources */,
 				7CF098321818BD280043FD9F /* Icon-72.png in Resources */,
+				7CED9B3B1829B2C4008BA73B /* EmptyPortrait.png in Resources */,
 				7CF0982A1818BD280043FD9F /* Default.png in Resources */,
 				7CF098341818BD280043FD9F /* Icon-Small-50.png in Resources */,
 				7CF0983F1818BD280043FD9F /* iTunesArtwork in Resources */,
@@ -1051,6 +1095,7 @@
 				7CF0982E1818BD280043FD9F /* Default-568h@2x.png in Resources */,
 				7CA72C6B181E41860085ADFC /* Lvl1-Apple-Sprite.png in Resources */,
 				7CA72C69181E41800085ADFC /* Slot.png in Resources */,
+				7C948AA9182B6D0300543508 /* SelectedPortrait.png in Resources */,
 				7CF0983C1818BD280043FD9F /* Icon@2x.png in Resources */,
 				7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */,
 			);
@@ -1084,6 +1129,7 @@
 				7CF098681818BD290043FD9F /* CCActionTween.m in Sources */,
 				7C7D35E0181CA9DB00CC2C02 /* SubmitButton.m in Sources */,
 				7CF0989F1818BD2B0043FD9F /* CCLabelBMFont.m in Sources */,
+				7CED9B271829908E008BA73B /* LoginLayer.m in Sources */,
 				7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */,
 				7CF0994C1818BD2F0043FD9F /* ccCArray.m in Sources */,
 				7CF099761818BD300043FD9F /* CDXMacOSXSupport.m in Sources */,
@@ -1095,6 +1141,7 @@
 				7CF0984A1818BD280043FD9F /* CCActionCatmullRom.m in Sources */,
 				7CF098C11818BD2B0043FD9F /* CCParticleSystem.m in Sources */,
 				7CF099161818BD2E0043FD9F /* CCTransition.m in Sources */,
+				7CED9B381829AA9D008BA73B /* Account.m in Sources */,
 				7CF098BE1818BD2B0043FD9F /* CCParticleExamples.m in Sources */,
 				7CF098BB1818BD2B0043FD9F /* CCParticleBatchNode.m in Sources */,
 				7CF098FE1818BD2D0043FD9F /* CCTextureAtlas.m in Sources */,
@@ -1119,6 +1166,7 @@
 				7CF0989C1818BD2A0043FD9F /* CCLabelAtlas.m in Sources */,
 				7CF098B81818BD2B0043FD9F /* CCParallaxNode.m in Sources */,
 				7CF098501818BD280043FD9F /* CCActionGrid.m in Sources */,
+				7CED9B391829AA9D008BA73B /* SOPDatabase.m in Sources */,
 				7CF098991818BD2A0043FD9F /* CCGrid.m in Sources */,
 				7CF099A81818BD310043FD9F /* quaternion.c in Sources */,
 				7CF098F51818BD2D0043FD9F /* CCSpriteFrame.m in Sources */,
@@ -1151,6 +1199,7 @@
 				7CF099731818BD300043FD9F /* CDOpenALSupport.m in Sources */,
 				7CF098561818BD290043FD9F /* CCActionInstant.m in Sources */,
 				7CF098771818BD290043FD9F /* CCClippingNode.m in Sources */,
+				7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */,
 				7CF098FB1818BD2D0043FD9F /* CCTexture2D.m in Sources */,
 				7CF099101818BD2D0043FD9F /* CCTMXTiledMap.m in Sources */,
 				7CF098D11818BD2C0043FD9F /* CCRenderTexture.m in Sources */,

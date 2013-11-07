@@ -1,11 +1,10 @@
 //
-//  IntroLayer.h
+//  Account.h
 //  Sound Out Phonics
 //
-//  Purpose: Intro layer and scene that is played when the application just starts.
-//           The layer then creates the menu scene
+//  Purpose: Object that stores account information
 //
-//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Intro/IntroLayer.h
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Shared/Account.h
 //
 //  Style: The source code will follow the general apple coding standard described
 //         here: https://tinyurl.com/n8jtvj3
@@ -18,17 +17,29 @@
 //         Sprite.png). Finally, the code will have comments throughout various non
 //         trivial operations.
 //
-//  Created on 2013-10-24.
+//  Created on 2013-11-5.
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "LoginLayer.h"
 
-@interface IntroLayer : CCLayer {
+@interface Account : NSObject {
+    int _accountId;
+    NSString *_name;
+    NSString *_password;
+    int _type;
+    NSString *_image;
+    CCSprite *_avatar;
 }
 
-// returns a CCScene that contains the IntroLayer as the only child
-+ (CCScene *)scene;
+@property (nonatomic, assign) int accountId;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *password;
+@property (nonatomic, assign) int type;
+@property (nonatomic, copy) NSString *image;
+@property (nonatomic, retain) CCSprite *avatar;
+
+- (id)initWithId:(int)accountId name:(NSString *)name password:(NSString *)password type:(int)type image:(NSString *)image;
 
 @end

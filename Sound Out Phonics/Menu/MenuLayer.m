@@ -24,6 +24,9 @@
 // Import the interfaces
 #import "MenuLayer.h"
 
+//TEST ONLY REMOVE
+#import "LoginLayer.h"
+
 #pragma mark - MenuLayer
 
 // Menu implementation
@@ -74,7 +77,13 @@
         }];
         
         
-		CCMenu *menu = [CCMenu menuWithItems:itemPlay, nil];
+        CCMenuItem *itemTest = [CCMenuItemFont itemWithString:@"Logout" block:^(id sender) {
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
+                                                       transitionWithDuration:1.0
+                                                       scene:[LoginLayer scene]]];
+        }];
+        
+		CCMenu *menu = [CCMenu menuWithItems:itemPlay, itemTest, nil];
 		
 		[menu alignItemsVerticallyWithPadding:20];
 		[menu setPosition:ccp( size.width/2, size.height/2 - 50)];
@@ -82,6 +91,19 @@
 		// Add the menu to the layer
 		[self addChild:menu];
         
+        Account *loggedInAccount = [Singleton sharedSingleton].loggedInAccount;
+        if (loggedInAccount != nil) {
+            loggedInAccount.avatar.scale = 0.5;
+            loggedInAccount.avatar.position = ccp(size.width/6, size.height-200);
+            
+            // Create Name
+            CCLabelTTF *portaitName = [CCLabelTTF labelWithString:loggedInAccount.name
+                                                         fontName:@"Marker Felt" fontSize:24];
+            portaitName.position = ccp(size.width/6, size.height-275);
+            [self addChild:portaitName];
+            
+            [self addChild:loggedInAccount.avatar];
+        }
 	}
 	return self;
 }

@@ -1,11 +1,10 @@
 //
-//  IntroLayer.h
+//  SOPDatabase.h
 //  Sound Out Phonics
 //
-//  Purpose: Intro layer and scene that is played when the application just starts.
-//           The layer then creates the menu scene
+//  Purpose: Object that allows access to the sqlite3 database
 //
-//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Intro/IntroLayer.h
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Shared/SOPDatabase.h
 //
 //  Style: The source code will follow the general apple coding standard described
 //         here: https://tinyurl.com/n8jtvj3
@@ -18,17 +17,17 @@
 //         Sprite.png). Finally, the code will have comments throughout various non
 //         trivial operations.
 //
-//  Created on 2013-10-24.
+//  Created on 2013-11-5.
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
-#import "cocos2d.h"
-#import "LoginLayer.h"
+#import <Foundation/Foundation.h>
+#import <sqlite3.h>
+#import "Account.h"
 
-@interface IntroLayer : CCLayer {
+@interface SOPDatabase : NSObject {
+    sqlite3 *_database;
 }
-
-// returns a CCScene that contains the IntroLayer as the only child
-+ (CCScene *)scene;
-
++ (SOPDatabase*) database;
+- (NSArray*) accountsInfo;
 @end
