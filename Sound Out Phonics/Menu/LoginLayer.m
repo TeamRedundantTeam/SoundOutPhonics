@@ -150,11 +150,15 @@
             // Must remove all the CCSprites from the layer because we will be adding the same sprite to the menulayer
             [self removeAllChildren];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
+            
+            // Cleanup after the transition
+            [self.parent removeChild:self cleanup:YES];
+
         }
         // Password was incorrect display an error message
         else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Invalid Password, try again!" delegate:nil
-                                   cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Invalid Password, try again!"
+                                  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alert show];
             [alert release];
         }

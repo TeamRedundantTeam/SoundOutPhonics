@@ -41,12 +41,12 @@
 @synthesize submitButton;
 
 // Create the Game scene
-+ (CCScene *)sceneWithParamaters:(NSString *)gameLevel withGraphemes:(NSString *)levelGraphemes {
++ (CCScene *)sceneWithParamaters:(NSString *)gameLevel withGraphemes:(NSString *)levelGraphemes withSprite:(NSString *)levelSprite {
     // 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	GameLayer *layer = [GameLayer nodeWithParamaters:gameLevel withGraphemes:levelGraphemes];
+	GameLayer *layer = [GameLayer nodeWithParamaters:gameLevel withGraphemes:levelGraphemes withSprite:levelSprite];
 	
 	// add layer as a child to scene
 	[scene addChild:layer];
@@ -56,12 +56,12 @@
 }
 
 // Creates the node of the level with the paramaters and then calles initWithParamaters to initialize the layer
-+ (id)nodeWithParamaters:(NSString *)level withGraphemes:(NSString *)levelGraphemes {
-    return [[[self alloc] initWithParamaters:level withGraphemes:levelGraphemes] autorelease];
++ (id)nodeWithParamaters:(NSString *)level withGraphemes:(NSString *)levelGraphemes withSprite:(NSString *)levelSprite {
+    return [[[self alloc] initWithParamaters:level withGraphemes:levelGraphemes withSprite:levelSprite] autorelease];
 }
 
 // Converts levelGraphemes into an array and randomizes the graphemes in that array
-- (NSArray*)generateGraphemeList:(NSString*)levelName withGraphemes:(NSString*)levelGraphemes {
+- (NSArray*)generateGraphemeList:(NSString*)levelName withGraphemes:(NSString*)levelGraphemes{
     
     NSArray* tempList = [levelGraphemes componentsSeparatedByString:@"-"];
     NSMutableArray* tempMutableList = [NSMutableArray arrayWithArray:tempList];
@@ -90,7 +90,7 @@
     return graphemeList;
 }
 
-- (id)initWithParamaters:(NSString *)gameLevel withGraphemes:(NSString *)levelGraphemes {
+- (id)initWithParamaters:(NSString *)gameLevel withGraphemes:(NSString *)levelGraphemes withSprite:(NSString *)levelSprite {
     
     if ((self = [super init])) {
         
@@ -103,8 +103,9 @@
         self.level = gameLevel;
         
         // Add picture sprite object
-        self.picture = [[SpritePicture alloc] initWithPosition:ccp(screenSize.width/5.5, screenSize.height - screenSize.height/4.5)];
-        
+        self.picture = [CCSprite spriteWithFile:levelSprite];
+        self.picture.position = ccp(screenSize.width/5.5, screenSize.height - screenSize.height/4.5);
+
         [self addChild:picture];
 
         // Add text to speech object

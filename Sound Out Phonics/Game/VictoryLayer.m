@@ -32,35 +32,60 @@
 {
     if ((self = [super initWithColor:color]))
     {
-        
         [self setTouchEnabled:YES];
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
         // Messages
         CCLabelTTF * victoryMessage = [CCLabelTTF labelWithString:@"You win!" fontName:@"Marker Felt" fontSize:64];
-        CCLabelTTF * tapMessage = [CCLabelTTF labelWithString:@"Tap anywhere to play again!" fontName:@"Marker Felt" fontSize:48];
+        _playAgainMessage = [CCLabelTTF labelWithString:@"Play Again?" fontName:@"Marker Felt" fontSize:48];
+        _mainMenuMessage = [CCLabelTTF labelWithString:@"Main Menu" fontName:@"Marker Felt" fontSize:48];
         [victoryMessage setPosition:ccp(screenSize.width/2, screenSize.height/2 + 75)];
-        [tapMessage setPosition:ccp(screenSize.width/2, screenSize.height/2)];
+        [_playAgainMessage setPosition:ccp(screenSize.width/2, screenSize.height/2)];
+        [_mainMenuMessage setPosition:ccp(screenSize.width/2, screenSize.height/2 - 75)];
         [self addChild:victoryMessage];
-        [self addChild:tapMessage];
+        [self addChild:_playAgainMessage];
+        [self addChild:_mainMenuMessage];
     }
     return self;
 }
 
-- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    // Check if any touch has occured
-    for (UITouch *touch in touches)
-    {
-        CGPoint location = [touch locationInView: [touch view]];
-        location = [[CCDirector sharedDirector] convertToGL: location];
+// Dispatcher to catch the touch events
+- (void)registerWithTouchDispatcher {
+	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+}
+
+// Handles the events that happen when the release occurs at a specific location
+- (void)tapReleaseAt:(CGPoint)releaseLocation {
+
+    if (CGRectContainsPoint(_playAgainMessage.boundingBox, releaseLocation)) {
+        // Create the new game scene
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
+                                                   transitionWithDuration:1.0
+                                                   scene:[GameLayer sceneWithParamaters:@"Apple" withGraphemes:@"A-pp-le" withSprite:@"AppleSprite.png"]]];
+        [self.parent removeChild:self cleanup:YES];
+    }
+    
+    if (CGRectContainsPoint(_mainMenuMessage.boundingBox, releaseLocation)) {
         
         // Create the new game scene
         [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                    transitionWithDuration:1.0
-                                                   scene:[GameLayer sceneWithParamaters:@"Apple" withGraphemes:@"A-pp-le"]]];
+                                                   scene:[MenuLayer scene]]];
         [self.parent removeChild:self cleanup:YES];
     }
+}
+
+// Event that is called when the touch has ended
+- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+    
+    CGPoint releaseLocation = [touch locationInView:[touch view]];
+    releaseLocation = [[CCDirector sharedDirector] convertToGL:releaseLocation];
+    [self tapReleaseAt:releaseLocation];
+}
+
+// Event that is called when the touch begins
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+    return YES;
 }
 
 - (void)dealloc

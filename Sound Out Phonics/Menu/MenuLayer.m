@@ -73,7 +73,7 @@
         CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"Play" block:^(id sender) {
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
-                                                       scene:[GameLayer sceneWithParamaters:@"Apple" withGraphemes:@"A-pp-le"] ]];
+                                                       scene:[GameLayer sceneWithParamaters:@"Apple" withGraphemes:@"A-pp-le" withSprite:@"AppleSprite.png"]]];
         }];
         
         

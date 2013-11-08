@@ -26,14 +26,13 @@
 
 
 #import "cocos2d.h"
-#import "SpritePicture.h"
 #import "TextToSpeech.h"
 #import "Slot.h"
 #import "SubmitButton.h"
 #import "VictoryLayer.h"
 
 @interface GameLayer : CCLayer {
-    SpritePicture *picture; // Image of the word the user is trying to spell
+    CCSprite *picture; // Image of the word the user is trying to spell
     TextToSpeech *tts; // Text To Speech library
     NSString *level; // The word that the players are trying to spell
     NSMutableArray *graphemes; // Graphemes that the player will move around in the game layer
@@ -45,9 +44,9 @@
 }
 
 // returns a CCScene that contains the GameBoardLayer as the only child and takes paramater gameLevel
-+(CCScene *)sceneWithParamaters:(NSString *)gameLevel withGraphemes:(NSString *)levelGraphemes;
++(CCScene *)sceneWithParamaters:(NSString *)gameLevel withGraphemes:(NSString *)levelGraphemes withSprite:(NSString *)levelSprite;
 
-@property (retain, nonatomic) SpritePicture *picture;
+@property (retain, nonatomic) CCSprite *picture;
 @property (retain, nonatomic) TextToSpeech *tts;
 @property (retain, nonatomic) NSString *level;
 @property (retain, nonatomic) NSMutableArray *graphemes;

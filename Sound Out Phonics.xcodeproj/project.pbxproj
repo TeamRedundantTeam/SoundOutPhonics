@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
 		7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C039AC1182A326B00E38FA1 /* Singleton.m */; };
-		7C6851171819FC8200A52AAA /* SpritePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C68510F1819FC8200A52AAA /* SpritePicture.m */; };
+		7C2636EC182C4E9E00EA972F /* AppleSprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C2636EB182C4E9E00EA972F /* AppleSprite.png */; };
 		7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
 		7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
 		7C753E22181A41650081BC90 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C753E21181A41650081BC90 /* GameLayer.m */; };
@@ -18,7 +18,6 @@
 		7C948AA9182B6D0300543508 /* SelectedPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C948AA8182B6D0300543508 /* SelectedPortrait.png */; };
 		7CA72C65181E41740085ADFC /* Submit-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA72C64181E41740085ADFC /* Submit-Button.png */; };
 		7CA72C69181E41800085ADFC /* Slot.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA72C68181E41800085ADFC /* Slot.png */; };
-		7CA72C6B181E41860085ADFC /* Lvl1-Apple-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA72C6A181E41860085ADFC /* Lvl1-Apple-Sprite.png */; };
 		7CA72C73181E43030085ADFC /* Main-Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CA72C72181E43030085ADFC /* Main-Menu.png */; };
 		7CED9B271829908E008BA73B /* LoginLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CED9B261829908E008BA73B /* LoginLayer.m */; };
 		7CED9B2918299DBC008BA73B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CED9B2818299DBC008BA73B /* libsqlite3.dylib */; };
@@ -168,8 +167,7 @@
 		7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = sop.sqlite3; path = Resources/sop.sqlite3; sourceTree = "<group>"; };
 		7C039AC0182A326B00E38FA1 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		7C039AC1182A326B00E38FA1 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
-		7C68510E1819FC8200A52AAA /* SpritePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpritePicture.h; sourceTree = "<group>"; };
-		7C68510F1819FC8200A52AAA /* SpritePicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpritePicture.m; sourceTree = "<group>"; };
+		7C2636EB182C4E9E00EA972F /* AppleSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleSprite.png; sourceTree = "<group>"; };
 		7C6851111819FC8200A52AAA /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		7C6851121819FC8200A52AAA /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		7C6851141819FC8200A52AAA /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 		7C948AA8182B6D0300543508 /* SelectedPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SelectedPortrait.png; path = Resources/SelectedPortrait.png; sourceTree = "<group>"; };
 		7CA72C64181E41740085ADFC /* Submit-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Submit-Button.png"; path = "Resources/Submit-Button.png"; sourceTree = "<group>"; };
 		7CA72C68181E41800085ADFC /* Slot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Slot.png; path = Resources/Slot.png; sourceTree = "<group>"; };
-		7CA72C6A181E41860085ADFC /* Lvl1-Apple-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl1-Apple-Sprite.png"; sourceTree = "<group>"; };
 		7CA72C72181E43030085ADFC /* Main-Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Main-Menu.png"; path = "Resources/Main-Menu.png"; sourceTree = "<group>"; };
 		7CED9B251829908E008BA73B /* LoginLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginLayer.h; sourceTree = "<group>"; };
 		7CED9B261829908E008BA73B /* LoginLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginLayer.m; sourceTree = "<group>"; };
@@ -508,8 +505,6 @@
 			children = (
 				7C753E20181A41650081BC90 /* GameLayer.h */,
 				7C753E21181A41650081BC90 /* GameLayer.m */,
-				7C68510E1819FC8200A52AAA /* SpritePicture.h */,
-				7C68510F1819FC8200A52AAA /* SpritePicture.m */,
 				7CF3D9D2181C73A4003DC0E5 /* Slot.h */,
 				7CF3D9D3181C73A4003DC0E5 /* Slot.m */,
 				7C7D35DE181CA9DB00CC2C02 /* SubmitButton.h */,
@@ -546,7 +541,7 @@
 		7C68511A1819FCE400A52AAA /* LevelSprites */ = {
 			isa = PBXGroup;
 			children = (
-				7CA72C6A181E41860085ADFC /* Lvl1-Apple-Sprite.png */,
+				7C2636EB182C4E9E00EA972F /* AppleSprite.png */,
 			);
 			name = LevelSprites;
 			path = Resources/LevelSprites;
@@ -1081,6 +1076,7 @@
 				7CF0983A1818BD280043FD9F /* Icon.png in Resources */,
 				7CF099981818BD310043FD9F /* ChangeLog in Resources */,
 				7CF0982C1818BD280043FD9F /* Default@2x.png in Resources */,
+				7C2636EC182C4E9E00EA972F /* AppleSprite.png in Resources */,
 				7CA72C65181E41740085ADFC /* Submit-Button.png in Resources */,
 				7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */,
 				7CF098361818BD280043FD9F /* Icon-Small.png in Resources */,
@@ -1093,7 +1089,6 @@
 				7CF098381818BD280043FD9F /* Icon-Small@2x.png in Resources */,
 				7CF098301818BD280043FD9F /* Default-Landscape~ipad.png in Resources */,
 				7CF0982E1818BD280043FD9F /* Default-568h@2x.png in Resources */,
-				7CA72C6B181E41860085ADFC /* Lvl1-Apple-Sprite.png in Resources */,
 				7CA72C69181E41800085ADFC /* Slot.png in Resources */,
 				7C948AA9182B6D0300543508 /* SelectedPortrait.png in Resources */,
 				7CF0983C1818BD280043FD9F /* Icon@2x.png in Resources */,
@@ -1160,7 +1155,6 @@
 				7CF098EF1818BD2D0043FD9F /* CCSprite.m in Sources */,
 				7CF098961818BD2A0043FD9F /* CCGrabber.m in Sources */,
 				7CF099A01818BD310043FD9F /* mat3.c in Sources */,
-				7C6851171819FC8200A52AAA /* SpritePicture.m in Sources */,
 				7CF099BA1818BD310043FD9F /* AppDelegate.m in Sources */,
 				7CF0992A1818BD2E0043FD9F /* CCES2Renderer.m in Sources */,
 				7CF0989C1818BD2A0043FD9F /* CCLabelAtlas.m in Sources */,
