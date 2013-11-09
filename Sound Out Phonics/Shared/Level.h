@@ -1,10 +1,10 @@
 //
-//  Account.h
+//  Level.h
 //  Sound Out Phonics
 //
-//  Purpose: Object that stores account information
+//  Purpose: Object that stores level information from the parser
 //
-//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Shared/Account.h
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Shared/Level.m
 //
 //  Style: The source code will follow the general apple coding standard described
 //         here: https://tinyurl.com/n8jtvj3
@@ -24,23 +24,22 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface Account : NSObject {
-    int _accountId;
+@interface Level : NSObject {
+    int _levelId;
     NSString *_name;
-    NSString *_password;
-    int _type;
-    NSString *_image;
-    CCSprite *_avatar;
+    NSString *_graphemes;
+    NSString *_spriteLocation;
+    CCSprite *_sprite;
 }
 
-@property (nonatomic, assign) int accountId;
+@property (nonatomic, assign) int levelId;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *password;
-@property (nonatomic, assign) int type;
-@property (nonatomic, copy) NSString *image;
+@property (nonatomic, copy) NSString *graphemes;
+@property (nonatomic, copy) NSString *spriteLocation;
 
-- (CCSprite *)avatar;
-- (id)initWithId:(int)accountId name:(NSString *)name password:(NSString *)password type:(int)type image:(NSString *)image;
-- (void)createAvatar;
-- (void)removeAvatar;
+- (id)initWithParameters:(int)levelId withName:(NSString *)name withGraphemes:(NSString *)graphemes withImageLocation:(NSString *)imageLocation;
+- (void)createSprite;
+- (CCSprite *)sprite;
+- (void)removeSprite;
+
 @end

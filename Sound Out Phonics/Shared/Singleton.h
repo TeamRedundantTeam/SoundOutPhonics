@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Account.h"
+#import "Level.h"
 
 @interface Singleton : NSObject {
     Account *_loggedInAccount;
+    Level *_selectedLevel;
 }
 +(Singleton *)sharedSingleton;
 @property (retain, nonatomic) Account *loggedInAccount;
+@property (retain, nonatomic) Level *selectedLevel;
 @end

@@ -71,19 +71,26 @@
         
         
         CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"Play" block:^(id sender) {
+            // Create a temporary level
+            Level *lvl1 = [[Level alloc] initWithParameters:1 withName:@"Apple" withGraphemes:@"A-pp-le" withImageLocation:@"AppleSprite.png"];
+            
+            // Add the temporary level to the shared singleton
+            [Singleton sharedSingleton].selectedLevel = lvl1;
+            
+            // Start this temporary level. TO-DO: Replace with level select scene
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
-                                                       scene:[GameLayer sceneWithParamaters:@"Apple" withGraphemes:@"A-pp-le" withSprite:@"AppleSprite.png"]]];
+                                                       scene:[GameLayer sceneWithLevel:lvl1]]];
         }];
         
         
-        CCMenuItem *itemTest = [CCMenuItemFont itemWithString:@"Logout" block:^(id sender) {
+        CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"Logout" block:^(id sender) {
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
                                                        scene:[LoginLayer scene]]];
         }];
         
-		CCMenu *menu = [CCMenu menuWithItems:itemPlay, itemTest, nil];
+		CCMenu *menu = [CCMenu menuWithItems:itemPlay, itemLogout, nil];
 		
 		[menu alignItemsVerticallyWithPadding:20];
 		[menu setPosition:ccp( size.width/2, size.height/2 - 50)];
@@ -93,6 +100,7 @@
         
         Account *loggedInAccount = [Singleton sharedSingleton].loggedInAccount;
         if (loggedInAccount != nil) {
+            [loggedInAccount createAvatar];
             loggedInAccount.avatar.scale = 0.5;
             loggedInAccount.avatar.position = ccp(size.width/6, size.height-200);
             

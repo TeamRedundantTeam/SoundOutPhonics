@@ -24,6 +24,7 @@
 #import "cocos2d.h"
 #import "GameLayer.h"
 #import "MenuLayer.h"
+#import "Singleton.h"
 
 @interface VictoryLayer : CCLayerColor {
     CCLabelTTF *_playAgainMessage;

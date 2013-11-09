@@ -30,8 +30,8 @@
 @synthesize password = _password;
 @synthesize type = _type;
 @synthesize image = _image;
-@synthesize avatar = _avatar;
 
+// Initializes the object with parameters received from the database
 - (id)initWithId:(int)accountId name:(NSString *)name password:(NSString *)password type:(int)type image:(NSString *) image {
     if ((self = [super init])) {
         self.accountId = accountId;
@@ -39,23 +39,26 @@
         self.password = password;
         self.type = type;
         self.image = image;
-        
-        // Sets the avatar based on the input.
-        if ([self.image isEqualToString:@""])
-            self.avatar = [CCSprite spriteWithFile:@"EmptyPortrait.png"];
-        else
-            self.avatar = [CCSprite spriteWithFile:self.image];
     }
     return self;
 }
 
-// Updates the avatar to the new image
-- (void) updateAvatar:(NSString *)image {
-    self.image = image;
+// Creates the avatar based of the current image set in the class
+- (void) createAvatar {
     if ([self.image isEqualToString:@""])
-        self.avatar = [CCSprite spriteWithFile:@"EmptyPortrait.png"];
+        _avatar = [CCSprite spriteWithFile:@"EmptyPortrait.png"];
     else
-        self.avatar = [CCSprite spriteWithFile:self.image];
+        _avatar = [CCSprite spriteWithFile:self.image];
+}
+
+// Returns the reference for the avatar
+- (CCSprite *) avatar {
+    return _avatar;
+}
+
+// Removes the reference to the currently used avatar. The cleanup for this object should be done within the layer
+- (void) removeAvatar {
+    _avatar = nil;
 }
 
 - (void) dealloc {

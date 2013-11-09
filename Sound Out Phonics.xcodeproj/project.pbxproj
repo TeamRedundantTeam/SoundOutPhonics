@@ -10,6 +10,7 @@
 		7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
 		7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C039AC1182A326B00E38FA1 /* Singleton.m */; };
 		7C2636EC182C4E9E00EA972F /* AppleSprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C2636EB182C4E9E00EA972F /* AppleSprite.png */; };
+		7C2636EF182C71BF00EA972F /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2636EE182C71BF00EA972F /* Level.m */; };
 		7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
 		7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
 		7C753E22181A41650081BC90 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C753E21181A41650081BC90 /* GameLayer.m */; };
@@ -168,6 +169,8 @@
 		7C039AC0182A326B00E38FA1 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		7C039AC1182A326B00E38FA1 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		7C2636EB182C4E9E00EA972F /* AppleSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleSprite.png; sourceTree = "<group>"; };
+		7C2636ED182C71BF00EA972F /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
+		7C2636EE182C71BF00EA972F /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		7C6851111819FC8200A52AAA /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		7C6851121819FC8200A52AAA /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		7C6851141819FC8200A52AAA /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
@@ -556,6 +559,8 @@
 				7CED9B371829AA9D008BA73B /* SOPDatabase.m */,
 				7C039AC0182A326B00E38FA1 /* Singleton.h */,
 				7C039AC1182A326B00E38FA1 /* Singleton.m */,
+				7C2636ED182C71BF00EA972F /* Level.h */,
+				7C2636EE182C71BF00EA972F /* Level.m */,
 			);
 			name = Shared;
 			path = "Sound Out Phonics/Shared";
@@ -1125,6 +1130,7 @@
 				7C7D35E0181CA9DB00CC2C02 /* SubmitButton.m in Sources */,
 				7CF0989F1818BD2B0043FD9F /* CCLabelBMFont.m in Sources */,
 				7CED9B271829908E008BA73B /* LoginLayer.m in Sources */,
+				7C2636EF182C71BF00EA972F /* Level.m in Sources */,
 				7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */,
 				7CF0994C1818BD2F0043FD9F /* ccCArray.m in Sources */,
 				7CF099761818BD300043FD9F /* CDXMacOSXSupport.m in Sources */,

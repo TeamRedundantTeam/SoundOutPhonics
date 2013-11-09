@@ -58,10 +58,12 @@
 - (void)tapReleaseAt:(CGPoint)releaseLocation {
 
     if (CGRectContainsPoint(_playAgainMessage.boundingBox, releaseLocation)) {
+        
         // Create the new game scene
         [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                    transitionWithDuration:1.0
-                                                   scene:[GameLayer sceneWithParamaters:@"Apple" withGraphemes:@"A-pp-le" withSprite:@"AppleSprite.png"]]];
+                                                   scene:[GameLayer sceneWithLevel:[Singleton sharedSingleton].selectedLevel]]];
+
         [self.parent removeChild:self cleanup:YES];
     }
     

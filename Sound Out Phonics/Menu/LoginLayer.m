@@ -32,8 +32,8 @@
 @synthesize avatarNames = _avatarNames;
 @synthesize accounts = _accounts;
 @synthesize selectedAccount = _selectedAccount;
-@synthesize submitButton = _submitButton;
-
+//@synthesize submitButton = _submitButton;
+@synthesize avatars = _avatars;
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 + (CCScene *)scene
 {
@@ -64,23 +64,25 @@
 		CGSize size = [[CCDirector sharedDirector] winSize];
         [self setTouchEnabled:YES];
 
-        self.accounts = [SOPDatabase database].accountsInfo;
-        self.avatarNames = [[NSMutableArray alloc]init];
+        self.accounts = [[SOPDatabase database] accountsInfo];
+        self.avatarNames = [NSMutableArray array];
         
         // Create the account avatars and names
         // TO-DO: Organize into rows and multiple pages
+        
         int i = 0;
         for (Account *account in self.accounts) {
             
             // Add the avatar
+            [account createAvatar];
             account.avatar.position = ccp(size.width/4 + i*140, size.height-200);
             [self addChild:account.avatar];
             
             // Create user name under the avatar
-            CCLabelTTF *portaitName = [CCLabelTTF labelWithString:account.name
+            CCLabelTTF *avatarName = [CCLabelTTF labelWithString:account.name
                                                       fontName:@"Marker Felt" fontSize:24];
-            portaitName.position = ccp(size.width/4 + i*140, size.height-300);
-            [self addChild:portaitName];
+            avatarName.position = ccp(size.width/4 + i*140, size.height-300);
+            [self addChild:avatarName];
             i++;
         }
         
@@ -109,9 +111,10 @@
 
         
         // Add Submit Button
-        self.submitButton = [[SubmitButton alloc] initWithPosition:ccp(size.width/2, size.height/2-100)];
-        [self.submitButton setState:false];
-        [self addChild:self.submitButton];
+        _submitButton = [[SubmitButton alloc] initWithPosition:ccp(size.width/2, size.height/2-100)];
+        [_submitButton setState:false];
+        //[self.submitButton release];
+        [self addChild:_submitButton];
         
     }
     return self;
@@ -136,7 +139,7 @@
     }
     
     // Occurs when the user presses the submit button
-    if (self.selectedAccount && self.submitButton.state && CGRectContainsPoint(self.submitButton.boundingBox, releaseLocation)) {
+    if (self.selectedAccount && _submitButton.state && CGRectContainsPoint(_submitButton.boundingBox, releaseLocation)) {
         
         // The password was correct transition to the menu layer
         if ([self.selectedAccount.password isEqualToString:self.passwordTextBox.text]) {
@@ -147,13 +150,15 @@
             // We now have a logged in account pass it onto the Singleton class
             [Singleton sharedSingleton].loggedInAccount = self.selectedAccount;
             
-            // Must remove all the CCSprites from the layer because we will be adding the same sprite to the menulayer
-            [self removeAllChildren];
+            // Avatar object must be removed from the selected account since we are sharing this perticular account between layers and
+            // CCSprite can only be attached to one layer. We are not removing the child from the layer because it makes the sprite dissapear
+            // before the transition ends. This also assures that each sprite is assign to one layer.
+            [self.selectedAccount removeAvatar];
+            
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
             
             // Cleanup after the transition
             [self.parent removeChild:self cleanup:YES];
-
         }
         // Password was incorrect display an error message
         else {
@@ -162,7 +167,6 @@
             [alert show];
             [alert release];
         }
-            
     }
 }
 
@@ -190,17 +194,20 @@
 - (void)textFieldDidEndEditing:(UITextField*)textField {
     // If the input text is empty then disable the submit button
     if ([self.passwordTextBox.text isEqualToString:@""])
-        self.submitButton.state = false;
+        _submitButton.state = false;
     else
-        self.submitButton.state = true;
+        _submitButton.state = true;
 }
 
 // on "dealloc" you need to release all your retained objects
 - (void)dealloc
 {
+    for (Account* account in self.accounts)
+        [account release];
+    
     [self.accounts release];
     [self.avatarNames release];
-    [self.submitButton release];
+    [_submitButton release];
 	[super dealloc];
 }
 

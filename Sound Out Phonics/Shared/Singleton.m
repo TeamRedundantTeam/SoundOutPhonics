@@ -11,6 +11,7 @@
 @implementation Singleton
 static Singleton* _sigleton = nil;
 @synthesize loggedInAccount = _loggedInAccount;
+@synthesize selectedLevel = _selectedLevel;
 
 +(Singleton*)sharedSingleton
 {
@@ -45,4 +46,10 @@ static Singleton* _sigleton = nil;
 	return self;
 }
 
+- (void)dealloc
+{
+    [_loggedInAccount release];
+    [_selectedLevel release];
+    [super dealloc];
+}
 @end

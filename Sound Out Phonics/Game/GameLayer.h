@@ -30,27 +30,28 @@
 #import "Slot.h"
 #import "SubmitButton.h"
 #import "VictoryLayer.h"
+#import "Level.h"
 
 @interface GameLayer : CCLayer {
     CCSprite *picture; // Image of the word the user is trying to spell
     TextToSpeech *tts; // Text To Speech library
-    NSString *level; // The word that the players are trying to spell
+    //NSString *level; // The word that the players are trying to spell
     NSMutableArray *graphemes; // Graphemes that the player will move around in the game layer
     CCLabelTTF *selectedGrapheme; // Currently selected grapheme by players touch
     CGPoint selectedGraphemeLastPosition; // The location of the selected grapheme
     NSMutableArray *slots; // Slots array in which the user will be putting the graphemes in
     SubmitButton *submitButton; // Submit button that will become enabled when all the slots are filled in
-
+    Level *_level;
 }
 
 // returns a CCScene that contains the GameBoardLayer as the only child and takes paramater gameLevel
-+(CCScene *)sceneWithParamaters:(NSString *)gameLevel withGraphemes:(NSString *)levelGraphemes withSprite:(NSString *)levelSprite;
++(CCScene *)sceneWithLevel:(Level *) level;
 
 @property (retain, nonatomic) CCSprite *picture;
 @property (retain, nonatomic) TextToSpeech *tts;
-@property (retain, nonatomic) NSString *level;
 @property (retain, nonatomic) NSMutableArray *graphemes;
 @property (retain, nonatomic) CCLabelTTF *selectedGrapheme;
 @property (retain, nonatomic) NSMutableArray *slots;
 @property (retain, nonatomic) SubmitButton *submitButton;
+@property (retain, nonatomic) Level *level;
 @end

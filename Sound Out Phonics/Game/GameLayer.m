@@ -34,19 +34,19 @@
 @implementation GameLayer
 @synthesize picture;
 @synthesize tts;
-@synthesize level;
 @synthesize graphemes;
 @synthesize selectedGrapheme;
 @synthesize slots;
 @synthesize submitButton;
+@synthesize level = _level;
 
 // Create the Game scene
-+ (CCScene *)sceneWithParamaters:(NSString *)gameLevel withGraphemes:(NSString *)levelGraphemes withSprite:(NSString *)levelSprite {
++ (CCScene *)sceneWithLevel:(Level *)level {
     // 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
 	
 	// 'layer' is an autorelease object.
-	GameLayer *layer = [GameLayer nodeWithParamaters:gameLevel withGraphemes:levelGraphemes withSprite:levelSprite];
+	GameLayer *layer = [GameLayer nodeWithParamaters:level];
 	
 	// add layer as a child to scene
 	[scene addChild:layer];
@@ -56,8 +56,8 @@
 }
 
 // Creates the node of the level with the paramaters and then calles initWithParamaters to initialize the layer
-+ (id)nodeWithParamaters:(NSString *)level withGraphemes:(NSString *)levelGraphemes withSprite:(NSString *)levelSprite {
-    return [[[self alloc] initWithParamaters:level withGraphemes:levelGraphemes withSprite:levelSprite] autorelease];
++ (id)nodeWithParamaters:(Level *)level {
+    return [[[self alloc] initWithLevel:level] autorelease];
 }
 
 // Converts levelGraphemes into an array and randomizes the graphemes in that array
@@ -90,7 +90,7 @@
     return graphemeList;
 }
 
-- (id)initWithParamaters:(NSString *)gameLevel withGraphemes:(NSString *)levelGraphemes withSprite:(NSString *)levelSprite {
+- (id)initWithLevel:(Level *)level {
     
     if ((self = [super init])) {
         
@@ -100,19 +100,19 @@
         // Get the screen size of the device
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
-        self.level = gameLevel;
+        self.level = level;
         
-        // Add picture sprite object
-        self.picture = [CCSprite spriteWithFile:levelSprite];
-        self.picture.position = ccp(screenSize.width/5.5, screenSize.height - screenSize.height/4.5);
 
-        [self addChild:picture];
+        // Add picture sprite object
+        [self.level createSprite];
+        self.level.sprite.position = ccp(screenSize.width/5.5, screenSize.height - screenSize.height/4.5);
+        [self addChild:self.level.sprite];
 
         // Add text to speech object
         self.tts = [[TextToSpeech alloc] init];
         
         // Create the graphyme list in randomized order
-        NSArray* graphemeList = [self generateGraphemeList:gameLevel withGraphemes:levelGraphemes];
+        NSArray* graphemeList = [self generateGraphemeList:self.level.name withGraphemes:self.level.graphemes];
         
         // Create Slots Array
         self.slots = [[NSMutableArray alloc] init];
@@ -150,7 +150,7 @@
 - (void)dealloc
 {
     [tts release];
-    [level release];
+    [self.level release];
     [picture release];
     [slots release];
     [submitButton release];
@@ -193,8 +193,8 @@
         selectedGraphemeLastPosition = touchLocation;
     
     // If the picture is selected the level name will be played out
-    if (selectedGrapheme == nil && CGRectContainsPoint(picture.boundingBox, touchLocation)) {
-        [tts playWord:level];
+    if (selectedGrapheme == nil && CGRectContainsPoint(self.level.sprite.boundingBox, touchLocation)) {
+        [tts playWord:self.level.name];
     }
     
     // If submit button is selected and it is enabled
@@ -205,9 +205,15 @@
         }
         
         // The user was able to put the the right graphemes into the slot. Create Victory Screen scene
-        if ([userInput isEqualToString:level])
+        if ([userInput isEqualToString:self.level.name])
         {
             ccColor4B c = {100,100,0,100};
+            
+            // Sprite object must be removed from the selected level since we are sharing this perticular level between layers and
+            // CCSprite can only be attached to one layer. We are not removing the child from the layer because it makes the sprite dissapear
+            // before the transition ends. This also assures that each sprite is assign to one layer at a time.
+            [self.level removeSprite];
+            
             VictoryLayer * vl = [[[VictoryLayer alloc] initWithColor:c] autorelease];
             [self.parent addChild:vl z:10];
             [self onExit];
