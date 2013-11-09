@@ -24,7 +24,6 @@
 
 #import "TextToSpeech.h"
 
-
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 #import "CCTouchDispatcher.h"
@@ -57,13 +56,15 @@
 	return slt;
 }
 
-// on "dealloc" you need to release all your retained objects
-- (void)dealloc
-{
-	[super dealloc];
-}
-
+// Plays the word using the the OpenEars library based on the input
 - (void)playWord:(NSString*)input {
     [self.fliteController say:input withVoice:self.slt];
+}
+
+// on "dealloc" you need to release all your retained objects
+- (void)dealloc {
+    [fliteController release];
+    [slt release];
+	[super dealloc];
 }
 @end

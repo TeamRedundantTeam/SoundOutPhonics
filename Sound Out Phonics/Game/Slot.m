@@ -38,6 +38,7 @@
 
 // on "dealloc" you need to release all your retained objects
 - (void)dealloc{
+    [self.grapheme release];
     [super dealloc];
 }
 

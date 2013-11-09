@@ -33,25 +33,19 @@
 #import "Level.h"
 
 @interface GameLayer : CCLayer {
-    CCSprite *picture; // Image of the word the user is trying to spell
-    TextToSpeech *tts; // Text To Speech library
-    //NSString *level; // The word that the players are trying to spell
-    NSMutableArray *graphemes; // Graphemes that the player will move around in the game layer
-    CCLabelTTF *selectedGrapheme; // Currently selected grapheme by players touch
-    CGPoint selectedGraphemeLastPosition; // The location of the selected grapheme
-    NSMutableArray *slots; // Slots array in which the user will be putting the graphemes in
-    SubmitButton *submitButton; // Submit button that will become enabled when all the slots are filled in
+    TextToSpeech *_tts; // Text To Speech library
+    NSMutableArray *_graphemes; // Graphemes that the player will move around in the game layer
+    CCLabelTTF *_selectedGrapheme; // Currently selected grapheme by players touch
+    CGPoint _selectedGraphemeLastPosition; // The location of the selected grapheme
+    NSMutableArray *_slots; // Slots array in which the user will be putting the graphemes in
+    SubmitButton *_submitButton; // Submit button that will become enabled when all the slots are filled in
+    
+    // Information about the current level such as the level number, level name, level graphemes,
+    // location of level's image and level's sprite reference.
     Level *_level;
 }
 
 // returns a CCScene that contains the GameBoardLayer as the only child and takes paramater gameLevel
 +(CCScene *)sceneWithLevel:(Level *) level;
 
-@property (retain, nonatomic) CCSprite *picture;
-@property (retain, nonatomic) TextToSpeech *tts;
-@property (retain, nonatomic) NSMutableArray *graphemes;
-@property (retain, nonatomic) CCLabelTTF *selectedGrapheme;
-@property (retain, nonatomic) NSMutableArray *slots;
-@property (retain, nonatomic) SubmitButton *submitButton;
-@property (retain, nonatomic) Level *level;
 @end

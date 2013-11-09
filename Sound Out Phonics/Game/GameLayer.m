@@ -30,15 +30,8 @@
 
 #pragma mark - GameLayer
 
-// GameBoardLayer implementation
+// GameLayer implementation
 @implementation GameLayer
-@synthesize picture;
-@synthesize tts;
-@synthesize graphemes;
-@synthesize selectedGrapheme;
-@synthesize slots;
-@synthesize submitButton;
-@synthesize level = _level;
 
 // Create the Game scene
 + (CCScene *)sceneWithLevel:(Level *)level {
@@ -100,37 +93,37 @@
         // Get the screen size of the device
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
-        self.level = level;
+        // Information about the current level
+        _level = level;
         
-
         // Add picture sprite object
-        [self.level createSprite];
-        self.level.sprite.position = ccp(screenSize.width/5.5, screenSize.height - screenSize.height/4.5);
-        [self addChild:self.level.sprite];
+        [_level createSprite];
+        _level.sprite.position = ccp(screenSize.width/5.5, screenSize.height - screenSize.height/4.5);
+        [self addChild:_level.sprite];
 
         // Add text to speech object
-        self.tts = [[TextToSpeech alloc] init];
+        _tts = [[TextToSpeech alloc] init];
         
         // Create the graphyme list in randomized order
-        NSArray* graphemeList = [self generateGraphemeList:self.level.name withGraphemes:self.level.graphemes];
+        NSArray* graphemeList = [self generateGraphemeList:_level.name withGraphemes:_level.graphemes];
         
         // Create Slots Array
-        self.slots = [[NSMutableArray alloc] init];
+        _slots = [[NSMutableArray alloc] init];
         for (int i = 0; i < graphemeList.count; i++) {
             // Create an individual slot
             Slot *slot = [[Slot alloc] initWithPosition:ccp(screenSize.width/4 + i*225, screenSize.height/4)];
-            [slots addObject:slot];
+            [_slots addObject:slot];
             [self addChild:slot];
             [slot release];
         }
         
         // Add Submit Button
-        self.submitButton = [[SubmitButton alloc] initWithPosition:ccp(screenSize.width - screenSize.width/9, screenSize.height/15)];
-        [self.submitButton setState:false];
-        [self addChild:submitButton];
+        _submitButton = [[SubmitButton alloc] initWithPosition:ccp(screenSize.width - screenSize.width/9, screenSize.height/15)];
+        [_submitButton setState:false];
+        [self addChild:_submitButton];
         
         // Create Graphemes
-        self.graphemes = [[NSMutableArray alloc] init];
+        _graphemes = [[NSMutableArray alloc] init];
         for (int i = 0; i < graphemeList.count; i++) {
             
             // Create Labels
@@ -139,23 +132,10 @@
             grapheme.position = ccp(screenSize.width/2 + i*screenSize.width/10, screenSize.height - screenSize.height/4.5);
             
             [self addChild:grapheme];
-            [graphemes addObject:grapheme];
+            [_graphemes addObject:grapheme];
         }
     }
     return self;
-}
-
-
-// on "dealloc" you need to release all your retained objects
-- (void)dealloc
-{
-    [tts release];
-    [self.level release];
-    [picture release];
-    [slots release];
-    [submitButton release];
-    [graphemes release];
-	[super dealloc];
 }
 
 // Dispatcher to catch the touch events
@@ -169,7 +149,7 @@
     CCLabelTTF *newGrapheme = nil;
     
     // Checks if a grapheme has been selected
-    for (CCLabelTTF *grapheme in graphemes) {
+    for (CCLabelTTF *grapheme in _graphemes) {
         if (CGRectContainsPoint(grapheme.boundingBox, touchLocation)) {
             newGrapheme = grapheme;
             break;
@@ -177,48 +157,48 @@
     }
     
     // If a new grapheme has been selected then begin rotating it from side to side
-    if (newGrapheme != selectedGrapheme) {
-        [selectedGrapheme stopAllActions];
-        [selectedGrapheme runAction:[CCRotateTo actionWithDuration:0.1 angle:0]];
+    if (newGrapheme != _selectedGrapheme) {
+        [_selectedGrapheme stopAllActions];
+        [_selectedGrapheme runAction:[CCRotateTo actionWithDuration:0.1 angle:0]];
         CCRotateTo *rotLeft = [CCRotateBy actionWithDuration:0.1 angle:-4.0];
         CCRotateTo *rotCenter = [CCRotateBy actionWithDuration:0.1 angle:0.0];
         CCRotateTo *rotRight = [CCRotateBy actionWithDuration:0.1 angle:4.0];
         CCSequence *rotSeq = [CCSequence actions:rotLeft, rotCenter, rotRight, rotCenter, nil];
         [newGrapheme runAction:[CCRepeatForever actionWithAction:rotSeq]];
-        selectedGrapheme = newGrapheme;
+        _selectedGrapheme = newGrapheme;
     }
     
     // Record the selected graphemes last touch location location
-    if (selectedGrapheme)
-        selectedGraphemeLastPosition = touchLocation;
+    if (_selectedGrapheme)
+        _selectedGraphemeLastPosition = touchLocation;
     
     // If the picture is selected the level name will be played out
-    if (selectedGrapheme == nil && CGRectContainsPoint(self.level.sprite.boundingBox, touchLocation)) {
-        [tts playWord:self.level.name];
+    if (_selectedGrapheme == nil && CGRectContainsPoint(_level.sprite.boundingBox, touchLocation)) {
+        [_tts playWord:_level.name];
     }
     
     // If submit button is selected and it is enabled
-    if ([self.submitButton state] && CGRectContainsPoint(submitButton.boundingBox, touchLocation)) {
+    if ([_submitButton state] && CGRectContainsPoint(_submitButton.boundingBox, touchLocation)) {
         NSString *userInput = @"";
-        for (Slot *slot in slots) {
+        for (Slot *slot in _slots) {
             userInput = [userInput stringByAppendingString:[slot.grapheme string]];
         }
         
         // The user was able to put the the right graphemes into the slot. Create Victory Screen scene
-        if ([userInput isEqualToString:self.level.name])
+        if ([userInput isEqualToString:_level.name])
         {
             ccColor4B c = {100,100,0,100};
             
             // Sprite object must be removed from the selected level since we are sharing this perticular level between layers and
             // CCSprite can only be attached to one layer. We are not removing the child from the layer because it makes the sprite dissapear
             // before the transition ends. This also assures that each sprite is assign to one layer at a time.
-            [self.level removeSprite];
+            [_level removeSprite];
             
             VictoryLayer * vl = [[[VictoryLayer alloc] initWithColor:c] autorelease];
             [self.parent addChild:vl z:10];
             [self onExit];
         }
-        [tts playWord:userInput];
+        [_tts playWord:userInput];
     }
 }
 
@@ -226,9 +206,9 @@
 - (void)tapReleaseAt:(CGPoint)releaseLocation {
     
     // Stop all the action that the selected label is performing and deselect it.
-    if (selectedGrapheme) {
-        [selectedGrapheme stopAllActions];
-        [selectedGrapheme runAction:[CCRotateTo actionWithDuration:0.1 angle:0]];
+    if (_selectedGrapheme) {
+        [_selectedGrapheme stopAllActions];
+        [_selectedGrapheme runAction:[CCRotateTo actionWithDuration:0.1 angle:0]];
         [self placeGrapheme:releaseLocation];
         [self checkSubmitButton];
     }
@@ -255,9 +235,9 @@
 
 // Translate the selected label to the new location
 - (void)panForTranslation:(CGPoint)translation {
-    if (selectedGrapheme) {
-        CGPoint newPos = ccpAdd(selectedGrapheme.position, translation);
-        selectedGrapheme.position = newPos;
+    if (_selectedGrapheme) {
+        CGPoint newPos = ccpAdd(_selectedGrapheme.position, translation);
+        _selectedGrapheme.position = newPos;
     }
 }
 
@@ -277,14 +257,14 @@
 // Only enabled the button when each of the slots are filled with a graphemes, otherwise the button is disabled
 - (void)checkSubmitButton {
     bool filledSlots = true;
-    for (Slot *slot in slots) {
+    for (Slot *slot in _slots) {
         if (slot.grapheme == nil) {
             filledSlots = false;
-            [self.submitButton setState:false];
+            [_submitButton setState:false];
         }
     }
     if (filledSlots == true)
-        [self.submitButton setState:true];
+        [_submitButton setState:true];
 }
 
 // A helper function that determines if a object can be placed into the slot
@@ -292,15 +272,15 @@
     Slot *destinationSlot = nil;
     Slot *sourceSlot = nil;
     
-    for (Slot *s in slots)
+    for (Slot *s in _slots)
         if (CGRectContainsPoint(s.boundingBox, releaseLocation)) {
             destinationSlot = s;
             //Don't look at the other slots
             break;
         }
     
-    for (Slot *s in slots)
-        if (s.grapheme == selectedGrapheme) {
+    for (Slot *s in _slots)
+        if (s.grapheme == _selectedGrapheme) {
             sourceSlot = s;
             break;
         }
@@ -310,9 +290,9 @@
     if (destinationSlot!=nil) {
         //Destination doesn't have a grapheme on it
         if (destinationSlot.grapheme == nil) {
-            destinationSlot.grapheme = selectedGrapheme;
+            destinationSlot.grapheme = _selectedGrapheme;
             destinationSlot.scale = 0.8;
-            selectedGrapheme.position = ccp(destinationSlot.position.x, destinationSlot.position.y);
+            _selectedGrapheme.position = ccp(destinationSlot.position.x, destinationSlot.position.y);
             
 
             // If we came from a slot remove our grapheme
@@ -322,10 +302,10 @@
             }
  
         } else { //Graphyme is being placed on a full slot
-            if (sourceSlot.grapheme == selectedGrapheme) {
-                selectedGrapheme.position = ccp(sourceSlot.position.x, sourceSlot.position.y);
+            if (sourceSlot.grapheme == _selectedGrapheme) {
+                _selectedGrapheme.position = ccp(sourceSlot.position.x, sourceSlot.position.y);
             } else {
-                selectedGrapheme.position = selectedGraphemeLastPosition;
+                _selectedGrapheme.position = _selectedGraphemeLastPosition;
             }
         }
     } else {
@@ -335,9 +315,18 @@
             sourceSlot.scale = 1.0;
         }
         
-        selectedGrapheme.position = releaseLocation;
+        _selectedGrapheme.position = releaseLocation;
     }
-    selectedGrapheme = nil;
+    _selectedGrapheme = nil;
+}
+
+// on "dealloc" you need to release all your retained objects
+- (void)dealloc {
+    [_tts release];
+    [_slots release];
+    [_submitButton release];
+    [_graphemes release];
+	[super dealloc];
 }
 @end
 

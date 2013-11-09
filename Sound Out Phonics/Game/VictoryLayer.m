@@ -90,8 +90,7 @@
     return YES;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [super dealloc];
 }
 

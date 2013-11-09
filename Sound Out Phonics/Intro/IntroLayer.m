@@ -74,5 +74,12 @@
 - (void)onEnter {
 	[super onEnter];
 	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LoginLayer scene]]];
+    
+    // Cleanup after the scene transition
+    [self.parent removeChild:self cleanup:YES];
+}
+
+- (void) dealloc {
+    [super dealloc];
 }
 @end

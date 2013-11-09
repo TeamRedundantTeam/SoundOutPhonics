@@ -148,7 +148,7 @@
             [self.passwordTextBox removeFromSuperview];
             
             // We now have a logged in account pass it onto the Singleton class
-            [Singleton sharedSingleton].loggedInAccount = self.selectedAccount;
+            [[Singleton sharedSingleton] setLoggedInAccount:self.selectedAccount];
             
             // Avatar object must be removed from the selected account since we are sharing this perticular account between layers and
             // CCSprite can only be attached to one layer. We are not removing the child from the layer because it makes the sprite dissapear
