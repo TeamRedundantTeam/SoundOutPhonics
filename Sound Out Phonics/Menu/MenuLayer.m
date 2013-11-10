@@ -58,6 +58,11 @@
 		// ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
         
+        // ============================================================================================
+        // INTERFACE WORK IN PROGRESS
+        // Author: Erik Schultz
+        // ============================================================================================
+        
         // create and initialize a background
         CCSprite *background = [CCSprite spriteWithFile:@"mainmenu-no_gradient.png"];
 
@@ -67,10 +72,16 @@
         [self addChild: background];
         
         // Play Options
+        [CCMenuItemFont setFontName:@"KBPlanetEarth"];
         [CCMenuItemFont setFontSize:28];
         
+        // ============================================================================================
+        // INTERFACE WORK IN PROGRESS
+        // Author: Erik Schultz
+        // ============================================================================================
         
-        CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"Play" block:^(id sender) {
+        CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"play." block:^(id sender) {
+            
             // Create a temporary level
             Level *lvl1 = [[Level alloc] initWithParameters:1 withName:@"Apple" withGraphemes:@"A-pp-le" withImageLocation:@"AppleSprite.png"];
             
@@ -84,7 +95,7 @@
         }];
         
         
-        CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"Logout" block:^(id sender) {
+        CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"quit." block:^(id sender) {
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
                                                        scene:[LoginLayer scene]]];
@@ -106,7 +117,7 @@
             
             // Create Name
             CCLabelTTF *portaitName = [CCLabelTTF labelWithString:loggedInAccount.name
-                                                         fontName:@"Marker Felt" fontSize:24];
+                                                         fontName:@"KBPlanetEarth" fontSize:24];
             portaitName.position = ccp(size.width/6, size.height-275);
             [self addChild:portaitName];
             

@@ -98,7 +98,7 @@
             
             // Create user name under the avatar
             CCLabelTTF *avatarName = [CCLabelTTF labelWithString:account.name
-                                                      fontName:@"Marker Felt" fontSize:24];
+                                                      fontName:@"KBPlanetEarth" fontSize:24];
             avatarName.position = ccp(size.width/4 + i*140, size.height-300);
             [self addChild:avatarName];
             i++;
