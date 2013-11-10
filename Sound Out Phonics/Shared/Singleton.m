@@ -25,6 +25,7 @@
 #import "Singleton.h"
 
 @implementation Singleton
+
 static Singleton *_sigleton = nil;
 
 // Create a shared accessor
@@ -52,7 +53,6 @@ static Singleton *_sigleton = nil;
 -(id)init {
 	self = [super init];
 	if (self != nil) {
-		// initialize stuff here
 	}
 	return self;
 }

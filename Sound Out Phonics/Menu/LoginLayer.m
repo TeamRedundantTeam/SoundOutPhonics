@@ -64,7 +64,7 @@
 		CGSize size = [[CCDirector sharedDirector] winSize];
         [self setTouchEnabled:YES];
 
-        self.accounts = [[SOPDatabase database] accountsInfo];
+        self.accounts = [[SOPDatabase database] loadAccounts];
         self.avatarNames = [NSMutableArray array];
         
         // Create the account avatars and names
@@ -115,7 +115,6 @@
         [_submitButton setState:false];
         //[self.submitButton release];
         [self addChild:_submitButton];
-        
     }
     return self;
 }

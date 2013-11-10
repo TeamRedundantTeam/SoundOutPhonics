@@ -31,6 +31,7 @@
     int _type;
     NSString *_image;
     CCSprite *_avatar;
+    NSArray *_statistics;
 }
 
 @property (nonatomic, assign) int accountId;
@@ -38,9 +39,18 @@
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, assign) int type;
 @property (nonatomic, copy) NSString *image;
+@property (nonatomic, retain) NSArray *statistics;
 
+// Returns the reference of the avatar
 - (CCSprite *)avatar;
-- (id)initWithId:(int)accountId name:(NSString *)name password:(NSString *)password type:(int)type image:(NSString *)image;
+
+// Create account based on the inputs pulled from the database
+- (id)initWithId:(int)accountId withName:(NSString *)name withPassword:(NSString *)password withType:(int)type
+      withImage:(NSString *) image withStatistics:(NSArray *)statistics;
+
+// Creates the avatar based of the current image set in the class
 - (void)createAvatar;
+
+// Removes the reference to the currently used avatar. The cleanup for this object should be done within the layer
 - (void)removeAvatar;
 @end

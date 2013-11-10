@@ -162,6 +162,7 @@
 		7CF19056181A3AE000528907 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF19053181A3AE000528907 /* Slt.framework */; };
 		7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF19059181A3B0900528907 /* TextToSpeech.m */; };
 		7CF3D9D4181C73A4003DC0E5 /* Slot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3D9D3181C73A4003DC0E5 /* Slot.m */; };
+		7CF9526E182F194600FE1DDC /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9526D182F194600FE1DDC /* Statistics.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -477,6 +478,8 @@
 		7CF19059181A3B0900528907 /* TextToSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextToSpeech.m; sourceTree = "<group>"; };
 		7CF3D9D2181C73A4003DC0E5 /* Slot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slot.h; sourceTree = "<group>"; };
 		7CF3D9D3181C73A4003DC0E5 /* Slot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Slot.m; sourceTree = "<group>"; };
+		7CF9526C182F194600FE1DDC /* Statistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statistics.h; sourceTree = "<group>"; };
+		7CF9526D182F194600FE1DDC /* Statistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statistics.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -561,6 +564,8 @@
 				7C039AC1182A326B00E38FA1 /* Singleton.m */,
 				7C2636ED182C71BF00EA972F /* Level.h */,
 				7C2636EE182C71BF00EA972F /* Level.m */,
+				7CF9526C182F194600FE1DDC /* Statistics.h */,
+				7CF9526D182F194600FE1DDC /* Statistics.m */,
 			);
 			name = Shared;
 			path = "Sound Out Phonics/Shared";
@@ -1175,6 +1180,7 @@
 				7CF0997C1818BD300043FD9F /* CocosDenshion.m in Sources */,
 				7CF099011818BD2D0043FD9F /* CCTextureCache.m in Sources */,
 				7CF099A41818BD310043FD9F /* neon_matrix_impl.c in Sources */,
+				7CF9526E182F194600FE1DDC /* Statistics.m in Sources */,
 				7CF098D41818BD2C0043FD9F /* CCScene.m in Sources */,
 				7CF098531818BD290043FD9F /* CCActionGrid3D.m in Sources */,
 				7CF0999C1818BD310043FD9F /* mat4stack.c in Sources */,

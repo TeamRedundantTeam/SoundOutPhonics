@@ -80,7 +80,7 @@
             // Start this temporary level. TO-DO: Replace with level select scene
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
-                                                       scene:[GameLayer sceneWithLevel:lvl1]]];
+                                                       scene:[GameLayer sceneWithLevel:lvl1 withAttempts:0]]];
         }];
         
         

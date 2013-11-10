@@ -62,7 +62,7 @@
         // Create the new game scene
         [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                    transitionWithDuration:1.0
-                                                   scene:[GameLayer sceneWithLevel:[Singleton sharedSingleton].selectedLevel]]];
+                                                   scene:[GameLayer sceneWithLevel:[Singleton sharedSingleton].selectedLevel withAttempts:0]]];
 
         [self.parent removeChild:self cleanup:YES];
     }
