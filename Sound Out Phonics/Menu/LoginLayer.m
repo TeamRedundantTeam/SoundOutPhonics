@@ -82,12 +82,9 @@
         // Author: Erik Schultz
         // ============================================================================================
         
-<<<<<<< HEAD
         // Load the accounts from the database
         self.accounts = [[SOPDatabase database] loadAccounts];
-=======
-        self.accounts = [[SOPDatabase database] accountsInfo];
->>>>>>> 22860f5eb130b3d14d0de464846d53284529b000
+
         self.avatarNames = [NSMutableArray array];
         
         // Create the account avatars and names
@@ -136,13 +133,7 @@
         // Add Submit Button
         _loginButton = [[LoginButton alloc] initWithPosition:ccp(size.width/2, size.height/2-100)];
         [_loginButton setState:false];
-<<<<<<< HEAD
         [self addChild:_loginButton];
-=======
-        //[self.submitButton release];
-        [self addChild:_loginButton];
-        
->>>>>>> 22860f5eb130b3d14d0de464846d53284529b000
     }
     return self;
 }
