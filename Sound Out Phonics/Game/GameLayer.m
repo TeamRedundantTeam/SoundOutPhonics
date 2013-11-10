@@ -93,11 +93,6 @@
         // Get the screen size of the device
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
-        // ============================================================================================
-        // INTERFACE WORK IN PROGRESS
-        // Author: Erik Schultz
-        // ============================================================================================
-        
         // create and initialize a background
         CCSprite *background = [CCSprite spriteWithFile:@"default_background.png"];
         
@@ -105,11 +100,6 @@
         
 		// add the background as a child to this layer
         [self addChild: background];
-        
-        // ============================================================================================
-        // INTERFACE WORK IN PROGRESS
-        // Author: Erik Schultz
-        // ============================================================================================
         
         // Information about the current level
         _level = level;

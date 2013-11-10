@@ -162,10 +162,13 @@
 		7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF19059181A3B0900528907 /* TextToSpeech.m */; };
 		7CF3D9D4181C73A4003DC0E5 /* Slot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3D9D3181C73A4003DC0E5 /* Slot.m */; };
 		E2398B8E182F5B2C00835BD8 /* mainmenu-no_gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = E2398B8D182F5B2C00835BD8 /* mainmenu-no_gradient.png */; };
-		E2398B93182F609100835BD8 /* mainmenu-play_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E2398B92182F609100835BD8 /* mainmenu-play_button.png */; };
-		E2398B97182F63F700835BD8 /* loginmenu-login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E2398B96182F63F700835BD8 /* loginmenu-login_button.png */; };
 		E2398B9B182F657800835BD8 /* default_background.png in Resources */ = {isa = PBXBuildFile; fileRef = E2398B9A182F657800835BD8 /* default_background.png */; };
 		E2398B9D182F6C8100835BD8 /* KBPlanetEarth.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2398B9C182F67A200835BD8 /* KBPlanetEarth.ttf */; };
+		E2952D45182F877A00D425F2 /* LoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E2952D44182F877A00D425F2 /* LoginButton.m */; };
+		E2952D47182F89BD00D425F2 /* loginmenu-login_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E2952D46182F89BD00D425F2 /* loginmenu-login_button.png */; };
+		E2952D49182F8A7300D425F2 /* gameboard-submit_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E2952D48182F8A7300D425F2 /* gameboard-submit_button.png */; };
+		E2952D4D182F9BE500D425F2 /* mainmenu-logout_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2952D4C182F9BE500D425F2 /* mainmenu-logout_icon.png */; };
+		E2952D4F182F9BF400D425F2 /* mainmenu-play_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2952D4E182F9BF400D425F2 /* mainmenu-play_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -481,10 +484,14 @@
 		7CF3D9D2181C73A4003DC0E5 /* Slot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slot.h; sourceTree = "<group>"; };
 		7CF3D9D3181C73A4003DC0E5 /* Slot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Slot.m; sourceTree = "<group>"; };
 		E2398B8D182F5B2C00835BD8 /* mainmenu-no_gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainmenu-no_gradient.png"; sourceTree = "<group>"; };
-		E2398B92182F609100835BD8 /* mainmenu-play_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainmenu-play_button.png"; sourceTree = "<group>"; };
-		E2398B96182F63F700835BD8 /* loginmenu-login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginmenu-login_button.png"; sourceTree = "<group>"; };
 		E2398B9A182F657800835BD8 /* default_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_background.png; sourceTree = "<group>"; };
 		E2398B9C182F67A200835BD8 /* KBPlanetEarth.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KBPlanetEarth.ttf; sourceTree = "<group>"; };
+		E2398B9E182F856100835BD8 /* LoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginButton.h; sourceTree = "<group>"; };
+		E2952D44182F877A00D425F2 /* LoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginButton.m; sourceTree = "<group>"; };
+		E2952D46182F89BD00D425F2 /* loginmenu-login_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginmenu-login_button.png"; sourceTree = "<group>"; };
+		E2952D48182F8A7300D425F2 /* gameboard-submit_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gameboard-submit_button.png"; sourceTree = "<group>"; };
+		E2952D4C182F9BE500D425F2 /* mainmenu-logout_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainmenu-logout_icon.png"; sourceTree = "<group>"; };
+		E2952D4E182F9BF400D425F2 /* mainmenu-play_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainmenu-play_icon.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -522,6 +529,8 @@
 				7C7D35DF181CA9DB00CC2C02 /* SubmitButton.m */,
 				7C7D35E4181CF91100CC2C02 /* VictoryLayer.h */,
 				7C7D35E5181CF91100CC2C02 /* VictoryLayer.m */,
+				E2398B9E182F856100835BD8 /* LoginButton.h */,
+				E2952D44182F877A00D425F2 /* LoginButton.m */,
 			);
 			name = Game;
 			path = "Sound Out Phonics/Game";
@@ -552,6 +561,7 @@
 		7C68511A1819FCE400A52AAA /* Level Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E2952D48182F8A7300D425F2 /* gameboard-submit_button.png */,
 				E2398B9A182F657800835BD8 /* default_background.png */,
 				7C2636EB182C4E9E00EA972F /* AppleSprite.png */,
 			);
@@ -1022,7 +1032,7 @@
 		E2398B8F182F604700835BD8 /* Login Page Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E2398B96182F63F700835BD8 /* loginmenu-login_button.png */,
+				E2952D46182F89BD00D425F2 /* loginmenu-login_button.png */,
 			);
 			name = "Login Page Resources";
 			sourceTree = "<group>";
@@ -1030,7 +1040,8 @@
 		E2398B91182F606900835BD8 /* Main Menu Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E2398B92182F609100835BD8 /* mainmenu-play_button.png */,
+				E2952D4E182F9BF400D425F2 /* mainmenu-play_icon.png */,
+				E2952D4C182F9BE500D425F2 /* mainmenu-logout_icon.png */,
 			);
 			name = "Main Menu Resources";
 			sourceTree = "<group>";
@@ -1132,19 +1143,21 @@
 				7CF098361818BD280043FD9F /* Icon-Small.png in Resources */,
 				7CF098321818BD280043FD9F /* Icon-72.png in Resources */,
 				E2398B8E182F5B2C00835BD8 /* mainmenu-no_gradient.png in Resources */,
-				E2398B93182F609100835BD8 /* mainmenu-play_button.png in Resources */,
 				7CED9B3B1829B2C4008BA73B /* EmptyPortrait.png in Resources */,
 				7CF0982A1818BD280043FD9F /* Default.png in Resources */,
+				E2952D4F182F9BF400D425F2 /* mainmenu-play_icon.png in Resources */,
 				7CF098341818BD280043FD9F /* Icon-Small-50.png in Resources */,
 				7CF0983F1818BD280043FD9F /* iTunesArtwork in Resources */,
+				E2952D49182F8A7300D425F2 /* gameboard-submit_button.png in Resources */,
 				7CF098381818BD280043FD9F /* Icon-Small@2x.png in Resources */,
 				7CF098301818BD280043FD9F /* Default-Landscape~ipad.png in Resources */,
 				7CF0982E1818BD280043FD9F /* Default-568h@2x.png in Resources */,
 				7CA72C69181E41800085ADFC /* Slot.png in Resources */,
 				E2398B9B182F657800835BD8 /* default_background.png in Resources */,
+				E2952D47182F89BD00D425F2 /* loginmenu-login_button.png in Resources */,
+				E2952D4D182F9BE500D425F2 /* mainmenu-logout_icon.png in Resources */,
 				7C948AA9182B6D0300543508 /* SelectedPortrait.png in Resources */,
 				7CF0983C1818BD280043FD9F /* Icon@2x.png in Resources */,
-				E2398B97182F63F700835BD8 /* loginmenu-login_button.png in Resources */,
 				7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1217,6 +1230,7 @@
 				7CED9B391829AA9D008BA73B /* SOPDatabase.m in Sources */,
 				7CF098991818BD2A0043FD9F /* CCGrid.m in Sources */,
 				7CF099A81818BD310043FD9F /* quaternion.c in Sources */,
+				E2952D45182F877A00D425F2 /* LoginButton.m in Sources */,
 				7CF098F51818BD2D0043FD9F /* CCSpriteFrame.m in Sources */,
 				7CF098621818BD290043FD9F /* CCActionProgressTimer.m in Sources */,
 				7CF098441818BD280043FD9F /* CCAction.m in Sources */,
