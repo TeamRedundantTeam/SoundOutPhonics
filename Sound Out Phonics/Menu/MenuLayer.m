@@ -54,23 +54,24 @@
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if((self = [super init])) {
-		
-		// ask director for the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
+		CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
         
-        // create and initialize a background
-        CCSprite *background = [CCSprite spriteWithFile:@"Main-Menu.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"mainmenu-no_gradient.png"]; // create and initialize the background layer (png)
+        CCSprite *playIcon = [CCSprite spriteWithFile:@"mainmenu-play_icon.png"]; // create and initialize the playIcon layer (png)
+        CCSprite *logoutIcon = [CCSprite spriteWithFile:@"mainmenu-logout_icon.png"]; // create and initialize the logoutIcon layer (png)
+        
+        background.position = ccp(size.width/2, size.height/2); // center background layer
+        playIcon.position = ccp((size.width/2)-75, size.height/2+50); // set playIcon screen position
+        logoutIcon.position = ccp((size.width/2)-75, size.height/2-20); // set logoutIcon screen position
 
-        background.position = ccp(size.width/2, size.height/2);
-
-		// add the background as a child to this layer
-        [self addChild: background];
+        [self addChild: background]; // add the background to the layer
+        [self addChild: playIcon]; // add the playIcon to the layer
+        [self addChild: logoutIcon]; // add the logoutIcon to the layer
         
-        // Play Options
-        [CCMenuItemFont setFontSize:28];
+        [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
+        [CCMenuItemFont setFontSize:50]; // set the default CCMenuItemFont size
         
-        
-        CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"Play" block:^(id sender) {
+        CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"play." block:^(id sender) {
             // Create a temporary level
             Level *lvl1 = [[Level alloc] initWithParameters:1 withName:@"Apple" withGraphemes:@"A-pp-le" withImageLocation:@"AppleSprite.png"];
             
@@ -84,7 +85,7 @@
         }];
         
         
-        CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"Logout" block:^(id sender) {
+        CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"quit." block:^(id sender) {
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
                                                        scene:[LoginLayer scene]]];
@@ -93,7 +94,7 @@
 		CCMenu *menu = [CCMenu menuWithItems:itemPlay, itemLogout, nil];
 		
 		[menu alignItemsVerticallyWithPadding:20];
-		[menu setPosition:ccp( size.width/2, size.height/2 - 50)];
+		[menu setPosition:ccp(size.width/2+10, size.height/2+15)];
 		
 		// Add the menu to the layer
 		[self addChild:menu];
@@ -102,12 +103,12 @@
         if (loggedInAccount != nil) {
             [loggedInAccount createAvatar];
             loggedInAccount.avatar.scale = 0.5;
-            loggedInAccount.avatar.position = ccp(size.width/6, size.height-200);
+            loggedInAccount.avatar.position = ccp(size.width/2, size.height/2+200);
             
             // Create Name
             CCLabelTTF *portaitName = [CCLabelTTF labelWithString:loggedInAccount.name
-                                                         fontName:@"Marker Felt" fontSize:24];
-            portaitName.position = ccp(size.width/6, size.height-275);
+                                                         fontName:@"KBPlanetEarth" fontSize:24];
+            portaitName.position = ccp(size.width/2, size.height-250);
             [self addChild:portaitName];
             
             [self addChild:loggedInAccount.avatar];

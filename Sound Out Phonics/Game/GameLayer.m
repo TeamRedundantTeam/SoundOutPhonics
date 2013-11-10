@@ -66,6 +66,14 @@
         // Get the screen size of the device
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
+        // create and initialize a background
+        CCSprite *background = [CCSprite spriteWithFile:@"default_background.png"];
+        
+        background.position = ccp(screenSize.width/2, screenSize.height/2);
+        
+		// add the background as a child to this layer
+        [self addChild: background];
+        
         // Information about the current level
         _level = level;
         
@@ -101,7 +109,7 @@
             
             // Create Labels
             CCLabelTTF *grapheme = [CCLabelTTF labelWithString:[graphemeList objectAtIndex:i]
-                                    fontName:@"Marker Felt" fontSize:64];
+                                    fontName:@"KBPlanetEarth" fontSize:64];
             grapheme.position = ccp(screenSize.width/2 + i*screenSize.width/10, screenSize.height - screenSize.height/4.5);
             
             [self addChild:grapheme];

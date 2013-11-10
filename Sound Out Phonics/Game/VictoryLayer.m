@@ -36,9 +36,9 @@
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
         // Messages
-        CCLabelTTF * victoryMessage = [CCLabelTTF labelWithString:@"You win!" fontName:@"Marker Felt" fontSize:64];
-        _playAgainMessage = [CCLabelTTF labelWithString:@"Play Again?" fontName:@"Marker Felt" fontSize:48];
-        _mainMenuMessage = [CCLabelTTF labelWithString:@"Main Menu" fontName:@"Marker Felt" fontSize:48];
+        CCLabelTTF * victoryMessage = [CCLabelTTF labelWithString:@"YOU WIN!" fontName:@"KBPlanetEarth" fontSize:64];
+        _playAgainMessage = [CCLabelTTF labelWithString:@"PLAY AGAIN?" fontName:@"KBPlanetEarth" fontSize:48];
+        _mainMenuMessage = [CCLabelTTF labelWithString:@"QUIT" fontName:@"KBPlanetEarth" fontSize:48];
         [victoryMessage setPosition:ccp(screenSize.width/2, screenSize.height/2 + 75)];
         [_playAgainMessage setPosition:ccp(screenSize.width/2, screenSize.height/2)];
         [_mainMenuMessage setPosition:ccp(screenSize.width/2, screenSize.height/2 - 75)];

@@ -1,5 +1,5 @@
 //
-//  SubmitButton.m
+//  LoginButton.m
 //  Sound Out Phonics
 //
 //  Purpose: Helper class that handles the submit button creation and various states
@@ -22,12 +22,12 @@
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
-#import "SubmitButton.h"
+#import "LoginButton.h"
 
-@implementation SubmitButton
+@implementation LoginButton
 
 - (id)initWithPosition:(CGPoint)pos {
-    if ((self = [super initWithFile:@"gameboard-submit_button.png"])) {
+    if ((self = [super initWithFile:@"loginmenu-login_button.png"])) {
         self.position = pos;
         self.opacity = 80;
     }

@@ -63,8 +63,31 @@
         // ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
         [self setTouchEnabled:YES];
-
+        
+        // ============================================================================================
+        // INTERFACE WORK IN PROGRESS
+        // Author: Erik Schultz
+        // ============================================================================================
+        
+        // create and initialize a background
+        CCSprite *background = [CCSprite spriteWithFile:@"mainmenu-no_gradient.png"];
+        
+        background.position = ccp(size.width/2, size.height/2);
+        
+		// add the background as a child to this layer
+        [self addChild: background];
+        
+        // ============================================================================================
+        // INTERFACE WORK IN PROGRESS
+        // Author: Erik Schultz
+        // ============================================================================================
+        
+<<<<<<< HEAD
+        // Load the accounts from the database
         self.accounts = [[SOPDatabase database] loadAccounts];
+=======
+        self.accounts = [[SOPDatabase database] accountsInfo];
+>>>>>>> 22860f5eb130b3d14d0de464846d53284529b000
         self.avatarNames = [NSMutableArray array];
         
         // Create the account avatars and names
@@ -80,7 +103,7 @@
             
             // Create user name under the avatar
             CCLabelTTF *avatarName = [CCLabelTTF labelWithString:account.name
-                                                      fontName:@"Marker Felt" fontSize:24];
+                                                      fontName:@"KBPlanetEarth" fontSize:24];
             avatarName.position = ccp(size.width/4 + i*140, size.height-300);
             [self addChild:avatarName];
             i++;
@@ -111,10 +134,15 @@
 
         
         // Add Submit Button
-        _submitButton = [[SubmitButton alloc] initWithPosition:ccp(size.width/2, size.height/2-100)];
-        [_submitButton setState:false];
+        _loginButton = [[LoginButton alloc] initWithPosition:ccp(size.width/2, size.height/2-100)];
+        [_loginButton setState:false];
+<<<<<<< HEAD
+        [self addChild:_loginButton];
+=======
         //[self.submitButton release];
-        [self addChild:_submitButton];
+        [self addChild:_loginButton];
+        
+>>>>>>> 22860f5eb130b3d14d0de464846d53284529b000
     }
     return self;
 }
@@ -138,7 +166,7 @@
     }
     
     // Occurs when the user presses the submit button
-    if (self.selectedAccount && _submitButton.state && CGRectContainsPoint(_submitButton.boundingBox, releaseLocation)) {
+    if (self.selectedAccount && _loginButton.state && CGRectContainsPoint(_loginButton.boundingBox, releaseLocation)) {
         
         // The password was correct transition to the menu layer
         if ([self.selectedAccount.password isEqualToString:self.passwordTextBox.text]) {
@@ -193,9 +221,9 @@
 - (void)textFieldDidEndEditing:(UITextField*)textField {
     // If the input text is empty then disable the submit button
     if ([self.passwordTextBox.text isEqualToString:@""])
-        _submitButton.state = false;
+        _loginButton.state = false;
     else
-        _submitButton.state = true;
+        _loginButton.state = true;
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -206,7 +234,7 @@
     
     [self.accounts release];
     [self.avatarNames release];
-    [_submitButton release];
+    [_loginButton release];
 	[super dealloc];
 }
 
