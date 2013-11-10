@@ -59,7 +59,7 @@
 		CGSize size = [[CCDirector sharedDirector] winSize];
         
         // create and initialize a background
-        CCSprite *background = [CCSprite spriteWithFile:@"Main-Menu.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"mainmenu-no_gradient.png"];
 
         background.position = ccp(size.width/2, size.height/2);
 

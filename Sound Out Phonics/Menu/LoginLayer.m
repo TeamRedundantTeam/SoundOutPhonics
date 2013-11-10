@@ -63,7 +63,25 @@
         // ask director for the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
         [self setTouchEnabled:YES];
-
+        
+        // ============================================================================================
+        // INTERFACE WORK IN PROGRESS
+        // Author: Erik Schultz
+        // ============================================================================================
+        
+        // create and initialize a background
+        CCSprite *background = [CCSprite spriteWithFile:@"mainmenu-no_gradient.png"];
+        
+        background.position = ccp(size.width/2, size.height/2);
+        
+		// add the background as a child to this layer
+        [self addChild: background];
+        
+        // ============================================================================================
+        // INTERFACE WORK IN PROGRESS
+        // Author: Erik Schultz
+        // ============================================================================================
+        
         self.accounts = [[SOPDatabase database] accountsInfo];
         self.avatarNames = [NSMutableArray array];
         

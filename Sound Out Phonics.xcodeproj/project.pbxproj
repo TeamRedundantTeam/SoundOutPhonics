@@ -162,6 +162,7 @@
 		7CF19056181A3AE000528907 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF19053181A3AE000528907 /* Slt.framework */; };
 		7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF19059181A3B0900528907 /* TextToSpeech.m */; };
 		7CF3D9D4181C73A4003DC0E5 /* Slot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3D9D3181C73A4003DC0E5 /* Slot.m */; };
+		E2398B8E182F5B2C00835BD8 /* mainmenu-no_gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = E2398B8D182F5B2C00835BD8 /* mainmenu-no_gradient.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -477,6 +478,7 @@
 		7CF19059181A3B0900528907 /* TextToSpeech.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextToSpeech.m; sourceTree = "<group>"; };
 		7CF3D9D2181C73A4003DC0E5 /* Slot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slot.h; sourceTree = "<group>"; };
 		7CF3D9D3181C73A4003DC0E5 /* Slot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Slot.m; sourceTree = "<group>"; };
+		E2398B8D182F5B2C00835BD8 /* mainmenu-no_gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainmenu-no_gradient.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -607,6 +609,7 @@
 		7CF098281818BD280043FD9F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E2398B8D182F5B2C00835BD8 /* mainmenu-no_gradient.png */,
 				7C948AA8182B6D0300543508 /* SelectedPortrait.png */,
 				7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */,
 				7CED9B3A1829B2C4008BA73B /* EmptyPortrait.png */,
@@ -1086,6 +1089,7 @@
 				7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */,
 				7CF098361818BD280043FD9F /* Icon-Small.png in Resources */,
 				7CF098321818BD280043FD9F /* Icon-72.png in Resources */,
+				E2398B8E182F5B2C00835BD8 /* mainmenu-no_gradient.png in Resources */,
 				7CED9B3B1829B2C4008BA73B /* EmptyPortrait.png in Resources */,
 				7CF0982A1818BD280043FD9F /* Default.png in Resources */,
 				7CF098341818BD280043FD9F /* Icon-Small-50.png in Resources */,
