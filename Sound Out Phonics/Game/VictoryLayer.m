@@ -28,21 +28,22 @@
 
 @implementation VictoryLayer
 
-- (id)initWithColor:(ccColor4B)color
-{
-    if ((self = [super initWithColor:color]))
-    {
+- (id)initWithColor:(ccColor4B)color withScore:(NSString *)score {
+    if ((self = [super initWithColor:color])) {
         [self setTouchEnabled:YES];
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
         // Messages
         CCLabelTTF * victoryMessage = [CCLabelTTF labelWithString:@"YOU WIN!" fontName:@"KBPlanetEarth" fontSize:64];
-        _playAgainMessage = [CCLabelTTF labelWithString:@"PLAY AGAIN?" fontName:@"KBPlanetEarth" fontSize:48];
-        _mainMenuMessage = [CCLabelTTF labelWithString:@"QUIT" fontName:@"KBPlanetEarth" fontSize:48];
-        [victoryMessage setPosition:ccp(screenSize.width/2, screenSize.height/2 + 75)];
+        CCLabelTTF *scoreMessage = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score: %@", score] fontName:@"KBPlanetEarth" fontSize:48];
+        _playAgainMessage = [CCLabelTTF labelWithString:@"play again?" fontName:@"KBPlanetEarth" fontSize:48];
+        _mainMenuMessage = [CCLabelTTF labelWithString:@"main menu" fontName:@"KBPlanetEarth" fontSize:48];
+        [victoryMessage setPosition:ccp(screenSize.width/2, screenSize.height/2 + 150)];
+        [scoreMessage setPosition:ccp(screenSize.width/2, screenSize.height/2 + 75)];
         [_playAgainMessage setPosition:ccp(screenSize.width/2, screenSize.height/2)];
-        [_mainMenuMessage setPosition:ccp(screenSize.width/2, screenSize.height/2 - 75)];
+        [_mainMenuMessage setPosition:ccp(screenSize.width/2, screenSize.height/2 - 50)];
         [self addChild:victoryMessage];
+        [self addChild:scoreMessage];
         [self addChild:_playAgainMessage];
         [self addChild:_mainMenuMessage];
     }
@@ -69,7 +70,7 @@
     
     if (CGRectContainsPoint(_mainMenuMessage.boundingBox, releaseLocation)) {
         
-        // Create the new game scene
+        // Exit to the menu
         [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                    transitionWithDuration:1.0
                                                    scene:[MenuLayer scene]]];

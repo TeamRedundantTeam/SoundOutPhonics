@@ -47,6 +47,8 @@
     CGPoint _selectedGraphemeLastPosition; // The location of the selected grapheme
     NSMutableArray *_slots; // Slots array in which the user will be putting the graphemes in
     SubmitButton *_submitButton; // Submit button that will become enabled when all the slots are filled in
+    CCSprite *_resetButton; // Reset button that resets the level
+    CCLayerColor * _wrongAnswerLayer; // Layer that will display when the player doesn't spell the word correctly
     
     // Statistic Variables
     int _attempts; // Stores number of times the user wasn't able to get the word correctly. Will be used to determine level Score.

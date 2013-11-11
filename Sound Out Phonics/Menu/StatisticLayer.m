@@ -139,7 +139,6 @@
         [self addChild:avatarName];
         i++;
     }
-
 }
 
 // Dispatcher to catch the touch events
@@ -203,7 +202,7 @@
     minTimeCategory.position = ccp(size.width/4 + 275, height + 150);
     maxTimeCategory.position = ccp(size.width/4 + 450, height + 150);
     
-    // 
+    // Indicate that these lables might be deleted in the future
     levelCategory.tag = 0;
     scoreCategory.tag = 0;
     minTimeCategory.tag = 0;

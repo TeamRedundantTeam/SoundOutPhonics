@@ -30,5 +30,5 @@
     CCLabelTTF *_playAgainMessage;
     CCLabelTTF *_mainMenuMessage;
 }
-
+- (id)initWithColor:(ccColor4B)color withScore:(NSString *)score;
 @end

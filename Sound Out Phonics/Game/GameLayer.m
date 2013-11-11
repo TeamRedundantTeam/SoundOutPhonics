@@ -115,13 +115,18 @@
             [self addChild:grapheme];
             [_graphemes addObject:grapheme];
         }
-        
+                  
         _attempts = attempts;
         NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
-        _levelScore = [CCLabelTTF labelWithString:score fontName:@"Marker Felt" fontSize:24];
+        _levelScore = [CCLabelTTF labelWithString:score fontName:@"KBPlanetEarth" fontSize:24];
         _levelScore.position = ccp(screenSize.width/2, screenSize.height - 24);
         [self addChild:_levelScore];
         
+        _resetButton = [CCSprite spriteWithFile:@"gamemenu-reset_icon.png"];
+        _resetButton.position = ccp(screenSize.width - 50, screenSize.height - 50);
+        [self addChild:_resetButton];
+        
+        // Initialize the schedular to calculate time since the level has started
         [self schedule: @selector(tick:)];
     }
     return self;
@@ -212,7 +217,7 @@
     // The user was able to put the the right graphemes into the slot. Create Victory Screen scene
     if ([userInput isEqualToString:_level.name]) {
 
-        
+        [_tts playWord:userInput];
         // Sprite object must be removed from the selected level since we are sharing this perticular level between layers and
         // CCSprite can only be attached to one scene at a time. We are not removing the child from the layer because it makes the sprite dissapear
         // before the transition ends. This also assures that each sprite is assign to one scene at a time.
@@ -225,7 +230,8 @@
         ccColor4B c = {100,100,0,100};
         
         // Create the victory scene on top of this scene
-        VictoryLayer * vl = [[[VictoryLayer alloc] initWithColor:c] autorelease];
+        NSString *score = [NSString stringWithFormat:@"%d", [self generateScore:_attempts]];
+        VictoryLayer * vl = [[[VictoryLayer alloc] initWithColor:c withScore:score] autorelease];
         [self.parent addChild:vl z:10];
         [self onExit];
     }
@@ -244,10 +250,25 @@
         
         // Create a new score based on number of attempts
         NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
-        _levelScore = [CCLabelTTF labelWithString:score fontName:@"Marker Felt" fontSize:24];
+        _levelScore = [CCLabelTTF labelWithString:score fontName:@"KBPlanetEarth" fontSize:24];
         _levelScore.position = ccp(screenSize.width/2, screenSize.height - 24);
         [self addChild:_levelScore];
+        
+        
+        // Background color. Transparent red
+        ccColor4B c = {225, 0, 0, 150};
+        
+        // Create the losing layer with a color scene on top of the current layer
+        _wrongAnswerLayer = [[CCLayerColor alloc] initWithColor:c];
+        [self addChild:_wrongAnswerLayer];
+        
+        [self scheduleOnce:@selector(removeLayer) delay:1];
     }
+}
+
+- (void)removeLayer {
+    [self removeChild:_wrongAnswerLayer];
+    [_wrongAnswerLayer release];
 }
 
 // Saves the statistics at the end of the level into already existing statistic or creates a new one
@@ -297,7 +318,7 @@
     else {
         
         // Create new statistic in the database
-        [[SOPDatabase database] createStatistic:account.accountId withLevel:_level.levelId withScore:score witTime:_elapsedTime];\
+        [[SOPDatabase database] createStatistic:account.accountId withLevel:_level.levelId withScore:score witTime:_elapsedTime];
         
         // Update the accounts statistic after we insert the new statistic
         account.statistics = [[SOPDatabase database] loadAccountStatistics:account.accountId];
@@ -314,8 +335,39 @@
         [self placeGrapheme:releaseLocation];
         [self checkSubmitButton];
     }
+    
+    // Get the screen size of the device
+    CGSize screenSize = [[CCDirector sharedDirector] winSize];
+    
+    if (CGRectContainsPoint(_resetButton.boundingBox, releaseLocation)) {
+        int i = 0;
+        
+        // put all graphemes in the original position
+        for (CCSprite *grapheme in _graphemes) {
+            grapheme.position = ccp(screenSize.width/2 + i*screenSize.width/10, screenSize.height - screenSize.height/4.5);
+            i++;
+        }
+        
+        // Remove all graphemes from the slots
+        for (Slot *slot in _slots) {
+            slot.grapheme = nil;
+            [_submitButton setState:false];
+        }
+        
+        _attempts++;
+        
+        // Remove Previous Score
+        [self removeChild:_levelScore];
+        
+        // Create a new score based on number of attempts
+        NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
+        _levelScore = [CCLabelTTF labelWithString:score fontName:@"KBPlanetEarth" fontSize:24];
+        _levelScore.position = ccp(screenSize.width/2, screenSize.height - 24);
+        [self addChild:_levelScore];
+    }
 
 }
+
 // Event that is called when the touch begins
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     
@@ -386,7 +438,6 @@
             sourceSlot = s;
             break;
         }
-
     
     //Grapheme is being placed over a slot
     if (destinationSlot!=nil) {
