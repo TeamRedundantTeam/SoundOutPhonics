@@ -55,13 +55,13 @@
         [self setTouchEnabled:YES];
         
         // Add the background sprite
-        CCSprite *background = [CCSprite spriteWithFile:@"background_no_gradient.png"]; // create and initialize the background sprite (png)
+        CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"]; // create and initialize the background sprite (png)
         background.position = ccp(size.width/2, size.height/2); // center background layer
         [self addChild:background];
 
         
         // Add the back button sprite
-        CCSprite *backButton = [CCSprite spriteWithFile:@"logout_icon.png"]; // create and initialize the back button sprite (png)
+        CCSprite *backButton = [CCSprite spriteWithFile:@"Back-Icon.png"]; // create and initialize the back button sprite (png)
         backButton.position = ccp(size.width - 180, size.height - size.height + 50);
         [self addChild:backButton];
 
@@ -103,7 +103,7 @@
     CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
     
     // Create the selected avatar frame
-    _selectedAvatarBorder = [CCSprite spriteWithFile:@"selected_portrait.png"];
+    _selectedAvatarBorder = [CCSprite spriteWithFile:@"Selected-Portrait.png"];
     _selectedAvatarBorder.visible = false;
     _selectedAvatarBorder.tag = 1;
     [self addChild:_selectedAvatarBorder];

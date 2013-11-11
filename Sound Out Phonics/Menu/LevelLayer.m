@@ -54,7 +54,7 @@
         [self setTouchEnabled:YES];
         
         // create and initialize a background
-        CCSprite *background = [CCSprite spriteWithFile:@"background_no_gradient.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"];
         
         background.position = ccp(size.width/2, size.height/2);
         
@@ -102,7 +102,7 @@
         [xmlURL release];
         
         // Add the back button sprite
-        CCSprite *backButton = [CCSprite spriteWithFile:@"logout_icon.png"]; // create and initialize the back button sprite (png)
+        CCSprite *backButton = [CCSprite spriteWithFile:@"Back-Icon.png"]; // create and initialize the back button sprite (png)
         backButton.position = ccp(size.width - 180, size.height - size.height + 50);
         backButton.tag = 1;
         [self addChild:backButton];

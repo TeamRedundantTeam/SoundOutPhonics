@@ -27,7 +27,7 @@
 @implementation LoginButton
 
 - (id)initWithPosition:(CGPoint)pos {
-    if ((self = [super initWithFile:@"login_button.png"])) {
+    if ((self = [super initWithFile:@"Login-Button.png"])) {
         self.position = pos;
         self.opacity = 80;
     }

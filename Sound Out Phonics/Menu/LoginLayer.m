@@ -63,7 +63,7 @@
         // ============================================================================================
         
         // create and initialize a background
-        CCSprite *background = [CCSprite spriteWithFile:@"background_no_gradient.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"];
         
         background.position = ccp(size.width/2, size.height/2);
         
@@ -111,7 +111,7 @@
         }
         
         // Create the selected avatar frame
-        _selectedAvatarBorder = [CCSprite spriteWithFile:@"selected_portrait.png"];
+        _selectedAvatarBorder = [CCSprite spriteWithFile:@"Selected-Portrait.png"];
         _selectedAvatarBorder.visible = false;
         [self addChild:_selectedAvatarBorder];
         

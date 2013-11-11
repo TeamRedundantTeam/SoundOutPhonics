@@ -48,7 +48,7 @@
 // Creates the avatar based of the current image set in the class
 - (void) createAvatar {
     if ([self.image isEqualToString:@""])
-        _avatar = [CCSprite spriteWithFile:@"empty_portrait.png"];
+        _avatar = [CCSprite spriteWithFile:@"Empty-Portrait.png"];
     else
         _avatar = [CCSprite spriteWithFile:self.image];
 }

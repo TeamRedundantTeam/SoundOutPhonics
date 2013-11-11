@@ -67,7 +67,7 @@
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
         // create and initialize a background
-        CCSprite *background = [CCSprite spriteWithFile:@"default_background.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"Default-Background.png"];
         
         background.position = ccp(screenSize.width/2, screenSize.height/2);
         
@@ -122,7 +122,7 @@
         _levelScore.position = ccp(screenSize.width/2, screenSize.height - 24);
         [self addChild:_levelScore];
         
-        _resetButton = [CCSprite spriteWithFile:@"reset_button.png"];
+        _resetButton = [CCSprite spriteWithFile:@"Reset-Button.png"];
         _resetButton.position = ccp(screenSize.width - 50, screenSize.height - 50);
         [self addChild:_resetButton];
         

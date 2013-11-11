@@ -3,150 +3,150 @@
         <Number>1</Number>
         <Name>can</Name>
         <Graphemes>c-a-n</Graphemes>
-        <Sprite>lvl1_can_sprite.png</Sprite>
+        <Sprite>Lvl1-Can-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>2</Number>
         <Name>map</Name>
         <Graphemes>m-a-p</Graphemes>
-        <Sprite>lvl2_map_sprite.png</Sprite>
+        <Sprite>Lvl2-Map-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>3</Number>
         <Name>drum</Name>
         <Graphemes>d-r-u-m</Graphemes>
-        <Sprite>lvl3_drum_sprite.png</Sprite>
+        <Sprite>Lvl3-Drum-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>4</Number>
         <Name>bus</Name>
         <Graphemes>b-u-s</Graphemes>
-        <Sprite>lvl4_bus_sprite.png</Sprite>
+        <Sprite>Lvl4-Bus-Sprite.png</Sprite>
     </Level>
         <Level>
         <Number>5</Number>
         <Name>slug</Name>
         <Graphemes>s-l-u-g</Graphemes>
-        <Sprite>lvl5_slug_sprite.png</Sprite>
+        <Sprite>Lvl5-Slug-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>6</Number>
         <Name>dig</Name>
         <Graphemes>d-i-g</Graphemes>
-        <Sprite>lvl6_dig_sprite.png</Sprite>
+        <Sprite>Lvl6-Dig-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>7</Number>
         <Name>six</Name>
         <Graphemes>s-i-x</Graphemes>
-        <Sprite>lvl7_six_sprite.png</Sprite>
+        <Sprite>Lvl7-Six-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>8</Number>
         <Name>fox</Name>
         <Graphemes>f-o-x</Graphemes>
-        <Sprite>lvl8_fox_sprite.png</Sprite>
+        <Sprite>Lvl8-Fox-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>9</Number>
         <Name>frog</Name>
         <Graphemes>f-r-o-g</Graphemes>
-        <Sprite>lvl9_frog_sprite.png</Sprite>
+        <Sprite>Lvl9-Frog-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>10</Number>
         <Name>pen</Name>
         <Graphemes>p-e-n</Graphemes>
-        <Sprite>lvl10_pen_sprite.png</Sprite>
+        <Sprite>Lvl10-Pen-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>11</Number>
         <Name>tent</Name>
         <Graphemes>t-e-n-t</Graphemes>
-        <Sprite>lvl11_tent_sprite.png</Sprite>
+        <Sprite>Lvl11-Tent-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>12</Number>
         <Name>trash</Name>
         <Graphemes>t-r-a-sh</Graphemes>
-        <Sprite>lvl12_trash_sprite.png</Sprite>
+        <Sprite>Lvl12-Trash-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>13</Number>
         <Name>fish</Name>
         <Graphemes>f-i-sh</Graphemes>
-        <Sprite>lvl13_fish_sprite.png</Sprite>
+        <Sprite>Lvl13-Fish-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>14</Number>
         <Name>cloth</Name>
         <Graphemes>c-l-o-th</Graphemes>
-        <Sprite>lvl14_cloth_sprite.png</Sprite>
+        <Sprite>Lvl14-Cloth-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>15</Number>
         <Name>branch</Name>
         <Graphemes>b-r-a-n-ch</Graphemes>
-        <Sprite>lvl15_branch_sprite.png</Sprite>
+        <Sprite>Lvl15-Branch-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>16</Number>
         <Name>bench</Name>
         <Graphemes>b-e-n-ch</Graphemes>
-        <Sprite>lvl16_bench_sprite.png</Sprite>
+        <Sprite>Lvl16-Bench-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>17</Number>
         <Name>chin</Name>
         <Graphemes>ch-i-n</Graphemes>
-        <Sprite>lvl17_chin_sprite.png</Sprite>
+        <Sprite>Lvl17-Chin-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>18</Number>
         <Name>whip</Name>
         <Graphemes>wh-i-p</Graphemes>
-        <Sprite>lvl18_whip_sprite.png</Sprite>
+        <Sprite>Lvl18-Whip-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>19</Number>
         <Name>lung</Name>
         <Graphemes>l-u-ng</Graphemes>
-        <Sprite>lvl19_lung_sprite.png</Sprite>
+        <Sprite>Lvl19-Lung-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>20</Number>
         <Name>swing</Name>
         <Graphemes>s-w-i-ng</Graphemes>
-        <Sprite>lvl20_swing_sprite.png</Sprite>
+        <Sprite>Lvl20-Swing-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>21</Number>
         <Name>pink</Name>
         <Graphemes>p-i-n-k</Graphemes>
-        <Sprite>lvl21_pink_sprite.png</Sprite>
+        <Sprite>Lvl21-Pink-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>22</Number>
         <Name>cliff</Name>
         <Graphemes>c-l-i-ff</Graphemes>
-        <Sprite>lvl22_cliff_sprite.png</Sprite>
+        <Sprite>Lvl22-Cliff-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>23</Number>
         <Name>skull</Name>
         <Graphemes>s-k-u-ll</Graphemes>
-        <Sprite>lvl23_skull_sprite.png</Sprite>
+        <Sprite>Lvl23-Skull-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>24</Number>
         <Name>doll</Name>
         <Graphemes>d-o-ll</Graphemes>
-        <Sprite>lvl24_doll_sprite.png</Sprite>
+        <Sprite>Lvl24-Doll-Sprite.png</Sprite>
     </Level>
     <Level>
         <Number>25</Number>
         <Name>grass</Name>
         <Graphemes>g-r-a-ss</Graphemes>
-        <Sprite>lvl25_grass_sprite.png</Sprite>
+        <Sprite>Lvl25-Grass-Sprite.png</Sprite>
     </Level>
 </Game>
