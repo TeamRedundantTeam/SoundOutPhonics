@@ -53,10 +53,10 @@
 	if((self = [super init])) {
 		CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
         
-        CCSprite *background = [CCSprite spriteWithFile:@"mainmenu-no_gradient.png"]; // create and initialize the background sprite (png)
-        CCSprite *playIcon = [CCSprite spriteWithFile:@"mainmenu-play_icon.png"]; // create and initialize the playIcon sprite (png)
-        CCSprite *statisticIcon = [CCSprite spriteWithFile:@"mainmenu-trophy_icon.png"]; // create and initialize the statistic sprite (png)
-        CCSprite *logoutIcon = [CCSprite spriteWithFile:@"mainmenu-logout_icon.png"]; // create and initialize the logoutIcon sprite (png)
+        CCSprite *background = [CCSprite spriteWithFile:@"background_no_gradient.png"]; // create and initialize the background sprite (png)
+        CCSprite *playIcon = [CCSprite spriteWithFile:@"play_icon.png"]; // create and initialize the playIcon sprite (png)
+        CCSprite *statisticIcon = [CCSprite spriteWithFile:@"trophy_icon.png"]; // create and initialize the statistic sprite (png)
+        CCSprite *logoutIcon = [CCSprite spriteWithFile:@"logout_icon.png"]; // create and initialize the logoutIcon sprite (png)
         
         background.position = ccp(size.width/2, size.height/2); // center background layer
         playIcon.position = ccp((size.width/2)-75, size.height/2+50); // set playIcon screen position

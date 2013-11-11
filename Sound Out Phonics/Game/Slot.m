@@ -30,7 +30,7 @@
 @synthesize grapheme;
 
 - (id)initWithPosition:(CGPoint)pos {
-    if ((self = [super initWithFile:@"Slot.png"])) {
+    if ((self = [super initWithFile:@"slot-icon.png"])) {
         self.position = pos;
     }
     return self;

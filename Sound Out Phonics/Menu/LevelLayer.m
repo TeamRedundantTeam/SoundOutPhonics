@@ -54,7 +54,7 @@
         [self setTouchEnabled:YES];
         
         // create and initialize a background
-        CCSprite *background = [CCSprite spriteWithFile:@"mainmenu-no_gradient.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"background_no_gradient.png"];
         
         background.position = ccp(size.width/2, size.height/2);
         
@@ -69,25 +69,40 @@
         NSURL *xmlURL = [[NSBundle mainBundle] URLForResource:@"Levels" withExtension:@"xml"];
         self.levels = [[LevelParser alloc] loadLevels:xmlURL];
         
-        int i = 0;
+        int column = 0;
+        int row = 0;
+        int levelNumber = 0;
         //For each level create an image to display to select
         for (Level *level in self.levels) {
+            
+            // Keeps track of what level number this object is at
+            levelNumber++;
+            
+            CCLabelTTF *levelName = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Level: %d",levelNumber] fontName:@"KBPlanetEarth" fontSize:24];
+            levelName.position = ccp(size.width/10 + column*140, size.height-140 + row*(-140));
+            [self addChild:levelName];
+            
             [level createSprite];
-            level.sprite.position = ccp(size.width/4 + i*140, size.height-200);
+            level.sprite.position = ccp(size.width/10 + column*140, size.height-200 + row*(-140));
             //Scale to 100x100px just for the selection screen
             level.sprite.scaleX = 100 / level.sprite.contentSize.width;
             level.sprite.scaleY = 100 / level.sprite.contentSize.height;
             [self addChild:level.sprite];
             
-            CCLabelTTF *levelName = [CCLabelTTF labelWithString:level.name fontName:@"KBPlanetEarth" fontSize:24];
-            levelName.position = ccp(size.width/4 + i*140, size.height-280);
-            [self addChild:levelName];
-            i++;
+            column++;
+            
+            // Move to the next row every 7 items
+            if (column % 7 == 0) {
+                // Move to new row
+                row++;
+                // Reset the column
+                column = 0;
+            }
         }
         [xmlURL release];
         
         // Add the back button sprite
-        CCSprite *backButton = [CCSprite spriteWithFile:@"mainmenu-logout_icon.png"]; // create and initialize the back button sprite (png)
+        CCSprite *backButton = [CCSprite spriteWithFile:@"logout_icon.png"]; // create and initialize the back button sprite (png)
         backButton.position = ccp(size.width - 180, size.height - size.height + 50);
         backButton.tag = 1;
         [self addChild:backButton];

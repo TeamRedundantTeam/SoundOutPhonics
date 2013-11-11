@@ -92,7 +92,7 @@
         _slots = [[NSMutableArray alloc] init];
         for (int i = 0; i < graphemeList.count; i++) {
             // Create an individual slot
-            Slot *slot = [[Slot alloc] initWithPosition:ccp(screenSize.width/4 + i*225, screenSize.height/4)];
+            Slot *slot = [[Slot alloc] initWithPosition:ccp(screenSize.width/7 + i*180, screenSize.height/4)];
             [_slots addObject:slot];
             [self addChild:slot];
             [slot release];
@@ -122,7 +122,7 @@
         _levelScore.position = ccp(screenSize.width/2, screenSize.height - 24);
         [self addChild:_levelScore];
         
-        _resetButton = [CCSprite spriteWithFile:@"gamemenu-reset_icon.png"];
+        _resetButton = [CCSprite spriteWithFile:@"reset_button.png"];
         _resetButton.position = ccp(screenSize.width - 50, screenSize.height - 50);
         [self addChild:_resetButton];
         

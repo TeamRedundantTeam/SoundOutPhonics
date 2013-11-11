@@ -27,7 +27,7 @@
 @implementation SubmitButton
 
 - (id)initWithPosition:(CGPoint)pos {
-    if ((self = [super initWithFile:@"gameboard-submit_button.png"])) {
+    if ((self = [super initWithFile:@"submit_button.png"])) {
         self.position = pos;
         self.opacity = 80;
     }
