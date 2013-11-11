@@ -66,6 +66,7 @@
 - (void)dealloc {
     self.name = nil;
     self.graphemes = nil;
+    self.spriteLocation = nil;
     [super dealloc];
 }
 @end

@@ -56,7 +56,7 @@
 }
 
 // Initializes the level with provided level infromation and number of times the person has attempted to do this level
-- (id)initWithLevel:(Level *)level withAttempts:attempts {
+- (id)initWithLevel:(Level *)level withAttempts:(int)attempts {
     
     if ((self = [super init])) {
         
