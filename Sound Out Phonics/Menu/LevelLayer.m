@@ -103,7 +103,7 @@
             // Create the level scene
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
-                                                       scene:[GameLayer sceneWithLevel:level]]];
+                                                       scene:[GameLayer sceneWithLevel:level withAttempts:0]]];
 
         }
     }

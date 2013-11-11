@@ -72,16 +72,10 @@
         [CCMenuItemFont setFontSize:50]; // set the default CCMenuItemFont size
         
         CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"play." block:^(id sender) {
-            // Create a temporary level
-            Level *lvl1 = [[Level alloc] initWithParameters:1 withName:@"Apple" withGraphemes:@"A-pp-le" withImageLocation:@"AppleSprite.png"];
-            
-            // Add the temporary level to the shared singleton
-            [Singleton sharedSingleton].selectedLevel = lvl1;
-            
-            // Start this temporary level. TO-DO: Replace with level select scene
+
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
-                                                       scene:[GameLayer sceneWithLevel:lvl1 withAttempts:0]]];
+                                                       scene:[LevelLayer scene]]];
         }];
         
         
@@ -105,7 +99,7 @@
             loggedInAccount.avatar.scale = 0.5;
             loggedInAccount.avatar.position = ccp(size.width/2, size.height/2+200);
             
-            // Create Name
+            // Create Name=
             CCLabelTTF *portaitName = [CCLabelTTF labelWithString:loggedInAccount.name
                                                          fontName:@"KBPlanetEarth" fontSize:24];
             portaitName.position = ccp(size.width/2, size.height-250);
