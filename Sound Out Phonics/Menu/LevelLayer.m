@@ -2,7 +2,22 @@
 //  LevelSelect.m
 //  Sound Out Phonics
 //
-//  Created by Jordan on 2013-11-10.
+//  Purpose: Level select layer and scene that allows player to choose which level they want to play
+//
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/LevelSelect.m
+//
+//  Style: The source code will follow the general apple coding standard described
+//         here: https://tinyurl.com/n8jtvj3
+//         Furthermore, the source code will be self descriptive and the formating
+//         will be consistent through the project. Long methods will be broken down
+//         and will have description of what the method does. The variable names and
+//         methods will follow the lower camel style (ex: selectedGraphemePosition),
+//         the classes will follow the upper camel style (ex: GameLayer) and the
+//         files will use the Cocos2d-iphone file name convention (ex: Lvl1-Apple-
+//         Sprite.png). Finally, the code will have comments throughout various non
+//         trivial operations.
+//
+//  Created on 2013-11-09.
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
@@ -64,13 +79,35 @@
             level.sprite.scaleY = 100 / level.sprite.contentSize.height;
             [self addChild:level.sprite];
             
-            CCLabelTTF *levelName = [CCLabelTTF labelWithString:level.name
-                                                        fontName:@"KBPlanetEarth" fontSize:24];
+            CCLabelTTF *levelName = [CCLabelTTF labelWithString:level.name fontName:@"KBPlanetEarth" fontSize:24];
             levelName.position = ccp(size.width/4 + i*140, size.height-280);
             [self addChild:levelName];
             i++;
         }
-    [xmlURL release];
+        [xmlURL release];
+        
+        // Add the back button sprite
+        CCSprite *backButton = [CCSprite spriteWithFile:@"mainmenu-logout_icon.png"]; // create and initialize the back button sprite (png)
+        backButton.position = ccp(size.width - 180, size.height - size.height + 50);
+        backButton.tag = 1;
+        [self addChild:backButton];
+        
+        // Add the back text which will make the user go back to the menu when pressed
+        [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
+        [CCMenuItemFont setFontSize:48]; // set the default CCMenuItemFont size
+        
+        CCMenuItem *itemBack = [CCMenuItemFont itemWithString:@"back" block:^(id sender) {
+            
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
+                                                       transitionWithDuration:1.0
+                                                       scene:[MenuLayer scene]]];
+        }];
+        
+        CCMenu *menu = [CCMenu menuWithItems:itemBack, nil];
+		[menu setPosition:ccp(size.width - 100, size.height - size.height + 40)];
+		menu.tag = 1;
+		// Add the menu to the layer
+		[self addChild:menu];
     
 	}
 	return self;

@@ -40,15 +40,13 @@
     Account *_selectedAccount; // Account that is currently selected by the user
     LoginButton *_loginButton; // login button
     CCSprite *_selectedAvatarBorder; // A border for avatar to indicate that it is selected
-    NSMutableArray *_avatars;
 }
 
 @property (retain, nonatomic) UITextField *passwordTextBox;
 @property (retain, nonatomic) NSMutableArray *avatarNames;
 @property (retain, nonatomic) NSArray *accounts;
 @property (retain, nonatomic) Account *selectedAccount;
-//@property (retain, nonatomic) SubmitButton *submitButton;
-@property (retain, nonatomic) NSMutableArray *avatars;
+
 // returns a CCScene that contains the MenuLayer as the only child
 + (CCScene *)scene;
 

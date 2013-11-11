@@ -32,11 +32,9 @@
 @synthesize avatarNames = _avatarNames;
 @synthesize accounts = _accounts;
 @synthesize selectedAccount = _selectedAccount;
-//@synthesize submitButton = _submitButton;
-@synthesize avatars = _avatars;
+
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
-+ (CCScene *)scene
-{
++ (CCScene *)scene {
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
 	
@@ -48,11 +46,6 @@
 	
 	// return the scene
 	return scene;
-}
-
-// Dispatcher to catch the touch events
-- (void)registerWithTouchDispatcher {
-	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 }
 
 // on "init" you need to initialize your instance
@@ -93,15 +86,26 @@
         int i = 0;
         for (Account *account in self.accounts) {
             
+            // Display what type of account it is.
+            CCLabelTTF *accountType;
+            
+            // Determine which string should be displayed based on the account type
+            if (account.type == 1)
+                accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
+            else
+                accountType = [CCLabelTTF labelWithString:@"Student" fontName:@"KBPlanetEarth" fontSize:24];
+            
+            accountType.position = ccp(size.width/4 + i*140, size.height-155);
+            [self addChild:accountType];
+            
             // Add the avatar
             [account createAvatar];
-            account.avatar.position = ccp(size.width/4 + i*140, size.height-200);
+            account.avatar.position = ccp(size.width/4 + i*140, size.height-250);
             [self addChild:account.avatar];
             
             // Create user name under the avatar
-            CCLabelTTF *avatarName = [CCLabelTTF labelWithString:account.name
-                                                      fontName:@"KBPlanetEarth" fontSize:24];
-            avatarName.position = ccp(size.width/4 + i*140, size.height-300);
+            CCLabelTTF *avatarName = [CCLabelTTF labelWithString:account.name fontName:@"KBPlanetEarth" fontSize:24];
+            avatarName.position = ccp(size.width/4 + i*140, size.height-350);
             [self addChild:avatarName];
             i++;
         }
@@ -112,15 +116,15 @@
         [self addChild:_selectedAvatarBorder];
         
         // Create the password textbox
-        self.passwordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(size.width/2-100, size.height/2-25, 200, 50)];
+        self.passwordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(size.width/2-100, size.height/2+25, 200, 50)];
         self.passwordTextBox.backgroundColor = [UIColor whiteColor];
         self.passwordTextBox.delegate = self;
+        self.passwordTextBox.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         self.passwordTextBox.adjustsFontSizeToFitWidth = true;
         
         // Grey text inside the box
         NSAttributedString *userName = [[NSAttributedString alloc] initWithString:@"Password"];
         self.passwordTextBox.attributedPlaceholder = userName;
-        
         self.passwordTextBox.enabled = false;
         
         // No spellchecker and make the input text display as ****
@@ -131,11 +135,16 @@
 
         
         // Add Submit Button
-        _loginButton = [[LoginButton alloc] initWithPosition:ccp(size.width/2, size.height/2-100)];
+        _loginButton = [[LoginButton alloc] initWithPosition:ccp(size.width/2, size.height/2-125)];
         [_loginButton setState:false];
         [self addChild:_loginButton];
     }
     return self;
+}
+
+// Dispatcher to catch the touch events
+- (void)registerWithTouchDispatcher {
+	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 }
 
 // Handles the events that happen when the release occurs at a specific location
@@ -150,6 +159,7 @@
             if (!_selectedAvatarBorder.visible)
                 _selectedAvatarBorder.visible = true;
             
+            // Move the border to the new selected avatar
             _selectedAvatarBorder.position = ccp(self.selectedAccount.avatar.position.x, self.selectedAccount.avatar.position.y);
             self.passwordTextBox.enabled = true;
             break;
@@ -220,6 +230,7 @@
 // on "dealloc" you need to release all your retained objects
 - (void)dealloc
 {
+    // Release all the accounts in the array
     for (Account* account in self.accounts)
         [account release];
     

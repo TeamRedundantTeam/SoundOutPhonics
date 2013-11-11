@@ -26,7 +26,9 @@
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
-#import "GameLayer.h"
+#import "LevelLayer.h"
+#import "LoginLayer.h"
+#import "StatisticLayer.h"
 
 @interface MenuLayer : CCLayer {
 

@@ -2,7 +2,7 @@
 //  LevelSelect.h
 //  Sound Out Phonics
 //
-//  Purpose: Menu layer and scene that has verious menu items based on the user type.
+//  Purpose: Level select layer and scene that allows player to choose which level they want to play
 //
 //  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/LevelSelect.h
 //

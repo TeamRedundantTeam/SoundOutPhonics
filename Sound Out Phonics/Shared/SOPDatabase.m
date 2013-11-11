@@ -101,8 +101,7 @@ static SOPDatabase *_database;
 // Load account's statistics based on the input and create Statistic objects based on the data pulled from the database
 - (NSArray *)loadAccountStatistics:(int)accountId {
     NSMutableArray *retrievedValue = [[[NSMutableArray alloc] init] autorelease];
-    NSString *query = [NSString stringWithFormat: @"SELECT accountId, level, score, min_victory_time, max_victory_time FROM Statistics WHERE accountId = '%d';",
-                       accountId];
+    NSString *query = [NSString stringWithFormat: @"SELECT accountId, level, score, min_victory_time, max_victory_time FROM Statistics WHERE accountId = '%d' ORDER BY level ASC;", accountId];
     
     sqlite3_stmt *statement;
     
