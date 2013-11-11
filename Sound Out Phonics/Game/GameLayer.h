@@ -36,11 +36,11 @@
 
 @interface GameLayer : CCLayer {
     
-    // Information about the current level such as the level number, level name, level graphemes,
+    // information about the current level such as the level number, level name, level graphemes,
     // location of level's image and level's sprite reference.
     Level *_level;
 
-    // Game Variables
+    // game variable declaration
     TextToSpeech *_tts; // Text To Speech library
     NSMutableArray *_graphemes; // Graphemes that the player will move around in the game layer
     CCLabelTTF *_selectedGrapheme; // Currently selected grapheme by players touch
@@ -50,16 +50,15 @@
     CCSprite *_resetButton; // Reset button that resets the level
     CCLayerColor * _wrongAnswerLayer; // Layer that will display when the player doesn't spell the word correctly
     
-    // Statistic Variables
+    // statistic Variables
     int _attempts; // Stores number of times the user wasn't able to get the word correctly. Will be used to determine level Score.
-    CCLabelTTF *_levelScore; // Text display of the level score
-    double _elapsedTime; // How long the user has attempted to play the level
+    CCLabelTTF *_levelScore; // text display of the level score
+    double _elapsedTime; // how long the user has attempted to play the level
     
 }
 
-// Returns a CCScene that contains the GameBoard as the only child and takes paramater level which has information about the level
-// and number of tries the user attempted to play this level. The attempts are used when the player decides to refresh the level before
-// completing it.
+    // returns a CCScene that contains the GameBoard as the only child and takes paramater level which has information about the level and number of tries the user attempted to play this level. The attempts are used when the player decides to refresh the level before completing it.
+
 +(CCScene *)sceneWithLevel:(Level *)level withAttempts:(int)attempts;
 
 @end

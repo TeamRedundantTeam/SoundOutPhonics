@@ -28,7 +28,7 @@
 @synthesize accounts = _accounts;
 @synthesize selectedAccount = _selectedAccount;
 
-// Helper class method that creates a Scene with the StatistcLayer as the only child.
+// helper class method that creates a Scene with the StatistcLayer as the only child.
 + (CCScene *)scene {
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
@@ -43,7 +43,7 @@
 	return scene;
 }
 
-// Initialize the instance
+// initialize the instance
 - (id)init
 {
 	// Apple recommends to re-assign "self" with the "super's" return value
@@ -51,22 +51,22 @@
         
         CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
         
-        // Enable touch for this layer
+        // enable touch for this layer
         [self setTouchEnabled:YES];
         
-        // Add the background sprite
+        // add the background sprite
         CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"]; // create and initialize the background sprite (png)
         background.position = ccp(size.width/2, size.height/2); // center background layer
         [self addChild:background];
 
         
-        // Add the back button sprite
-        CCSprite *backButton = [CCSprite spriteWithFile:@"Back-Icon.png"]; // create and initialize the back button sprite (png)
+        // create and initialize the back button sprite (png)
+        CCSprite *backButton = [CCSprite spriteWithFile:@"Back-Icon.png"];
         backButton.position = ccp(size.width - 180, size.height - size.height + 50);
         [self addChild:backButton];
 
         
-        // Add the back text which will make the user go back to the menu when pressed
+        // add the back text which will make the user go back to the menu when pressed
         [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
         [CCMenuItemFont setFontSize:48]; // set the default CCMenuItemFont size
         
@@ -80,14 +80,14 @@
         CCMenu *menu = [CCMenu menuWithItems:itemBack, nil];
 		[menu setPosition:ccp(size.width - 100, size.height - size.height + 40)];
         
-		// Add the menu to the layer
+		// add the menu to the layer
 		[self addChild:menu];
         
         
-        // Set the account to the logged in account
+        // set the account to the logged in account
         _account = [Singleton sharedSingleton].loggedInAccount;
         
-        // If account level is Teacher than we need to display all the students statistics otherwise only the currently logged in player
+        // if account level is Teacher than we need to display all the students statistics otherwise only the currently logged in player
         if (_account.type == 1)
             [self displayStudents];
         else
@@ -97,29 +97,30 @@
 }
 
 
-// Display all the students pulled from the database
+// display all the students pulled from the database
 - (void)displayStudents {
     
     CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
     
-    // Create the selected avatar frame
+    // create the selected avatar frame
     _selectedAvatarBorder = [CCSprite spriteWithFile:@"Selected-Portrait.png"];
     _selectedAvatarBorder.visible = false;
     _selectedAvatarBorder.tag = 1;
     [self addChild:_selectedAvatarBorder];
     
-    // Load the accounts from the database
+    // load the accounts from the database
     self.accounts = [[SOPDatabase database] loadAccounts];
     
-    // Create the account avatars and names
+    // create the account avatars and names
     // TO-DO: Organize into rows and multiple pages
+    
     int i = 0;
     for (Account *account in self.accounts) {
         
-        // Display what type of account it is.
+        // display what type of account it is.
         CCLabelTTF *accountType;
         
-        // Determine which string should be displayed based on the account type
+        // determine which string should be displayed based on the account type
         if (account.type == 1)
             accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
         else
@@ -128,12 +129,12 @@
         accountType.position = ccp(size.width/4 + i*140, size.height-155);
         [self addChild:accountType];
         
-        // Add the avatar
+        // add the avatar
         [account createAvatar];
         account.avatar.position = ccp(size.width/4 + i*140, size.height-250);
         [self addChild:account.avatar];
         
-        // Create user name under the avatar
+        // create user name under the avatar
         CCLabelTTF *avatarName = [CCLabelTTF labelWithString:account.name fontName:@"KBPlanetEarth" fontSize:24];
         avatarName.position = ccp(size.width/4 + i*140, size.height-350);
         [self addChild:avatarName];
@@ -141,40 +142,40 @@
     }
 }
 
-// Dispatcher to catch the touch events
+// dispatcher to catch the touch events
 - (void)registerWithTouchDispatcher {
 	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 }
 
-// Handles the events that happen when the release occurs at a specific location
+// handles the events that happen when the release occurs at a specific location
 - (void)tapReleaseAt:(CGPoint)releaseLocation {
     
     CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
     
-    // Checks if one of the accounts has been selected
+    // checks if one of the accounts has been selected
     for (Account *account in self.accounts) {
         if (CGRectContainsPoint(account.avatar.boundingBox, releaseLocation)) {
             self.selectedAccount = account;
         
-            // A new student is selected and we must remove the individual statistic from previously selected student.
+            // a new student is selected and we must remove the individual statistic from previously selected student.
             while ([self getChildByTag:0])
                 [self removeChildByTag:0 cleanup:true];
             
-            // Display the statistic of a selected account
+            // display the statistic of a selected account
             [self displayAccountStatistic:_selectedAccount.accountId withStartingHeight:size.height/4];
             
-            // Make the avatar box visible since we now have a selected account
+            // make the avatar box visible since we now have a selected account
             if (!_selectedAvatarBorder.visible)
                 _selectedAvatarBorder.visible = true;
             
-            // Move the border to the new selected avatar
+            // move the border to the new selected avatar
             _selectedAvatarBorder.position = ccp(_selectedAccount.avatar.position.x, _selectedAccount.avatar.position.y);
             break;
         }
     }
 }
 
-// Event that is called when the touch has ended
+// event that is called when the touch has ended
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
     
     CGPoint releaseLocation = [touch locationInView:[touch view]];
@@ -182,13 +183,13 @@
     [self tapReleaseAt:releaseLocation];
 }
 
-// Event that is called when the touch begins
+// event that is called when the touch begins
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     return YES;
 }
 
-// Display account statistic based on the input account id and the starting height. Each sprite has a special tag which indicates allows us to remove
-// them later if teacher is selecting multiple student accounts.
+// display account statistic based on the input account id and the starting height. Each sprite has a special tag which indicates allows us to remove them later if teacher is selecting multiple student accounts.
+
 - (void)displayAccountStatistic:(int)accountId withStartingHeight:(int)height{
     
     CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
@@ -202,7 +203,7 @@
     minTimeCategory.position = ccp(size.width/4 + 275, height + 150);
     maxTimeCategory.position = ccp(size.width/4 + 450, height + 150);
     
-    // Indicate that these lables might be deleted in the future
+    // indicate that these lables might be deleted in the future
     levelCategory.tag = 0;
     scoreCategory.tag = 0;
     minTimeCategory.tag = 0;
@@ -212,7 +213,7 @@
     [self addChild:minTimeCategory];
     [self addChild:maxTimeCategory];
     
-    // Pull statistics from the database
+    // pull statistics from the database
     NSArray *statistics = [[SOPDatabase database] loadAccountStatistics:accountId];
     
     int i = 0;
@@ -239,7 +240,7 @@
 
 - (void) dealloc {
     
-    // Release all the accounts in the array
+    // release all the accounts in the array
     for (Account* account in self.accounts)
         [account release];
     

@@ -32,7 +32,7 @@
 @synthesize image = _image;
 @synthesize statistics = _statistics;
 
-// Initializes the object with parameters received from the database
+// initializes the object with parameters received from the database
 - (id)initWithId:(int)accountId withName:(NSString *)name withPassword:(NSString *)password withType:(int)type withImage:(NSString *) image withStatistics:(NSArray *)statistics {
     if ((self = [super init])) {
         self.accountId = accountId;
@@ -45,7 +45,7 @@
     return self;
 }
 
-// Creates the avatar based of the current image set in the class
+// creates the avatar based of the current image set in the class
 - (void) createAvatar {
     if ([self.image isEqualToString:@""])
         _avatar = [CCSprite spriteWithFile:@"Empty-Portrait.png"];
@@ -53,12 +53,12 @@
         _avatar = [CCSprite spriteWithFile:self.image];
 }
 
-// Returns the reference of the avatar
+// returns the reference of the avatar
 - (CCSprite *) avatar {
     return _avatar;
 }
 
-// Removes the reference to the currently used avatar. The cleanup for this object should be done within the layer
+// removes the reference to the currently used avatar. The cleanup for this object should be done within the layer
 - (void) removeAvatar {
     _avatar = nil;
 }

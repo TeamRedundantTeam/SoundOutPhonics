@@ -30,7 +30,7 @@
 @synthesize minTime = _minTime;
 @synthesize maxTime = _maxTime;
 
-// Initializes the object with parameters received from the SQLite database
+// initializes the object with parameters received from the SQLite database
 - (id)initWithParameters:(int)accountId withLevel:(int)level withScore:(int)score withMinTime:(double)minTime withMaxTime:(double)maxTime {
     if ((self = [super init])) {
         self.accountId = accountId;

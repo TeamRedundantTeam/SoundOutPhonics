@@ -23,15 +23,15 @@
 //
 
 
-// Import the interfaces
+// import the interfaces
 #import "IntroLayer.h"
 
 #pragma mark - IntroLayer
 
-// HelloWorldLayer implementation
+// IntroLayer implementation
 @implementation IntroLayer
 
-// Helper class method that creates a Scene with the HelloWorldLayer as the only child.
+// Helper class method that creates a Scene with the IntroLayer as the only child.
 + (CCScene *)scene
 {
 	// 'scene' is an autorelease object.
@@ -47,7 +47,7 @@
 	return scene;
 }
 
-// Initialization of the Introl Layer
+// initialization of the Intro Layer
 - (id)init {
 	if ((self = [super init])) {
 
@@ -56,7 +56,7 @@
 
 		CCSprite *background;
 		
-        // Determins which intor image to play
+        // determines which intor image to play
 		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
 			background = [CCSprite spriteWithFile:@"Default.png"];
 			background.rotation = 90;
@@ -65,7 +65,7 @@
 		}
 		background.position = ccp(size.width/2, size.height/2);
 
-		// Add the label as a child to this Layer
+		// add the label as a child to this Layer
 		[self addChild: background];
 	}
 	return self;
@@ -75,7 +75,7 @@
 	[super onEnter];
 	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LoginLayer scene]]];
     
-    // Cleanup after the scene transition
+    // cleanup after the scene transition
     [self.parent removeChild:self cleanup:YES];
 }
 

@@ -34,12 +34,12 @@
 #import "Singleton.h"
 
 @interface LoginLayer : CCLayer <UITextFieldDelegate> {
-    UITextField *_passwordTextBox; // Password textbox input field
-    NSMutableArray *_avatarNames; // The names that are displayed under the avatars
-    NSArray *_accounts; // All accounts from the database
-    Account *_selectedAccount; // Account that is currently selected by the user
+    UITextField *_passwordTextBox; // password textbox input field
+    NSMutableArray *_avatarNames; // the names that are displayed under the avatars
+    NSArray *_accounts; // all accounts from the database
+    Account *_selectedAccount; // account that is currently selected by the user
     LoginButton *_loginButton; // login button
-    CCSprite *_selectedAvatarBorder; // A border for avatar to indicate that it is selected
+    CCSprite *_selectedAvatarBorder; // a border for avatar to indicate that it is selected
 }
 
 @property (retain, nonatomic) UITextField *passwordTextBox;

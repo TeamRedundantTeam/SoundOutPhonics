@@ -26,10 +26,10 @@
 
 #pragma mark - MenuLayer
 
-// Menu implementation
+// menu implementation
 @implementation MenuLayer
 
-// Helper class method that creates a Scene with the MenuLayer as the only child.
+// helper class method that creates a scene with the MenuLayer as the only child.
 + (CCScene *)scene
 {
 	// 'scene' is an autorelease object.
@@ -76,37 +76,37 @@
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
                                                        scene:[LevelLayer scene]]];
-        }];
+        }]; // add the 'play' CCMenuItem
         
         CCMenuItem *itemStatistic = [CCMenuItemFont itemWithString:@"statistics." block:^(id sender) {
             
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
                                                        scene:[StatisticLayer scene]]];
-        }];
+        }]; // add the 'statistics' CCMenuItem
         
         CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"quit." block:^(id sender) {
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
                                                        scene:[LoginLayer scene]]];
-        }];
+        }]; // add the 'quit' CCMenuItem
         
 		CCMenu *menu = [CCMenu menuWithItems:itemPlay, itemStatistic, itemLogout, nil];
 		
 		[menu alignItemsVerticallyWithPadding:15];
 		[menu setPosition:ccp(size.width/2+10, size.height/2 - 25)];
 		
-		// Add the menu to the layer
+		// add the menu to the layer
 		[self addChild:menu];
         
-        // Add the avatar to the menu
+        // add the avatar to the menu
         Account *loggedInAccount = [Singleton sharedSingleton].loggedInAccount;
         if (loggedInAccount != nil) {
             
-            // Display what type of account it is.
+            // display what type of account it is.
             CCLabelTTF *accountType;
             
-            // Determine which string should be displayed based on the account type
+            // determine which string should be displayed based on the account type
             if (loggedInAccount.type == 1)
                 accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
             else
@@ -115,12 +115,12 @@
             accountType.position = ccp(size.width/2, size.height/2+225);
             [self addChild:accountType];
             
-            // Create the avatar
+            // create the avatar
             [loggedInAccount createAvatar];
             loggedInAccount.avatar.scale = 0.5;
             loggedInAccount.avatar.position = ccp(size.width/2, size.height/2+175);
             
-            // Create Name
+            // create Name
             CCLabelTTF *portaitName = [CCLabelTTF labelWithString:loggedInAccount.name
                                                          fontName:@"KBPlanetEarth" fontSize:24];
             portaitName.position = ccp(size.width/2, size.height-275);

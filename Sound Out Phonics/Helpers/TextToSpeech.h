@@ -32,7 +32,7 @@
     Slt *slt;
 }
 
-// Plays the word using the the OpenEars library based on the input
+// plays the word using the the OpenEars library based on the input
 - (void)playWord:(NSString*)input;
 @property (strong, nonatomic) FliteController *fliteController;
 @property (strong, nonatomic) Slt *slt;

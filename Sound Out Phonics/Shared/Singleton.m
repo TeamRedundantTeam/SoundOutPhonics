@@ -28,7 +28,7 @@
 
 static Singleton *_sigleton = nil;
 
-// Create a shared accessor
+// create a shared accessor
 + (Singleton *)sharedSingleton {
 	@synchronized([Singleton class]) {
 		if (!_sigleton)
@@ -39,7 +39,7 @@ static Singleton *_sigleton = nil;
 	return nil;
 }
 
-// Allow only one instance of singleton to be allocated at a time
+// allow only one instance of singleton to be allocated at a time
 + (id)alloc {
 	@synchronized([Singleton class]) {
 		NSAssert(_sigleton == nil, @"Attempted to allocate a second instance of a singleton.");
@@ -49,7 +49,7 @@ static Singleton *_sigleton = nil;
 	return nil;
 }
 
-// Initialization of the class
+// initialization of the class
 -(id)init {
 	self = [super init];
 	if (self != nil) {
@@ -57,24 +57,24 @@ static Singleton *_sigleton = nil;
 	return self;
 }
 
-// Setter method that sets the logged in account based on the input. The previous logged in account is released from memory
+// setter method that sets the logged in account based on the input. The previous logged in account is released from memory
 - (void)setLoggedInAccount:(Account *) input {
     [_loggedInAccount release];
     _loggedInAccount = input;
 }
 
-// Setter method that sets the selected level based on the input. The previous selected level is released from memory
+// setter method that sets the selected level based on the input. The previous selected level is released from memory
 - (void)setSelectedLevel:(Level *) input {
     [_selectedLevel release];
     _selectedLevel = input;
 }
 
-// Getter method to the logged in account
+// getter method to the logged in account
 - (Account *)loggedInAccount {
     return _loggedInAccount;
 }
 
-// Getter method to the selected level
+// getter method to the selected level
 - (Level *)selectedLevel {
     return _selectedLevel;
 }

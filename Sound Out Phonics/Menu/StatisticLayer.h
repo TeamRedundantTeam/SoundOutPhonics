@@ -19,7 +19,7 @@
     CCSprite *_selectedAvatarBorder; // A border for avatar to indicate that it is selected
     Account *_selectedAccount; // Account that is currently selected by the user
 }
-// returns a CCScene that contains the MenuLayer as the only child
+// returns a CCScene that contains the StatisticLayer as the only child
 + (CCScene *)scene;
 
 @property (retain, nonatomic) NSArray *accounts;

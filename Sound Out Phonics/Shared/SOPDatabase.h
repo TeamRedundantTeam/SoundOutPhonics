@@ -30,18 +30,18 @@
     sqlite3 *_database;
 }
 
-// Accessor to the static database object. This allows us to have one database active throught the application
+// accessor to the static database object. This allows us to have one database active throught the application
 + (SOPDatabase *)database;
 
-// Pull account information from the SQLite database and generate the appropriate Account classes
+// pull account information from the SQLite database and generate the appropriate Account classes
 - (NSArray *)loadAccounts;
 
-// Load account's statistics based on the input and create Statistic objects based on the data pulled from the database
+// load account's statistics based on the input and create Statistic objects based on the data pulled from the database
 - (NSArray *)loadAccountStatistics:(int)accountId;
 
-// Update a specific statistic in the Statistic table based on the input
+// update a specific statistic in the Statistic table based on the input
 - (void)updateStatistic:(int)accountId withLevel:(int)level withStatistic:(Statistics *)statistic;
 
-// Insert a new statistic into the Statistic table based on the input
+// insert a new statistic into the Statistic table based on the input
 - (void)createStatistic:(int)accountId withLevel:(int)level withScore:(int)score witTime:(double)time;
 @end

@@ -39,7 +39,7 @@
     [super dealloc];
 }
 
-// The button will become greyed out depending on the state
+// the button will become greyed out depending on the state
 - (void)setState:(bool)input {
     if (input) {
         self.opacity = 255;

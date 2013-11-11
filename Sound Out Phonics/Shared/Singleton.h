@@ -27,22 +27,22 @@
 #import "Level.h"
 
 @interface Singleton : NSObject {
-    Account *_loggedInAccount; // The reference to an account that is currently logged used to transition logged in account between scenes.
-    Level *_selectedLevel; // The reference to the level that is currently selected. Used to replay levels and determine next level.
+    Account *_loggedInAccount; // the reference to an account that is currently logged used to transition logged in account between scenes.
+    Level *_selectedLevel; // the reference to the level that is currently selected. Used to replay levels and determine next level.
 }
 
-// Create a shared accessor
+// create a shared accessor
 + (Singleton *)sharedSingleton;
 
-// Setter method that sets the logged in account based on the input. The previous logged in account is released from memory
+// setter method that sets the logged in account based on the input. The previous logged in account is released from memory
 - (void)setLoggedInAccount:(Account *)input;
 
-// Setter method that sets the selected level based on the input. The previous selected level is released from memory
+// setter method that sets the selected level based on the input. The previous selected level is released from memory
 - (void)setSelectedLevel:(Level *)input;
 
-// Getter method to the logged in account
+// getter method to the logged in account
 - (Account *)loggedInAccount;
 
-// Getter method to the selected level
+// getter method to the selected level
 - (Level *)selectedLevel;
 @end

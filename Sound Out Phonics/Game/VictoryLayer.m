@@ -50,17 +50,17 @@
     return self;
 }
 
-// Dispatcher to catch the touch events
+// dispatcher to catch the touch events
 - (void)registerWithTouchDispatcher {
 	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 }
 
-// Handles the events that happen when the release occurs at a specific location
+// handles the events that happen when the release occurs at a specific location
 - (void)tapReleaseAt:(CGPoint)releaseLocation {
 
     if (CGRectContainsPoint(_playAgainMessage.boundingBox, releaseLocation)) {
         
-        // Create the new game scene
+        // create the new game scene
         [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                    transitionWithDuration:1.0
                                                    scene:[GameLayer sceneWithLevel:[Singleton sharedSingleton].selectedLevel withAttempts:0]]];
@@ -70,7 +70,7 @@
     
     if (CGRectContainsPoint(_mainMenuMessage.boundingBox, releaseLocation)) {
         
-        // Exit to the menu
+        // exit to the menu
         [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                    transitionWithDuration:1.0
                                                    scene:[MenuLayer scene]]];
@@ -78,7 +78,7 @@
     }
 }
 
-// Event that is called when the touch has ended
+// event that is called when the touch has ended
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
     
     CGPoint releaseLocation = [touch locationInView:[touch view]];
@@ -86,7 +86,7 @@
     [self tapReleaseAt:releaseLocation];
 }
 
-// Event that is called when the touch begins
+// event that is called when the touch begins
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     return YES;
 }

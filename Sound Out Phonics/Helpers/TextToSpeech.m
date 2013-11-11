@@ -24,7 +24,7 @@
 
 #import "TextToSpeech.h"
 
-// Needed to obtain the Navigation Controller
+// needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 #import "CCTouchDispatcher.h"
 
@@ -56,7 +56,7 @@
 	return slt;
 }
 
-// Plays the word using the the OpenEars library based on the input
+// plays the word using the the OpenEars library based on the input
 - (void)playWord:(NSString*)input {
     [self.fliteController say:input withVoice:self.slt];
 }

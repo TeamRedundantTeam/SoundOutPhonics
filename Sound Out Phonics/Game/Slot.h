@@ -28,7 +28,7 @@
 #import "CCLabelTTF.h"
 
 @interface Slot : CCSprite {
-    CCLabelTTF *grapheme; // Grapheme that is associated with this slot
+    CCLabelTTF *grapheme; // grapheme that is associated with this slot
 }
 - (id)initWithPosition:(CGPoint)pos;
 

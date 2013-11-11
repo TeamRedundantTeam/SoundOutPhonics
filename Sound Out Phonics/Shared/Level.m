@@ -30,7 +30,7 @@
 @synthesize graphemes = _graphemes;
 @synthesize spriteLocation = _spriteLocation;
 
-// Initializes the object with parameters received from the XML parser
+// initializes the object with parameters received from the XML parser
 - (id)initWithParameters:(int)levelId withName:(NSString *)name withGraphemes:(NSString *)graphemes withImageLocation:(NSString *)imageLocation {
     if ((self = [super init])) {
         self.levelId = levelId;
@@ -41,18 +41,18 @@
     return self;
 }
 
-// Creates the sprite based on the specified spriteLocation
+// creates the sprite based on the specified spriteLocation
 - (void)createSprite {
     //Needs to be resized
     _sprite = [CCSprite spriteWithFile:self.spriteLocation];
 }
 
-// Returns reference to the sprite
+// returns reference to the sprite
 - (CCSprite *)sprite {
     return _sprite;
 }
 
-// Removes the referenced sprite. The cleanup for this object should be done within the layer.
+// removes the referenced sprite. The cleanup for this object should be done within the layer.
 - (void)removeSprite {
     _sprite = nil;
 }
@@ -61,7 +61,6 @@
     return [NSString stringWithFormat:@"<Level: %p>\nLevel: %d\nName: %@\nGraphemes: %@\nSprite Loc: %@",
             self, self.levelId, self.name, self.graphemes, self.spriteLocation];
 }
-
 
 - (void)dealloc {
     self.name = nil;

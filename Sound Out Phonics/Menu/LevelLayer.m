@@ -56,58 +56,61 @@
         // create and initialize a background
         CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"];
         
+        // set the background position as centered
         background.position = ccp(size.width/2, size.height/2);
         
 		// add the background as a child to this layer
         [self addChild: background];
         
-        // Play Options
+        // set the size and font for default CCMenuItemFont
         [CCMenuItemFont setFontName:@"KBPlanetEarth"];
         [CCMenuItemFont setFontSize:28];
         
-        //Create our URL to the xml file and parse it
+        // create the URL to the XML file and parse it
         NSURL *xmlURL = [[NSBundle mainBundle] URLForResource:@"Levels" withExtension:@"xml"];
         self.levels = [[LevelParser alloc] loadLevels:xmlURL];
         
+        // create and initialize variables to organize level sprites
         int column = 0;
         int row = 0;
         int levelNumber = 0;
-        //For each level create an image to display to select
+        
+        // for each level create an image to display to select
         for (Level *level in self.levels) {
             
-            // Keeps track of what level number this object is at
+            // keeps track of what level number this object is at
             levelNumber++;
-            
+            // display the level name and set its position
             CCLabelTTF *levelName = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Level: %d",levelNumber] fontName:@"KBPlanetEarth" fontSize:24];
             levelName.position = ccp(size.width/10 + column*140, size.height-140 + row*(-140));
             [self addChild:levelName];
             
             [level createSprite];
             level.sprite.position = ccp(size.width/10 + column*140, size.height-200 + row*(-140));
-            //Scale to 100x100px just for the selection screen
+            // scale sprite to 100x100px for only the selection screen
             level.sprite.scaleX = 100 / level.sprite.contentSize.width;
             level.sprite.scaleY = 100 / level.sprite.contentSize.height;
             [self addChild:level.sprite];
-            
+            // increment column
             column++;
             
-            // Move to the next row every 7 items
+            // move to the next row every 7 items
             if (column % 7 == 0) {
-                // Move to new row
+                // move to new row
                 row++;
-                // Reset the column
+                // reset the column
                 column = 0;
             }
         }
         [xmlURL release];
         
-        // Add the back button sprite
-        CCSprite *backButton = [CCSprite spriteWithFile:@"Back-Icon.png"]; // create and initialize the back button sprite (png)
+        // create and initialize the back button sprite (png)
+        CCSprite *backButton = [CCSprite spriteWithFile:@"Back-Icon.png"];
         backButton.position = ccp(size.width - 180, size.height - size.height + 50);
         backButton.tag = 1;
         [self addChild:backButton];
         
-        // Add the back text which will make the user go back to the menu when pressed
+        // add the back text which will make the user go back to the menu when pressed
         [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
         [CCMenuItemFont setFontSize:48]; // set the default CCMenuItemFont size
         
@@ -121,7 +124,7 @@
         CCMenu *menu = [CCMenu menuWithItems:itemBack, nil];
 		[menu setPosition:ccp(size.width - 100, size.height - size.height + 40)];
 		menu.tag = 1;
-		// Add the menu to the layer
+		// add the menu to the layer
 		[self addChild:menu];
     
 	}

@@ -33,7 +33,7 @@
 @synthesize accounts = _accounts;
 @synthesize selectedAccount = _selectedAccount;
 
-// Helper class method that creates a Scene with the HelloWorldLayer as the only child.
+// helper class method that creates a Scene with the LoginLayer as the only child.
 + (CCScene *)scene {
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
@@ -57,11 +57,6 @@
 		CGSize size = [[CCDirector sharedDirector] winSize];
         [self setTouchEnabled:YES];
         
-        // ============================================================================================
-        // INTERFACE WORK IN PROGRESS
-        // Author: Erik Schultz
-        // ============================================================================================
-        
         // create and initialize a background
         CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"];
         
@@ -69,27 +64,22 @@
         
 		// add the background as a child to this layer
         [self addChild: background];
-        
-        // ============================================================================================
-        // INTERFACE WORK IN PROGRESS
-        // Author: Erik Schultz
-        // ============================================================================================
-        
-        // Load the accounts from the database
+
+        // load the accounts from the database
         self.accounts = [[SOPDatabase database] loadAccounts];
 
         self.avatarNames = [NSMutableArray array];
         
-        // Create the account avatars and names
+        // create the account avatars and names
         // TO-DO: Organize into rows and multiple pages
         
         int i = 0;
         for (Account *account in self.accounts) {
             
-            // Display what type of account it is.
+            // display what type of account it is.
             CCLabelTTF *accountType;
             
-            // Determine which string should be displayed based on the account type
+            // determine which string should be displayed based on the account type
             if (account.type == 1)
                 accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
             else
@@ -98,43 +88,43 @@
             accountType.position = ccp(size.width/4 + i*140, size.height-155);
             [self addChild:accountType];
             
-            // Add the avatar
+            // add the avatar
             [account createAvatar];
             account.avatar.position = ccp(size.width/4 + i*140, size.height-250);
             [self addChild:account.avatar];
             
-            // Create user name under the avatar
+            // create user name under the avatar
             CCLabelTTF *avatarName = [CCLabelTTF labelWithString:account.name fontName:@"KBPlanetEarth" fontSize:24];
             avatarName.position = ccp(size.width/4 + i*140, size.height-350);
             [self addChild:avatarName];
             i++;
         }
         
-        // Create the selected avatar frame
+        // create the selected avatar frame
         _selectedAvatarBorder = [CCSprite spriteWithFile:@"Selected-Portrait.png"];
         _selectedAvatarBorder.visible = false;
         [self addChild:_selectedAvatarBorder];
         
-        // Create the password textbox
+        // create the password textbox
         self.passwordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(size.width/2-100, size.height/2+25, 200, 50)];
         self.passwordTextBox.backgroundColor = [UIColor whiteColor];
         self.passwordTextBox.delegate = self;
         self.passwordTextBox.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         self.passwordTextBox.adjustsFontSizeToFitWidth = true;
         
-        // Grey text inside the box
+        // grey text inside the box
         NSAttributedString *userName = [[NSAttributedString alloc] initWithString:@"Password"];
         self.passwordTextBox.attributedPlaceholder = userName;
         self.passwordTextBox.enabled = false;
         
-        // No spellchecker and make the input text display as ****
+        // no spellchecker and make the input text display as ****
         self.passwordTextBox.spellCheckingType = UITextSpellCheckingTypeNo;
         self.passwordTextBox.secureTextEntry = true;
         [userName release];
         [[CCDirector sharedDirector].view addSubview:self.passwordTextBox];
 
         
-        // Add Submit Button
+        // add Submit Button
         _loginButton = [[LoginButton alloc] initWithPosition:ccp(size.width/2, size.height/2-125)];
         [_loginButton setState:false];
         [self addChild:_loginButton];
@@ -142,53 +132,53 @@
     return self;
 }
 
-// Dispatcher to catch the touch events
+// dispatcher to catch the touch events
 - (void)registerWithTouchDispatcher {
 	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 }
 
-// Handles the events that happen when the release occurs at a specific location
+// handles the events that happen when the release occurs at a specific location
 - (void)tapReleaseAt:(CGPoint)releaseLocation {
     
-    // Checks if one of the accounts has been selected
+    // checks if one of the accounts has been selected
     for (Account *account in self.accounts) {
         if (CGRectContainsPoint(account.avatar.boundingBox, releaseLocation)) {
             self.selectedAccount = account;
             
-            // Make the avatar box visible since we now have a selected account
+            // make the avatar box visible since we now have a selected account
             if (!_selectedAvatarBorder.visible)
                 _selectedAvatarBorder.visible = true;
             
-            // Move the border to the new selected avatar
+            // move the border to the new selected avatar
             _selectedAvatarBorder.position = ccp(self.selectedAccount.avatar.position.x, self.selectedAccount.avatar.position.y);
             self.passwordTextBox.enabled = true;
             break;
         }
     }
     
-    // Occurs when the user presses the submit button
+    // occurs when the user presses the submit button
     if (self.selectedAccount && _loginButton.state && CGRectContainsPoint(_loginButton.boundingBox, releaseLocation)) {
         
-        // The password was correct transition to the menu layer
+        // the password was correct transition to the menu layer
         if ([self.selectedAccount.password isEqualToString:self.passwordTextBox.text]) {
             
-            // Password TextBox transition. TO-DO: make it smooth to match the layer transition
+            // password TextBox transition. TO-DO: make it smooth to match the layer transition
             [self.passwordTextBox removeFromSuperview];
             
-            // We now have a logged in account pass it onto the Singleton class
+            // we now have a logged in account pass it onto the Singleton class
             [[Singleton sharedSingleton] setLoggedInAccount:self.selectedAccount];
             
-            // Avatar object must be removed from the selected account since we are sharing this perticular account between layers and
+            // avatar object must be removed from the selected account since we are sharing this perticular account between layers and
             // CCSprite can only be attached to one layer. We are not removing the child from the layer because it makes the sprite dissapear
             // before the transition ends. This also assures that each sprite is assign to one layer.
             [self.selectedAccount removeAvatar];
             
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
             
-            // Cleanup after the transition
+            // cleanup after the transition
             [self.parent removeChild:self cleanup:YES];
         }
-        // Password was incorrect display an error message
+        // password was incorrect display an error message
         else {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Invalid Password, try again!\n The password is 'pw'"
                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -198,7 +188,7 @@
     }
 }
 
-// Event that is called when the touch has ended
+// event that is called when the touch has ended
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
     
     CGPoint releaseLocation = [touch locationInView:[touch view]];
@@ -206,21 +196,21 @@
     [self tapReleaseAt:releaseLocation];
 }
 
-// Event that is called when the touch begins
+// event that is called when the touch begins
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     return YES;
 }
 
-// Occurs when return is pressed on the keyboard
+// occurs when return is pressed on the keyboard
 - (BOOL)textFieldShouldReturn:(UITextField*)textField {
-    //Terminate editing
+    // terminate editing
     [textField resignFirstResponder];
     return YES;
 }
 
-// Occurs when the editin is ended on the text field
+// occurs when the editin is ended on the text field
 - (void)textFieldDidEndEditing:(UITextField*)textField {
-    // If the input text is empty then disable the submit button
+    // if the input text is empty then disable the submit button
     if ([self.passwordTextBox.text isEqualToString:@""])
         _loginButton.state = false;
     else
@@ -230,7 +220,7 @@
 // on "dealloc" you need to release all your retained objects
 - (void)dealloc
 {
-    // Release all the accounts in the array
+    // release all the accounts in the array
     for (Account* account in self.accounts)
         [account release];
     

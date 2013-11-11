@@ -27,7 +27,7 @@
 
 static SOPDatabase *_database;
 
-// Create database if it doesn't exist
+// create database if it doesn't exist
 + (SOPDatabase*) database {
     if (_database == nil) {
         _database = [[SOPDatabase alloc] init];
@@ -38,24 +38,24 @@ static SOPDatabase *_database;
 - (id)init {
     if ((self = [super init])) {
         
-        // Initialize file manager to create a file if necessarry
+        // initialize file manager to create a file if necessarry
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSError *error;
         
-        // Search the Documents folder of the app. Writable folder on the device.
+        // search the Documents folder of the app. Writable folder on the device.
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
         
-        // Append the database file at the end of the path
+        // append the database file at the end of the path
         NSString *databasePath = [documentsDirectory stringByAppendingPathComponent:@"sop.sqlite3"];
         
-        // Add the database to the Documents folder if it doesn't exist there
+        // add the database to the Documents folder if it doesn't exist there
         if ([fileManager fileExistsAtPath:databasePath] == NO) {
             NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"sop" ofType:@"sqlite3"];
             [fileManager copyItemAtPath:resourcePath toPath:databasePath error:&error];
         }
         
-        // Try to open the database connection
+        // try to open the database connection
         if (sqlite3_open([databasePath UTF8String], &_database) != SQLITE_OK) {
             NSLog(@"Failed to open database!");
         }
@@ -63,7 +63,7 @@ static SOPDatabase *_database;
     return self;
 }
 
-// Pull account information from the SQLite database and generate the appropriate Account classes
+// pull account information from the SQLite database and generate the appropriate Account classes
 - (NSArray *)loadAccounts {
     NSMutableArray *retrievedValue = [[[NSMutableArray alloc] init] autorelease];
     NSString *query = @"SELECT accountId, name, password, type, profile_image FROM Accounts ORDER BY accountId ASC";
@@ -73,7 +73,7 @@ static SOPDatabase *_database;
     // check if the query executed
     if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
         
-        // Continue while there is a result
+        // continue while there is a result
         while (sqlite3_step(statement) == SQLITE_ROW) {
             int accountId = sqlite3_column_int(statement, 0);
             char *nameChar = (char *) sqlite3_column_text(statement, 1);
@@ -98,7 +98,7 @@ static SOPDatabase *_database;
     return retrievedValue;
 }
 
-// Load account's statistics based on the input and create Statistic objects based on the data pulled from the database
+// load account's statistics based on the input and create Statistic objects based on the data pulled from the database
 - (NSArray *)loadAccountStatistics:(int)accountId {
     NSMutableArray *retrievedValue = [[[NSMutableArray alloc] init] autorelease];
     NSString *query = [NSString stringWithFormat: @"SELECT accountId, level, score, min_victory_time, max_victory_time FROM Statistics WHERE accountId = '%d' ORDER BY level ASC;", accountId];
@@ -108,7 +108,7 @@ static SOPDatabase *_database;
     // check if the query executed
     if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
         
-        // Continue while there is a result
+        // continue while there is a result
         while (sqlite3_step(statement) == SQLITE_ROW) {
             int accountId = sqlite3_column_int(statement, 0);
             int level = sqlite3_column_int(statement, 1);
@@ -125,7 +125,7 @@ static SOPDatabase *_database;
     return retrievedValue;
 }
 
-// Update a specific statistic in the Statistic table based on the input
+// update a specific statistic in the Statistic table based on the input
 - (void)updateStatistic:(int)accountId withLevel:(int)level withStatistic:(Statistics *)statistic {
     NSString *query = @"UPDATE Statistics SET score = ?, min_victory_time = ?, max_victory_time = ? WHERE (accountId = ? AND level = ?);";
     
@@ -147,7 +147,7 @@ static SOPDatabase *_database;
     
 }
 
-// Insert a new statistic into the Statistic table based on the input
+// insert a new statistic into the Statistic table based on the input
 - (void)createStatistic:(int)accountId withLevel:(int)level withScore:(int)score witTime:(double)time {
     
     NSString *query = @"INSERT INTO Statistics (accountId, level, score, min_victory_time, max_victory_time) VALUES (?,?,?,?,?);";

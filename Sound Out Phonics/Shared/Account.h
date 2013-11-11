@@ -41,16 +41,16 @@
 @property (nonatomic, copy) NSString *image;
 @property (nonatomic, retain) NSArray *statistics;
 
-// Returns the reference of the avatar
+// returns the reference of the avatar
 - (CCSprite *)avatar;
 
-// Create account based on the inputs pulled from the database
+// create account based on the inputs pulled from the database
 - (id)initWithId:(int)accountId withName:(NSString *)name withPassword:(NSString *)password withType:(int)type
       withImage:(NSString *) image withStatistics:(NSArray *)statistics;
 
-// Creates the avatar based of the current image set in the class
+// creates the avatar based of the current image set in the class
 - (void)createAvatar;
 
-// Removes the reference to the currently used avatar. The cleanup for this object should be done within the layer
+// removes the reference to the currently used avatar. The cleanup for this object should be done within the layer
 - (void)removeAvatar;
 @end

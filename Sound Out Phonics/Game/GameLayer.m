@@ -24,7 +24,7 @@
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
-// Import the interfaces
+// import the interfaces
 #import "GameLayer.h"
 
 #pragma mark - GameLayer
@@ -32,9 +32,7 @@
 // GameLayer implementation
 @implementation GameLayer
 
-// Returns a CCScene that contains the GameBoard as the only child and takes paramater level which has information about the level
-// and number of tries the user attempted to play this level. The attempts are used when the player decides to refresh the level before
-// completing it.
+// Returns a CCScene that contains the GameLayer as the only child and takes paramater level which has information about the level and number of tries the user attempted to play this level. The attempts are used when the player decides to refresh the level before completing it.
 + (CCScene *)sceneWithLevel:(Level *)level withAttempts:(int)attempts{
     // 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
@@ -49,20 +47,20 @@
 	return scene;
 }
 
-// Creates the node of the level with the paramaters and then calles initWithParamaters to initialize the layer
+// creates the node of the level with the paramaters and then calles initWithParamaters to initialize the layer
 + (id)nodeWithParamaters:(Level *)level withAttempts:(int)attempts {
     return [[[self alloc] initWithLevel:level withAttempts:attempts] autorelease];
 }
 
-// Initializes the level with provided level infromation and number of times the person has attempted to do this level
+// initializes the level with provided level infromation and number of times the person has attempted to do this level
 - (id)initWithLevel:(Level *)level withAttempts:(int)attempts {
     
     if ((self = [super init])) {
         
-        // Enable touch for this layer
+        // enable touch for this layer
         [self setTouchEnabled:YES];
         
-        // Get the screen size of the device
+        // get the screen size of the device
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
         // create and initialize a background
@@ -73,40 +71,40 @@
 		// add the background as a child to this layer
         [self addChild: background];
         
-        // Information about the current level
+        // information about the current level
         _level = level;
         
-        // Add picture sprite object
+        // add picture sprite object
         [_level createSprite];
         _level.sprite.position = ccp(screenSize.width/5.5, screenSize.height - screenSize.height/4.5);
         [self addChild:_level.sprite];
 
-        // Add text to speech object
+        // add text to speech object
         _tts = [[TextToSpeech alloc] init];
         
-        // Create the graphyme list in randomized order
+        // create the graphyme list in randomized order
         NSArray* graphemeList = [self generateGraphemeList:_level.name withGraphemes:_level.graphemes];
         
-        // Create Slots Array
+        // create Slots Array
         _slots = [[NSMutableArray alloc] init];
         for (int i = 0; i < graphemeList.count; i++) {
-            // Create an individual slot
+            // create an individual slot
             Slot *slot = [[Slot alloc] initWithPosition:ccp(screenSize.width/7 + i*180, screenSize.height/4)];
             [_slots addObject:slot];
             [self addChild:slot];
             [slot release];
         }
         
-        // Add Submit Button
+        // add Submit Button
         _submitButton = [[SubmitButton alloc] initWithPosition:ccp(screenSize.width - screenSize.width/9, screenSize.height/15)];
         [_submitButton setState:false];
         [self addChild:_submitButton];
         
-        // Create Graphemes
+        // create Graphemes
         _graphemes = [[NSMutableArray alloc] init];
         for (int i = 0; i < graphemeList.count; i++) {
             
-            // Create Labels
+            // create Labels
             CCLabelTTF *grapheme = [CCLabelTTF labelWithString:[graphemeList objectAtIndex:i]
                                     fontName:@"KBPlanetEarth" fontSize:64];
             grapheme.position = ccp(screenSize.width/2 + i*screenSize.width/10, screenSize.height - screenSize.height/4.5);
@@ -125,16 +123,16 @@
         _resetButton.position = ccp(screenSize.width - 50, screenSize.height - 50);
         [self addChild:_resetButton];
         
-        // Initialize the schedular to calculate time since the level has started
+        // initialize the schedular to calculate time since the level has started
         [self schedule: @selector(tick:)];
         
-        // Play level name at the start
+        // play level name at the start
         [_tts playWord:_level.name];
     }
     return self;
 }
 
-// Converts levelGraphemes into an array and randomizes the graphemes in that array
+// converts levelGraphemes into an array and randomizes the graphemes in that array
 - (NSArray*)generateGraphemeList:(NSString*)levelName withGraphemes:(NSString*)levelGraphemes{
     
     NSArray* tempList = [levelGraphemes componentsSeparatedByString:@"-"];
@@ -142,39 +140,39 @@
     
     int j;
     
-    // Randomize the list using Fisher and Yates' algorithm
+    // randomize the list using Fisher and Yates' algorithm
     for (int i = tempMutableList.count-1; i > 0; i--) {
         j = arc4random() % (i+1);
         [tempMutableList exchangeObjectAtIndex:i withObjectAtIndex:j];
     }
     
-    // Create an array with the randomized mutable array
+    // create an array with the randomized mutable array
     NSArray* graphemeList = [NSArray arrayWithArray:tempMutableList];
     
     NSString* temp = @"";
-    // Create the string from the new randomized array
+    // create the string from the new randomized array
     for (int i = 0; i < tempMutableList.count; i++) {
         temp = [temp stringByAppendingString:[tempMutableList objectAtIndex:i]];
     }
     
-    // Recursively check that the randomized array is not in the proper order
+    // recursively check that the randomized array is not in the proper order
     if ([temp isEqualToString:levelName] && graphemeList.count > 1)
         graphemeList = [self generateGraphemeList:levelName withGraphemes:levelGraphemes];
     
     return graphemeList;
 }
 
-// Dispatcher to catch the touch events
+// dispatcher to catch the touch events
 - (void)registerWithTouchDispatcher {
 	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 }
 
-// Handling of the on tap down at a specific location that will do various functionality depending on which sprite is being touched
+// handling of the on tap down at a specific location that will do various functionality depending on which sprite is being touched
 - (void)tapDownAt:(CGPoint)touchLocation {
     
     CCLabelTTF *newGrapheme = nil;
     
-    // Checks if a grapheme has been selected
+    // checks if a grapheme has been selected
     for (CCLabelTTF *grapheme in _graphemes) {
         if (CGRectContainsPoint(grapheme.boundingBox, touchLocation)) {
             newGrapheme = grapheme;
@@ -182,7 +180,7 @@
         }
     }
     
-    // If a new grapheme has been selected then begin rotating it from side to side
+    // if a new grapheme has been selected then begin rotating it from side to side
     if (newGrapheme != _selectedGrapheme) {
         [_selectedGrapheme stopAllActions];
         [_selectedGrapheme runAction:[CCRotateTo actionWithDuration:0.1 angle:0]];
@@ -194,73 +192,71 @@
         _selectedGrapheme = newGrapheme;
     }
     
-    // Record the selected graphemes last touch location location
+    // record the selected graphemes last touch location location
     if (_selectedGrapheme)
         _selectedGraphemeLastPosition = touchLocation;
     
-    // If the picture is selected the level name will be played out
+    // if the picture is selected the level name will be played out
     if (_selectedGrapheme == nil && CGRectContainsPoint(_level.sprite.boundingBox, touchLocation)) {
         [_tts playWord:_level.name];
     }
     
-    // If submit button is selected and it is enabled
+    // if submit button is selected and it is enabled
     if ([_submitButton state] && CGRectContainsPoint(_submitButton.boundingBox, touchLocation)) {
         [self executeSubmitButton];
     }
 }
 
-// Executes when the SubmitButton is pressed
+// executes when the SubmitButton is pressed
 - (void)executeSubmitButton {
     NSString *userInput = @"";
     for (Slot *slot in _slots) {
         userInput = [userInput stringByAppendingString:[slot.grapheme string]];
     }
     
-    // The user was able to put the the right graphemes into the slot. Create Victory Screen scene
+    // the user was able to put the the right graphemes into the slot. Create Victory Screen scene
     if ([userInput isEqualToString:_level.name]) {
 
         [_tts playWord:userInput];
-        // Sprite object must be removed from the selected level since we are sharing this perticular level between layers and
-        // CCSprite can only be attached to one scene at a time. We are not removing the child from the layer because it makes the sprite dissapear
-        // before the transition ends. This also assures that each sprite is assign to one scene at a time.
+        // sprite object must be removed from the selected level since we are sharing this perticular level between layers and CCSprite can only be attached to one scene at a time. We are not removing the child from the layer because it makes the sprite dissapear before the transition ends. This also assures that each sprite is assign to one scene at a time.
         [_level removeSprite];
         
-        // Save the statistics after the player has won the game
+        // save the statistics after the player has won the game
         [self saveStatistics];
 
-        // Background color. To-Do change the color to a more nicer color
+        // background color. To-Do change the color to a more nicer color
         ccColor4B c = {100,100,0,100};
         
-        // Create the victory scene on top of this scene
+        // create the victory scene on top of this scene
         NSString *score = [NSString stringWithFormat:@"%d", [self generateScore:_attempts]];
         VictoryLayer * vl = [[[VictoryLayer alloc] initWithColor:c withScore:score] autorelease];
         [self.parent addChild:vl z:10];
         [self onExit];
     }
     else {
-        // Play the wrong spelled out word to the player
+        // play the wrong spelled out word to the player
         [_tts playWord:userInput];
         
-        // Attempts increase since the player wasn't able to get the word right at this time. Used to decrease the score
+        // attempts increase since the player wasn't able to get the word right at this time. Used to decrease the score
         _attempts++;
         
-        // Get the screen size of the device
+        // get the screen size of the device
         CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
-        // The score will change and we need to remove the previous score
+        // the score will change and we need to remove the previous score
         [self removeChild:_levelScore];
         
-        // Create a new score based on number of attempts
+        // create a new score based on number of attempts
         NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
         _levelScore = [CCLabelTTF labelWithString:score fontName:@"KBPlanetEarth" fontSize:24];
         _levelScore.position = ccp(screenSize.width/2, screenSize.height - 24);
         [self addChild:_levelScore];
         
         
-        // Background color. Transparent red
+        // background color. Transparent red
         ccColor4B c = {225, 0, 0, 150};
         
-        // Create the losing layer with a color scene on top of the current layer
+        // create the losing layer with a color scene on top of the current layer
         _wrongAnswerLayer = [[CCLayerColor alloc] initWithColor:c];
         [self addChild:_wrongAnswerLayer];
         
@@ -273,19 +269,19 @@
     [_wrongAnswerLayer release];
 }
 
-// Saves the statistics at the end of the level into already existing statistic or creates a new one
+// saves the statistics at the end of the level into already existing statistic or creates a new one
 - (void)saveStatistics {
     
-    // Get the currently logged in account
+    // get the currently logged in account
     Account *account = [Singleton sharedSingleton].loggedInAccount;
     
-    // Get the accounts statistics
+    // get the accounts statistics
     NSArray *statistics = account.statistics;
     
-    // Used to determine if we found a statistic for this specific level
+    // used to determine if we found a statistic for this specific level
     Statistics *foundStatistic = nil;
     
-    // Determine if there is a statistic for this level
+    // determine if there is a statistic for this level
     for (Statistics *statistic in statistics) {
         if (statistic.level == _level.levelId) {
             foundStatistic = statistic;
@@ -293,44 +289,44 @@
         }
     }
     
-    // Determine how much score should be given for this level
+    // determine how much score should be given for this level
     int score = [self generateScore:_attempts];
     
-    // There already exists statistic for this level
+    // there already exists statistic for this level
     if (foundStatistic) {
         
-        // Add new score if it is better than the previous one
+        // add new score if it is better than the previous one
         if (foundStatistic.score < score) {
             foundStatistic.score = score;
         }
         
-        // Add new minimum completion time if it's better than the previous time
+        // add new minimum completion time if it's better than the previous time
         if (foundStatistic.minTime > _elapsedTime) {
             foundStatistic.minTime = _elapsedTime;
         }
         
-        // Add new maximum completion time if it's better than the previous time
+        // add new maximum completion time if it's better than the previous time
         if (foundStatistic.maxTime < _elapsedTime) {
             foundStatistic.maxTime = _elapsedTime;
         }
         
-        // Update the statistic in the database based on the logged in account, current level and the account's statistic for this level
+        // update the statistic in the database based on the logged in account, current level and the account's statistic for this level
         [[SOPDatabase database]updateStatistic:account.accountId withLevel:_level.levelId withStatistic:foundStatistic];
     }
     else {
         
-        // Create new statistic in the database
+        // create new statistic in the database
         [[SOPDatabase database] createStatistic:account.accountId withLevel:_level.levelId withScore:score witTime:_elapsedTime];
         
-        // Update the accounts statistic after we insert the new statistic
+        // update the accounts statistic after we insert the new statistic
         account.statistics = [[SOPDatabase database] loadAccountStatistics:account.accountId];
     }
 }
 
-// Handles the events that happen when the release occurs at a specific location
+// handles the events that happen when the release occurs at a specific location
 - (void)tapReleaseAt:(CGPoint)releaseLocation {
     
-    // Stop all the action that the selected label is performing and deselect it.
+    // stop all the action that the selected label is performing and deselect it.
     if (_selectedGrapheme) {
         [_selectedGrapheme stopAllActions];
         [_selectedGrapheme runAction:[CCRotateTo actionWithDuration:0.1 angle:0]];
@@ -338,7 +334,7 @@
         [self checkSubmitButton];
     }
     
-    // Get the screen size of the device
+    // get the screen size of the device
     CGSize screenSize = [[CCDirector sharedDirector] winSize];
     
     if (CGRectContainsPoint(_resetButton.boundingBox, releaseLocation)) {
@@ -350,7 +346,7 @@
             i++;
         }
         
-        // Remove all graphemes from the slots
+        // remove all graphemes from the slots
         for (Slot *slot in _slots) {
             slot.grapheme = nil;
             [_submitButton setState:false];
@@ -358,10 +354,10 @@
         
         _attempts++;
         
-        // Remove Previous Score
+        // remove Previous Score
         [self removeChild:_levelScore];
         
-        // Create a new score based on number of attempts
+        // create a new score based on number of attempts
         NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
         _levelScore = [CCLabelTTF labelWithString:score fontName:@"KBPlanetEarth" fontSize:24];
         _levelScore.position = ccp(screenSize.width/2, screenSize.height - 24);
@@ -370,10 +366,10 @@
 
 }
 
-// Event that is called when the touch begins
+// event that is called when the touch begins
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     
-    // Gathers the locaiton of the touch and sends it onto the tapDownAt method
+    // gathers the locaiton of the touch and sends it onto the tapDownAt method
     CGPoint touchLocation = [touch locationInView:[touch view]];
     touchLocation = [[CCDirector sharedDirector] convertToGL:touchLocation];
     [self tapDownAt:touchLocation];
@@ -381,7 +377,7 @@
 }
 
 
-// Event that is called when the touch has ended
+// event that is called when the touch has ended
 - (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
     
     CGPoint releaseLocation = [touch locationInView:[touch view]];
@@ -389,7 +385,7 @@
     [self tapReleaseAt:releaseLocation];
 }
 
-// Translate the selected label to the new location
+// translate the selected label to the new location
 - (void)panForTranslation:(CGPoint)translation {
     if (_selectedGrapheme) {
         CGPoint newPos = ccpAdd(_selectedGrapheme.position, translation);
@@ -397,7 +393,7 @@
     }
 }
 
-// Event that occurs when the touch is moved from one location to another
+// event that occurs when the touch is moved from one location to another
 - (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event {
     CGPoint touchLocation = [self convertTouchToNodeSpace:touch];
     
@@ -409,8 +405,8 @@
     [self panForTranslation:translation];
 }
 
-// Checks if the submit button should be enabled or not
-// Only enabled the button when each of the slots are filled with a graphemes, otherwise the button is disabled
+// checks if the submit button should be enabled or not
+// only enabled the button when each of the slots are filled with a graphemes, otherwise the button is disabled
 - (void)checkSubmitButton {
     bool filledSlots = true;
     for (Slot *slot in _slots) {
@@ -423,7 +419,7 @@
         [_submitButton setState:true];
 }
 
-// A helper function that determines if a object can be placed into the slot
+// a helper function that determines if a object can be placed into the slot
 - (void)placeGrapheme:(CGPoint)releaseLocation {
     Slot *destinationSlot = nil;
     Slot *sourceSlot = nil;
@@ -431,7 +427,7 @@
     for (Slot *s in _slots)
         if (CGRectContainsPoint(s.boundingBox, releaseLocation)) {
             destinationSlot = s;
-            //Don't look at the other slots
+            // don't look at the other slots
             break;
         }
     
@@ -441,22 +437,22 @@
             break;
         }
     
-    //Grapheme is being placed over a slot
+    // grapheme is being placed over a slot
     if (destinationSlot!=nil) {
-        //Destination doesn't have a grapheme on it
+        // destination doesn't have a grapheme on it
         if (destinationSlot.grapheme == nil) {
             destinationSlot.grapheme = _selectedGrapheme;
             destinationSlot.scale = 0.8;
             _selectedGrapheme.position = ccp(destinationSlot.position.x, destinationSlot.position.y);
             
 
-            // If we came from a slot remove our grapheme
+            // if we came from a slot remove our grapheme
             if (sourceSlot != nil) {
                 sourceSlot.grapheme = nil;
                 sourceSlot.scale = 1;
             }
  
-        } else { //Graphyme is being placed on a full slot
+        } else { // graphyme is being placed on a full slot
             if (sourceSlot.grapheme == _selectedGrapheme) {
                 _selectedGrapheme.position = ccp(sourceSlot.position.x, sourceSlot.position.y);
             } else {
@@ -464,7 +460,7 @@
             }
         }
     } else {
-        //Graphyme came from another slot
+        // graphyme came from another slot
         if (sourceSlot != nil) {
             sourceSlot.grapheme = nil;
             sourceSlot.scale = 1.0;
@@ -475,7 +471,7 @@
     _selectedGrapheme = nil;
 }
 
-// Generate the amount of score given for the level based on number of attempts
+// generate the amount of score given for the level based on number of attempts
 - (int)generateScore:(int)attempts {
     switch (attempts) {
         case 0:

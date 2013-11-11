@@ -36,7 +36,7 @@
 }
 
 @property (retain, nonatomic) NSArray *levels;
-// returns a CCScene that contains the MenuLayer as the only child
+// returns a CCScene that contains the LevelLayer as the only child
 + (CCScene *)scene;
 
 @end
