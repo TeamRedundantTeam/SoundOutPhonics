@@ -1,0 +1,14 @@
+<Game>
+    <Level>
+        <Number>1</Number>
+        <Name>Apple </Name>
+        <Graphemes>A-pp-le </Graphemes>
+        <Sprite>AppleSprite.png</Sprite>
+    </Level>
+    <Level>
+        <Number>2</Number>
+        <Name>Bus</Name>
+        <Graphemes>B-us</Graphemes>
+        <Sprite>BusSprite.png</Sprite>
+    </Level>
+</Game>

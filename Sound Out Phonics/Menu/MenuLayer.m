@@ -23,7 +23,7 @@
 
 // Import the interfaces
 #import "MenuLayer.h"
-
+#import "LevelLayer.h"
 //TEST ONLY REMOVE
 #import "LoginLayer.h"
 
@@ -81,17 +81,10 @@
         // ============================================================================================
         
         CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"play." block:^(id sender) {
-            
-            // Create a temporary level
-            Level *lvl1 = [[Level alloc] initWithParameters:1 withName:@"Apple" withGraphemes:@"A-pp-le" withImageLocation:@"AppleSprite.png"];
-            
-            // Add the temporary level to the shared singleton
-            [Singleton sharedSingleton].selectedLevel = lvl1;
-            
             // Start this temporary level. TO-DO: Replace with level select scene
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
-                                                       scene:[GameLayer sceneWithLevel:lvl1]]];
+                                                       scene:[LevelLayer scene]]];
         }];
         
         

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		174667E518305AF700342181 /* BusSprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 174667E418305AF700342181 /* BusSprite.png */; };
+		17C4A7C1182F832600132F42 /* LevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C4A7C0182F832600132F42 /* LevelLayer.m */; };
+		17C4A7C4182F87BF00132F42 /* LevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C4A7C3182F87BF00132F42 /* LevelParser.m */; };
+		17C4A7C9183034C900132F42 /* Levels.xml in Resources */ = {isa = PBXBuildFile; fileRef = 17C4A7C8183034C900132F42 /* Levels.xml */; };
 		7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
 		7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C039AC1182A326B00E38FA1 /* Singleton.m */; };
 		7C2636EC182C4E9E00EA972F /* AppleSprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C2636EB182C4E9E00EA972F /* AppleSprite.png */; };
@@ -169,6 +173,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		174667E418305AF700342181 /* BusSprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BusSprite.png; sourceTree = "<group>"; };
+		17C4A7BF182F832600132F42 /* LevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLayer.h; sourceTree = "<group>"; };
+		17C4A7C0182F832600132F42 /* LevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelLayer.m; sourceTree = "<group>"; };
+		17C4A7C2182F87BF00132F42 /* LevelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelParser.h; sourceTree = "<group>"; };
+		17C4A7C3182F87BF00132F42 /* LevelParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelParser.m; sourceTree = "<group>"; };
+		17C4A7C8183034C900132F42 /* Levels.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Levels.xml; path = "Sound Out Phonics/Resources/Levels.xml"; sourceTree = SOURCE_ROOT; };
 		7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = sop.sqlite3; path = Resources/sop.sqlite3; sourceTree = "<group>"; };
 		7C039AC0182A326B00E38FA1 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		7C039AC1182A326B00E38FA1 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
@@ -544,6 +554,8 @@
 				7C6851151819FC8200A52AAA /* MenuLayer.m */,
 				7CED9B251829908E008BA73B /* LoginLayer.h */,
 				7CED9B261829908E008BA73B /* LoginLayer.m */,
+				17C4A7BF182F832600132F42 /* LevelLayer.h */,
+				17C4A7C0182F832600132F42 /* LevelLayer.m */,
 			);
 			name = Menu;
 			path = "Sound Out Phonics/Menu";
@@ -552,8 +564,10 @@
 		7C68511A1819FCE400A52AAA /* Level Resources */ = {
 			isa = PBXGroup;
 			children = (
+				174667E418305AF700342181 /* BusSprite.png */,
 				E2398B9A182F657800835BD8 /* default_background.png */,
 				7C2636EB182C4E9E00EA972F /* AppleSprite.png */,
+				17C4A7C8183034C900132F42 /* Levels.xml */,
 			);
 			name = "Level Resources";
 			path = Resources/LevelSprites;
@@ -1014,6 +1028,8 @@
 			children = (
 				7CF19058181A3B0900528907 /* TextToSpeech.h */,
 				7CF19059181A3B0900528907 /* TextToSpeech.m */,
+				17C4A7C2182F87BF00132F42 /* LevelParser.h */,
+				17C4A7C3182F87BF00132F42 /* LevelParser.m */,
 			);
 			name = Helpers;
 			path = "Sound Out Phonics/Helpers";
@@ -1146,6 +1162,8 @@
 				7CF0983C1818BD280043FD9F /* Icon@2x.png in Resources */,
 				E2398B97182F63F700835BD8 /* loginmenu-login_button.png in Resources */,
 				7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */,
+				17C4A7C9183034C900132F42 /* Levels.xml in Resources */,
+				174667E518305AF700342181 /* BusSprite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1278,6 +1296,8 @@
 				7CF099801818BD300043FD9F /* SimpleAudioEngine.m in Sources */,
 				7CF099321818BD2E0043FD9F /* CCTouchDispatcher.m in Sources */,
 				7CF098B51818BD2B0043FD9F /* CCNode.m in Sources */,
+				17C4A7C1182F832600132F42 /* LevelLayer.m in Sources */,
+				17C4A7C4182F87BF00132F42 /* LevelParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1337,7 +1357,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sound Out Phonics/Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"Sound Out Phonics/libs/kazmath/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"Sound Out Phonics/libs/kazmath/include\"",
+				);
 				INFOPLIST_FILE = "Sound Out Phonics/Resources/Info.plist";
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -1361,7 +1383,9 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sound Out Phonics/Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"Sound Out Phonics/libs/kazmath/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"Sound Out Phonics/libs/kazmath/include\"",
+				);
 				INFOPLIST_FILE = "Sound Out Phonics/Resources/Info.plist";
 				OTHER_LDFLAGS = (
 					"-lz",

@@ -1,10 +1,10 @@
 //
-//  Level.h
+//  LevelSelect.h
 //  Sound Out Phonics
 //
-//  Purpose: Object that stores level information from the parser
+//  Purpose: Menu layer and scene that has verious menu items based on the user type.
 //
-//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Shared/Level.m
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/LevelSelect.h
 //
 //  Style: The source code will follow the general apple coding standard described
 //         here: https://tinyurl.com/n8jtvj3
@@ -17,30 +17,26 @@
 //         Sprite.png). Finally, the code will have comments throughout various non
 //         trivial operations.
 //
-//  Created on 2013-11-5.
+//  Created on 2013-11-09.
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+
 #import "cocos2d.h"
 
-@interface Level : NSObject {
-    int _levelId;
-    NSString *_name;
-    NSString *_graphemes;
-    NSString *_spriteLocation;
-    CCSprite *_sprite;
+// Needed to obtain the Navigation Controller
+#import "AppDelegate.h"
+#import "LevelParser.h"
+#import "Level.h"
+#import "Singleton.h"
+#import "GameLayer.h"
+
+@interface LevelLayer : CCLayer {
+    NSArray *_levels;
 }
 
-@property (nonatomic, assign) int levelId;
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *graphemes;
-@property (nonatomic, copy) NSString *spriteLocation;
-
-- (id)initWithParameters:(int)levelId withName:(NSString *)name withGraphemes:(NSString *)graphemes withImageLocation:(NSString *)imageLocation;
-- (void)createSprite;
-- (CCSprite *)sprite;
-- (void)removeSprite;
--(NSString *) description;
+@property (retain, nonatomic) NSArray *levels;
+// returns a CCScene that contains the MenuLayer as the only child
++ (CCScene *)scene;
 
 @end

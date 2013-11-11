@@ -43,6 +43,7 @@
 
 // Creates the sprite based on the specified spriteLocation
 - (void)createSprite {
+    //Needs to be resized
     _sprite = [CCSprite spriteWithFile:self.spriteLocation];
 }
 
@@ -55,6 +56,12 @@
 - (void)removeSprite {
     _sprite = nil;
 }
+
+-(NSString *) description {
+    return [NSString stringWithFormat:@"<Level: %p>\nLevel: %d\nName: %@\nGraphemes: %@\nSprite Loc: %@",
+            self, self.levelId, self.name, self.graphemes, self.spriteLocation];
+}
+
 
 - (void)dealloc {
     self.name = nil;
