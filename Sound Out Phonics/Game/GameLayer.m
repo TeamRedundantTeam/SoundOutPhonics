@@ -27,7 +27,6 @@
 // Import the interfaces
 #import "GameLayer.h"
 
-
 #pragma mark - GameLayer
 
 // GameLayer implementation
@@ -128,6 +127,9 @@
         
         // Initialize the schedular to calculate time since the level has started
         [self schedule: @selector(tick:)];
+        
+        // Play level name at the start
+        [_tts playWord:_level.name];
     }
     return self;
 }
