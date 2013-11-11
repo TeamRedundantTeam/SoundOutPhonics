@@ -31,8 +31,16 @@
 #import "SubmitButton.h"
 #import "VictoryLayer.h"
 #import "Level.h"
+#import "Statistics.h"
+#import "SOPDatabase.h"
 
 @interface GameLayer : CCLayer {
+    
+    // Information about the current level such as the level number, level name, level graphemes,
+    // location of level's image and level's sprite reference.
+    Level *_level;
+
+    // Game Variables
     TextToSpeech *_tts; // Text To Speech library
     NSMutableArray *_graphemes; // Graphemes that the player will move around in the game layer
     CCLabelTTF *_selectedGrapheme; // Currently selected grapheme by players touch
@@ -40,12 +48,16 @@
     NSMutableArray *_slots; // Slots array in which the user will be putting the graphemes in
     SubmitButton *_submitButton; // Submit button that will become enabled when all the slots are filled in
     
-    // Information about the current level such as the level number, level name, level graphemes,
-    // location of level's image and level's sprite reference.
-    Level *_level;
+    // Statistic Variables
+    int _attempts; // Stores number of times the user wasn't able to get the word correctly. Will be used to determine level Score.
+    CCLabelTTF *_levelScore; // Text display of the level score
+    double _elapsedTime; // How long the user has attempted to play the level
+    
 }
 
-// returns a CCScene that contains the GameBoardLayer as the only child and takes paramater gameLevel
-+(CCScene *)sceneWithLevel:(Level *) level;
+// Returns a CCScene that contains the GameBoard as the only child and takes paramater level which has information about the level
+// and number of tries the user attempted to play this level. The attempts are used when the player decides to refresh the level before
+// completing it.
++(CCScene *)sceneWithLevel:(Level *)level withAttempts:(int)attempts;
 
 @end

@@ -1,11 +1,11 @@
 //
-//  SubmitButton.m
+//  LoginButton.h
 //  Sound Out Phonics
 //
 //  Purpose: Helper class that handles the submit button creation and various states
 //           of the button to indicate if the button is enabled or not
 //
-//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Game/SubmitButton.m
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Game/SubmitButton.h
 //
 //  Style: The source code will follow the general apple coding standard described
 //         here: https://tinyurl.com/n8jtvj3
@@ -22,36 +22,12 @@
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
-#import "SubmitButton.h"
+#import "CCSprite.h"
 
-@implementation SubmitButton
-
-- (id)initWithPosition:(CGPoint)pos {
-    if ((self = [super initWithFile:@"gameboard-submit_button.png"])) {
-        self.position = pos;
-        self.opacity = 80;
-    }
-    return self;
+@interface LoginButton : CCSprite {
+    bool state;
 }
-
-// on "dealloc" you need to release all your retained objects
-- (void)dealloc {
-    [super dealloc];
-}
-
-// The button will become greyed out depending on the state
-- (void)setState:(bool)input {
-    if (input) {
-        self.opacity = 255;
-        state = true;
-    }
-    else {
-        self.opacity = 80;
-        state = false;
-    }
-}
-
-- (bool)state {
-    return state;
-}
+- (id)initWithPosition:(CGPoint)pos;
+- (bool)state;
+- (void)setState:(bool)input;
 @end

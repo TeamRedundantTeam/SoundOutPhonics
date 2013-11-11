@@ -82,7 +82,9 @@
         // Author: Erik Schultz
         // ============================================================================================
         
-        self.accounts = [[SOPDatabase database] accountsInfo];
+        // Load the accounts from the database
+        self.accounts = [[SOPDatabase database] loadAccounts];
+
         self.avatarNames = [NSMutableArray array];
         
         // Create the account avatars and names
@@ -129,11 +131,9 @@
 
         
         // Add Submit Button
-        _submitButton = [[SubmitButton alloc] initWithPosition:ccp(size.width/2, size.height/2-100)];
-        [_submitButton setState:false];
-        //[self.submitButton release];
-        [self addChild:_submitButton];
-        
+        _loginButton = [[LoginButton alloc] initWithPosition:ccp(size.width/2, size.height/2-100)];
+        [_loginButton setState:false];
+        [self addChild:_loginButton];
     }
     return self;
 }
@@ -157,7 +157,7 @@
     }
     
     // Occurs when the user presses the submit button
-    if (self.selectedAccount && _submitButton.state && CGRectContainsPoint(_submitButton.boundingBox, releaseLocation)) {
+    if (self.selectedAccount && _loginButton.state && CGRectContainsPoint(_loginButton.boundingBox, releaseLocation)) {
         
         // The password was correct transition to the menu layer
         if ([self.selectedAccount.password isEqualToString:self.passwordTextBox.text]) {
@@ -212,9 +212,9 @@
 - (void)textFieldDidEndEditing:(UITextField*)textField {
     // If the input text is empty then disable the submit button
     if ([self.passwordTextBox.text isEqualToString:@""])
-        _submitButton.state = false;
+        _loginButton.state = false;
     else
-        _submitButton.state = true;
+        _loginButton.state = true;
 }
 
 // on "dealloc" you need to release all your retained objects
@@ -225,7 +225,7 @@
     
     [self.accounts release];
     [self.avatarNames release];
-    [_submitButton release];
+    [_loginButton release];
 	[super dealloc];
 }
 

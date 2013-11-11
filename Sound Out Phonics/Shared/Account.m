@@ -30,15 +30,17 @@
 @synthesize password = _password;
 @synthesize type = _type;
 @synthesize image = _image;
+@synthesize statistics = _statistics;
 
 // Initializes the object with parameters received from the database
-- (id)initWithId:(int)accountId name:(NSString *)name password:(NSString *)password type:(int)type image:(NSString *) image {
+- (id)initWithId:(int)accountId withName:(NSString *)name withPassword:(NSString *)password withType:(int)type withImage:(NSString *) image withStatistics:(NSArray *)statistics {
     if ((self = [super init])) {
         self.accountId = accountId;
         self.name = name;
         self.password = password;
         self.type = type;
         self.image = image;
+        self.statistics = statistics;
     }
     return self;
 }
@@ -51,7 +53,7 @@
         _avatar = [CCSprite spriteWithFile:self.image];
 }
 
-// Returns the reference for the avatar
+// Returns the reference of the avatar
 - (CCSprite *) avatar {
     return _avatar;
 }
@@ -64,6 +66,7 @@
 - (void) dealloc {
     self.name = nil;
     self.password = nil;
+    [self.statistics release];
     [super dealloc];
 }
 @end

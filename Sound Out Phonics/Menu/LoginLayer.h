@@ -29,7 +29,7 @@
 #import "MenuLayer.h"
 #import "SOPDatabase.h"
 #import "Account.h"
-#import "SubmitButton.h"
+#import "LoginButton.h"
 #import <UIKit/UIKit.h>
 #import "Singleton.h"
 
@@ -38,7 +38,7 @@
     NSMutableArray *_avatarNames; // The names that are displayed under the avatars
     NSArray *_accounts; // All accounts from the database
     Account *_selectedAccount; // Account that is currently selected by the user
-    SubmitButton *_submitButton; // Login button TO-DO: Change art and name
+    LoginButton *_loginButton; // login button
     CCSprite *_selectedAvatarBorder; // A border for avatar to indicate that it is selected
     NSMutableArray *_avatars;
 }
