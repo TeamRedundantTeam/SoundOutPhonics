@@ -78,9 +78,6 @@
         [_level createSprite];
         _level.sprite.position = ccp(screenSize.width/5.5, screenSize.height - screenSize.height/4.5);
         [self addChild:_level.sprite];
-
-        // add text to speech object
-        _tts = [[TextToSpeech alloc] init];
         
         // create the graphyme list in randomized order
         NSArray* graphemeList = [self generateGraphemeList:_level.name withGraphemes:_level.graphemes];
@@ -127,7 +124,7 @@
         [self schedule: @selector(tick:)];
         
         // play level name at the start
-        [_tts playWord:_level.name];
+        [[TextToSpeech tts] playWord:_level.name];
     }
     return self;
 }
@@ -198,7 +195,7 @@
     
     // if the picture is selected the level name will be played out
     if (_selectedGrapheme == nil && CGRectContainsPoint(_level.sprite.boundingBox, touchLocation)) {
-        [_tts playWord:_level.name];
+        [[TextToSpeech tts] playWord:_level.name];
     }
     
     // if submit button is selected and it is enabled
@@ -217,7 +214,9 @@
     // the user was able to put the the right graphemes into the slot. Create Victory Screen scene
     if ([userInput isEqualToString:_level.name]) {
 
-        [_tts playWord:userInput];
+        // play the right spelled out word to the player
+        [[TextToSpeech tts] playWord:userInput];
+
         // sprite object must be removed from the selected level since we are sharing this perticular level between layers and CCSprite can only be attached to one scene at a time. We are not removing the child from the layer because it makes the sprite dissapear before the transition ends. This also assures that each sprite is assign to one scene at a time.
         [_level removeSprite];
         
@@ -235,7 +234,7 @@
     }
     else {
         // play the wrong spelled out word to the player
-        [_tts playWord:userInput];
+        [[TextToSpeech tts] playWord:userInput];
         
         // attempts increase since the player wasn't able to get the word right at this time. Used to decrease the score
         _attempts++;
@@ -490,7 +489,6 @@
 
 // on "dealloc" you need to release all your retained objects
 - (void)dealloc {
-    [_tts release];
     [_slots release];
     [_submitButton release];
     [_graphemes release];

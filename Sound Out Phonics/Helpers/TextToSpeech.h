@@ -32,6 +32,8 @@
     Slt *slt;
 }
 
++ (TextToSpeech *) tts;
+
 // plays the word using the the OpenEars library based on the input
 - (void)playWord:(NSString*)input;
 @property (strong, nonatomic) FliteController *fliteController;

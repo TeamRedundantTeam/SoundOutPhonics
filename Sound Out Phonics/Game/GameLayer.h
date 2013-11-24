@@ -41,7 +41,6 @@
     Level *_level;
 
     // game variable declaration
-    TextToSpeech *_tts; // Text To Speech library
     NSMutableArray *_graphemes; // Graphemes that the player will move around in the game layer
     CCLabelTTF *_selectedGrapheme; // Currently selected grapheme by players touch
     CGPoint _selectedGraphemeLastPosition; // The location of the selected grapheme
