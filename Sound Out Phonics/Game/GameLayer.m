@@ -259,13 +259,19 @@
         _wrongAnswerLayer = [[CCLayerColor alloc] initWithColor:c];
         [self addChild:_wrongAnswerLayer];
         
+        // Disable the touch while the the wrong answer layer is active to prevent the user from removing objects from slots
+        // or pressing submit button again
+        [self setTouchEnabled:NO];
         [self scheduleOnce:@selector(removeLayer) delay:1];
     }
 }
 
+// occurs when the wrongAnswerLayer is being removed from the scene
 - (void)removeLayer {
     [self removeChild:_wrongAnswerLayer];
     [_wrongAnswerLayer release];
+    // Re-enable the touch
+    [self setTouchEnabled:YES];
 }
 
 // saves the statistics at the end of the level into already existing statistic or creates a new one
