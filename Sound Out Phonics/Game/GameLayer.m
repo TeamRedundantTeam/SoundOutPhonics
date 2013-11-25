@@ -93,7 +93,7 @@
         }
         
         // add Submit Button
-        _submitButton = [[SubmitButton alloc] initWithPosition:ccp(screenSize.width - screenSize.width/9, screenSize.height/15)];
+        _submitButton = [[StateButton alloc] initWithFile:@"Submit-Button.png" withPosition:ccp(screenSize.width - screenSize.width/9, screenSize.height/15)];
         [_submitButton setState:false];
         [self addChild:_submitButton];
         

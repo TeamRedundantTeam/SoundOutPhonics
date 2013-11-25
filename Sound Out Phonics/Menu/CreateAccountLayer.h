@@ -1,10 +1,10 @@
 //
-//  LoginLayer.h
+//  CreateAccountLayer.h
 //  Sound Out Phonics
 //
-//  Purpose: Login layer and scene that asks user for login information
+//  Purpose: Create account layer that allows to create an account based on the user inputs
 //
-//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/LoginLayer.h
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/CreateAccountLevel.h
 //
 //  Style: The source code will follow the general apple coding standard described
 //         here: https://tinyurl.com/n8jtvj3
@@ -17,10 +17,9 @@
 //         Sprite.png). Finally, the code will have comments throughout various non
 //         trivial operations.
 //
-//  Created on 2013-11-5.
+//  Created on 2013-11-23.
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
-
 
 #import "cocos2d.h"
 #import <UIKit/UIKit.h>
@@ -28,26 +27,22 @@
 #import "AppDelegate.h"
 
 #import "MenuLayer.h"
-#import "SOPDatabase.h"
-#import "Account.h"
 #import "StateButton.h"
-#import "Singleton.h"
+#import "SOPDatabase.h"
 
-@interface LoginLayer : CCLayer <UITextFieldDelegate> {
+@interface CreateAccountLayer : CCLayer <UITextFieldDelegate> {
+    int _accountLevel;
+    UITextField *_nameTextBox; // account name textbox
     UITextField *_passwordTextBox; // password textbox input field
-    NSMutableArray *_avatarNames; // the names that are displayed under the avatars
-    NSArray *_accounts; // all accounts from the database
-    Account *_selectedAccount; // account that is currently selected by the user
-    StateButton *_loginButton; // login button
-    CCSprite *_selectedAvatarBorder; // a border for avatar to indicate that it is selected
+    UITextField *_confirmPasswordTextBox; // confirm password textbox input field
+    StateButton *_createAccountButton;
+    CCLabelTTF *_errorMessage;
 }
 
-@property (retain, nonatomic) UITextField *passwordTextBox;
-@property (retain, nonatomic) NSMutableArray *avatarNames;
-@property (retain, nonatomic) NSArray *accounts;
-@property (retain, nonatomic) Account *selectedAccount;
-
 // returns a CCScene that contains the LoginLayer as the only child
-+ (CCScene *)scene;
++ (CCScene *)sceneWithAccountLevel:(int)accountLevel;
 
+@property (retain, nonatomic) UITextField *nameTextBox;
+@property (retain, nonatomic) UITextField *passwordTextBox;
+@property (retain, nonatomic) UITextField *confirmPasswordTextBox;
 @end

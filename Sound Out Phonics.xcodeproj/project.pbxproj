@@ -12,6 +12,8 @@
 		7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
 		7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C039AC1182A326B00E38FA1 /* Singleton.m */; };
 		7C2636EF182C71BF00EA972F /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2636EE182C71BF00EA972F /* Level.m */; };
+		7C398C181841AF0300877AC2 /* CreateAccountLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C398C171841AF0300877AC2 /* CreateAccountLayer.m */; };
+		7C398C1E1841B5CF00877AC2 /* StateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C398C1D1841B5CF00877AC2 /* StateButton.m */; };
 		7C5DDA82183180540047A808 /* Slot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA81183180540047A808 /* Slot-Sprite.png */; };
 		7C5DDA84183180740047A808 /* Default-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA83183180740047A808 /* Default-Background.png */; };
 		7C5DDA861831808C0047A808 /* Reset-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA851831808C0047A808 /* Reset-Button.png */; };
@@ -50,9 +52,7 @@
 		7C5DDACA183183B70047A808 /* Lvl25-Grass-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAB0183183B70047A808 /* Lvl25-Grass-Sprite.png */; };
 		7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
 		7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
-		7C6DBF9B1830506E0083FD6E /* LoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6DBF9A1830506E0083FD6E /* LoginButton.m */; };
 		7C753E22181A41650081BC90 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C753E21181A41650081BC90 /* GameLayer.m */; };
-		7C7D35E0181CA9DB00CC2C02 /* SubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D35DF181CA9DB00CC2C02 /* SubmitButton.m */; };
 		7C7D35E6181CF91100CC2C02 /* VictoryLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D35E5181CF91100CC2C02 /* VictoryLayer.m */; };
 		7CAF16B6183069B100243C4B /* Levels.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16B5183069B100243C4B /* Levels.xml */; };
 		7CAF16D5183070F900243C4B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16BE183070F800243C4B /* Default-568h@2x.png */; };
@@ -210,6 +210,10 @@
 		7C039AC1182A326B00E38FA1 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		7C2636ED182C71BF00EA972F /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		7C2636EE182C71BF00EA972F /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
+		7C398C161841AF0300877AC2 /* CreateAccountLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountLayer.h; sourceTree = "<group>"; };
+		7C398C171841AF0300877AC2 /* CreateAccountLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountLayer.m; sourceTree = "<group>"; };
+		7C398C1C1841B5CF00877AC2 /* StateButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateButton.h; sourceTree = "<group>"; };
+		7C398C1D1841B5CF00877AC2 /* StateButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateButton.m; sourceTree = "<group>"; };
 		7C5DDA81183180540047A808 /* Slot-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slot-Sprite.png"; sourceTree = "<group>"; };
 		7C5DDA83183180740047A808 /* Default-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Background.png"; sourceTree = "<group>"; };
 		7C5DDA851831808C0047A808 /* Reset-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reset-Button.png"; sourceTree = "<group>"; };
@@ -250,12 +254,8 @@
 		7C6851121819FC8200A52AAA /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		7C6851141819FC8200A52AAA /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
 		7C6851151819FC8200A52AAA /* MenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLayer.m; sourceTree = "<group>"; };
-		7C6DBF991830506E0083FD6E /* LoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginButton.h; sourceTree = "<group>"; };
-		7C6DBF9A1830506E0083FD6E /* LoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginButton.m; sourceTree = "<group>"; };
 		7C753E20181A41650081BC90 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		7C753E21181A41650081BC90 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
-		7C7D35DE181CA9DB00CC2C02 /* SubmitButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitButton.h; sourceTree = "<group>"; };
-		7C7D35DF181CA9DB00CC2C02 /* SubmitButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitButton.m; sourceTree = "<group>"; };
 		7C7D35E4181CF91100CC2C02 /* VictoryLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VictoryLayer.h; sourceTree = "<group>"; };
 		7C7D35E5181CF91100CC2C02 /* VictoryLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VictoryLayer.m; sourceTree = "<group>"; };
 		7CAF16B5183069B100243C4B /* Levels.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Levels.xml; path = Resources/Levels.xml; sourceTree = "<group>"; };
@@ -586,8 +586,6 @@
 				7C753E21181A41650081BC90 /* GameLayer.m */,
 				7CF3D9D2181C73A4003DC0E5 /* Slot.h */,
 				7CF3D9D3181C73A4003DC0E5 /* Slot.m */,
-				7C7D35DE181CA9DB00CC2C02 /* SubmitButton.h */,
-				7C7D35DF181CA9DB00CC2C02 /* SubmitButton.m */,
 				7C7D35E4181CF91100CC2C02 /* VictoryLayer.h */,
 				7C7D35E5181CF91100CC2C02 /* VictoryLayer.m */,
 			);
@@ -610,14 +608,14 @@
 			children = (
 				174EA97B1830670E00A2503C /* LevelLayer.h */,
 				174EA97C1830670E00A2503C /* LevelLayer.m */,
-				7C6DBF991830506E0083FD6E /* LoginButton.h */,
-				7C6DBF9A1830506E0083FD6E /* LoginButton.m */,
 				7C6851141819FC8200A52AAA /* MenuLayer.h */,
 				7C6851151819FC8200A52AAA /* MenuLayer.m */,
 				7CED9B251829908E008BA73B /* LoginLayer.h */,
 				7CED9B261829908E008BA73B /* LoginLayer.m */,
 				7CAF16E71830852900243C4B /* StatisticLayer.h */,
 				7CAF16E81830852900243C4B /* StatisticLayer.m */,
+				7C398C161841AF0300877AC2 /* CreateAccountLayer.h */,
+				7C398C171841AF0300877AC2 /* CreateAccountLayer.m */,
 			);
 			name = Menu;
 			path = "Sound Out Phonics/Menu";
@@ -1157,6 +1155,8 @@
 		7CF19057181A3B0900528907 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				7C398C1C1841B5CF00877AC2 /* StateButton.h */,
+				7C398C1D1841B5CF00877AC2 /* StateButton.m */,
 				7CF19058181A3B0900528907 /* TextToSpeech.h */,
 				174EA96E1830635800A2503C /* LevelParser.h */,
 				174EA96F1830635800A2503C /* LevelParser.m */,
@@ -1308,7 +1308,6 @@
 				7CF3D9D4181C73A4003DC0E5 /* Slot.m in Sources */,
 				7CF099451818BD2F0043FD9F /* base64.c in Sources */,
 				7CF098681818BD290043FD9F /* CCActionTween.m in Sources */,
-				7C7D35E0181CA9DB00CC2C02 /* SubmitButton.m in Sources */,
 				7CF0989F1818BD2B0043FD9F /* CCLabelBMFont.m in Sources */,
 				7CED9B271829908E008BA73B /* LoginLayer.m in Sources */,
 				7C2636EF182C71BF00EA972F /* Level.m in Sources */,
@@ -1318,7 +1317,6 @@
 				7CF0996A1818BD300043FD9F /* ZipUtils.m in Sources */,
 				7CF0985C1818BD290043FD9F /* CCActionManager.m in Sources */,
 				7CF098C41818BD2B0043FD9F /* CCParticleSystemQuad.m in Sources */,
-				7C6DBF9B1830506E0083FD6E /* LoginButton.m in Sources */,
 				7CF098871818BD2A0043FD9F /* CCDrawNode.m in Sources */,
 				7CF099191818BD2E0043FD9F /* CCTransitionPageTurn.m in Sources */,
 				7CF0984A1818BD280043FD9F /* CCActionCatmullRom.m in Sources */,
@@ -1366,6 +1364,7 @@
 				7CF098811818BD2A0043FD9F /* CCDirector.m in Sources */,
 				7CF098711818BD290043FD9F /* CCAtlasNode.m in Sources */,
 				7CF099B71818BD310043FD9F /* main.m in Sources */,
+				7C398C181841AF0300877AC2 /* CreateAccountLayer.m in Sources */,
 				7CF099351818BD2E0043FD9F /* CCTouchHandler.m in Sources */,
 				7CF098AF1818BD2B0043FD9F /* CCMotionStreak.m in Sources */,
 				7CF0992E1818BD2E0043FD9F /* CCGLView.m in Sources */,
@@ -1373,6 +1372,7 @@
 				7CF0995B1818BD2F0043FD9F /* CGPointExtension.m in Sources */,
 				7CF0985F1818BD290043FD9F /* CCActionPageTurn3D.m in Sources */,
 				7CF099B01818BD310043FD9F /* vec3.c in Sources */,
+				7C398C1E1841B5CF00877AC2 /* StateButton.m in Sources */,
 				7CF099621818BD2F0043FD9F /* TGAlib.m in Sources */,
 				7CF0986B1818BD290043FD9F /* CCAnimation.m in Sources */,
 				7CF099961818BD310043FD9F /* aabb.c in Sources */,

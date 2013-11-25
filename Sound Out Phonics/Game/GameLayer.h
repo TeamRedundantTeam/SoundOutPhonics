@@ -28,7 +28,7 @@
 #import "cocos2d.h"
 #import "TextToSpeech.h"
 #import "Slot.h"
-#import "SubmitButton.h"
+#import "StateButton.h"
 #import "VictoryLayer.h"
 #import "Level.h"
 #import "Statistics.h"
@@ -45,7 +45,7 @@
     CCLabelTTF *_selectedGrapheme; // Currently selected grapheme by players touch
     CGPoint _selectedGraphemeLastPosition; // The location of the selected grapheme
     NSMutableArray *_slots; // Slots array in which the user will be putting the graphemes in
-    SubmitButton *_submitButton; // Submit button that will become enabled when all the slots are filled in
+    StateButton *_submitButton; // Submit button that will become enabled when all the slots are filled in
     CCSprite *_resetButton; // Reset button that resets the level
     CCLayerColor * _wrongAnswerLayer; // Layer that will display when the player doesn't spell the word correctly
     

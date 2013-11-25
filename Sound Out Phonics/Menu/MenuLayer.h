@@ -29,6 +29,7 @@
 #import "LevelLayer.h"
 #import "LoginLayer.h"
 #import "StatisticLayer.h"
+#import "CreateAccountLayer.h"
 
 @interface MenuLayer : CCLayer {
 

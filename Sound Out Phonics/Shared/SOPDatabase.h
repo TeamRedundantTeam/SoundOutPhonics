@@ -39,6 +39,12 @@
 // load account's statistics based on the input and create Statistic objects based on the data pulled from the database
 - (NSArray *)loadAccountStatistics:(int)accountId;
 
+// create account with the provided input
+- (BOOL)createAccount:(int)accountId withName:(NSString*)name withPassword:(NSString*)password withLevel:(int)type;
+
+// returns the las accounts id and 0 if no accounts are present
+- (int)getLastAccountId;
+
 // update a specific statistic in the Statistic table based on the input
 - (void)updateStatistic:(int)accountId withLevel:(int)level withStatistic:(Statistics *)statistic;
 

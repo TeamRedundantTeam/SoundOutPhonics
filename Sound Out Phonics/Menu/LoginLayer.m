@@ -49,8 +49,7 @@
 }
 
 // on "init" you need to initialize your instance
-- (id)init
-{
+- (id)init {
 	if((self = [super init])) {
         
         // ask director for the window size
@@ -65,73 +64,98 @@
 		// add the background as a child to this layer
         [self addChild: background];
 
-        // load the accounts from the database
-        self.accounts = [[SOPDatabase database] loadAccounts];
-
-        self.avatarNames = [NSMutableArray array];
-        
-        // create the account avatars and names
-        // TO-DO: Organize into rows and multiple pages
-        
-        int i = 0;
-        for (Account *account in self.accounts) {
-            
-            // display what type of account it is.
-            CCLabelTTF *accountType;
-            
-            // determine which string should be displayed based on the account type
-            if (account.type == 1)
-                accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
-            else
-                accountType = [CCLabelTTF labelWithString:@"Student" fontName:@"KBPlanetEarth" fontSize:24];
-            
-            accountType.position = ccp(size.width/4 + i*140, size.height-155);
-            [self addChild:accountType];
-            
-            // add the avatar
-            [account createAvatar];
-            account.avatar.position = ccp(size.width/4 + i*140, size.height-250);
-            [self addChild:account.avatar];
-            
-            // create user name under the avatar
-            CCLabelTTF *avatarName = [CCLabelTTF labelWithString:account.name fontName:@"KBPlanetEarth" fontSize:24];
-            avatarName.position = ccp(size.width/4 + i*140, size.height-350);
-            [self addChild:avatarName];
-            i++;
+        // No accounts found and new account needs to be created
+        if ([[SOPDatabase database] getLastAccountId] == 0) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Account!"
+                                                            message:@"No administrator account found. Would you like to create a new account or play as guest?"
+                                                           delegate:self cancelButtonTitle:nil otherButtonTitles:@"Create Account", @"Guest Account", nil];
+            [alert show];
+            [alert release];
         }
+        else {
+            
+            // load the accounts from the database
+            self.accounts = [[SOPDatabase database] loadAccounts];
+
+            self.avatarNames = [NSMutableArray array];
         
-        // create the selected avatar frame
-        _selectedAvatarBorder = [CCSprite spriteWithFile:@"Selected-Portrait.png"];
-        _selectedAvatarBorder.visible = false;
-        [self addChild:_selectedAvatarBorder];
+            // create the account avatars and names
+            // TO-DO: Organize into rows and multiple pages
         
-        // create the password textbox
-        self.passwordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(size.width/2-100, size.height/2+25, 200, 50)];
-        self.passwordTextBox.backgroundColor = [UIColor whiteColor];
-        self.passwordTextBox.delegate = self;
-        self.passwordTextBox.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-        self.passwordTextBox.adjustsFontSizeToFitWidth = true;
+            int i = 0;
+            for (Account *account in self.accounts) {
+            
+                // display what type of account it is.
+                CCLabelTTF *accountType;
+            
+                // determine which string should be displayed based on the account type
+                if (account.type == 1)
+                    accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
+                else
+                    accountType = [CCLabelTTF labelWithString:@"Student" fontName:@"KBPlanetEarth" fontSize:24];
+            
+                accountType.position = ccp(size.width/4 + i*140, size.height-155);
+                [self addChild:accountType];
+            
+                // add the avatar for a specific account
+                [account createAvatar];
+                account.avatar.position = ccp(size.width/4 + i*140, size.height-250);
+                [self addChild:account.avatar];
+            
+                // create user name under the avatar
+                CCLabelTTF *avatarName = [CCLabelTTF labelWithString:account.name fontName:@"KBPlanetEarth" fontSize:24];
+                avatarName.position = ccp(size.width/4 + i*140, size.height-350);
+                [self addChild:avatarName];
+                i++;
+            }
         
-        // grey text inside the box
-        NSAttributedString *userName = [[NSAttributedString alloc] initWithString:@"Password"];
-        self.passwordTextBox.attributedPlaceholder = userName;
-        self.passwordTextBox.enabled = false;
+            // create the selected avatar frame
+            _selectedAvatarBorder = [CCSprite spriteWithFile:@"Selected-Portrait.png"];
+            _selectedAvatarBorder.visible = false;
+            [self addChild:_selectedAvatarBorder];
         
-        // no spellchecker and make the input text display as ****
-        self.passwordTextBox.spellCheckingType = UITextSpellCheckingTypeNo;
-        self.passwordTextBox.secureTextEntry = true;
-        [userName release];
-        [[CCDirector sharedDirector].view addSubview:self.passwordTextBox];
+            // create the password textbox
+            self.passwordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(size.width/2-100, size.height/2+25, 200, 50)];
+            self.passwordTextBox.backgroundColor = [UIColor whiteColor];
+            self.passwordTextBox.delegate = self;
+            self.passwordTextBox.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+            self.passwordTextBox.adjustsFontSizeToFitWidth = true;
+        
+            // grey text inside the box
+            NSAttributedString *userName = [[NSAttributedString alloc] initWithString:@"Password"];
+            self.passwordTextBox.attributedPlaceholder = userName;
+            self.passwordTextBox.enabled = false;
+        
+            // no spellchecker and make the input text display as ****
+            self.passwordTextBox.spellCheckingType = UITextSpellCheckingTypeNo;
+            self.passwordTextBox.secureTextEntry = true;
+            [userName release];
+            [[CCDirector sharedDirector].view addSubview:self.passwordTextBox];
 
         
-        // add Submit Button
-        _loginButton = [[LoginButton alloc] initWithPosition:ccp(size.width/2, size.height/2-125)];
-        [_loginButton setState:false];
-        [self addChild:_loginButton];
+            // add login button
+            _loginButton = [[StateButton alloc] initWithFile:@"Login-Button.png" withPosition:ccp(size.width/2, size.height/2-125)];
+            [_loginButton setState:false];
+            [self addChild:_loginButton];
+        }
     }
     return self;
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[CreateAccountLayer sceneWithAccountLevel:1]]];
+        
+        // cleanup after the transition
+        [self.parent removeChild:self cleanup:YES];
+    }
+    else {
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
+        
+        // cleanup after the transition
+        [self.parent removeChild:self cleanup:YES];
+    }
+}
 // dispatcher to catch the touch events
 - (void)registerWithTouchDispatcher {
 	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
@@ -180,8 +204,8 @@
         }
         // password was incorrect display an error message
         else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Invalid Password, try again!\n The password is 'pw'"
-                                  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Invalid Password, try again!\n"
+                                  delegate:nil cancelButtonTitle:@"Close" otherButtonTitles: nil];
             [alert show];
             [alert release];
         }

@@ -1,11 +1,11 @@
 //
-//  LoginButton.m
+//  StateButton.m
 //  Sound Out Phonics
 //
-//  Purpose: Helper class that handles the submit button creation and various states
-//           of the button to indicate if the button is enabled or not
+//  Purpose: Helper class that handles button creation that has states
+//           that indicates if the button is enabled or not
 //
-//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Game/SubmitButton.m
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Helpers/StateButton.m
 //
 //  Style: The source code will follow the general apple coding standard described
 //         here: https://tinyurl.com/n8jtvj3
@@ -18,16 +18,17 @@
 //         Sprite.png). Finally, the code will have comments throughout various non
 //         trivial operations.
 //
-//  Created on 2013-10-26.
+//  Created on 2013-11-23.
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
-#import "LoginButton.h"
+#import "StateButton.h"
 
-@implementation LoginButton
+@implementation StateButton
 
-- (id)initWithPosition:(CGPoint)pos {
-    if ((self = [super initWithFile:@"Login-Button.png"])) {
+// Intialized the sprite with a specific name and position
+- (id)initWithFile:(NSString *)filename withPosition:(CGPoint)pos {
+    if ((self = [super initWithFile:filename])) {
         self.position = pos;
         self.opacity = 80;
     }

@@ -68,37 +68,6 @@
         [self addChild: statisticIcon]; // add the playIcon to the scene
         [self addChild: logoutIcon]; // add the logoutIcon to the scene
         
-        [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
-        [CCMenuItemFont setFontSize:50]; // set the default CCMenuItemFont size
-        
-        CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"play." block:^(id sender) {
-
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                       transitionWithDuration:1.0
-                                                       scene:[LevelLayer scene]]];
-        }]; // add the 'play' CCMenuItem
-        
-        CCMenuItem *itemStatistic = [CCMenuItemFont itemWithString:@"statistics." block:^(id sender) {
-            
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                       transitionWithDuration:1.0
-                                                       scene:[StatisticLayer scene]]];
-        }]; // add the 'statistics' CCMenuItem
-        
-        CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"quit." block:^(id sender) {
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                       transitionWithDuration:1.0
-                                                       scene:[LoginLayer scene]]];
-        }]; // add the 'quit' CCMenuItem
-        
-		CCMenu *menu = [CCMenu menuWithItems:itemPlay, itemStatistic, itemLogout, nil];
-		
-		[menu alignItemsVerticallyWithPadding:15];
-		[menu setPosition:ccp(size.width/2+10, size.height/2 - 25)];
-		
-		// add the menu to the layer
-		[self addChild:menu];
-        
         // add the avatar to the menu
         Account *loggedInAccount = [Singleton sharedSingleton].loggedInAccount;
         if (loggedInAccount != nil) {
@@ -128,6 +97,49 @@
             
             [self addChild:loggedInAccount.avatar];
         }
+        
+        // create Menu
+        [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
+        [CCMenuItemFont setFontSize:50]; // set the default CCMenuItemFont size
+        
+        CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"play." block:^(id sender) {
+
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
+                                                       transitionWithDuration:1.0
+                                                       scene:[LevelLayer scene]]];
+        }]; // add the 'play' CCMenuItem
+        
+        CCMenuItem *itemStatistic = [CCMenuItemFont itemWithString:@"statistics." block:^(id sender) {
+            
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
+                                                       transitionWithDuration:1.0
+                                                       scene:[StatisticLayer scene]]];
+        }]; // add the 'statistics' CCMenuItem
+        
+        CCMenuItem *itemManageAccount = [CCMenuItemFont itemWithString:@"manage accounts." block:^(id sender) {
+                [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
+                                                       transitionWithDuration:1.0
+                                                       scene:[CreateAccountLayer sceneWithAccountLevel:0]]];
+        }]; // add the 'create account' CCMenuItem
+        
+        CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"quit." block:^(id sender) {
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
+                                                       transitionWithDuration:1.0
+                                                       scene:[LoginLayer scene]]];
+        }]; // add the 'quit' CCMenuItem
+        
+        CCMenu *menu;
+        // Admin menu has different options from the student menus
+        if (loggedInAccount.type == 1)
+            menu = [CCMenu menuWithItems:itemPlay, itemStatistic, itemManageAccount, itemLogout, nil];
+        else
+            menu = [CCMenu menuWithItems:itemPlay, itemStatistic, itemLogout, nil];
+		
+		[menu alignItemsVerticallyWithPadding:15];
+		[menu setPosition:ccp(size.width/2+10, size.height/2 - 25)];
+		
+		// add the menu to the layer
+		[self addChild:menu];
 	}
 	return self;
 }

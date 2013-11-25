@@ -125,6 +125,46 @@ static SOPDatabase *_database;
     return retrievedValue;
 }
 
+// create a new account
+- (BOOL)createAccount:(int)accountId withName:(NSString*)name withPassword:(NSString*)password withLevel:(int)type {
+    
+    NSString *query = [NSString stringWithFormat: @"INSERT INTO Accounts (accountId, name, password, type, profile_image) VALUES (?,?,?,?,?);"];
+    
+    sqlite3_stmt *statement;
+    
+    // check if the query executed
+    if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        sqlite3_bind_int(statement, 1, accountId);
+        sqlite3_bind_text(statement, 2, [name UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(statement, 3, [password UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_int(statement, 4, type);
+        sqlite3_bind_text(statement, 5, "", -1, SQLITE_TRANSIENT);
+        
+        if (sqlite3_step(statement) != SQLITE_DONE) {
+            NSLog(@"error: %s", sqlite3_errmsg(_database));
+            sqlite3_reset(statement);
+            return false;
+        }
+        
+        sqlite3_finalize(statement);
+    }
+    return true;
+}
+
+- (int)getLastAccountId {
+    NSString *query = @"SELECT accountID FROM Accounts ORDER BY accountID DESC LIMIT 1;";
+    sqlite3_stmt *statement = nil;
+    int lastAccountId = 0;
+    
+    if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        // continue while there is a result
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            lastAccountId = sqlite3_column_int(statement, 0);
+        }
+        sqlite3_finalize(statement);
+    }
+    return lastAccountId;
+}
 // update a specific statistic in the Statistic table based on the input
 - (void)updateStatistic:(int)accountId withLevel:(int)level withStatistic:(Statistics *)statistic {
     NSString *query = @"UPDATE Statistics SET score = ?, min_victory_time = ?, max_victory_time = ? WHERE (accountId = ? AND level = ?);";
@@ -144,7 +184,6 @@ static SOPDatabase *_database;
         
         sqlite3_finalize(statement);
     }
-    
 }
 
 // insert a new statistic into the Statistic table based on the input
