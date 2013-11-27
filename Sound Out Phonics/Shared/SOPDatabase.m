@@ -118,7 +118,6 @@ static SOPDatabase *_database;
             
             Statistics *statistic = [[Statistics alloc] initWithParameters:accountId withLevel:level withScore:score withMinTime:minTime withMaxTime:maxTime];
             [retrievedValue addObject:statistic];
-            [statistic release];
         }
         sqlite3_finalize(statement);
     }

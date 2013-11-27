@@ -66,6 +66,11 @@
 - (void) dealloc {
     self.name = nil;
     self.password = nil;
+    
+    // Release all the statistics in the array
+    for (Statistics *statistic in self.statistics)
+        [statistic release];
+    
     [self.statistics release];
     [super dealloc];
 }

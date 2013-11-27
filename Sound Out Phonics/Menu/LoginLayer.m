@@ -29,7 +29,6 @@
 @implementation LoginLayer
 
 @synthesize passwordTextBox = _passwordTextBox;
-@synthesize avatarNames = _avatarNames;
 @synthesize accounts = _accounts;
 @synthesize selectedAccount = _selectedAccount;
 
@@ -53,22 +52,20 @@
 	if((self = [super init])) {
         
         // ask director for the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
+		_size = [[CCDirector sharedDirector] winSize];
+        
         [self setTouchEnabled:YES];
         
-        // create and initialize a background
+        // Create and initialize a background sprite
         CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"];
-        
-        background.position = ccp(size.width/2, size.height/2);
-        
-		// add the background as a child to this layer
+        background.position = ccp(_size.width/2, _size.height/2);
         [self addChild: background];
 
         // No accounts found and new account needs to be created
         if ([[SOPDatabase database] getLastAccountId] == 0) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Account!"
-                                                            message:@"No administrator account found. Would you like to create a new account or play as guest?"
-                                                           delegate:self cancelButtonTitle:nil otherButtonTitles:@"Create Account", @"Guest Account", nil];
+                                  message:@"No administrator account found. Would you like to create a new account or play as guest?"
+                                  delegate:self cancelButtonTitle:nil otherButtonTitles:@"Create Account", @"Guest Account", nil];
             [alert show];
             [alert release];
         }
@@ -76,70 +73,117 @@
             
             // load the accounts from the database
             self.accounts = [[SOPDatabase database] loadAccounts];
+        
+            _currentAccountPage = 1;
 
-            self.avatarNames = [NSMutableArray array];
-        
-            // create the account avatars and names
-            // TO-DO: Organize into rows and multiple pages
-        
-            int i = 0;
-            for (Account *account in self.accounts) {
-            
-                // display what type of account it is.
-                CCLabelTTF *accountType;
-            
-                // determine which string should be displayed based on the account type
-                if (account.type == 1)
-                    accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
-                else
-                    accountType = [CCLabelTTF labelWithString:@"Student" fontName:@"KBPlanetEarth" fontSize:24];
-            
-                accountType.position = ccp(size.width/4 + i*140, size.height-155);
-                [self addChild:accountType];
-            
-                // add the avatar for a specific account
-                [account createAvatar];
-                account.avatar.position = ccp(size.width/4 + i*140, size.height-250);
-                [self addChild:account.avatar];
-            
-                // create user name under the avatar
-                CCLabelTTF *avatarName = [CCLabelTTF labelWithString:account.name fontName:@"KBPlanetEarth" fontSize:24];
-                avatarName.position = ccp(size.width/4 + i*140, size.height-350);
-                [self addChild:avatarName];
-                i++;
-            }
-        
             // create the selected avatar frame
             _selectedAvatarBorder = [CCSprite spriteWithFile:@"Selected-Portrait.png"];
             _selectedAvatarBorder.visible = false;
             [self addChild:_selectedAvatarBorder];
         
             // create the password textbox
-            self.passwordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(size.width/2-100, size.height/2+25, 200, 50)];
+            self.passwordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(_size.width/2-100, _size.height/2 - 25, 200, 50)];
             self.passwordTextBox.backgroundColor = [UIColor whiteColor];
             self.passwordTextBox.delegate = self;
             self.passwordTextBox.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
             self.passwordTextBox.adjustsFontSizeToFitWidth = true;
         
             // grey text inside the box
-            NSAttributedString *userName = [[NSAttributedString alloc] initWithString:@"Password"];
-            self.passwordTextBox.attributedPlaceholder = userName;
+            NSAttributedString *password = [[NSAttributedString alloc] initWithString:@"Password"];
+            self.passwordTextBox.attributedPlaceholder = password;
             self.passwordTextBox.enabled = false;
         
             // no spellchecker and make the input text display as ****
             self.passwordTextBox.spellCheckingType = UITextSpellCheckingTypeNo;
             self.passwordTextBox.secureTextEntry = true;
-            [userName release];
+            [password release];
             [[CCDirector sharedDirector].view addSubview:self.passwordTextBox];
 
         
-            // add login button
-            _loginButton = [[StateButton alloc] initWithFile:@"Login-Button.png" withPosition:ccp(size.width/2, size.height/2-125)];
+            // Initialize and add the login button
+            _loginButton = [[StateButton alloc] initWithFile:@"Login-Button.png" withPosition:ccp(_size.width/2, _size.height/2 - 75)];
             [_loginButton setState:false];
             [self addChild:_loginButton];
+            
+            // Initialize and add the paging button sprites
+            _lastAccountsPage = [CCSprite spriteWithFile:@"Arrow.png"];
+            _nextAccountsPage = [CCSprite spriteWithFile:@"Arrow.png"];
+            
+            _lastAccountsPage.position = ccp(_size.width/2 - 375, _size.height - 250);
+            _nextAccountsPage.position = ccp(_size.width/2 + 375, _size.height - 250);
+            
+            // Rotate the sprite by 180 degrees CW
+            _nextAccountsPage.rotation = 180;
+            
+            // In some cases paging might not be needed so the sprites are invisible by default and enabled later on
+            _lastAccountsPage.visible = false;
+            _nextAccountsPage.visible = false;
+
+            [self addChild:_lastAccountsPage];
+            [self addChild:_nextAccountsPage];
+            
+            [self displayAccounts:_currentAccountPage];
         }
     }
     return self;
+}
+
+// create the account avatars and names
+- (void) displayAccounts:(int)page {
+    
+    // Number of results that will be displayed
+    int results = 5;
+    
+    
+    int accountsOnPage = 0;
+    if ([self.accounts count] <= results) {
+        accountsOnPage = [self.accounts count] - 1;
+    }
+    else {
+        accountsOnPage = results - 1;
+        
+        // Do not show last page sprite if the current active page is 1
+        if (page != 1)
+            _lastAccountsPage.visible = true;
+        if (page * results < [self.accounts count])
+            _nextAccountsPage.visible = true;
+    }
+    
+    int i = 0;
+    for (Account *account in self.accounts) {
+        
+        if (i >= (page - 1) * results && i < page * results)
+        {
+            // display what type of account it is.
+            CCLabelTTF *accountType;
+        
+            // determine which string should be displayed based on the account type
+            if (account.type == 1)
+                accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
+            else
+                accountType = [CCLabelTTF labelWithString:@"Student" fontName:@"KBPlanetEarth" fontSize:24];
+        
+            // determine the position dynamicly based on how many objects are present in the array
+            accountType.position = ccp(_size.width/2 - accountsOnPage * 70 + i % results * 140, _size.height-135);
+            accountType.tag = 0;
+            [self addChild:accountType];
+        
+            // add the avatar for a specific account
+            [account createAvatar];
+            account.avatar.position = ccp(_size.width/2 - accountsOnPage * 70 + i % results * 140, _size.height-230);
+            account.avatar.tag = 1;
+            account.avatar.visible = true;
+            [self addChild:account.avatar];
+        
+            // create user name under the avatar
+            CCLabelTTF *avatarName = [CCLabelTTF labelWithString:account.name fontName:@"KBPlanetEarth" fontSize:24];
+            avatarName.position = ccp(_size.width/2 - accountsOnPage * 70 + i % results * 140, _size.height-330);
+            avatarName.tag = 0;
+            [self addChild:avatarName];
+
+        }
+        i++;
+    }
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -164,9 +208,34 @@
 // handles the events that happen when the release occurs at a specific location
 - (void)tapReleaseAt:(CGPoint)releaseLocation {
     
+    // check if the user has pressed the next account page sprite.
+    if (_nextAccountsPage.visible && CGRectContainsPoint(_nextAccountsPage.boundingBox, releaseLocation)) {
+        _currentAccountPage++;
+        
+        [self cleanupSprites];
+        
+        // display the new account page
+        [self displayAccounts:_currentAccountPage];
+    }
+    
+    // check if the user has pressed the last account page sprite.
+    if (_lastAccountsPage.visible && CGRectContainsPoint(_lastAccountsPage.boundingBox, releaseLocation)) {
+        
+        // The first page is always 1. Make sure that the current page doesn't go out of those bounds
+        if (_currentAccountPage > 1) {
+            _currentAccountPage--;
+            
+            // cleanup all temporary objects before proceeding to the next stage
+            [self cleanupSprites];
+            
+            // display the new account page
+            [self displayAccounts:_currentAccountPage];
+        }
+    }
+    
     // checks if one of the accounts has been selected
     for (Account *account in self.accounts) {
-        if (CGRectContainsPoint(account.avatar.boundingBox, releaseLocation)) {
+        if (account.avatar.visible && CGRectContainsPoint(account.avatar.boundingBox, releaseLocation)) {
             self.selectedAccount = account;
             
             // make the avatar box visible since we now have a selected account
@@ -241,6 +310,27 @@
         _loginButton.state = true;
 }
 
+// removes all the temporary objects from the scene
+- (void)cleanupSprites {
+    
+    for (Account *account in self.accounts) {
+        account.avatar.visible = false;
+    }
+    
+    // Remove all children that were tagged as 0
+    while ([self getChildByTag:0]) {
+        [self removeChildByTag:0 cleanup:true];
+    }
+    
+    _nextAccountsPage.visible = false;
+    _lastAccountsPage.visible = false;
+    
+    _selectedAvatarBorder.visible = false;
+    _selectedAccount = nil;
+    
+    self.passwordTextBox.enabled = false;
+}
+
 // on "dealloc" you need to release all your retained objects
 - (void)dealloc
 {
@@ -249,7 +339,6 @@
         [account release];
     
     [self.accounts release];
-    [self.avatarNames release];
     [_loginButton release];
 	[super dealloc];
 }

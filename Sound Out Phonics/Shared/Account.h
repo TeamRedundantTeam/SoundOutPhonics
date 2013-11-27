@@ -23,6 +23,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Statistics.h"
 
 @interface Account : NSObject {
     int _accountId;
