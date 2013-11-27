@@ -27,6 +27,7 @@
 
 @synthesize accounts = _accounts;
 @synthesize selectedAccount = _selectedAccount;
+@synthesize loggedInAccount = _loggedInAccount;
 
 // helper class method that creates a Scene with the StatistcLayer as the only child.
 + (CCScene *)scene {
@@ -55,10 +56,14 @@
         [self setTouchEnabled:YES];
         
         // add the background sprite
-        CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"]; // create and initialize the background sprite (png)
+        CCSprite *background = [CCSprite spriteWithFile:@"Default-Background.png"]; // create and initialize the background sprite (png)
         background.position = ccp(size.width/2, size.height/2); // center background layer
         [self addChild:background];
 
+        // title name
+        CCLabelTTF *titleName = [CCLabelTTF labelWithString:@"Statistics" fontName:@"KBPlanetEarth" fontSize:48];
+        titleName.position = ccp(size.width/2, size.height-75);
+        [self addChild:titleName];
         
         // create and initialize the back button sprite (png)
         CCSprite *backButton = [CCSprite spriteWithFile:@"Back-Icon.png"];
@@ -83,21 +88,21 @@
 		// add the menu to the layer
 		[self addChild:menu];
         
-        
         // set the account to the logged in account
-        _account = [Singleton sharedSingleton].loggedInAccount;
+        self.loggedInAccount = [Singleton sharedSingleton].loggedInAccount;
         
-        // if account level is Teacher than we need to display all the students statistics otherwise only the currently logged in player
-        if (_account.type == 1)
-            [self displayStudents];
-        else
-            [self displayAccountStatistic:_account.accountId withStartingHeight:size.height/2];
+        // display all the student profiles
+        [self displayStudents];
+        
+        // start from the first page
+        _currentPage = 1;
+
     }
     return self;
 }
 
 
-// display all the students pulled from the database
+// display all the students profile which is either pulled from the database or the student itself
 - (void)displayStudents {
     
     CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
@@ -108,8 +113,13 @@
     _selectedAvatarBorder.tag = 1;
     [self addChild:_selectedAvatarBorder];
     
-    // load the accounts from the database
-    self.accounts = [[SOPDatabase database] loadAccounts];
+    if (self.loggedInAccount.type == 1)
+        // load the accounts from the database
+        self.accounts = [[SOPDatabase database] loadAccounts];
+
+    else
+        // Only add itself to the array
+        self.accounts = [NSArray arrayWithObject:self.loggedInAccount];
     
     // create the account avatars and names
     // TO-DO: Organize into rows and multiple pages
@@ -125,18 +135,18 @@
             accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
         else
             accountType = [CCLabelTTF labelWithString:@"Student" fontName:@"KBPlanetEarth" fontSize:24];
-        
-        accountType.position = ccp(size.width/4 + i*140, size.height-155);
+
+        accountType.position = ccp(size.width/4 + i*140, size.height-115);
         [self addChild:accountType];
         
         // add the avatar
         [account createAvatar];
-        account.avatar.position = ccp(size.width/4 + i*140, size.height-250);
+        account.avatar.position = ccp(size.width/4 + i*140, size.height-200);
         [self addChild:account.avatar];
         
         // create user name under the avatar
         CCLabelTTF *avatarName = [CCLabelTTF labelWithString:account.name fontName:@"KBPlanetEarth" fontSize:24];
-        avatarName.position = ccp(size.width/4 + i*140, size.height-350);
+        avatarName.position = ccp(size.width/4 + i*140, size.height-300);
         [self addChild:avatarName];
         i++;
     }
@@ -158,11 +168,10 @@
             self.selectedAccount = account;
         
             // a new student is selected and we must remove the individual statistic from previously selected student.
-            while ([self getChildByTag:0])
-                [self removeChildByTag:0 cleanup:true];
+            [self cleanup];
             
             // display the statistic of a selected account
-            [self displayAccountStatistic:_selectedAccount.accountId withStartingHeight:size.height/4];
+            [self displayAccountStatistic:_selectedAccount.accountId withStartingHeight:size.height/3 withPage:1];
             
             // make the avatar box visible since we now have a selected account
             if (!_selectedAvatarBorder.visible)
@@ -171,6 +180,30 @@
             // move the border to the new selected avatar
             _selectedAvatarBorder.position = ccp(_selectedAccount.avatar.position.x, _selectedAccount.avatar.position.y);
             break;
+        }
+    }
+    
+    // check if the user has pressed the next page sprite.
+    if (_nextPage && CGRectContainsPoint(_nextPage.boundingBox, releaseLocation)) {
+        _currentPage++;
+        
+        [self cleanup];
+        // display the statistic of a selected account
+        [self displayAccountStatistic:_selectedAccount.accountId withStartingHeight:size.height/3 withPage:_currentPage];
+    }
+    
+    // check if the user has pressed the last page sprite.
+    if (_lastPage && CGRectContainsPoint(_lastPage.boundingBox, releaseLocation)) {
+        
+        // The first page is always 1. Make sure that the current page doesn't go out of those bounds
+        if (_currentPage > 1) {
+            _currentPage--;
+            
+            // cleanup all temporary objects before proceeding to the next stage
+            [self cleanup];
+            
+            // display the statistic of a selected account
+            [self displayAccountStatistic:_selectedAccount.accountId withStartingHeight:size.height/3 withPage:_currentPage];
         }
     }
 }
@@ -188,9 +221,12 @@
     return YES;
 }
 
-// display account statistic based on the input account id and the starting height. Each sprite has a special tag which indicates allows us to remove them later if teacher is selecting multiple student accounts.
-
-- (void)displayAccountStatistic:(int)accountId withStartingHeight:(int)height{
+// display account statistic based on the input account id, the starting height and page that is being displayed.
+// Each sprite has a special tag which allows us to remove those sprites later if another account or page is selected.
+- (void)displayAccountStatistic:(int)accountId withStartingHeight:(int)height withPage:(int)page {
+    
+    // print 10 results per page
+    static int results = 10;
     
     CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
     
@@ -213,29 +249,66 @@
     [self addChild:minTimeCategory];
     [self addChild:maxTimeCategory];
     
-    // pull statistics from the database
+    // pull statistics from the database. Better design choice would be to pull statistics only once from the database
     NSArray *statistics = [[SOPDatabase database] loadAccountStatistics:accountId];
     
+    // Occurs when there are more statistics than can be fit per page
+    if ([statistics count] >= results) {
+        // add the next page arrow sprites
+        _lastPage = [CCSprite spriteWithFile:@"Arrow.png"]; // create and initialize the arrow
+        _lastPage.position = ccp(size.width/4 + 225, size.height/3 - 160);
+        _lastPage.tag = 0;
+        [self addChild:_lastPage];
+        
+        // add the last page arrow sprites
+        _nextPage = [CCSprite spriteWithFile:@"Arrow.png"]; // create and initialize the arrow
+        _nextPage.rotation = 180;
+        _nextPage.position = ccp(size.width/4 + 325, size.height/3 - 160);
+        _nextPage.tag = 0;
+        [self addChild:_nextPage];
+        
+        // display of what page it is
+        CCLabelTTF *pageLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",page] fontName:@"KBPlanetEarth" fontSize:24];
+        pageLabel.position = ccp(size.width/4 + 275, size.height/3 - 160);
+        pageLabel.tag = 0;
+        [self addChild:pageLabel];
+    }
+    
     int i = 0;
+    // loop through the loaded statistics
     for (Statistics *statistic in statistics) {
-        CCLabelTTF *level = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",statistic.level] fontName:@"KBPlanetEarth" fontSize:24];
-        CCLabelTTF *score = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",statistic.score] fontName:@"KBPlanetEarth" fontSize:24];
-        CCLabelTTF *minTime = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%f",statistic.minTime] fontName:@"KBPlanetEarth" fontSize:24];
-        CCLabelTTF *maxTime = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%f",statistic.maxTime] fontName:@"KBPlanetEarth" fontSize:24];
-        level.position = ccp(size.width/4, (height + 100) - 25 * i);
-        score.position = ccp(size.width/4 + 100, (height + 100) - 25 * i);
-        minTime.position = ccp(size.width/4 + 275, (height + 100) - 25 * i);
-        maxTime.position = ccp(size.width/4 + 450, (height + 100) - 25* i);
-        level.tag = 0;
-        score.tag = 0;
-        minTime.tag = 0;
-        maxTime.tag = 0;
-        [self addChild:level];
-        [self addChild:score];
-        [self addChild:minTime];
-        [self addChild:maxTime];
+        if (i >= (page - 1) * results && i < page * results)
+        {
+            CCLabelTTF *level = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",statistic.level] fontName:@"KBPlanetEarth" fontSize:24];
+            CCLabelTTF *score = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",statistic.score] fontName:@"KBPlanetEarth" fontSize:24];
+            CCLabelTTF *minTime = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%f",statistic.minTime] fontName:@"KBPlanetEarth" fontSize:24];
+            CCLabelTTF *maxTime = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%f",statistic.maxTime] fontName:@"KBPlanetEarth" fontSize:24];
+            level.position = ccp(size.width/4, (height + 100) - 25 * (i % results));
+            score.position = ccp(size.width/4 + 100, (height + 100) - 25 * (i % results));
+            minTime.position = ccp(size.width/4 + 275, (height + 100) - 25 * (i % results));
+            maxTime.position = ccp(size.width/4 + 450, (height + 100) - 25* (i % results));
+            level.tag = 0;
+            score.tag = 0;
+            minTime.tag = 0;
+            maxTime.tag = 0;
+            [self addChild:level];
+            [self addChild:score];
+            [self addChild:minTime];
+            [self addChild:maxTime];
+        }
         i++;
     }
+}
+
+// removes all the temporary objects from the scene
+- (void) cleanup {
+    
+    // Remove all children that were tagged as 0
+    while ([self getChildByTag:0])
+        [self removeChildByTag:0 cleanup:true];
+    
+    _nextPage = nil;
+    _lastPage = nil;
 }
 
 - (void) dealloc {
