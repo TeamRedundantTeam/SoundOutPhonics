@@ -55,7 +55,7 @@
         
         CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"];     // create and initialize the background sprite (png)
         CCSprite *playIcon = [CCSprite spriteWithFile:@"Play-Icon.png"];                    // create and initialize the playIcon sprite (png)
-        CCSprite *statisticIcon = [CCSprite spriteWithFile:@"Statistic-Icon.png"];             // create and initialize the statisticIcon sprite (png)
+        CCSprite *statisticIcon = [CCSprite spriteWithFile:@"Statistic-Icon.png"];          // create and initialize the statisticIcon sprite (png)
         CCSprite *logoutIcon = [CCSprite spriteWithFile:@"Back-Icon.png"];                  // create and initialize the logoutIcon sprite (png)
         CCSprite *manageIcon = [CCSprite spriteWithFile:@"Manage-Icon.png"];                // create and initialize the manageIcon sprite (png)
         
@@ -69,7 +69,6 @@
         [self addChild: playIcon];                                                          // add the playIcon to the scene
         [self addChild: statisticIcon];                                                     // add the statisticIcon to the scene
         [self addChild: logoutIcon];                                                        // add the logoutIcon to the scene
-        [self addChild: manageIcon];                                                        // add the logoutIcon to the scene
         
         // add the avatar to the menu
         Account *loggedInAccount = [Singleton sharedSingleton].loggedInAccount;
@@ -80,10 +79,14 @@
             
             // determine which string should be displayed based on the account type
             if (loggedInAccount.type == 1)
+            {
                 accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
+                [self addChild: manageIcon];                                                // add the manageIcon to the scene
+            }
             else
+            {
                 accountType = [CCLabelTTF labelWithString:@"Student" fontName:@"KBPlanetEarth" fontSize:24];
-            
+            }
             accountType.position = ccp(size.width/2, size.height/2+225);
             [self addChild:accountType];
             
