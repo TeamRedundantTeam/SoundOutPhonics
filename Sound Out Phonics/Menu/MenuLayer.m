@@ -55,18 +55,21 @@
         
         CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"];     // create and initialize the background sprite (png)
         CCSprite *playIcon = [CCSprite spriteWithFile:@"Play-Icon.png"];                    // create and initialize the playIcon sprite (png)
-        CCSprite *statisticIcon = [CCSprite spriteWithFile:@"Trophy-Icon.png"];             // create and initialize the statistic sprite (png)
+        CCSprite *statisticIcon = [CCSprite spriteWithFile:@"Statistic-Icon.png"];             // create and initialize the statisticIcon sprite (png)
         CCSprite *logoutIcon = [CCSprite spriteWithFile:@"Back-Icon.png"];                  // create and initialize the logoutIcon sprite (png)
+        CCSprite *manageIcon = [CCSprite spriteWithFile:@"Manage-Icon.png"];                // create and initialize the manageIcon sprite (png)
         
         background.position = ccp(size.width/2, size.height/2);                             // center background layer
         playIcon.position = ccp((size.width/2)-85, size.height/2+50);                       // set playIcon screen position
         statisticIcon.position = ccp((size.width/2)-87, size.height/2-23);                  // set statisticIcon screen position
-        logoutIcon.position = ccp((size.width/2)-85, size.height/2-100);                    // set logoutIcon screen position
+        logoutIcon.position = ccp((size.width/2)-87, size.height/2-100);                    // set logoutIcon screen position
+        manageIcon.position = ccp((size.width/2)-87, size.height/2-180);                    // set manageIcon screen position
 
         [self addChild: background];                                                        // add the background to the scene
         [self addChild: playIcon];                                                          // add the playIcon to the scene
         [self addChild: statisticIcon];                                                     // add the statisticIcon to the scene
         [self addChild: logoutIcon];                                                        // add the logoutIcon to the scene
+        [self addChild: manageIcon];                                                        // add the logoutIcon to the scene
         
         // add the avatar to the menu
         Account *loggedInAccount = [Singleton sharedSingleton].loggedInAccount;
@@ -136,10 +139,10 @@
         else
             menu = [CCMenu menuWithItems:itemPlay, itemStatistic, itemLogout, nil];
 		
-        itemPlay.position = ccp(size.width-1023, size.height/2+180);
+        itemPlay.position = ccp(size.width-1025, size.height/2+180);
         itemStatistic.position = ccp(size.width-973, size.height/2+105);
         itemLogout.position = ccp(size.width-1030, size.height/2+30);
-        itemManageAccount.position = ccp(size.width-1000, size.height/2-5);
+        itemManageAccount.position = ccp(size.width-883, size.height/2-50);
 		
 		// add the menu to the layer
 		[self addChild:menu];
