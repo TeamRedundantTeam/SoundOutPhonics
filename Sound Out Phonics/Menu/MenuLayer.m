@@ -62,7 +62,7 @@
         background.position = ccp(size.width/2, size.height/2);                             // center background layer
         playIcon.position = ccp((size.width/2)-88, size.height/2+50);                       // set playIcon screen position
         statisticIcon.position = ccp((size.width/2)-87, size.height/2-28);                  // set statisticIcon screen position
-        logoutIcon.position = ccp((size.width/2)-88, size.height/2-95);                    // set logoutIcon screen position
+        logoutIcon.position = ccp((size.width/2)-88, size.height/2-95);                     // set logoutIcon screen position
         manageIcon.position = ccp((size.width/2)-87, size.height/2-175);                    // set manageIcon screen position
 
         [self addChild: background];                                                        // add the background to the scene
@@ -78,13 +78,11 @@
             CCLabelTTF *accountType;
             
             // determine which string should be displayed based on the account type
-            if (loggedInAccount.type == 1)
-            {
+            if (loggedInAccount.type == 1){
                 accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
                 [self addChild: manageIcon];                                                // add the manageIcon to the scene
             }
-            else
-            {
+            else{
                 accountType = [CCLabelTTF labelWithString:@"Student" fontName:@"KBPlanetEarth" fontSize:24];
             }
             accountType.position = ccp(size.width/2, size.height/2+225);
@@ -142,10 +140,10 @@
         else
             menu = [CCMenu menuWithItems:itemPlay, itemStatistic, itemLogout, nil];
 		
-        itemPlay.position = ccp(size.width-1020, size.height/2+175);
-        itemStatistic.position = ccp(size.width-968, size.height/2+100);
-        itemLogout.position = ccp(size.width-1025, size.height/2+25);
-        itemManageAccount.position = ccp(size.width-878, size.height/2-45);
+        itemPlay.position = ccp(size.width/2-500, size.height/2-335);
+        itemStatistic.position = ccp(size.width/2-450, size.height/2-413);
+        itemLogout.position = ccp(size.width/2-507, size.height/2-480);
+        itemManageAccount.position = ccp(size.width/2-357, size.height/2-560);
 		
 		// add the menu to the layer
 		[self addChild:menu];
