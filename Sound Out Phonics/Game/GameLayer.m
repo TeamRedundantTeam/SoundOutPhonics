@@ -61,12 +61,12 @@
         [self setTouchEnabled:YES];
         
         // get the screen size of the device
-        CGSize screenSize = [[CCDirector sharedDirector] winSize];
+        _size = [[CCDirector sharedDirector] winSize];
         
         // create and initialize a background
         CCSprite *background = [CCSprite spriteWithFile:@"Default-Background.png"];
         
-        background.position = ccp(screenSize.width/2, screenSize.height/2);
+        background.position = ccp(_size.width/2, _size.height/2);
         
 		// add the background as a child to this layer
         [self addChild: background];
@@ -76,48 +76,67 @@
         
         // add picture sprite object
         [_level createSprite];
-        _level.sprite.position = ccp(screenSize.width/5.5, screenSize.height - screenSize.height/4.5);
+        _level.sprite.position = ccp(_size.width/5.5, _size.height - _size.height/4.5);
         [self addChild:_level.sprite];
         
         // create the graphyme list in randomized order
         NSArray* graphemeList = [self generateGraphemeList:_level.name withGraphemes:_level.graphemes];
         
-        // create Slots Array
-        _slots = [[NSMutableArray alloc] init];
-        for (int i = 0; i < graphemeList.count; i++) {
-            // create an individual slot
-            Slot *slot = [[Slot alloc] initWithPosition:ccp(screenSize.width/7 + i*180, screenSize.height/4)];
-            [_slots addObject:slot];
-            [self addChild:slot];
-            [slot release];
+        // How many reults allowed per page
+        int results = 7;
+        
+        // Check that the grapheme number does not exceed the maximum result number. Otherwise the graphemes will be outside of the viewable area.
+        if (graphemeList.count < results) {
+        
+            // create Slots Array
+            _slots = [[NSMutableArray alloc] init];
+            
+            for (int i = 0; i < graphemeList.count; i++) {
+            
+                // Dynamicly determine the position of the x-coordinate based on how many graphemes are present
+                CGFloat xpos = _size.width/2 - (graphemeList.count - 1 ) * 70 + (i % results) * 140;
+                CGFloat ypos = _size.height/4;
+            
+                // create an individual slot
+                Slot *slot = [[Slot alloc] initWithPosition:ccp(xpos, ypos)];
+                [_slots addObject:slot];
+                [self addChild:slot];
+                [slot release];
+            }
+    
+        
+            // create Graphemes
+            _graphemes = [[NSMutableArray alloc] init];
+            for (int i = 0; i < graphemeList.count; i++) {
+            
+                // create Labels
+                CCLabelTTF *grapheme = [CCLabelTTF labelWithString:[graphemeList objectAtIndex:i]
+                                    fontName:@"KBPlanetEarth" fontSize:64];
+            
+                CGFloat xpos = _size.width/2 + 140 - (graphemeList.count - 1 ) * 32 + i * 64;
+                CGFloat ypos = _size.height - _size.height/4.5;
+                grapheme.position = ccp(xpos, ypos);
+            
+                [self addChild:grapheme];
+                [_graphemes addObject:grapheme];
+            }
         }
+        else
+            NSLog(@"Error could not add that many graphemes to the screen at this time. The maximum number of graphemes allowed on the screen is %d",results);
         
         // add Submit Button
-        _submitButton = [[StateButton alloc] initWithFile:@"Submit-Button.png" withPosition:ccp(screenSize.width - screenSize.width/9, screenSize.height/15)];
+        _submitButton = [[StateButton alloc] initWithFile:@"Submit-Button.png" withPosition:ccp(_size.width - _size.width/9, _size.height/15)];
         [_submitButton setState:false];
         [self addChild:_submitButton];
         
-        // create Graphemes
-        _graphemes = [[NSMutableArray alloc] init];
-        for (int i = 0; i < graphemeList.count; i++) {
-            
-            // create Labels
-            CCLabelTTF *grapheme = [CCLabelTTF labelWithString:[graphemeList objectAtIndex:i]
-                                    fontName:@"KBPlanetEarth" fontSize:64];
-            grapheme.position = ccp(screenSize.width/2 + i*screenSize.width/10, screenSize.height - screenSize.height/4.5);
-            
-            [self addChild:grapheme];
-            [_graphemes addObject:grapheme];
-        }
-                  
         _attempts = attempts;
         NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
         _levelScore = [CCLabelTTF labelWithString:score fontName:@"KBPlanetEarth" fontSize:24];
-        _levelScore.position = ccp(screenSize.width/2, screenSize.height - 24);
+        _levelScore.position = ccp(_size.width/2, _size.height - 24);
         [self addChild:_levelScore];
         
         _resetButton = [CCSprite spriteWithFile:@"Reset-Button.png"];
-        _resetButton.position = ccp(screenSize.width - 50, screenSize.height - 50);
+        _resetButton.position = ccp(_size.width - 50, _size.height - 50);
         [self addChild:_resetButton];
         
         // initialize the schedular to calculate time since the level has started
@@ -239,16 +258,13 @@
         // attempts increase since the player wasn't able to get the word right at this time. Used to decrease the score
         _attempts++;
         
-        // get the screen size of the device
-        CGSize screenSize = [[CCDirector sharedDirector] winSize];
-        
         // the score will change and we need to remove the previous score
         [self removeChild:_levelScore];
         
         // create a new score based on number of attempts
         NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
         _levelScore = [CCLabelTTF labelWithString:score fontName:@"KBPlanetEarth" fontSize:24];
-        _levelScore.position = ccp(screenSize.width/2, screenSize.height - 24);
+        _levelScore.position = ccp(_size.width/2, _size.height - 24);
         [self addChild:_levelScore];
         
         
@@ -339,15 +355,12 @@
         [self checkSubmitButton];
     }
     
-    // get the screen size of the device
-    CGSize screenSize = [[CCDirector sharedDirector] winSize];
-    
     if (CGRectContainsPoint(_resetButton.boundingBox, releaseLocation)) {
         int i = 0;
         
         // put all graphemes in the original position
         for (CCSprite *grapheme in _graphemes) {
-            grapheme.position = ccp(screenSize.width/2 + i*screenSize.width/10, screenSize.height - screenSize.height/4.5);
+            grapheme.position = ccp(_size.width/2 + i * _size.width/10, _size.height - _size.height/4.5);
             i++;
         }
         
@@ -365,7 +378,7 @@
         // create a new score based on number of attempts
         NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
         _levelScore = [CCLabelTTF labelWithString:score fontName:@"KBPlanetEarth" fontSize:24];
-        _levelScore.position = ccp(screenSize.width/2, screenSize.height - 24);
+        _levelScore.position = ccp(_size.width/2, _size.height - 24);
         [self addChild:_levelScore];
     }
 

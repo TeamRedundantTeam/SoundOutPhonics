@@ -36,11 +36,13 @@
 
 @interface GameLayer : CCLayer {
     
-    // information about the current level such as the level number, level name, level graphemes,
+    // Information about the current level such as the level number, level name, level graphemes,
     // location of level's image and level's sprite reference.
     Level *_level;
-
-    // game variable declaration
+    
+    CGSize _size; // Used to store the screen size
+    
+    // Game variable declaration
     NSMutableArray *_graphemes; // Graphemes that the player will move around in the game layer
     CCLabelTTF *_selectedGrapheme; // Currently selected grapheme by players touch
     CGPoint _selectedGraphemeLastPosition; // The location of the selected grapheme
@@ -49,7 +51,7 @@
     CCSprite *_resetButton; // Reset button that resets the level
     CCLayerColor * _wrongAnswerLayer; // Layer that will display when the player doesn't spell the word correctly
     
-    // statistic Variables
+    // Statistic Variables
     int _attempts; // Stores number of times the user wasn't able to get the word correctly. Will be used to determine level Score.
     CCLabelTTF *_levelScore; // text display of the level score
     double _elapsedTime; // how long the user has attempted to play the level
