@@ -30,8 +30,7 @@
 @implementation MenuLayer
 
 // helper class method that creates a scene with the MenuLayer as the only child.
-+ (CCScene *)scene
-{
++ (CCScene *)scene {
 	// 'scene' is an autorelease object.
 	CCScene *scene = [CCScene node];
 	
@@ -46,8 +45,7 @@
 }
 
 // Initialize the instance
-- (id)init
-{
+- (id)init {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if((self = [super init])) {
@@ -82,7 +80,7 @@
                 accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
                 [self addChild: manageIcon];                                                // add the manageIcon to the scene
             }
-            else{
+            else {
                 accountType = [CCLabelTTF labelWithString:@"Student" fontName:@"KBPlanetEarth" fontSize:24];
             }
             accountType.position = ccp(size.width/2, size.height/2+225);
@@ -110,7 +108,7 @@
 
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
-                                                       scene:[LevelLayer scene]]];
+                                                       scene:[LevelSelectLayer scene]]];
             
         }]; // add the 'play' CCMenuItem
         
@@ -154,8 +152,7 @@
 
 
 // on "dealloc" you need to release all your retained objects
-- (void)dealloc
-{
+- (void)dealloc {
 	// in case you have something to dealloc, do it in this method
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)

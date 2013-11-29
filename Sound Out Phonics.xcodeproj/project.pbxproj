@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		174EA97D1830670E00A2503C /* LevelLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 174EA97C1830670E00A2503C /* LevelLayer.m */; };
 		174EA97E1830672F00A2503C /* LevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 174EA96F1830635800A2503C /* LevelParser.m */; };
 		7C0394DB18457F5800947CF3 /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0394DA18457F5800947CF3 /* Arrow.png */; };
 		7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
@@ -48,6 +47,7 @@
 		7C5DDACA183183B70047A808 /* Lvl25-Grass-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAB0183183B70047A808 /* Lvl25-Grass-Sprite.png */; };
 		7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
 		7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
+		7C736C4D184829B000A4ED10 /* LevelSelectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C736C4C184829B000A4ED10 /* LevelSelectLayer.m */; };
 		7C753E22181A41650081BC90 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C753E21181A41650081BC90 /* GameLayer.m */; };
 		7C7D35E6181CF91100CC2C02 /* VictoryLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D35E5181CF91100CC2C02 /* VictoryLayer.m */; };
 		7CAF16B6183069B100243C4B /* Levels.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16B5183069B100243C4B /* Levels.xml */; };
@@ -205,8 +205,6 @@
 /* Begin PBXFileReference section */
 		174EA96E1830635800A2503C /* LevelParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelParser.h; sourceTree = "<group>"; };
 		174EA96F1830635800A2503C /* LevelParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LevelParser.m; sourceTree = "<group>"; };
-		174EA97B1830670E00A2503C /* LevelLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLayer.h; sourceTree = "<group>"; };
-		174EA97C1830670E00A2503C /* LevelLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelLayer.m; sourceTree = "<group>"; };
 		7C0394DA18457F5800947CF3 /* Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrow.png; sourceTree = "<group>"; };
 		7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = sop.sqlite3; path = Resources/sop.sqlite3; sourceTree = "<group>"; };
 		7C039AC0182A326B00E38FA1 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -252,6 +250,8 @@
 		7C6851121819FC8200A52AAA /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		7C6851141819FC8200A52AAA /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
 		7C6851151819FC8200A52AAA /* MenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLayer.m; sourceTree = "<group>"; };
+		7C736C4B184829B000A4ED10 /* LevelSelectLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectLayer.h; sourceTree = "<group>"; };
+		7C736C4C184829B000A4ED10 /* LevelSelectLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectLayer.m; sourceTree = "<group>"; };
 		7C753E20181A41650081BC90 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		7C753E21181A41650081BC90 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		7C7D35E4181CF91100CC2C02 /* VictoryLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VictoryLayer.h; sourceTree = "<group>"; };
@@ -610,8 +610,8 @@
 		7C6851131819FC8200A52AAA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				174EA97B1830670E00A2503C /* LevelLayer.h */,
-				174EA97C1830670E00A2503C /* LevelLayer.m */,
+				7C736C4B184829B000A4ED10 /* LevelSelectLayer.h */,
+				7C736C4C184829B000A4ED10 /* LevelSelectLayer.m */,
 				7C6851141819FC8200A52AAA /* MenuLayer.h */,
 				7C6851151819FC8200A52AAA /* MenuLayer.m */,
 				7CED9B251829908E008BA73B /* LoginLayer.h */,
@@ -1312,6 +1312,7 @@
 				7C753E22181A41650081BC90 /* GameLayer.m in Sources */,
 				7C7D35E6181CF91100CC2C02 /* VictoryLayer.m in Sources */,
 				7CF099131818BD2D0043FD9F /* CCTMXXMLParser.m in Sources */,
+				7C736C4D184829B000A4ED10 /* LevelSelectLayer.m in Sources */,
 				7CF099AA1818BD310043FD9F /* ray2.c in Sources */,
 				7CF3D9D4181C73A4003DC0E5 /* Slot.m in Sources */,
 				7CF099451818BD2F0043FD9F /* base64.c in Sources */,
@@ -1422,7 +1423,6 @@
 				7CF099801818BD300043FD9F /* SimpleAudioEngine.m in Sources */,
 				7CF099321818BD2E0043FD9F /* CCTouchDispatcher.m in Sources */,
 				7CF098B51818BD2B0043FD9F /* CCNode.m in Sources */,
-				174EA97D1830670E00A2503C /* LevelLayer.m in Sources */,
 				174EA97E1830672F00A2503C /* LevelParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

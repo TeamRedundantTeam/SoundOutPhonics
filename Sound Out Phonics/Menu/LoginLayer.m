@@ -152,8 +152,7 @@
     int i = 0;
     for (Account *account in self.accounts) {
         
-        if (i >= (page - 1) * results && i < page * results)
-        {
+        if (i >= (page - 1) * results && i < page * results) {
             // display what type of account it is.
             CCLabelTTF *accountType;
         
@@ -171,7 +170,6 @@
             // add the avatar for a specific account
             [account createAvatar];
             account.avatar.position = ccp(_size.width/2 - accountsOnPage * 70 + i % results * 140, _size.height-230);
-            account.avatar.tag = 1;
             account.avatar.visible = true;
             [self addChild:account.avatar];
         
@@ -180,7 +178,6 @@
             avatarName.position = ccp(_size.width/2 - accountsOnPage * 70 + i % results * 140, _size.height-330);
             avatarName.tag = 0;
             [self addChild:avatarName];
-
         }
         i++;
     }

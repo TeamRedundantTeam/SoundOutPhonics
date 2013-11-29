@@ -113,7 +113,7 @@
                 CCLabelTTF *grapheme = [CCLabelTTF labelWithString:[graphemeList objectAtIndex:i]
                                     fontName:@"KBPlanetEarth" fontSize:64];
             
-                CGFloat xpos = _size.width/2 + 140 - (graphemeList.count - 1 ) * 32 + i * 64;
+                CGFloat xpos = _size.width/2 + 140 - (graphemeList.count - 1 ) * 40 + i * 80;
                 CGFloat ypos = _size.height - _size.height/4.5;
                 grapheme.position = ccp(xpos, ypos);
             
@@ -258,15 +258,9 @@
         // attempts increase since the player wasn't able to get the word right at this time. Used to decrease the score
         _attempts++;
         
-        // the score will change and we need to remove the previous score
-        [self removeChild:_levelScore];
-        
-        // create a new score based on number of attempts
+        // Change the old score to the new score
         NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
-        _levelScore = [CCLabelTTF labelWithString:score fontName:@"KBPlanetEarth" fontSize:24];
-        _levelScore.position = ccp(_size.width/2, _size.height - 24);
-        [self addChild:_levelScore];
-        
+        [_levelScore setString:score];
         
         // background color. Transparent red
         ccColor4B c = {225, 0, 0, 150};
@@ -360,26 +354,24 @@
         
         // put all graphemes in the original position
         for (CCSprite *grapheme in _graphemes) {
-            grapheme.position = ccp(_size.width/2 + i * _size.width/10, _size.height - _size.height/4.5);
+            CGFloat xpos = _size.width/2 + 140 - (_graphemes.count - 1 ) * 40 + i * 80;
+            CGFloat ypos = _size.height - _size.height/4.5;
+            grapheme.position = ccp(xpos, ypos);
             i++;
         }
         
         // remove all graphemes from the slots
         for (Slot *slot in _slots) {
             slot.grapheme = nil;
+            slot.scale = 1.0; // reset the size of the slot
             [_submitButton setState:false];
         }
         
         _attempts++;
         
-        // remove Previous Score
-        [self removeChild:_levelScore];
-        
-        // create a new score based on number of attempts
+        // Change the old score to the new score
         NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
-        _levelScore = [CCLabelTTF labelWithString:score fontName:@"KBPlanetEarth" fontSize:24];
-        _levelScore.position = ccp(_size.width/2, _size.height - 24);
-        [self addChild:_levelScore];
+        [_levelScore setString:score];
     }
 
 }

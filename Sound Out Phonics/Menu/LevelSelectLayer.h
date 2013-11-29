@@ -4,7 +4,9 @@
 //
 //  Purpose: Level select layer and scene that allows player to choose which level they want to play
 //
-//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/LevelSelect.h
+//  History: History of the file can be found here:
+//           https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/LevelLayer.h
+//           https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/LevelSelectLayer.h
 //
 //  Style: The source code will follow the general apple coding standard described
 //         here: https://tinyurl.com/n8jtvj3
@@ -31,8 +33,12 @@
 #import "Singleton.h"
 #import "GameLayer.h"
 
-@interface LevelLayer : CCLayer {
-    NSArray *_levels;
+@interface LevelSelectLayer : CCLayer {
+    NSArray *_levels; // Reference to all the loaded levels
+    CGSize _size; // Used to store the screen size
+    int _currentLevelsPage; // Keeps track of the current levels page
+    CCSprite *_nextLevelsPage; // Reference to the next level page arrow sprite
+    CCSprite *_lastLevelsPage; // Reference to the previous level page arrow sprite
 }
 
 @property (retain, nonatomic) NSArray *levels;
