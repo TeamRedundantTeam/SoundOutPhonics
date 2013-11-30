@@ -52,18 +52,19 @@
 		CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
         
         CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"];     // create and initialize the background sprite (png)
-        CCSprite *playIcon = [CCSprite spriteWithFile:@"Play-Icon.png"];                    // create and initialize the playIcon sprite (png)
-        CCSprite *statisticIcon = [CCSprite spriteWithFile:@"Statistic-Icon.png"];          // create and initialize the statisticIcon sprite (png)
-        CCSprite *logoutIcon = [CCSprite spriteWithFile:@"Back-Icon.png"];                  // create and initialize the logoutIcon sprite (png)
-        CCSprite *manageIcon = [CCSprite spriteWithFile:@"Manage-Icon.png"];                // create and initialize the manageIcon sprite (png)
-        
         background.position = ccp(size.width/2, size.height/2);                             // center background layer
-        playIcon.position = ccp((size.width/2)-88, size.height/2+50);                       // set playIcon screen position
-        statisticIcon.position = ccp((size.width/2)-87, size.height/2-28);                  // set statisticIcon screen position
-        logoutIcon.position = ccp((size.width/2)-88, size.height/2-100);                     // set logoutIcon screen position
-        manageIcon.position = ccp((size.width/2)-87, size.height/2-175);                    // set manageIcon screen position
+        [self addChild: background];
+        
+        CCSprite *playIcon = [CCSprite spriteWithFile:@"Game-IconFinal.png"];               // create and initialize the playIcon sprite (png)
+        CCSprite *statisticIcon = [CCSprite spriteWithFile:@"Statistic-IconFinal.png"];     // create and initialize the statisticIcon sprite (png)
+        CCSprite *logoutIcon = [CCSprite spriteWithFile:@"Cancel-IconFinal.png"];           // create and initialize the logoutIcon sprite (png)
+        CCSprite *manageIcon = [CCSprite spriteWithFile:@"Manage-IconFinal.png"];           // create and initialize the manageIcon sprite (png)
+        
+        playIcon.position = ccp((size.width/2)-88, size.height/2+52);                       // set playIcon screen position
+        statisticIcon.position = ccp((size.width/2)-89, size.height/2-23);                  // set statisticIcon screen position
+        logoutIcon.position = ccp((size.width/2)-88, size.height/2-100);                    // set logoutIcon screen position
+        manageIcon.position = ccp((size.width/2)-89, size.height/2-175);                    // set manageIcon screen position
 
-        [self addChild: background];                                                        // add the background to the scene
         [self addChild: playIcon];                                                          // add the playIcon to the scene
         [self addChild: statisticIcon];                                                     // add the statisticIcon to the scene
         [self addChild: logoutIcon];                                                        // add the logoutIcon to the scene
@@ -78,12 +79,13 @@
             // determine which string should be displayed based on the account type
             if (loggedInAccount.type == 1){
                 accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
-                [self addChild: manageIcon];                                                // add the manageIcon to the scene
             }
             else {
                 accountType = [CCLabelTTF labelWithString:@"Student" fontName:@"KBPlanetEarth" fontSize:24];
             }
+            
             accountType.position = ccp(size.width/2, size.height/2+225);
+            
             [self addChild:accountType];
             
             // create the avatar
@@ -92,8 +94,7 @@
             loggedInAccount.avatar.position = ccp(size.width/2, size.height/2+175);
             
             // create Name
-            CCLabelTTF *portaitName = [CCLabelTTF labelWithString:loggedInAccount.name
-                                                         fontName:@"KBPlanetEarth" fontSize:24];
+            CCLabelTTF *portaitName = [CCLabelTTF labelWithString:loggedInAccount.name fontName:@"KBPlanetEarth" fontSize:24];
             portaitName.position = ccp(size.width/2, size.height-275);
             [self addChild:portaitName];
             
@@ -132,12 +133,15 @@
         }]; // add the 'quit' CCMenuItem
         
         CCMenu *menu;
-        // Admin menu has different options from the student menus
-        if (loggedInAccount.type == 1)
+        // admin menu has different options from the student menus
+        if (loggedInAccount.type == 1) {
             menu = [CCMenu menuWithItems:itemPlay, itemStatistic, itemManageAccount, itemLogout, nil];
-        else
+            [self addChild: manageIcon];
+        }
+        else {
             menu = [CCMenu menuWithItems:itemPlay, itemStatistic, itemLogout, nil];
-		
+        }
+        
         itemPlay.position = ccp(size.width/2-500, size.height/2-335);
         itemStatistic.position = ccp(size.width/2-450, size.height/2-413);
         itemLogout.position = ccp(size.width/2-507, size.height/2-485);
@@ -148,8 +152,6 @@
 	}
 	return self;
 }
-
-
 
 // on "dealloc" you need to release all your retained objects
 - (void)dealloc {
