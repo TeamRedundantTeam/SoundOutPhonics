@@ -221,6 +221,8 @@
 		7CF9526E182F194600FE1DDC /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9526D182F194600FE1DDC /* Statistics.m */; };
 		7CFCBE72183172A200EF6233 /* KBPlanetEarth.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */; };
 		E25DFEB3184B1A9100991902 /* Empty-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E25DFEB2184B1A9100991902 /* Empty-Portrait.png */; };
+		E2850B24184B3E8E00066613 /* Splash-SOF-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = E2850B23184B3E8E00066613 /* Splash-SOF-Landscape.png */; };
+		E2850B26184B3FC600066613 /* Splash-SOF-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E2850B25184B3FC600066613 /* Splash-SOF-Default.png */; };
 		E2B18F461847B9C300656E35 /* Background-No-Gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F451847B9C300656E35 /* Background-No-Gradient.png */; };
 		E2B18F4A1847BD9100656E35 /* Slot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F491847BD9100656E35 /* Slot-Sprite.png */; };
 		E2B18F531847FDF600656E35 /* Manage-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F4F1847FDF600656E35 /* Manage-Icon.png */; };
@@ -628,6 +630,8 @@
 		7CF9526D182F194600FE1DDC /* Statistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statistics.m; sourceTree = "<group>"; };
 		7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = KBPlanetEarth.ttf; path = Resources/KBPlanetEarth.ttf; sourceTree = "<group>"; };
 		E25DFEB2184B1A9100991902 /* Empty-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty-Portrait.png"; sourceTree = "<group>"; };
+		E2850B23184B3E8E00066613 /* Splash-SOF-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash-SOF-Landscape.png"; sourceTree = "<group>"; };
+		E2850B25184B3FC600066613 /* Splash-SOF-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash-SOF-Default.png"; sourceTree = "<group>"; };
 		E2B18F451847B9C300656E35 /* Background-No-Gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background-No-Gradient.png"; sourceTree = "<group>"; };
 		E2B18F491847BD9100656E35 /* Slot-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slot-Sprite.png"; sourceTree = "<group>"; };
 		E2B18F4F1847FDF600656E35 /* Manage-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Manage-Icon.png"; sourceTree = "<group>"; };
@@ -1302,6 +1306,8 @@
 		E2EB99ED184A7E560069AA61 /* [NEW] Final Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E2850B25184B3FC600066613 /* Splash-SOF-Default.png */,
+				E2850B23184B3E8E00066613 /* Splash-SOF-Landscape.png */,
 				E2D9B55B184B37C100B02510 /* Background-Menu.png */,
 				E2D9B557184B354600B02510 /* Help-Icon.png */,
 				E2D9B554184B31FF00B02510 /* Credits-Icon.png */,
@@ -1416,6 +1422,7 @@
 				E2EB9A00184A7EF70069AA61 /* Pause-IconFinal.png in Resources */,
 				7CF6BECE184AFAF90054E471 /* Lvl7-Six-Sprite.png in Resources */,
 				7CF6BEC9184AFAF90054E471 /* Lvl2-Map-Sprite.png in Resources */,
+				E2850B26184B3FC600066613 /* Splash-SOF-Default.png in Resources */,
 				E2EB99FE184A7EF70069AA61 /* Manage-IconFinal.png in Resources */,
 				7CF6BEE0184AFAF90054E471 /* Lvl25-Grass-Sprite.png in Resources */,
 				7CF6BEF6184AFAF90054E471 /* Lvl47-Goose-Sprite.png in Resources */,
@@ -1448,6 +1455,7 @@
 				E2EB9A03184A7EF70069AA61 /* Forward-IconFinal.png in Resources */,
 				E2EB9A09184A7EF70069AA61 /* Home-IconFinal.png in Resources */,
 				7CF6BED9184AFAF90054E471 /* Lvl18-Whip-Sprite.png in Resources */,
+				E2850B24184B3E8E00066613 /* Splash-SOF-Landscape.png in Resources */,
 				7CF6BEE5184AFAF90054E471 /* Lvl30-Ball-Sprite.png in Resources */,
 				7CF6BEDE184AFAF90054E471 /* Lvl23-Skull-Sprite.png in Resources */,
 				7CF6BEF5184AFAF90054E471 /* Lvl46-Boot-Sprite.png in Resources */,
