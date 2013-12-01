@@ -58,7 +58,7 @@
         
         // Initialize and add the background sprites
         CCSprite *background = [CCSprite spriteWithFile:@"Default-Background.png"];
-        CCLabelTTF *titleName = [CCLabelTTF labelWithString:@"Level Select" fontName:@"KBPlanetEarth" fontSize:48];
+        CCLabelTTF *titleName = [CCLabelTTF labelWithString:@"LEVEL SELECT" fontName:@"KBPlanetEarth" fontSize:48];
         
         background.position = ccp(_size.width/2, _size.height/2);
         titleName.position = ccp(_size.width/2, _size.height-75);
@@ -78,8 +78,8 @@
 		// add the menu to the layer
 		[self addChild:menu];
         
-        _lastLevelsPage = [CCSprite spriteWithFile:@"Arrow.png"];
-        _nextLevelsPage = [CCSprite spriteWithFile:@"Arrow.png"];
+        _lastLevelsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
+        _nextLevelsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
         
         _lastLevelsPage.position = ccp(_size.width/4 + 225, _size.height/3 - 200);
         _nextLevelsPage.position = ccp(_size.width/4 + 325, _size.height/3 - 200);
