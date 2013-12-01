@@ -218,6 +218,7 @@
 		7CF6BEF7184AFAF90054E471 /* Lvl48-Foot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC5184AFAF90054E471 /* Lvl48-Foot-Sprite.png */; };
 		7CF6BEF8184AFAF90054E471 /* Lvl49-Wood-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC6184AFAF90054E471 /* Lvl49-Wood-Sprite.png */; };
 		7CF6BEF9184AFAF90054E471 /* Lvl50-Leaf-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC7184AFAF90054E471 /* Lvl50-Leaf-Sprite.png */; };
+		7CF6BF02184B46EC0054E471 /* PauseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6BF01184B46EC0054E471 /* PauseLayer.m */; };
 		7CF9526E182F194600FE1DDC /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9526D182F194600FE1DDC /* Statistics.m */; };
 		7CFCBE72183172A200EF6233 /* KBPlanetEarth.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */; };
 		E25DFEB3184B1A9100991902 /* Empty-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E25DFEB2184B1A9100991902 /* Empty-Portrait.png */; };
@@ -626,6 +627,8 @@
 		7CF6BEC5184AFAF90054E471 /* Lvl48-Foot-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl48-Foot-Sprite.png"; sourceTree = "<group>"; };
 		7CF6BEC6184AFAF90054E471 /* Lvl49-Wood-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl49-Wood-Sprite.png"; sourceTree = "<group>"; };
 		7CF6BEC7184AFAF90054E471 /* Lvl50-Leaf-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl50-Leaf-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BF00184B46EC0054E471 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayer.h; sourceTree = "<group>"; };
+		7CF6BF01184B46EC0054E471 /* PauseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseLayer.m; sourceTree = "<group>"; };
 		7CF9526C182F194600FE1DDC /* Statistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statistics.h; sourceTree = "<group>"; };
 		7CF9526D182F194600FE1DDC /* Statistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statistics.m; sourceTree = "<group>"; };
 		7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = KBPlanetEarth.ttf; path = Resources/KBPlanetEarth.ttf; sourceTree = "<group>"; };
@@ -685,6 +688,8 @@
 		7C68510B1819FC8200A52AAA /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				7CF6BF00184B46EC0054E471 /* PauseLayer.h */,
+				7CF6BF01184B46EC0054E471 /* PauseLayer.m */,
 				7C753E20181A41650081BC90 /* GameLayer.h */,
 				7C753E21181A41650081BC90 /* GameLayer.m */,
 				7CF3D9D2181C73A4003DC0E5 /* Slot.h */,
@@ -1512,6 +1517,7 @@
 				7CF099651818BD2F0043FD9F /* TransformUtils.m in Sources */,
 				7CF098B21818BD2B0043FD9F /* CCNode+Debug.m in Sources */,
 				7CF0988D1818BD2A0043FD9F /* ccFPSImages.m in Sources */,
+				7CF6BF02184B46EC0054E471 /* PauseLayer.m in Sources */,
 				7C753E22181A41650081BC90 /* GameLayer.m in Sources */,
 				7C7D35E6181CF91100CC2C02 /* VictoryLayer.m in Sources */,
 				7CF099131818BD2D0043FD9F /* CCTMXXMLParser.m in Sources */,
