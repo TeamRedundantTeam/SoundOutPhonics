@@ -164,7 +164,7 @@
             Account * loggedInAccount = [Singleton sharedSingleton].loggedInAccount;
             if (loggedInAccount.accountId == self.account.accountId) {
                 loggedInAccount.name = self.nameTextBox.text;
-                loggedInAccount.name = self.passwordTextBox.text;
+                loggedInAccount.password = self.passwordTextBox.text;
             }
             
             // Update the layer title
