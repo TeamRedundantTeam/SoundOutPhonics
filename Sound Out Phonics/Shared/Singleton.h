@@ -45,4 +45,6 @@
 
 // getter method to the selected level
 - (Level *)selectedLevel;
+
+@property (nonatomic, retain) NSArray *levels;
 @end

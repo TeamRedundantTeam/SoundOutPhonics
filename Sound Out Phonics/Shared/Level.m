@@ -29,6 +29,7 @@
 @synthesize name = _name;
 @synthesize graphemes = _graphemes;
 @synthesize spriteLocation = _spriteLocation;
+@synthesize nextLevel = _nextLevel;
 
 // initializes the object with parameters received from the XML parser
 - (id)initWithParameters:(int)levelId withName:(NSString *)name withGraphemes:(NSString *)graphemes withImageLocation:(NSString *)imageLocation {
@@ -37,6 +38,7 @@
         self.name = name;
         self.graphemes = graphemes;
         self.spriteLocation = imageLocation;
+        self.nextLevel = nil;
     }
     return self;
 }
@@ -44,7 +46,8 @@
 // creates the sprite based on the specified spriteLocation
 - (void)createSprite {
     //Needs to be resized
-    _sprite = [CCSprite spriteWithFile:self.spriteLocation];
+    [_sprite release];
+    _sprite = [[CCSprite alloc] initWithFile:self.spriteLocation];
 }
 
 // returns reference to the sprite
@@ -66,6 +69,7 @@
     self.name = nil;
     self.graphemes = nil;
     self.spriteLocation = nil;
+    [_sprite release];
     [super dealloc];
 }
 @end

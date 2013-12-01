@@ -27,8 +27,6 @@
 
 @implementation LevelSelectLayer
 
-@synthesize levels = _levels;
-
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 + (CCScene *)scene
 {
@@ -93,10 +91,25 @@
         [self addChild:_lastLevelsPage];
         [self addChild:_nextLevelsPage];
         
-        // create the URL to the XML file and parse it
-        NSURL *xmlURL = [[NSBundle mainBundle] URLForResource:@"Levels" withExtension:@"xml"];
-        self.levels = [[LevelParser alloc] loadLevels:xmlURL];
-        [xmlURL release];
+        if (![Singleton sharedSingleton].levels) {
+            // create the URL to the XML file and parse it
+            NSURL *xmlURL = [[NSBundle mainBundle] URLForResource:@"Levels" withExtension:@"xml"];
+            _levels = [[LevelParser alloc] loadLevels:xmlURL];
+            [xmlURL release];
+            
+            Level *previousLevel = nil;
+            for (Level *level in _levels) {
+                
+                if (previousLevel)
+                    previousLevel.nextLevel = level;
+                
+                previousLevel = level;
+            }
+            
+            [Singleton sharedSingleton].levels = _levels;
+        }
+        else
+            _levels = [Singleton sharedSingleton].levels;
         
         _currentLevelsPage = 1;
         [self displayLevels];
@@ -115,10 +128,10 @@
     int maxNumOfRows = 3;
     
     // Make the next and last page arrow visible
-    if ([self.levels count] > resultsPerRow * maxNumOfRows) {
+    if ([_levels count] > resultsPerRow * maxNumOfRows) {
         if (_currentLevelsPage != 1)
             _lastLevelsPage.visible = true;
-        if (_currentLevelsPage * resultsPerRow * maxNumOfRows < [self.levels count])
+        if (_currentLevelsPage * resultsPerRow * maxNumOfRows < [_levels count])
             _nextLevelsPage.visible = true;
     
         // display of what page it is
@@ -134,7 +147,7 @@
     int row = 0;
     
     // for each level create an image to display to select
-    for (Level *level in self.levels) {
+    for (Level *level in _levels) {
         if (i >= (_currentLevelsPage - 1) * resultsPerRow * maxNumOfRows && i < _currentLevelsPage * resultsPerRow * maxNumOfRows) {
             // display the level name and set its position
             CCLabelTTF *levelName = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Level: %d",level.levelId] fontName:@"KBPlanetEarth" fontSize:24];
@@ -184,7 +197,7 @@
 - (void)tapReleaseAt:(CGPoint)releaseLocation {
     // Checks if one of the Levels has been selected
     
-    for (Level *level in self.levels) {
+    for (Level *level in _levels) {
         if (level.sprite.visible && CGRectContainsPoint(level.sprite.boundingBox, releaseLocation)) {
             [Singleton sharedSingleton].selectedLevel = level;
             
@@ -234,21 +247,12 @@
     _lastLevelsPage.visible = false;
     _nextLevelsPage.visible = false;
     
-    for (Level *level in self.levels)
+    for (Level *level in _levels)
         level.sprite.visible = false;
 }
 
 // on "dealloc" you need to release all your retained objects
 - (void)dealloc {
-    
-    // Releasing Level objects
-    for (Level *level in self.levels) {
-        if (level != [Singleton sharedSingleton].selectedLevel) {
-            [level release];
-        }
-    }
-    [self.levels release];
-    
 	[super dealloc];
 }
 

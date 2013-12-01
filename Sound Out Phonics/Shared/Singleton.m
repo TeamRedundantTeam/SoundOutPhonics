@@ -65,7 +65,6 @@ static Singleton *_sigleton = nil;
 
 // setter method that sets the selected level based on the input. The previous selected level is released from memory
 - (void)setSelectedLevel:(Level *) input {
-    [_selectedLevel release];
     _selectedLevel = input;
 }
 
@@ -82,6 +81,10 @@ static Singleton *_sigleton = nil;
 - (void)dealloc {
     [_loggedInAccount release];
     [_selectedLevel release];
+    for (Level *level in self.levels) {
+        [level release];
+    }
+    [self.levels release];
     [super dealloc];
 }
 @end

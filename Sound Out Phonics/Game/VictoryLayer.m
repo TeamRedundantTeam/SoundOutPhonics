@@ -30,22 +30,44 @@
 
 - (id)initWithColor:(ccColor4B)color withScore:(NSString *)score {
     if ((self = [super initWithColor:color])) {
-        [self setTouchEnabled:YES];
-        CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
-        // Messages
-        CCLabelTTF * victoryMessage = [CCLabelTTF labelWithString:@"YOU WIN!" fontName:@"KBPlanetEarth" fontSize:64];
+        [self setTouchEnabled:YES];
+        _size = [[CCDirector sharedDirector] winSize];
+        
+        // create and initialize a background
+        CCSprite *background = [CCSprite spriteWithFile:@"Default-Background.png"];
+        
+        background.position = ccp(_size.width/2, _size.height/2);
+        background.scale = 0.75;
+        [self addChild:background];
+        
+        // create header text
+        CCLabelTTF *layerName = [CCLabelTTF labelWithString:@"YOU WIN!" fontName:@"KBPlanetEarth" fontSize:48];
+        layerName.position = ccp(_size.width/2, _size.height - 150);
+        [self addChild:layerName];
+        
         CCLabelTTF *scoreMessage = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score: %@", score] fontName:@"KBPlanetEarth" fontSize:48];
-        _playAgainMessage = [CCLabelTTF labelWithString:@"play again?" fontName:@"KBPlanetEarth" fontSize:48];
-        _mainMenuMessage = [CCLabelTTF labelWithString:@"main menu" fontName:@"KBPlanetEarth" fontSize:48];
-        [victoryMessage setPosition:ccp(screenSize.width/2, screenSize.height/2 + 150)];
-        [scoreMessage setPosition:ccp(screenSize.width/2, screenSize.height/2 + 75)];
-        [_playAgainMessage setPosition:ccp(screenSize.width/2, screenSize.height/2)];
-        [_mainMenuMessage setPosition:ccp(screenSize.width/2, screenSize.height/2 - 50)];
-        [self addChild:victoryMessage];
+        [scoreMessage setPosition:ccp(_size.width/2, _size.height - 225)];
         [self addChild:scoreMessage];
-        [self addChild:_playAgainMessage];
-        [self addChild:_mainMenuMessage];
+        
+        _playAgainButton = [CCLabelTTF labelWithString:@"Play Again?" fontName:@"KBPlanetEarth" fontSize:48];
+        [_playAgainButton setPosition:ccp(_size.width/2, _size.height - 325)];
+        [self addChild:_playAgainButton];
+        
+        _nextLevelButton = [StateText labelWithString:@"Next Level" fontName:@"KBPlanetEarth" fontSize:48];
+        [_nextLevelButton setPosition:ccp(_size.width/2, _size.height - 400)];
+        
+        // Check if there is a next level and set the next level button accordingly
+        if ([Singleton sharedSingleton].selectedLevel.nextLevel)
+            [_nextLevelButton setState:true];
+        else
+            [_nextLevelButton setState:false];
+        [self addChild:_nextLevelButton];
+        
+        _levelSelectButton = [CCLabelTTF labelWithString:@"Level Select" fontName:@"KBPlanetEarth" fontSize:48];
+        [_levelSelectButton setPosition:ccp(_size.width/2, _size.height - 475)];
+        [self addChild:_levelSelectButton];
+        
     }
     return self;
 }
@@ -58,22 +80,29 @@
 // handles the events that happen when the release occurs at a specific location
 - (void)tapReleaseAt:(CGPoint)releaseLocation {
 
-    if (CGRectContainsPoint(_playAgainMessage.boundingBox, releaseLocation)) {
+    if (CGRectContainsPoint(_playAgainButton.boundingBox, releaseLocation)) {
         
         // create the new game scene
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                   transitionWithDuration:1.0
-                                                   scene:[GameLayer sceneWithLevel:[Singleton sharedSingleton].selectedLevel withAttempts:0]]];
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0
+                                     scene:[GameLayer sceneWithLevel:[Singleton sharedSingleton].selectedLevel withAttempts:0]]];
 
         [self.parent removeChild:self cleanup:YES];
     }
     
-    if (CGRectContainsPoint(_mainMenuMessage.boundingBox, releaseLocation)) {
+    if (_nextLevelButton.state && CGRectContainsPoint(_nextLevelButton.boundingBox, releaseLocation)) {
+        
+        // create the new game scene
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0
+                                     scene:[GameLayer sceneWithLevel:[Singleton sharedSingleton].selectedLevel.nextLevel withAttempts:0]]];
+        
+        [self.parent removeChild:self cleanup:YES];
+    }
+    
+    if (CGRectContainsPoint(_levelSelectButton.boundingBox, releaseLocation)) {
         
         // exit to the menu
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                   transitionWithDuration:1.0
-                                                   scene:[MenuLayer scene]]];
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0
+                                     scene:[LevelSelectLayer scene]]];
         [self.parent removeChild:self cleanup:YES];
     }
 }

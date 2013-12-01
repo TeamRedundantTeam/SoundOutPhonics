@@ -74,6 +74,8 @@
         // information about the current level
         _level = level;
         
+        [Singleton sharedSingleton].selectedLevel = level;
+        
         // add picture sprite object
         [_level createSprite];
         _level.sprite.position = ccp(_size.width/2, _size.height/2+200);
@@ -86,7 +88,7 @@
         int results = 7;
         
         // Check that the grapheme number does not exceed the maximum result number. Otherwise the graphemes will be outside of the viewable area.
-        if (graphemeList.count < results) {
+        if (graphemeList.count <= results) {
         
             // create Slots Array
             _slots = [[NSMutableArray alloc] init];
@@ -113,7 +115,7 @@
                 CCLabelTTF *grapheme = [CCLabelTTF labelWithString:[graphemeList objectAtIndex:i]
                                     fontName:@"KBPlanetEarth" fontSize:64];
             
-                CGFloat xpos = _size.width/2 + 140 - (graphemeList.count - 1 ) * 40 + i * 80;
+                CGFloat xpos = _size.width/2 - (graphemeList.count - 1 ) * 40 + i * 80;
                 CGFloat ypos = _size.height/2-25;
                 grapheme.position = ccp(xpos, ypos);
             

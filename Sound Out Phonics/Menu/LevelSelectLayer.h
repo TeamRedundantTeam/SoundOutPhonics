@@ -32,6 +32,7 @@
 #import "Level.h"
 #import "Singleton.h"
 #import "GameLayer.h"
+#import "MenuLayer.h"
 
 @interface LevelSelectLayer : CCLayer {
     NSArray *_levels; // Reference to all the loaded levels
@@ -41,7 +42,6 @@
     CCSprite *_lastLevelsPage; // Reference to the previous level page arrow sprite
 }
 
-@property (retain, nonatomic) NSArray *levels;
 // returns a CCScene that contains the LevelLayer as the only child
 + (CCScene *)scene;
 

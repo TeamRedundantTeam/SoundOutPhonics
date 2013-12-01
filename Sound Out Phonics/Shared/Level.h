@@ -30,17 +30,19 @@
     NSString *_graphemes;
     NSString *_spriteLocation;
     CCSprite *_sprite;
+    Level *_nextLevel;
 }
 
 @property (nonatomic, assign) int levelId;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *graphemes;
 @property (nonatomic, copy) NSString *spriteLocation;
+@property (nonatomic, retain) Level *nextLevel;
 
 - (id)initWithParameters:(int)levelId withName:(NSString *)name withGraphemes:(NSString *)graphemes withImageLocation:(NSString *)imageLocation;
 - (void)createSprite;
 - (CCSprite *)sprite;
 - (void)removeSprite;
--(NSString *) description;
+- (NSString *) description;
 
 @end

@@ -23,12 +23,17 @@
 
 #import "cocos2d.h"
 #import "GameLayer.h"
-#import "MenuLayer.h"
+#import "LevelSelectLayer.h"
 #import "Singleton.h"
+#import "StateText.h"
 
 @interface VictoryLayer : CCLayerColor {
-    CCLabelTTF *_playAgainMessage;
-    CCLabelTTF *_mainMenuMessage;
+    CGSize _size;
+    CCLabelTTF *_playAgainButton;
+    StateText *_nextLevelButton;
+    CCLabelTTF *_levelSelectButton;
+    
 }
 - (id)initWithColor:(ccColor4B)color withScore:(NSString *)score;
+
 @end
