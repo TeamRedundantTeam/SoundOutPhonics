@@ -76,7 +76,7 @@
         
         // add picture sprite object
         [_level createSprite];
-        _level.sprite.position = ccp(_size.width/5.5, _size.height - _size.height/4.5);
+        _level.sprite.position = ccp(_size.width/2, _size.height/2+200);
         [self addChild:_level.sprite];
         
         // create the graphyme list in randomized order
@@ -114,7 +114,7 @@
                                     fontName:@"KBPlanetEarth" fontSize:64];
             
                 CGFloat xpos = _size.width/2 + 140 - (graphemeList.count - 1 ) * 40 + i * 80;
-                CGFloat ypos = _size.height - _size.height/4.5;
+                CGFloat ypos = _size.height/2-25;
                 grapheme.position = ccp(xpos, ypos);
             
                 [self addChild:grapheme];
@@ -124,18 +124,23 @@
         else
             NSLog(@"Error could not add that many graphemes to the screen at this time. The maximum number of graphemes allowed on the screen is %d",results);
         
+        // add word border
+        CCSprite *wordBorder = [CCSprite spriteWithFile:@"Border-Play.png"];                  // create and initialize the wordBorder sprite (png)
+        wordBorder.position = ccp(_size.width/2, _size.height/2+200);                         // center wordBorder layer
+        [self addChild: wordBorder];                                                          // add wordBorder layer
+
         // add Submit Button
-        _submitButton = [[StateButton alloc] initWithFile:@"Submit-Button.png" withPosition:ccp(_size.width - _size.width/9, _size.height/15)];
+        _submitButton = [[StateButton alloc] initWithFile:@"Login-Button.png" withPosition:ccp(_size.width - _size.width/9, _size.height/15)];
         [_submitButton setState:false];
         [self addChild:_submitButton];
         
         _attempts = attempts;
-        NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
+        NSString *score = [NSString stringWithFormat:@"score: %d", [self generateScore:_attempts]];
         _levelScore = [CCLabelTTF labelWithString:score fontName:@"KBPlanetEarth" fontSize:24];
         _levelScore.position = ccp(_size.width/2, _size.height - 24);
         [self addChild:_levelScore];
         
-        _resetButton = [CCSprite spriteWithFile:@"Reset-Button.png"];
+        _resetButton = [CCSprite spriteWithFile:@"Refresh-IconFinal.png"];
         _resetButton.position = ccp(_size.width - 50, _size.height - 50);
         [self addChild:_resetButton];
         
@@ -259,7 +264,7 @@
         _attempts++;
         
         // Change the old score to the new score
-        NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
+        NSString *score = [NSString stringWithFormat:@"score: %d", [self generateScore:_attempts]];
         [_levelScore setString:score];
         
         // background color. Transparent red
@@ -355,7 +360,7 @@
         // put all graphemes in the original position
         for (CCSprite *grapheme in _graphemes) {
             CGFloat xpos = _size.width/2 + 140 - (_graphemes.count - 1 ) * 40 + i * 80;
-            CGFloat ypos = _size.height - _size.height/4.5;
+            CGFloat ypos = _size.height/2-25;
             grapheme.position = ccp(xpos, ypos);
             i++;
         }
@@ -370,7 +375,7 @@
         _attempts++;
         
         // Change the old score to the new score
-        NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
+        NSString *score = [NSString stringWithFormat:@"score: %d", [self generateScore:_attempts]];
         [_levelScore setString:score];
     }
 
