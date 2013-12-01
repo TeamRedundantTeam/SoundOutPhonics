@@ -58,10 +58,10 @@
 		
         // determines which intor image to play
 		if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-			background = [CCSprite spriteWithFile:@"Default.png"];
+			background = [CCSprite spriteWithFile:@"Splash-SOF-Default.png"];
 			background.rotation = 90;
 		} else {
-			background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
+			background = [CCSprite spriteWithFile:@"Splash-SOF-Landscape.png"];
 		}
 		background.position = ccp(size.width/2, size.height/2);
 
