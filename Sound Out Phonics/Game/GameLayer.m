@@ -360,7 +360,7 @@
         // put all graphemes in the original position
         for (CCSprite *grapheme in _graphemes) {
             CGFloat xpos = _size.width/2 + 140 - (_graphemes.count - 1 ) * 40 + i * 80;
-            CGFloat ypos = _size.height - _size.height/4.5;
+            CGFloat ypos = _size.height/2-25;
             grapheme.position = ccp(xpos, ypos);
             i++;
         }
@@ -375,7 +375,7 @@
         _attempts++;
         
         // Change the old score to the new score
-        NSString *score = [NSString stringWithFormat:@"Score: %d", [self generateScore:_attempts]];
+        NSString *score = [NSString stringWithFormat:@"score: %d", [self generateScore:_attempts]];
         [_levelScore setString:score];
     }
 
