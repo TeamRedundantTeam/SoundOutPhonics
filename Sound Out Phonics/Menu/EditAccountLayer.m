@@ -120,7 +120,7 @@
         _errorMessage.visible = false;
         [self addChild:_errorMessage];
         
-        _exitButton = [CCSprite spriteWithFile:@"Exit-Button.png"];
+        _exitButton = [CCSprite spriteWithFile:@"Cancel-IconFinal.png"];
         _exitButton.position = ccp(size.width/2 + 375, size.height/2 + 290);
         [self addChild:_exitButton];
     }
