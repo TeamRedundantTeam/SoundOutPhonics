@@ -51,7 +51,7 @@
 	if((self = [super init])) {
 		CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
         
-        CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"];     // create and initialize the background sprite (png)
+        CCSprite *background = [CCSprite spriteWithFile:@"Background-Menu.png"];     // create and initialize the background sprite (png)
         background.position = ccp(size.width/2, size.height/2);                             // center background layer
         [self addChild: background];
         

@@ -55,20 +55,19 @@
         
         // Initialize and add the background sprites
         CCSprite *background = [CCSprite spriteWithFile:@"Default-Background.png"]; // create and initialize the background sprite (png)
-        CCSprite *backButton = [CCSprite spriteWithFile:@"Back-Icon.png"];
-        CCLabelTTF *titleName = [CCLabelTTF labelWithString:@"Manage Accounts" fontName:@"KBPlanetEarth" fontSize:48];
+        CCLabelTTF *titleName = [CCLabelTTF labelWithString:@"MANAGE ACCOUNTS" fontName:@"KBPlanetEarth" fontSize:48];
         
         background.position = ccp(_size.width/2, _size.height/2);
-        backButton.position = ccp(_size.width - 180, _size.height - _size.height + 50);
         titleName.position = ccp(_size.width/2, _size.height-75);
         
         [self addChild:background];
         [self addChild:titleName];
-        [self addChild:backButton];
         
-        _backButton = [CCLabelTTF labelWithString:@"back" fontName:@"KBPlanetEarth" fontSize:48];
-        _backButton.position = ccp(_size.width - 100, _size.height - _size.height + 40);
-        [self addChild:_backButton];
+        // add the HOME icon to the screen which returns the user to the main menu on press
+        CCMenuItemImage *itemHome = [CCMenuItemImage itemWithNormalImage:@"Home-IconFinal.png" selectedImage:@"Home-IconFinal.png" target:self selector:@selector(goHome:)];
+        CCMenu *menu = [CCMenu menuWithItems:itemHome, nil];
+        [menu setPosition:ccp(_size.width - 100, _size.height - _size.height + 40)];
+		[self addChild:menu];
         
         // load the accounts from the database
         self.accounts = [[SOPDatabase database] loadAccounts];
@@ -116,6 +115,11 @@
         [self addChild:_createAccountButton];
     }
     return self;
+}
+
+// function called by pressing HOME button to return to main menu
+- (void)goHome:(id)sender {
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
 }
 
 // create the account avatars and names

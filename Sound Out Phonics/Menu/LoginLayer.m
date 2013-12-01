@@ -57,7 +57,7 @@
         [self setTouchEnabled:YES];
         
         // Create and initialize a background sprite
-        CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"Background-Menu.png"];
         background.position = ccp(_size.width/2, _size.height/2);
         [self addChild: background];
 

@@ -229,6 +229,7 @@
 		E2B18F5A1848035E00656E35 /* Play-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F581848035E00656E35 /* Play-Icon.png */; };
 		E2D9B556184B31FF00B02510 /* Credits-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D9B554184B31FF00B02510 /* Credits-Icon.png */; };
 		E2D9B558184B354600B02510 /* Help-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D9B557184B354600B02510 /* Help-Icon.png */; };
+		E2D9B55C184B37C100B02510 /* Background-Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D9B55B184B37C100B02510 /* Background-Menu.png */; };
 		E2EB99FC184A7EF70069AA61 /* Statistic-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99EE184A7EF70069AA61 /* Statistic-IconFinal.png */; };
 		E2EB99FD184A7EF70069AA61 /* Back-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99EF184A7EF70069AA61 /* Back-IconFinal.png */; };
 		E2EB99FE184A7EF70069AA61 /* Manage-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99F0184A7EF70069AA61 /* Manage-IconFinal.png */; };
@@ -635,6 +636,7 @@
 		E2B18F581848035E00656E35 /* Play-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play-Icon.png"; sourceTree = "<group>"; };
 		E2D9B554184B31FF00B02510 /* Credits-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Credits-Icon.png"; sourceTree = "<group>"; };
 		E2D9B557184B354600B02510 /* Help-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Help-Icon.png"; sourceTree = "<group>"; };
+		E2D9B55B184B37C100B02510 /* Background-Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background-Menu.png"; sourceTree = "<group>"; };
 		E2EB99EE184A7EF70069AA61 /* Statistic-IconFinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Statistic-IconFinal.png"; sourceTree = "<group>"; };
 		E2EB99EF184A7EF70069AA61 /* Back-IconFinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Back-IconFinal.png"; sourceTree = "<group>"; };
 		E2EB99F0184A7EF70069AA61 /* Manage-IconFinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Manage-IconFinal.png"; sourceTree = "<group>"; };
@@ -1300,6 +1302,7 @@
 		E2EB99ED184A7E560069AA61 /* [NEW] Final Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E2D9B55B184B37C100B02510 /* Background-Menu.png */,
 				E2D9B557184B354600B02510 /* Help-Icon.png */,
 				E2D9B554184B31FF00B02510 /* Credits-Icon.png */,
 				E2FB221A184ACF9100125633 /* Login-Button.png */,
@@ -1431,6 +1434,7 @@
 				E2EB9A07184A7EF70069AA61 /* Game-IconFinal.png in Resources */,
 				7CF6BEE3184AFAF90054E471 /* Lvl28-Bridge-Sprite.png in Resources */,
 				E2B18F461847B9C300656E35 /* Background-No-Gradient.png in Resources */,
+				E2D9B55C184B37C100B02510 /* Background-Menu.png in Resources */,
 				E2EB9A01184A7EF70069AA61 /* Refresh-IconFinal.png in Resources */,
 				7CAF16DD183070F900243C4B /* Icon.png in Resources */,
 				7CAF16DB183070F900243C4B /* Icon-Small.png in Resources */,
