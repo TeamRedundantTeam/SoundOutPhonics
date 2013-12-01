@@ -37,10 +37,10 @@
     int _currentAccountPage; // The account page that the user has currently selected
     CCSprite *_lastAccountsPage; // Sprite that allows users to move to the previous account page
     CCSprite *_nextAccountsPage; // Sprite that allows users to move to the next account page
-    CCLabelTTF *_backButton;
     StateText *_editAccountButton;
     CCLabelTTF *_createAccountButton;
     StateText *_deleteAccountButton;
+    CCSprite *_homeButton;
 }
 
 // returns a CCScene that contains the ManageAccountLayer as the only child

@@ -63,11 +63,9 @@
         [self addChild:background];
         [self addChild:titleName];
         
-        // add the HOME icon to the screen which returns the user to the main menu on press
-        CCMenuItemImage *itemHome = [CCMenuItemImage itemWithNormalImage:@"Home-IconFinal.png" selectedImage:@"Home-IconFinal.png" target:self selector:@selector(goHome:)];
-        CCMenu *menu = [CCMenu menuWithItems:itemHome, nil];
-        [menu setPosition:ccp(_size.width - 100, _size.height - _size.height + 40)];
-		[self addChild:menu];
+        _homeButton = [CCSprite spriteWithFile:@"Home-IconFinal.png"];
+        _homeButton.position = ccp(_size.width - 100, _size.height - _size.height + 40);
+        [self addChild:_homeButton];
         
         // load the accounts from the database
         self.accounts = [[SOPDatabase database] loadAccounts];
@@ -260,7 +258,8 @@
         [self addChild:layer];
     }
     
-    if (CGRectContainsPoint(_backButton.boundingBox, releaseLocation)) {
+    // Occurs when Home Button is pressed
+    if (CGRectContainsPoint(_homeButton.boundingBox, releaseLocation)) {
         [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
     }
     
