@@ -64,22 +64,19 @@
         
         // Initialize and add the background sprites
         CCSprite *background = [CCSprite spriteWithFile:@"Default-Background.png"]; // create and initialize the background sprite (png)
-        CCSprite *backButton = [CCSprite spriteWithFile:@"Back-Icon.png"];
-        CCLabelTTF *titleName = [CCLabelTTF labelWithString:@"Statistics" fontName:@"KBPlanetEarth" fontSize:48];
+        CCLabelTTF *titleName = [CCLabelTTF labelWithString:@"STATISTICS" fontName:@"KBPlanetEarth" fontSize:48];
         
         background.position = ccp(_size.width/2, _size.height/2); // center background layer
-        backButton.position = ccp(_size.width - 180, _size.height - _size.height + 50);
         titleName.position = ccp(_size.width/2, _size.height-75);
 
         [self addChild:background];
         [self addChild:titleName];
-        [self addChild:backButton];
 
         // Initialize and add the paging button sprites
-        _lastStatisticsPage = [CCSprite spriteWithFile:@"Arrow.png"];
-        _nextStatisticsPage = [CCSprite spriteWithFile:@"Arrow.png"];
-        _lastAccountsPage = [CCSprite spriteWithFile:@"Arrow.png"];
-        _nextAccountsPage = [CCSprite spriteWithFile:@"Arrow.png"];
+        _lastStatisticsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
+        _nextStatisticsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
+        _lastAccountsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
+        _nextAccountsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
         
         _lastStatisticsPage.position = ccp(_size.width/4 + 225, _size.height/3 - 200);
         _nextStatisticsPage.position = ccp(_size.width/4 + 325, _size.height/3 - 200);
@@ -105,14 +102,11 @@
         [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
         [CCMenuItemFont setFontSize:48]; // set the default CCMenuItemFont size
         
-        CCMenuItem *itemBack = [CCMenuItemFont itemWithString:@"back" block:^(id sender) {
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                       transitionWithDuration:1.0
-                                                       scene:[MenuLayer scene]]];
-        }];
-
-        CCMenu *menu = [CCMenu menuWithItems:itemBack, nil];
-		[menu setPosition:ccp(_size.width - 100, _size.height - _size.height + 40)];
+        CCMenuItemImage *itemHome = [CCMenuItemImage itemWithNormalImage:@"Home-IconFinal.png" selectedImage:@"Home-IconFinal.png" target:self selector:@selector(goHome:)];
+        
+        CCMenu *menu = [CCMenu menuWithItems:itemHome, nil];
+		
+        [menu setPosition:ccp(_size.width - 100, _size.height - _size.height + 40)];
         
 		// add the menu to the layer
 		[self addChild:menu];
@@ -130,6 +124,11 @@
         [self displayAccounts:_currentAccountsPage];
     }
     return self;
+}
+
+// function called by pressing HOME button to return to main menu
+- (void)goHome:(id)sender {
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
 }
 
 // display all the students profile which is either pulled from the database or the student itself
