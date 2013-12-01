@@ -24,9 +24,7 @@
 
 #import "cocos2d.h"
 #import <UIKit/UIKit.h>
-// Needed to obtain the Navigation Controller
-#import "AppDelegate.h"
-
+#import "AppDelegate.h"                                         // Needed to obtain the Navigation Controller
 #import "MenuLayer.h"
 #import "SOPDatabase.h"
 #import "Account.h"
@@ -34,15 +32,15 @@
 #import "Singleton.h"
 
 @interface LoginLayer : CCLayer <UITextFieldDelegate> {
-    CGSize _size; // Used to store the screen size
-    UITextField *_passwordTextBox; // password textbox input field
-    NSArray *_accounts; // all accounts from the database
-    Account *_selectedAccount; // account that is currently selected by the user
-    StateButton *_loginButton; // login button
-    CCSprite *_selectedAvatarBorder; // a border for avatar to indicate that it is selected
-    int _currentAccountPage; // The account page that the user has currently selected
-    CCSprite *_lastAccountsPage; // Sprite that allows users to move to the previous account page
-    CCSprite *_nextAccountsPage; // Sprite that allows users to move to the next account page
+    CGSize _size;                                               // used to store the screen size
+    UITextField *_passwordTextBox;                              // password textbox input field
+    NSArray *_accounts;                                         // all accounts from the database
+    Account *_selectedAccount;                                  // account that is currently selected by the user
+    StateButton *_loginButton;                                  // login button
+    CCSprite *_selectedAvatarBorder;                            // a border for avatar to indicate that it is selected
+    int _currentAccountPage;                                    // the account page that the user has currently selected
+    CCSprite *_lastAccountsPage;                                // sprite that allows users to move to the previous account page
+    CCSprite *_nextAccountsPage;                                // sprite that allows users to move to the next account page
 }
 
 @property (retain, nonatomic) UITextField *passwordTextBox;
