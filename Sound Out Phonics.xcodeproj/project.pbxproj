@@ -19,31 +19,6 @@
 		7C5DDA88183180A90047A808 /* Submit-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA87183180A90047A808 /* Submit-Button.png */; };
 		7C5DDA93183182200047A808 /* Empty-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA91183182200047A808 /* Empty-Portrait.png */; };
 		7C5DDA94183182200047A808 /* Selected-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA92183182200047A808 /* Selected-Portrait.png */; };
-		7C5DDAB2183183B70047A808 /* Lvl1-Can-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA98183183B70047A808 /* Lvl1-Can-Sprite.png */; };
-		7C5DDAB3183183B70047A808 /* Lvl2-Map-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA99183183B70047A808 /* Lvl2-Map-Sprite.png */; };
-		7C5DDAB4183183B70047A808 /* Lvl3-Drum-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA9A183183B70047A808 /* Lvl3-Drum-Sprite.png */; };
-		7C5DDAB5183183B70047A808 /* Lvl4-Bus-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA9B183183B70047A808 /* Lvl4-Bus-Sprite.png */; };
-		7C5DDAB6183183B70047A808 /* Lvl5-Slug-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA9C183183B70047A808 /* Lvl5-Slug-Sprite.png */; };
-		7C5DDAB7183183B70047A808 /* Lvl6-Dig-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA9D183183B70047A808 /* Lvl6-Dig-Sprite.png */; };
-		7C5DDAB8183183B70047A808 /* Lvl7-Six-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA9E183183B70047A808 /* Lvl7-Six-Sprite.png */; };
-		7C5DDAB9183183B70047A808 /* Lvl8-Fox-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA9F183183B70047A808 /* Lvl8-Fox-Sprite.png */; };
-		7C5DDABA183183B70047A808 /* Lvl9-Frog-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAA0183183B70047A808 /* Lvl9-Frog-Sprite.png */; };
-		7C5DDABB183183B70047A808 /* Lvl10-Pen-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAA1183183B70047A808 /* Lvl10-Pen-Sprite.png */; };
-		7C5DDABC183183B70047A808 /* Lvl11-Tent-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAA2183183B70047A808 /* Lvl11-Tent-Sprite.png */; };
-		7C5DDABD183183B70047A808 /* Lvl12-Trash-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAA3183183B70047A808 /* Lvl12-Trash-Sprite.png */; };
-		7C5DDABE183183B70047A808 /* Lvl13-Fish-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAA4183183B70047A808 /* Lvl13-Fish-Sprite.png */; };
-		7C5DDABF183183B70047A808 /* Lvl14-Cloth-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAA5183183B70047A808 /* Lvl14-Cloth-Sprite.png */; };
-		7C5DDAC0183183B70047A808 /* Lvl15-Branch-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAA6183183B70047A808 /* Lvl15-Branch-Sprite.png */; };
-		7C5DDAC1183183B70047A808 /* Lvl16-Bench-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAA7183183B70047A808 /* Lvl16-Bench-Sprite.png */; };
-		7C5DDAC2183183B70047A808 /* Lvl17-Chin-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAA8183183B70047A808 /* Lvl17-Chin-Sprite.png */; };
-		7C5DDAC3183183B70047A808 /* Lvl18-Whip-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAA9183183B70047A808 /* Lvl18-Whip-Sprite.png */; };
-		7C5DDAC4183183B70047A808 /* Lvl19-Lung-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAAA183183B70047A808 /* Lvl19-Lung-Sprite.png */; };
-		7C5DDAC5183183B70047A808 /* Lvl20-Swing-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAAB183183B70047A808 /* Lvl20-Swing-Sprite.png */; };
-		7C5DDAC6183183B70047A808 /* Lvl21-Pink-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAAC183183B70047A808 /* Lvl21-Pink-Sprite.png */; };
-		7C5DDAC7183183B70047A808 /* Lvl22-Cliff-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAAD183183B70047A808 /* Lvl22-Cliff-Sprite.png */; };
-		7C5DDAC8183183B70047A808 /* Lvl23-Skull-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAAE183183B70047A808 /* Lvl23-Skull-Sprite.png */; };
-		7C5DDAC9183183B70047A808 /* Lvl24-Doll-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAAF183183B70047A808 /* Lvl24-Doll-Sprite.png */; };
-		7C5DDACA183183B70047A808 /* Lvl25-Grass-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDAB0183183B70047A808 /* Lvl25-Grass-Sprite.png */; };
 		7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
 		7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
 		7C736C4D184829B000A4ED10 /* LevelSelectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C736C4C184829B000A4ED10 /* LevelSelectLayer.m */; };
@@ -194,6 +169,56 @@
 		7CF6BE2B184AE2B70054E471 /* StateText.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6BE2A184AE2B70054E471 /* StateText.m */; };
 		7CF6BE30184AE2CA0054E471 /* EditAccountLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6BE2D184AE2CA0054E471 /* EditAccountLayer.m */; };
 		7CF6BE31184AE2CA0054E471 /* ManageAccountLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6BE2F184AE2CA0054E471 /* ManageAccountLayer.m */; };
+		7CF6BEC8184AFAF90054E471 /* Lvl1-Can-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE96184AFAF90054E471 /* Lvl1-Can-Sprite.png */; };
+		7CF6BEC9184AFAF90054E471 /* Lvl2-Map-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE97184AFAF90054E471 /* Lvl2-Map-Sprite.png */; };
+		7CF6BECA184AFAF90054E471 /* Lvl3-Drum-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE98184AFAF90054E471 /* Lvl3-Drum-Sprite.png */; };
+		7CF6BECB184AFAF90054E471 /* Lvl4-Bus-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE99184AFAF90054E471 /* Lvl4-Bus-Sprite.png */; };
+		7CF6BECC184AFAF90054E471 /* Lvl5-Slug-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9A184AFAF90054E471 /* Lvl5-Slug-Sprite.png */; };
+		7CF6BECD184AFAF90054E471 /* Lvl6-Dig-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9B184AFAF90054E471 /* Lvl6-Dig-Sprite.png */; };
+		7CF6BECE184AFAF90054E471 /* Lvl7-Six-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9C184AFAF90054E471 /* Lvl7-Six-Sprite.png */; };
+		7CF6BECF184AFAF90054E471 /* Lvl8-Fox-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9D184AFAF90054E471 /* Lvl8-Fox-Sprite.png */; };
+		7CF6BED0184AFAF90054E471 /* Lvl9-Frog-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9E184AFAF90054E471 /* Lvl9-Frog-Sprite.png */; };
+		7CF6BED1184AFAF90054E471 /* Lvl10-Pen-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9F184AFAF90054E471 /* Lvl10-Pen-Sprite.png */; };
+		7CF6BED2184AFAF90054E471 /* Lvl11-Tent-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA0184AFAF90054E471 /* Lvl11-Tent-Sprite.png */; };
+		7CF6BED3184AFAF90054E471 /* Lvl12-Trash-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA1184AFAF90054E471 /* Lvl12-Trash-Sprite.png */; };
+		7CF6BED4184AFAF90054E471 /* Lvl13-Fish-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA2184AFAF90054E471 /* Lvl13-Fish-Sprite.png */; };
+		7CF6BED5184AFAF90054E471 /* Lvl14-Cloth-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA3184AFAF90054E471 /* Lvl14-Cloth-Sprite.png */; };
+		7CF6BED6184AFAF90054E471 /* Lvl15-Branch-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA4184AFAF90054E471 /* Lvl15-Branch-Sprite.png */; };
+		7CF6BED7184AFAF90054E471 /* Lvl16-Bench-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA5184AFAF90054E471 /* Lvl16-Bench-Sprite.png */; };
+		7CF6BED8184AFAF90054E471 /* Lvl17-Chin-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA6184AFAF90054E471 /* Lvl17-Chin-Sprite.png */; };
+		7CF6BED9184AFAF90054E471 /* Lvl18-Whip-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA7184AFAF90054E471 /* Lvl18-Whip-Sprite.png */; };
+		7CF6BEDA184AFAF90054E471 /* Lvl19-Lung-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA8184AFAF90054E471 /* Lvl19-Lung-Sprite.png */; };
+		7CF6BEDB184AFAF90054E471 /* Lvl20-Swing-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA9184AFAF90054E471 /* Lvl20-Swing-Sprite.png */; };
+		7CF6BEDC184AFAF90054E471 /* Lvl21-Pink-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAA184AFAF90054E471 /* Lvl21-Pink-Sprite.png */; };
+		7CF6BEDD184AFAF90054E471 /* Lvl22-Cliff-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAB184AFAF90054E471 /* Lvl22-Cliff-Sprite.png */; };
+		7CF6BEDE184AFAF90054E471 /* Lvl23-Skull-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAC184AFAF90054E471 /* Lvl23-Skull-Sprite.png */; };
+		7CF6BEDF184AFAF90054E471 /* Lvl24-Doll-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAD184AFAF90054E471 /* Lvl24-Doll-Sprite.png */; };
+		7CF6BEE0184AFAF90054E471 /* Lvl25-Grass-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAE184AFAF90054E471 /* Lvl25-Grass-Sprite.png */; };
+		7CF6BEE1184AFAF90054E471 /* Lvl26-Duck-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAF184AFAF90054E471 /* Lvl26-Duck-Sprite.png */; };
+		7CF6BEE2184AFAF90054E471 /* Lvl27-Lock-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB0184AFAF90054E471 /* Lvl27-Lock-Sprite.png */; };
+		7CF6BEE3184AFAF90054E471 /* Lvl28-Bridge-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB1184AFAF90054E471 /* Lvl28-Bridge-Sprite.png */; };
+		7CF6BEE4184AFAF90054E471 /* Lvl29-Witch-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB2184AFAF90054E471 /* Lvl29-Witch-Sprite.png */; };
+		7CF6BEE5184AFAF90054E471 /* Lvl30-Ball-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB3184AFAF90054E471 /* Lvl30-Ball-Sprite.png */; };
+		7CF6BEE6184AFAF90054E471 /* Lvl31-Child-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB4184AFAF90054E471 /* Lvl31-Child-Sprite.png */; };
+		7CF6BEE7184AFAF90054E471 /* Lvl32-Coin-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB5184AFAF90054E471 /* Lvl32-Coin-Sprite.png */; };
+		7CF6BEE8184AFAF90054E471 /* Lvl33-Toy-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB6184AFAF90054E471 /* Lvl33-Toy-Sprite.png */; };
+		7CF6BEE9184AFAF90054E471 /* Lvl34-Star-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB7184AFAF90054E471 /* Lvl34-Star-Sprite.png */; };
+		7CF6BEEA184AFAF90054E471 /* Lvl35-Feet-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB8184AFAF90054E471 /* Lvl35-Feet-Sprite.png */; };
+		7CF6BEEB184AFAF90054E471 /* Lvl36-Teeth-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB9184AFAF90054E471 /* Lvl36-Teeth-Sprite.png */; };
+		7CF6BEEC184AFAF90054E471 /* Lvl37-Horn-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBA184AFAF90054E471 /* Lvl37-Horn-Sprite.png */; };
+		7CF6BEED184AFAF90054E471 /* Lvl38-Sail-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBB184AFAF90054E471 /* Lvl38-Sail-Sprite.png */; };
+		7CF6BEEE184AFAF90054E471 /* Lvl39-Rain-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBC184AFAF90054E471 /* Lvl39-Rain-Sprite.png */; };
+		7CF6BEEF184AFAF90054E471 /* Lvl40-Saint-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBD184AFAF90054E471 /* Lvl40-Saint-Sprite.png */; };
+		7CF6BEF0184AFAF90054E471 /* Lvl41-Hay-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBE184AFAF90054E471 /* Lvl41-Hay-Sprite.png */; };
+		7CF6BEF1184AFAF90054E471 /* Lvl42-Fern-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBF184AFAF90054E471 /* Lvl42-Fern-Sprite.png */; };
+		7CF6BEF2184AFAF90054E471 /* Lvl43-Boat-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC0184AFAF90054E471 /* Lvl43-Boat-Sprite.png */; };
+		7CF6BEF3184AFAF90054E471 /* Lvl44-Queen-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC1184AFAF90054E471 /* Lvl44-Queen-Sprite.png */; };
+		7CF6BEF4184AFAF90054E471 /* Lvl45-Moon-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC2184AFAF90054E471 /* Lvl45-Moon-Sprite.png */; };
+		7CF6BEF5184AFAF90054E471 /* Lvl46-Boot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC3184AFAF90054E471 /* Lvl46-Boot-Sprite.png */; };
+		7CF6BEF6184AFAF90054E471 /* Lvl47-Goose-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC4184AFAF90054E471 /* Lvl47-Goose-Sprite.png */; };
+		7CF6BEF7184AFAF90054E471 /* Lvl48-Foot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC5184AFAF90054E471 /* Lvl48-Foot-Sprite.png */; };
+		7CF6BEF8184AFAF90054E471 /* Lvl49-Wood-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC6184AFAF90054E471 /* Lvl49-Wood-Sprite.png */; };
+		7CF6BEF9184AFAF90054E471 /* Lvl50-Leaf-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC7184AFAF90054E471 /* Lvl50-Leaf-Sprite.png */; };
 		7CF9526E182F194600FE1DDC /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9526D182F194600FE1DDC /* Statistics.m */; };
 		7CFCBE72183172A200EF6233 /* KBPlanetEarth.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */; };
 		E2B18F461847B9C300656E35 /* Background-No-Gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F451847B9C300656E35 /* Background-No-Gradient.png */; };
@@ -238,31 +263,6 @@
 		7C5DDA87183180A90047A808 /* Submit-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Submit-Button.png"; sourceTree = "<group>"; };
 		7C5DDA91183182200047A808 /* Empty-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty-Portrait.png"; sourceTree = "<group>"; };
 		7C5DDA92183182200047A808 /* Selected-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Selected-Portrait.png"; sourceTree = "<group>"; };
-		7C5DDA98183183B70047A808 /* Lvl1-Can-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl1-Can-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDA99183183B70047A808 /* Lvl2-Map-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl2-Map-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDA9A183183B70047A808 /* Lvl3-Drum-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl3-Drum-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDA9B183183B70047A808 /* Lvl4-Bus-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl4-Bus-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDA9C183183B70047A808 /* Lvl5-Slug-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl5-Slug-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDA9D183183B70047A808 /* Lvl6-Dig-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl6-Dig-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDA9E183183B70047A808 /* Lvl7-Six-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl7-Six-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDA9F183183B70047A808 /* Lvl8-Fox-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl8-Fox-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAA0183183B70047A808 /* Lvl9-Frog-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl9-Frog-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAA1183183B70047A808 /* Lvl10-Pen-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl10-Pen-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAA2183183B70047A808 /* Lvl11-Tent-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl11-Tent-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAA3183183B70047A808 /* Lvl12-Trash-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl12-Trash-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAA4183183B70047A808 /* Lvl13-Fish-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl13-Fish-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAA5183183B70047A808 /* Lvl14-Cloth-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl14-Cloth-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAA6183183B70047A808 /* Lvl15-Branch-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl15-Branch-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAA7183183B70047A808 /* Lvl16-Bench-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl16-Bench-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAA8183183B70047A808 /* Lvl17-Chin-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl17-Chin-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAA9183183B70047A808 /* Lvl18-Whip-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl18-Whip-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAAA183183B70047A808 /* Lvl19-Lung-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl19-Lung-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAAB183183B70047A808 /* Lvl20-Swing-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl20-Swing-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAAC183183B70047A808 /* Lvl21-Pink-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl21-Pink-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAAD183183B70047A808 /* Lvl22-Cliff-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl22-Cliff-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAAE183183B70047A808 /* Lvl23-Skull-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl23-Skull-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAAF183183B70047A808 /* Lvl24-Doll-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl24-Doll-Sprite.png"; sourceTree = "<group>"; };
-		7C5DDAB0183183B70047A808 /* Lvl25-Grass-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl25-Grass-Sprite.png"; sourceTree = "<group>"; };
 		7C6851111819FC8200A52AAA /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		7C6851121819FC8200A52AAA /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		7C6851141819FC8200A52AAA /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
@@ -572,6 +572,56 @@
 		7CF6BE2D184AE2CA0054E471 /* EditAccountLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAccountLayer.m; sourceTree = "<group>"; };
 		7CF6BE2E184AE2CA0054E471 /* ManageAccountLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageAccountLayer.h; sourceTree = "<group>"; };
 		7CF6BE2F184AE2CA0054E471 /* ManageAccountLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageAccountLayer.m; sourceTree = "<group>"; };
+		7CF6BE96184AFAF90054E471 /* Lvl1-Can-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl1-Can-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BE97184AFAF90054E471 /* Lvl2-Map-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl2-Map-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BE98184AFAF90054E471 /* Lvl3-Drum-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl3-Drum-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BE99184AFAF90054E471 /* Lvl4-Bus-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl4-Bus-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BE9A184AFAF90054E471 /* Lvl5-Slug-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl5-Slug-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BE9B184AFAF90054E471 /* Lvl6-Dig-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl6-Dig-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BE9C184AFAF90054E471 /* Lvl7-Six-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl7-Six-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BE9D184AFAF90054E471 /* Lvl8-Fox-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl8-Fox-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BE9E184AFAF90054E471 /* Lvl9-Frog-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl9-Frog-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BE9F184AFAF90054E471 /* Lvl10-Pen-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl10-Pen-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEA0184AFAF90054E471 /* Lvl11-Tent-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl11-Tent-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEA1184AFAF90054E471 /* Lvl12-Trash-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl12-Trash-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEA2184AFAF90054E471 /* Lvl13-Fish-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl13-Fish-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEA3184AFAF90054E471 /* Lvl14-Cloth-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl14-Cloth-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEA4184AFAF90054E471 /* Lvl15-Branch-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl15-Branch-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEA5184AFAF90054E471 /* Lvl16-Bench-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl16-Bench-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEA6184AFAF90054E471 /* Lvl17-Chin-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl17-Chin-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEA7184AFAF90054E471 /* Lvl18-Whip-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl18-Whip-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEA8184AFAF90054E471 /* Lvl19-Lung-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl19-Lung-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEA9184AFAF90054E471 /* Lvl20-Swing-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl20-Swing-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEAA184AFAF90054E471 /* Lvl21-Pink-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl21-Pink-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEAB184AFAF90054E471 /* Lvl22-Cliff-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl22-Cliff-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEAC184AFAF90054E471 /* Lvl23-Skull-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl23-Skull-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEAD184AFAF90054E471 /* Lvl24-Doll-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl24-Doll-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEAE184AFAF90054E471 /* Lvl25-Grass-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl25-Grass-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEAF184AFAF90054E471 /* Lvl26-Duck-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl26-Duck-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEB0184AFAF90054E471 /* Lvl27-Lock-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl27-Lock-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEB1184AFAF90054E471 /* Lvl28-Bridge-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl28-Bridge-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEB2184AFAF90054E471 /* Lvl29-Witch-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl29-Witch-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEB3184AFAF90054E471 /* Lvl30-Ball-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl30-Ball-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEB4184AFAF90054E471 /* Lvl31-Child-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl31-Child-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEB5184AFAF90054E471 /* Lvl32-Coin-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl32-Coin-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEB6184AFAF90054E471 /* Lvl33-Toy-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl33-Toy-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEB7184AFAF90054E471 /* Lvl34-Star-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl34-Star-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEB8184AFAF90054E471 /* Lvl35-Feet-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl35-Feet-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEB9184AFAF90054E471 /* Lvl36-Teeth-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl36-Teeth-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEBA184AFAF90054E471 /* Lvl37-Horn-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl37-Horn-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEBB184AFAF90054E471 /* Lvl38-Sail-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl38-Sail-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEBC184AFAF90054E471 /* Lvl39-Rain-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl39-Rain-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEBD184AFAF90054E471 /* Lvl40-Saint-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl40-Saint-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEBE184AFAF90054E471 /* Lvl41-Hay-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl41-Hay-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEBF184AFAF90054E471 /* Lvl42-Fern-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl42-Fern-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEC0184AFAF90054E471 /* Lvl43-Boat-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl43-Boat-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEC1184AFAF90054E471 /* Lvl44-Queen-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl44-Queen-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEC2184AFAF90054E471 /* Lvl45-Moon-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl45-Moon-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEC3184AFAF90054E471 /* Lvl46-Boot-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl46-Boot-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEC4184AFAF90054E471 /* Lvl47-Goose-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl47-Goose-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEC5184AFAF90054E471 /* Lvl48-Foot-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl48-Foot-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEC6184AFAF90054E471 /* Lvl49-Wood-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl49-Wood-Sprite.png"; sourceTree = "<group>"; };
+		7CF6BEC7184AFAF90054E471 /* Lvl50-Leaf-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl50-Leaf-Sprite.png"; sourceTree = "<group>"; };
 		7CF9526C182F194600FE1DDC /* Statistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statistics.h; sourceTree = "<group>"; };
 		7CF9526D182F194600FE1DDC /* Statistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statistics.m; sourceTree = "<group>"; };
 		7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = KBPlanetEarth.ttf; path = Resources/KBPlanetEarth.ttf; sourceTree = "<group>"; };
@@ -702,31 +752,56 @@
 		7CAF16C8183070F900243C4B /* LevelSprites */ = {
 			isa = PBXGroup;
 			children = (
-				7C5DDA98183183B70047A808 /* Lvl1-Can-Sprite.png */,
-				7C5DDA99183183B70047A808 /* Lvl2-Map-Sprite.png */,
-				7C5DDA9A183183B70047A808 /* Lvl3-Drum-Sprite.png */,
-				7C5DDA9B183183B70047A808 /* Lvl4-Bus-Sprite.png */,
-				7C5DDA9C183183B70047A808 /* Lvl5-Slug-Sprite.png */,
-				7C5DDA9D183183B70047A808 /* Lvl6-Dig-Sprite.png */,
-				7C5DDA9E183183B70047A808 /* Lvl7-Six-Sprite.png */,
-				7C5DDA9F183183B70047A808 /* Lvl8-Fox-Sprite.png */,
-				7C5DDAA0183183B70047A808 /* Lvl9-Frog-Sprite.png */,
-				7C5DDAA1183183B70047A808 /* Lvl10-Pen-Sprite.png */,
-				7C5DDAA2183183B70047A808 /* Lvl11-Tent-Sprite.png */,
-				7C5DDAA3183183B70047A808 /* Lvl12-Trash-Sprite.png */,
-				7C5DDAA4183183B70047A808 /* Lvl13-Fish-Sprite.png */,
-				7C5DDAA5183183B70047A808 /* Lvl14-Cloth-Sprite.png */,
-				7C5DDAA6183183B70047A808 /* Lvl15-Branch-Sprite.png */,
-				7C5DDAA7183183B70047A808 /* Lvl16-Bench-Sprite.png */,
-				7C5DDAA8183183B70047A808 /* Lvl17-Chin-Sprite.png */,
-				7C5DDAA9183183B70047A808 /* Lvl18-Whip-Sprite.png */,
-				7C5DDAAA183183B70047A808 /* Lvl19-Lung-Sprite.png */,
-				7C5DDAAB183183B70047A808 /* Lvl20-Swing-Sprite.png */,
-				7C5DDAAC183183B70047A808 /* Lvl21-Pink-Sprite.png */,
-				7C5DDAAD183183B70047A808 /* Lvl22-Cliff-Sprite.png */,
-				7C5DDAAE183183B70047A808 /* Lvl23-Skull-Sprite.png */,
-				7C5DDAAF183183B70047A808 /* Lvl24-Doll-Sprite.png */,
-				7C5DDAB0183183B70047A808 /* Lvl25-Grass-Sprite.png */,
+				7CF6BE96184AFAF90054E471 /* Lvl1-Can-Sprite.png */,
+				7CF6BE97184AFAF90054E471 /* Lvl2-Map-Sprite.png */,
+				7CF6BE98184AFAF90054E471 /* Lvl3-Drum-Sprite.png */,
+				7CF6BE99184AFAF90054E471 /* Lvl4-Bus-Sprite.png */,
+				7CF6BE9A184AFAF90054E471 /* Lvl5-Slug-Sprite.png */,
+				7CF6BE9B184AFAF90054E471 /* Lvl6-Dig-Sprite.png */,
+				7CF6BE9C184AFAF90054E471 /* Lvl7-Six-Sprite.png */,
+				7CF6BE9D184AFAF90054E471 /* Lvl8-Fox-Sprite.png */,
+				7CF6BE9E184AFAF90054E471 /* Lvl9-Frog-Sprite.png */,
+				7CF6BE9F184AFAF90054E471 /* Lvl10-Pen-Sprite.png */,
+				7CF6BEA0184AFAF90054E471 /* Lvl11-Tent-Sprite.png */,
+				7CF6BEA1184AFAF90054E471 /* Lvl12-Trash-Sprite.png */,
+				7CF6BEA2184AFAF90054E471 /* Lvl13-Fish-Sprite.png */,
+				7CF6BEA3184AFAF90054E471 /* Lvl14-Cloth-Sprite.png */,
+				7CF6BEA4184AFAF90054E471 /* Lvl15-Branch-Sprite.png */,
+				7CF6BEA5184AFAF90054E471 /* Lvl16-Bench-Sprite.png */,
+				7CF6BEA6184AFAF90054E471 /* Lvl17-Chin-Sprite.png */,
+				7CF6BEA7184AFAF90054E471 /* Lvl18-Whip-Sprite.png */,
+				7CF6BEA8184AFAF90054E471 /* Lvl19-Lung-Sprite.png */,
+				7CF6BEA9184AFAF90054E471 /* Lvl20-Swing-Sprite.png */,
+				7CF6BEAA184AFAF90054E471 /* Lvl21-Pink-Sprite.png */,
+				7CF6BEAB184AFAF90054E471 /* Lvl22-Cliff-Sprite.png */,
+				7CF6BEAC184AFAF90054E471 /* Lvl23-Skull-Sprite.png */,
+				7CF6BEAD184AFAF90054E471 /* Lvl24-Doll-Sprite.png */,
+				7CF6BEAE184AFAF90054E471 /* Lvl25-Grass-Sprite.png */,
+				7CF6BEAF184AFAF90054E471 /* Lvl26-Duck-Sprite.png */,
+				7CF6BEB0184AFAF90054E471 /* Lvl27-Lock-Sprite.png */,
+				7CF6BEB1184AFAF90054E471 /* Lvl28-Bridge-Sprite.png */,
+				7CF6BEB2184AFAF90054E471 /* Lvl29-Witch-Sprite.png */,
+				7CF6BEB3184AFAF90054E471 /* Lvl30-Ball-Sprite.png */,
+				7CF6BEB4184AFAF90054E471 /* Lvl31-Child-Sprite.png */,
+				7CF6BEB5184AFAF90054E471 /* Lvl32-Coin-Sprite.png */,
+				7CF6BEB6184AFAF90054E471 /* Lvl33-Toy-Sprite.png */,
+				7CF6BEB7184AFAF90054E471 /* Lvl34-Star-Sprite.png */,
+				7CF6BEB8184AFAF90054E471 /* Lvl35-Feet-Sprite.png */,
+				7CF6BEB9184AFAF90054E471 /* Lvl36-Teeth-Sprite.png */,
+				7CF6BEBA184AFAF90054E471 /* Lvl37-Horn-Sprite.png */,
+				7CF6BEBB184AFAF90054E471 /* Lvl38-Sail-Sprite.png */,
+				7CF6BEBC184AFAF90054E471 /* Lvl39-Rain-Sprite.png */,
+				7CF6BEBD184AFAF90054E471 /* Lvl40-Saint-Sprite.png */,
+				7CF6BEBE184AFAF90054E471 /* Lvl41-Hay-Sprite.png */,
+				7CF6BEBF184AFAF90054E471 /* Lvl42-Fern-Sprite.png */,
+				7CF6BEC0184AFAF90054E471 /* Lvl43-Boat-Sprite.png */,
+				7CF6BEC1184AFAF90054E471 /* Lvl44-Queen-Sprite.png */,
+				7CF6BEC2184AFAF90054E471 /* Lvl45-Moon-Sprite.png */,
+				7CF6BEC3184AFAF90054E471 /* Lvl46-Boot-Sprite.png */,
+				7CF6BEC4184AFAF90054E471 /* Lvl47-Goose-Sprite.png */,
+				7CF6BEC5184AFAF90054E471 /* Lvl48-Foot-Sprite.png */,
+				7CF6BEC6184AFAF90054E471 /* Lvl49-Wood-Sprite.png */,
+				7CF6BEC7184AFAF90054E471 /* Lvl50-Leaf-Sprite.png */,
 			);
 			name = LevelSprites;
 			path = Resources/LevelSprites;
@@ -1301,75 +1376,100 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CF6BEE1184AFAF90054E471 /* Lvl26-Duck-Sprite.png in Resources */,
 				7CF099981818BD310043FD9F /* ChangeLog in Resources */,
-				7C5DDABF183183B70047A808 /* Lvl14-Cloth-Sprite.png in Resources */,
-				7C5DDAC3183183B70047A808 /* Lvl18-Whip-Sprite.png in Resources */,
 				E2EB99FF184A7EF70069AA61 /* Cancel-IconFinal.png in Resources */,
-				7C5DDAB9183183B70047A808 /* Lvl8-Fox-Sprite.png in Resources */,
-				7C5DDAB7183183B70047A808 /* Lvl6-Dig-Sprite.png in Resources */,
-				7C5DDAB6183183B70047A808 /* Lvl5-Slug-Sprite.png in Resources */,
 				E2B18F541847FDF600656E35 /* Statistic-Icon.png in Resources */,
-				7C5DDAB5183183B70047A808 /* Lvl4-Bus-Sprite.png in Resources */,
+				7CF6BEF2184AFAF90054E471 /* Lvl43-Boat-Sprite.png in Resources */,
+				7CF6BEF8184AFAF90054E471 /* Lvl49-Wood-Sprite.png in Resources */,
+				7CF6BECB184AFAF90054E471 /* Lvl4-Bus-Sprite.png in Resources */,
 				7CAF16D5183070F900243C4B /* Default-568h@2x.png in Resources */,
+				7CF6BECD184AFAF90054E471 /* Lvl6-Dig-Sprite.png in Resources */,
+				7CF6BECC184AFAF90054E471 /* Lvl5-Slug-Sprite.png in Resources */,
+				7CF6BED7184AFAF90054E471 /* Lvl16-Bench-Sprite.png in Resources */,
+				7CF6BEE7184AFAF90054E471 /* Lvl32-Coin-Sprite.png in Resources */,
 				7CAF16DC183070F900243C4B /* Icon-Small@2x.png in Resources */,
 				E2B18F591848035E00656E35 /* Back-Icon.png in Resources */,
+				7CF6BEF1184AFAF90054E471 /* Lvl42-Fern-Sprite.png in Resources */,
+				7CF6BEE6184AFAF90054E471 /* Lvl31-Child-Sprite.png in Resources */,
 				7CAF16B6183069B100243C4B /* Levels.xml in Resources */,
 				7C5DDA88183180A90047A808 /* Submit-Button.png in Resources */,
+				7CF6BEED184AFAF90054E471 /* Lvl38-Sail-Sprite.png in Resources */,
+				7CF6BEF4184AFAF90054E471 /* Lvl45-Moon-Sprite.png in Resources */,
+				7CF6BEF7184AFAF90054E471 /* Lvl48-Foot-Sprite.png in Resources */,
 				7CAF16DA183070F900243C4B /* Icon-Small-50.png in Resources */,
 				7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */,
 				7C5DDA861831808C0047A808 /* Reset-Button.png in Resources */,
+				7CF6BEEA184AFAF90054E471 /* Lvl35-Feet-Sprite.png in Resources */,
+				7CF6BEF0184AFAF90054E471 /* Lvl41-Hay-Sprite.png in Resources */,
 				E2FB221B184ACF9100125633 /* Login-Button.png in Resources */,
-				7C5DDABE183183B70047A808 /* Lvl13-Fish-Sprite.png in Resources */,
 				E2EB9A00184A7EF70069AA61 /* Pause-IconFinal.png in Resources */,
+				7CF6BECE184AFAF90054E471 /* Lvl7-Six-Sprite.png in Resources */,
+				7CF6BEC9184AFAF90054E471 /* Lvl2-Map-Sprite.png in Resources */,
 				E2EB99FE184A7EF70069AA61 /* Manage-IconFinal.png in Resources */,
+				7CF6BEE0184AFAF90054E471 /* Lvl25-Grass-Sprite.png in Resources */,
+				7CF6BEF6184AFAF90054E471 /* Lvl47-Goose-Sprite.png in Resources */,
 				7CAF16D6183070F900243C4B /* Default-Landscape~ipad.png in Resources */,
-				7C5DDAC5183183B70047A808 /* Lvl20-Swing-Sprite.png in Resources */,
+				7CF6BEEC184AFAF90054E471 /* Lvl37-Horn-Sprite.png in Resources */,
+				7CF6BED0184AFAF90054E471 /* Lvl9-Frog-Sprite.png in Resources */,
+				7CF6BEEB184AFAF90054E471 /* Lvl36-Teeth-Sprite.png in Resources */,
 				7C5DDA84183180740047A808 /* Default-Background.png in Resources */,
 				7CFCBE72183172A200EF6233 /* KBPlanetEarth.ttf in Resources */,
 				E2EB99FD184A7EF70069AA61 /* Back-IconFinal.png in Resources */,
 				7CAF16DE183070F900243C4B /* Icon@2x.png in Resources */,
 				7CAF16D7183070F900243C4B /* Default.png in Resources */,
+				7CF6BEE8184AFAF90054E471 /* Lvl33-Toy-Sprite.png in Resources */,
 				E2EB99FC184A7EF70069AA61 /* Statistic-IconFinal.png in Resources */,
 				E2B18F4A1847BD9100656E35 /* Slot-Sprite.png in Resources */,
-				7C5DDABB183183B70047A808 /* Lvl10-Pen-Sprite.png in Resources */,
 				E2EB9A07184A7EF70069AA61 /* Game-IconFinal.png in Resources */,
-				7C5DDAC6183183B70047A808 /* Lvl21-Pink-Sprite.png in Resources */,
+				7CF6BEE3184AFAF90054E471 /* Lvl28-Bridge-Sprite.png in Resources */,
 				E2B18F461847B9C300656E35 /* Background-No-Gradient.png in Resources */,
-				7C5DDAC8183183B70047A808 /* Lvl23-Skull-Sprite.png in Resources */,
-				7C5DDAC7183183B70047A808 /* Lvl22-Cliff-Sprite.png in Resources */,
 				E2EB9A01184A7EF70069AA61 /* Refresh-IconFinal.png in Resources */,
-				7C5DDAB2183183B70047A808 /* Lvl1-Can-Sprite.png in Resources */,
 				7CAF16DD183070F900243C4B /* Icon.png in Resources */,
-				7C5DDAB8183183B70047A808 /* Lvl7-Six-Sprite.png in Resources */,
 				7CAF16DB183070F900243C4B /* Icon-Small.png in Resources */,
 				7CAF16D9183070F900243C4B /* Icon-72.png in Resources */,
 				7C5DDA93183182200047A808 /* Empty-Portrait.png in Resources */,
+				7CF6BEC8184AFAF90054E471 /* Lvl1-Can-Sprite.png in Resources */,
 				E2EB9A04184A7EF70069AA61 /* Plus-IconFinal.png in Resources */,
+				7CF6BEE9184AFAF90054E471 /* Lvl34-Star-Sprite.png in Resources */,
 				E2B18F531847FDF600656E35 /* Manage-Icon.png in Resources */,
+				7CF6BED8184AFAF90054E471 /* Lvl17-Chin-Sprite.png in Resources */,
+				7CF6BEDA184AFAF90054E471 /* Lvl19-Lung-Sprite.png in Resources */,
 				E2EB9A03184A7EF70069AA61 /* Forward-IconFinal.png in Resources */,
 				E2EB9A09184A7EF70069AA61 /* Home-IconFinal.png in Resources */,
-				7C5DDAB3183183B70047A808 /* Lvl2-Map-Sprite.png in Resources */,
+				7CF6BED9184AFAF90054E471 /* Lvl18-Whip-Sprite.png in Resources */,
+				7CF6BEE5184AFAF90054E471 /* Lvl30-Ball-Sprite.png in Resources */,
+				7CF6BEDE184AFAF90054E471 /* Lvl23-Skull-Sprite.png in Resources */,
+				7CF6BEF5184AFAF90054E471 /* Lvl46-Boot-Sprite.png in Resources */,
 				7C5DDA94183182200047A808 /* Selected-Portrait.png in Resources */,
-				7C5DDAC1183183B70047A808 /* Lvl16-Bench-Sprite.png in Resources */,
 				7CF0983F1818BD280043FD9F /* iTunesArtwork in Resources */,
 				E2EB9A08184A7EF70069AA61 /* Trash-IconFinal.png in Resources */,
-				7C5DDAC4183183B70047A808 /* Lvl19-Lung-Sprite.png in Resources */,
+				7CF6BECA184AFAF90054E471 /* Lvl3-Drum-Sprite.png in Resources */,
 				E2EB9A05184A7EF70069AA61 /* Minus-IconFinal.png in Resources */,
+				7CF6BED3184AFAF90054E471 /* Lvl12-Trash-Sprite.png in Resources */,
+				7CF6BEDD184AFAF90054E471 /* Lvl22-Cliff-Sprite.png in Resources */,
+				7CF6BEDF184AFAF90054E471 /* Lvl24-Doll-Sprite.png in Resources */,
+				7CF6BEDB184AFAF90054E471 /* Lvl20-Swing-Sprite.png in Resources */,
+				7CF6BEDC184AFAF90054E471 /* Lvl21-Pink-Sprite.png in Resources */,
+				7CF6BED6184AFAF90054E471 /* Lvl15-Branch-Sprite.png in Resources */,
+				7CF6BEE4184AFAF90054E471 /* Lvl29-Witch-Sprite.png in Resources */,
 				7C0394DB18457F5800947CF3 /* Arrow.png in Resources */,
-				7C5DDAB4183183B70047A808 /* Lvl3-Drum-Sprite.png in Resources */,
-				7C5DDABA183183B70047A808 /* Lvl9-Frog-Sprite.png in Resources */,
 				E2EB9A02184A7EF70069AA61 /* Backward-IconFinal.png in Resources */,
-				7C5DDACA183183B70047A808 /* Lvl25-Grass-Sprite.png in Resources */,
-				7C5DDAC2183183B70047A808 /* Lvl17-Chin-Sprite.png in Resources */,
+				7CF6BED4184AFAF90054E471 /* Lvl13-Fish-Sprite.png in Resources */,
+				7CF6BEE2184AFAF90054E471 /* Lvl27-Lock-Sprite.png in Resources */,
+				7CF6BECF184AFAF90054E471 /* Lvl8-Fox-Sprite.png in Resources */,
+				7CF6BEF9184AFAF90054E471 /* Lvl50-Leaf-Sprite.png in Resources */,
 				7CAF16D8183070F900243C4B /* Default@2x.png in Resources */,
-				7C5DDAC0183183B70047A808 /* Lvl15-Branch-Sprite.png in Resources */,
-				7C5DDABC183183B70047A808 /* Lvl11-Tent-Sprite.png in Resources */,
+				7CF6BEF3184AFAF90054E471 /* Lvl44-Queen-Sprite.png in Resources */,
+				7CF6BEEF184AFAF90054E471 /* Lvl40-Saint-Sprite.png in Resources */,
 				7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */,
-				7C5DDAC9183183B70047A808 /* Lvl24-Doll-Sprite.png in Resources */,
+				7CF6BEEE184AFAF90054E471 /* Lvl39-Rain-Sprite.png in Resources */,
+				7CF6BED1184AFAF90054E471 /* Lvl10-Pen-Sprite.png in Resources */,
+				7CF6BED5184AFAF90054E471 /* Lvl14-Cloth-Sprite.png in Resources */,
 				E2EB9A06184A7EF70069AA61 /* Profile-IconFinal.png in Resources */,
+				7CF6BED2184AFAF90054E471 /* Lvl11-Tent-Sprite.png in Resources */,
 				E2FB221D184AD25D00125633 /* Border-Play.png in Resources */,
 				E2B18F5A1848035E00656E35 /* Play-Icon.png in Resources */,
-				7C5DDABD183183B70047A808 /* Lvl12-Trash-Sprite.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
