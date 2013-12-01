@@ -1,10 +1,10 @@
 //
-//  LoginLayer.m
+//  ManageAccountLayer.m
 //  Sound Out Phonics
 //
-//  Purpose: Login layer and scene that asks user for login information
+//  Purpose: A layer that allows administrators to edit and add new accounts
 //
-//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/LoginLayer.m
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/ManageAccountLayer.m
 //
 //  Style: The source code will follow the general apple coding standard described
 //         here: https://tinyurl.com/n8jtvj3
@@ -17,120 +17,110 @@
 //         Sprite.png). Finally, the code will have comments throughout various non
 //         trivial operations.
 //
-//  Created on 2013-11-5.
+//  Created on 2013-11-23.
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
+#import "ManageAccountLayer.h"
 
-#import "LoginLayer.h"
+#pragma mark - ManageAccountLayer
 
-#pragma mark - LoginLayer
-
-@implementation LoginLayer
-
-@synthesize passwordTextBox = _passwordTextBox;
+@implementation ManageAccountLayer
 @synthesize accounts = _accounts;
 @synthesize selectedAccount = _selectedAccount;
 
 // helper class method that creates a Scene with the LoginLayer as the only child.
 + (CCScene *)scene {
-	// 'scene' is an autorelease object.
-	CCScene *scene = [CCScene node];
-	
-	// 'layer' is an autorelease object.
-	LoginLayer *layer = [LoginLayer node];
-	
-	// add layer as a child to scene
-	[scene addChild: layer];
-	
-	// return the scene
-	return scene;
+    // 'scene' is an autorelease object.
+    CCScene *scene = [CCScene node];
+        
+    // 'layer' is an autorelease object.
+    ManageAccountLayer *layer = [ManageAccountLayer node];
+
+        
+    // add layer as a child to scene
+    [scene addChild:layer z: 1 tag:1];
+        
+    // return the scene
+    return scene;
 }
 
-// on "init" you need to initialize your instance
 - (id)init {
 	if((self = [super init])) {
         
-        // ask director for the window size
+		// ask director for the window size
 		_size = [[CCDirector sharedDirector] winSize];
         
         [self setTouchEnabled:YES];
         
-        // Create and initialize a background sprite
-        CCSprite *background = [CCSprite spriteWithFile:@"Background-No-Gradient.png"];
+        // Initialize and add the background sprites
+        CCSprite *background = [CCSprite spriteWithFile:@"Default-Background.png"]; // create and initialize the background sprite (png)
+        CCSprite *backButton = [CCSprite spriteWithFile:@"Back-Icon.png"];
+        CCLabelTTF *titleName = [CCLabelTTF labelWithString:@"Manage Accounts" fontName:@"KBPlanetEarth" fontSize:48];
+        
         background.position = ccp(_size.width/2, _size.height/2);
-        [self addChild: background];
-
-
-            
+        backButton.position = ccp(_size.width - 180, _size.height - _size.height + 50);
+        titleName.position = ccp(_size.width/2, _size.height-75);
+        
+        [self addChild:background];
+        [self addChild:titleName];
+        [self addChild:backButton];
+        
+        _backButton = [CCLabelTTF labelWithString:@"back" fontName:@"KBPlanetEarth" fontSize:48];
+        _backButton.position = ccp(_size.width - 100, _size.height - _size.height + 40);
+        [self addChild:_backButton];
+        
         // load the accounts from the database
         self.accounts = [[SOPDatabase database] loadAccounts];
         
         _currentAccountPage = 1;
-
+        
         // create the selected avatar frame
         _selectedAvatarBorder = [CCSprite spriteWithFile:@"Selected-Portrait.png"];
         _selectedAvatarBorder.visible = false;
         [self addChild:_selectedAvatarBorder];
         
-        // create the password textbox
-        self.passwordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(_size.width/2-100, _size.height/2 - 25, 200, 50)];
-        self.passwordTextBox.backgroundColor = [UIColor whiteColor];
-        self.passwordTextBox.delegate = self;
-        self.passwordTextBox.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-        self.passwordTextBox.adjustsFontSizeToFitWidth = true;
-        
-        // grey text inside the box
-        NSAttributedString *password = [[NSAttributedString alloc] initWithString:@"Password"];
-        self.passwordTextBox.attributedPlaceholder = password;
-        self.passwordTextBox.enabled = false;
-        
-        // no spellchecker and make the input text display as ****
-        self.passwordTextBox.spellCheckingType = UITextSpellCheckingTypeNo;
-        self.passwordTextBox.secureTextEntry = true;
-        [password release];
-        [[CCDirector sharedDirector].view addSubview:self.passwordTextBox];
-
-        
-        // Initialize and add the login button
-        _loginButton = [[StateButton alloc] initWithFile:@"Login-Button.png" withPosition:ccp(_size.width/2, _size.height/2 - 75)];
-        [_loginButton setState:false];
-        [self addChild:_loginButton];
-            
         // Initialize and add the paging button sprites
         _lastAccountsPage = [CCSprite spriteWithFile:@"Arrow.png"];
         _nextAccountsPage = [CCSprite spriteWithFile:@"Arrow.png"];
-            
+        
         _lastAccountsPage.position = ccp(_size.width/2 - 375, _size.height - 250);
         _nextAccountsPage.position = ccp(_size.width/2 + 375, _size.height - 250);
-            
+        
         // Rotate the sprite by 180 degrees CW
         _nextAccountsPage.rotation = 180;
-            
+        
         // In some cases paging might not be needed so the sprites are invisible by default and enabled later on
         _lastAccountsPage.visible = false;
         _nextAccountsPage.visible = false;
-
+        
         [self addChild:_lastAccountsPage];
         [self addChild:_nextAccountsPage];
-            
+        
         [self displayAccounts];
         
-        // No accounts found and new account needs to be created
-        if ([[SOPDatabase database] getAdminAccountId] == 0) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Administrator Account found!"
-                                                      message:@"No administrator account found. Would you like to create a new account or play as guest?"
-                                                      delegate:self cancelButtonTitle:nil otherButtonTitles:@"Create Account", @"Guest Account", nil];
-            [alert show];
-            [alert release];
-        }
+        // Add edit account button.
+        _editAccountButton = [[StateText alloc] initWithString:@"Edit Account" fontName:@"KBPlanetEarth" fontSize:48 position:ccp(_size.width/2, _size.height/2 - 50)];
+        [_editAccountButton setState:false];
+        [self addChild:_editAccountButton];
+        
+        // Add delete account button
+        _deleteAccountButton = [[StateText alloc] initWithString:@"Delete Account" fontName:@"KBPlanetEarth" fontSize:48
+                                                        position:ccp(_size.width/2, _size.height/2 - 125)];
+        [_deleteAccountButton setState:false];
+        [self addChild:_deleteAccountButton];
+        
+        // add create account button
+        _createAccountButton = [CCLabelTTF labelWithString:@"Create Account" fontName:@"KBPlanetEarth" fontSize:48];
+        _createAccountButton.position = ccp(_size.width/2, _size.height/2 - 200);
+        [self addChild:_createAccountButton];
     }
     return self;
 }
 
 // create the account avatars and names
 - (void) displayAccounts {
-    
+
     // Number of results that will be displayed per page
     int results = 5;
     
@@ -154,7 +144,7 @@
         _currentAccountPage--;
         [self displayAccounts];
     }
-    
+        
     int i = 0;
     for (Account *account in self.accounts) {
         
@@ -183,7 +173,7 @@
                 account.avatar.position = ccp(_size.width/2 - (accountsOnPage - 1) * 70 + i % results * 140, _size.height-230);
             else
                 account.avatar.position = ccp(_size.width/2 - (results - 1) * 70 + i % results * 140, _size.height-230);
-            
+
             account.avatar.visible = true;
             [self addChild:account.avatar];
             
@@ -200,21 +190,6 @@
     }
 }
 
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-        
-        ccColor4B color = {100,100,0,100};
-        CreateAccountLayer *layer = [[[CreateAccountLayer alloc] initWithColor:color withLevel:1] autorelease];
-        [self addChild:layer];
-    }
-    else {
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
-        
-        // cleanup after the transition
-        [self.parent removeChild:self cleanup:YES];
-    }
-}
 // dispatcher to catch the touch events
 - (void)registerWithTouchDispatcher {
 	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
@@ -259,40 +234,58 @@
             
             // move the border to the new selected avatar
             _selectedAvatarBorder.position = ccp(self.selectedAccount.avatar.position.x, self.selectedAccount.avatar.position.y);
-            self.passwordTextBox.enabled = true;
+    
+            _editAccountButton.state = true;
+            if (self.selectedAccount.accountId != [Singleton sharedSingleton].loggedInAccount.accountId)
+                _deleteAccountButton.state = true;
+            else
+                _deleteAccountButton.state = false;
             break;
         }
     }
     
-    // occurs when the user presses the submit button
-    if (self.selectedAccount && _loginButton.state && CGRectContainsPoint(_loginButton.boundingBox, releaseLocation)) {
-        
-        // the password was correct transition to the menu layer
-        if ([self.selectedAccount.password isEqualToString:self.passwordTextBox.text]) {
-            
-            // password TextBox transition. TO-DO: make it smooth to match the layer transition
-            [self.passwordTextBox removeFromSuperview];
-            
-            // we now have a logged in account pass it onto the Singleton class
-            [[Singleton sharedSingleton] setLoggedInAccount:self.selectedAccount];
-            
-            // avatar object must be removed from the selected account since we are sharing this perticular account between layers and
-            // CCSprite can only be attached to one layer. We are not removing the child from the layer because it makes the sprite dissapear
-            // before the transition ends. This also assures that each sprite is assign to one layer.
-            [self.selectedAccount removeAvatar];
-            
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
-            
-            // cleanup after the transition
-            [self.parent removeChild:self cleanup:YES];
+    if (self.selectedAccount && _editAccountButton.state && CGRectContainsPoint(_editAccountButton.boundingBox, releaseLocation)) {
+        ccColor4B color = {100,100,0,100};
+        EditAccountLayer *layer = [[[EditAccountLayer alloc] initWithColor:color withAccount:self.selectedAccount] autorelease];
+        [self addChild:layer];
+    }
+    
+    if (CGRectContainsPoint(_createAccountButton.boundingBox, releaseLocation)) {
+        ccColor4B color = {100,100,0,100};
+        CreateAccountLayer *layer = [[[CreateAccountLayer alloc] initWithColor:color withLevel:0] autorelease];
+        [self addChild:layer];
+    }
+    
+    if (CGRectContainsPoint(_backButton.boundingBox, releaseLocation)) {
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
+    }
+    
+    if (self.selectedAccount && _deleteAccountButton.state && CGRectContainsPoint(_deleteAccountButton.boundingBox, releaseLocation)) {
+        if (self.selectedAccount.accountId != [Singleton sharedSingleton].loggedInAccount.accountId)
+        {
+            if ([[SOPDatabase database] deleteAccount:self.selectedAccount.accountId]) {
+                [self updateAccounts];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Selected account has been deleted!"
+                                                               delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alert show];
+                [alert release];
+            }
+            else {
+                // Send an alert indicating that you cannot delete your own account
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Cannot delete your own account!"
+                                                               delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [alert show];
+                [alert release];
+            }
         }
-        // password was incorrect display an error message
         else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Invalid Password, try again!\n"
-                                  delegate:nil cancelButtonTitle:@"Close" otherButtonTitles: nil];
+            // Send an alert indicating that an error occured
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Unable to delete the selected account!"
+                                                           delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
             [alert release];
         }
+
     }
 }
 
@@ -309,23 +302,7 @@
     return YES;
 }
 
-// occurs when return is pressed on the keyboard
-- (BOOL)textFieldShouldReturn:(UITextField*)textField {
-    // terminate editing
-    [textField resignFirstResponder];
-    return YES;
-}
-
-// occurs when the editin is ended on the text field
-- (void)textFieldDidEndEditing:(UITextField*)textField {
-    // if the input text is empty then disable the submit button
-    if ([self.passwordTextBox.text isEqualToString:@""])
-        _loginButton.state = false;
-    else
-        _loginButton.state = true;
-}
-
-// Updates current accounts sprites
+// Updates the accounts sprites only
 - (void)updateAccountsSprites {
     
     // cleanup all temporary objects before proceeding to the next stage
@@ -370,22 +347,25 @@
     _selectedAvatarBorder.visible = false;
     _selectedAccount = nil;
     
-    self.passwordTextBox.enabled = false;
-    _loginButton.state = false;
+    _editAccountButton.state = false;
+    _deleteAccountButton.state = false;
 }
 
-// on "dealloc" you need to release all your retained objects
-- (void)dealloc
-{
-    // release all the accounts in the array
+// Release all the retained objects
+- (void)dealloc {
+    [self.selectedAccount release];
+    [_editAccountButton release];
+    [_deleteAccountButton release];
+
+    // Release all the accounts in the array
     for (Account* account in self.accounts)
         [account release];
     
     [self.accounts release];
-    [_loginButton release];
-	[super dealloc];
+    
+    [super dealloc];
 }
+    
 
-#pragma mark LoginLayer delegate
-
+#pragma mark ManageAccountLayer delegate
 @end

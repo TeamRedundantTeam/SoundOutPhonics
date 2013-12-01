@@ -27,20 +27,22 @@
 #import "AppDelegate.h"
 
 #import "MenuLayer.h"
-#import "StateButton.h"
+#import "StateText.h"
 #import "SOPDatabase.h"
 
-@interface CreateAccountLayer : CCLayer <UITextFieldDelegate> {
-    int _accountLevel;
-    UITextField *_nameTextBox; // account name textbox
-    UITextField *_passwordTextBox; // password textbox input field
-    UITextField *_confirmPasswordTextBox; // confirm password textbox input field
-    StateButton *_createAccountButton;
-    CCLabelTTF *_errorMessage;
+@interface CreateAccountLayer : CCLayerColor <UITextFieldDelegate> {
+    CGSize _size;                           // Size of the screen
+    int _accountLevel;                      // Keeps track of what account type should be created
+    UITextField *_nameTextBox;              // account name textbox
+    UITextField *_passwordTextBox;          // password textbox input field
+    UITextField *_confirmPasswordTextBox;   // confirm password textbox input field
+    StateText *_createAccountButton;        // Reference to create account button
+    CCLabelTTF *_errorMessage;              // Reference to error message text
+    CCSprite *_exitButton;                  // Reference to the exit button
 }
 
 // returns a CCScene that contains the LoginLayer as the only child
-+ (CCScene *)sceneWithAccountLevel:(int)accountLevel;
+- (id)initWithColor:(ccColor4B)color withLevel:(int)accountLevel;
 
 @property (retain, nonatomic) UITextField *nameTextBox;
 @property (retain, nonatomic) UITextField *passwordTextBox;

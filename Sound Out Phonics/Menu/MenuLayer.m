@@ -122,7 +122,7 @@
         CCMenuItem *itemManageAccount = [CCMenuItemFont itemWithString:@"manage accounts." block:^(id sender) {
                 [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
-                                                       scene:[CreateAccountLayer sceneWithAccountLevel:0]]];
+                                                       scene:[ManageAccountLayer scene]]];
         }]; // add the 'create account' CCMenuItem
         
         CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"quit." block:^(id sender) {

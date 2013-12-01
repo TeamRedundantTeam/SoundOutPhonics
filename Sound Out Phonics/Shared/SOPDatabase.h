@@ -42,9 +42,18 @@
 // create account with the provided input
 - (BOOL)createAccount:(int)accountId withName:(NSString*)name withPassword:(NSString*)password withLevel:(int)type;
 
-// returns the las accounts id and 0 if no accounts are present
+// returns the last accounts id and 0 if no accounts are present
 - (int)getLastAccountId;
 
+// returns the admin account id if there is one
+- (int)getAdminAccountId;
+
+// Update a specific account with the new provided information
+- (BOOL)updateAccount:(int)accountId withName:(NSString *)name withPassword:(NSString *)password;
+
+// Delete a specific account from the database
+- (BOOL)deleteAccount:(int)accountId;
+    
 // update a specific statistic in the Statistic table based on the input
 - (void)updateStatistic:(int)accountId withLevel:(int)level withStatistic:(Statistics *)statistic;
 

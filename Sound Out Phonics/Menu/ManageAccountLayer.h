@@ -1,10 +1,10 @@
 //
-//  LoginLayer.h
+//  ManageAccountLayer.h
 //  Sound Out Phonics
 //
-//  Purpose: Login layer and scene that asks user for login information
+//  Purpose: A layer that allows administrators to edit and add new accounts
 //
-//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/LoginLayer.h
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/ManageAccountLayer.h
 //
 //  Style: The source code will follow the general apple coding standard described
 //         here: https://tinyurl.com/n8jtvj3
@@ -17,48 +17,42 @@
 //         Sprite.png). Finally, the code will have comments throughout various non
 //         trivial operations.
 //
-//  Created on 2013-11-5.
+//  Created on 2013-11-23.
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
-
+#import "CCLayer.h"
 #import "cocos2d.h"
-#import <UIKit/UIKit.h>
-// Needed to obtain the Navigation Controller
-#import "AppDelegate.h"
-
-#import "MenuLayer.h"
-#import "SOPDatabase.h"
 #import "Account.h"
-#import "StateButton.h"
-#import "Singleton.h"
-#import "LoginLayer.h"
-#import "CreateAccountLayer.h"
+#import "SOPDatabase.h"
+#import "StateText.h"
+#import "MenuLayer.h"
+#import "EditAccountLayer.h"
 
-@interface LoginLayer : CCLayer <UITextFieldDelegate> {
-    CGSize _size; // Used to store the screen size
-    UITextField *_passwordTextBox; // password textbox input field
+@interface ManageAccountLayer : CCLayer <UITextFieldDelegate> {
+    CGSize _size;
     NSArray *_accounts; // stores reference to all the accounts from the database
     Account *_selectedAccount; // account that is currently selected by the user
-    StateButton *_loginButton; // login button
     CCSprite *_selectedAvatarBorder; // a border for avatar to indicate that it is selected
     int _currentAccountPage; // The account page that the user has currently selected
     CCSprite *_lastAccountsPage; // Sprite that allows users to move to the previous account page
     CCSprite *_nextAccountsPage; // Sprite that allows users to move to the next account page
+    CCLabelTTF *_backButton;
+    StateText *_editAccountButton;
+    CCLabelTTF *_createAccountButton;
+    StateText *_deleteAccountButton;
 }
 
-@property (retain, nonatomic) UITextField *passwordTextBox;
-@property (retain, nonatomic) NSMutableArray *avatarNames;
-@property (retain, nonatomic) NSArray *accounts;
-@property (retain, nonatomic) Account *selectedAccount;
-
-// returns a CCScene that contains the LoginLayer as the only child
+// returns a CCScene that contains the ManageAccountLayer as the only child
 + (CCScene *)scene;
 
 // Pulls new accounts from the database
 - (void)updateAccounts;
 
-// Updates current accounts sprites
+// Updates the account sprites
 - (void)updateAccountsSprites;
+
+@property (retain, nonatomic) NSArray *accounts;
+@property (retain, nonatomic) Account *selectedAccount;
 
 @end

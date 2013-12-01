@@ -11,6 +11,8 @@
 		7C0394DB18457F5800947CF3 /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0394DA18457F5800947CF3 /* Arrow.png */; };
 		7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
 		7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C039AC1182A326B00E38FA1 /* Singleton.m */; };
+		7C05C8541849FC4A00F43836 /* StateText.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C05C8531849FC4A00F43836 /* StateText.m */; };
+		7C05C858184A010B00F43836 /* Exit-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C05C857184A010B00F43836 /* Exit-Button.png */; };
 		7C2636EF182C71BF00EA972F /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2636EE182C71BF00EA972F /* Level.m */; };
 		7C398C181841AF0300877AC2 /* CreateAccountLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C398C171841AF0300877AC2 /* CreateAccountLayer.m */; };
 		7C398C1E1841B5CF00877AC2 /* StateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C398C1D1841B5CF00877AC2 /* StateButton.m */; };
@@ -48,6 +50,8 @@
 		7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
 		7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
 		7C736C4D184829B000A4ED10 /* LevelSelectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C736C4C184829B000A4ED10 /* LevelSelectLayer.m */; };
+		7C736C50184862B600A4ED10 /* ManageAccountLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C736C4F184862B600A4ED10 /* ManageAccountLayer.m */; };
+		7C736C531848718400A4ED10 /* EditAccountLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C736C521848718400A4ED10 /* EditAccountLayer.m */; };
 		7C753E22181A41650081BC90 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C753E21181A41650081BC90 /* GameLayer.m */; };
 		7C7D35E6181CF91100CC2C02 /* VictoryLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D35E5181CF91100CC2C02 /* VictoryLayer.m */; };
 		7CAF16B6183069B100243C4B /* Levels.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16B5183069B100243C4B /* Levels.xml */; };
@@ -209,6 +213,9 @@
 		7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = sop.sqlite3; path = Resources/sop.sqlite3; sourceTree = "<group>"; };
 		7C039AC0182A326B00E38FA1 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		7C039AC1182A326B00E38FA1 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
+		7C05C8521849FC4A00F43836 /* StateText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateText.h; sourceTree = "<group>"; };
+		7C05C8531849FC4A00F43836 /* StateText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateText.m; sourceTree = "<group>"; };
+		7C05C857184A010B00F43836 /* Exit-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exit-Button.png"; sourceTree = "<group>"; };
 		7C2636ED182C71BF00EA972F /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		7C2636EE182C71BF00EA972F /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		7C398C161841AF0300877AC2 /* CreateAccountLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountLayer.h; sourceTree = "<group>"; };
@@ -252,6 +259,10 @@
 		7C6851151819FC8200A52AAA /* MenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLayer.m; sourceTree = "<group>"; };
 		7C736C4B184829B000A4ED10 /* LevelSelectLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectLayer.h; sourceTree = "<group>"; };
 		7C736C4C184829B000A4ED10 /* LevelSelectLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectLayer.m; sourceTree = "<group>"; };
+		7C736C4E184862B600A4ED10 /* ManageAccountLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageAccountLayer.h; sourceTree = "<group>"; };
+		7C736C4F184862B600A4ED10 /* ManageAccountLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageAccountLayer.m; sourceTree = "<group>"; };
+		7C736C511848718400A4ED10 /* EditAccountLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAccountLayer.h; sourceTree = "<group>"; };
+		7C736C521848718400A4ED10 /* EditAccountLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAccountLayer.m; sourceTree = "<group>"; };
 		7C753E20181A41650081BC90 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
 		7C753E21181A41650081BC90 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
 		7C7D35E4181CF91100CC2C02 /* VictoryLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VictoryLayer.h; sourceTree = "<group>"; };
@@ -620,6 +631,10 @@
 				7CAF16E81830852900243C4B /* StatisticLayer.m */,
 				7C398C161841AF0300877AC2 /* CreateAccountLayer.h */,
 				7C398C171841AF0300877AC2 /* CreateAccountLayer.m */,
+				7C736C4E184862B600A4ED10 /* ManageAccountLayer.h */,
+				7C736C4F184862B600A4ED10 /* ManageAccountLayer.m */,
+				7C736C511848718400A4ED10 /* EditAccountLayer.h */,
+				7C736C521848718400A4ED10 /* EditAccountLayer.m */,
 			);
 			name = Menu;
 			path = "Sound Out Phonics/Menu";
@@ -691,6 +706,7 @@
 		7CAF16CB183070F900243C4B /* MenuSprites */ = {
 			isa = PBXGroup;
 			children = (
+				7C05C857184A010B00F43836 /* Exit-Button.png */,
 				E2B18F571848035E00656E35 /* Back-Icon.png */,
 				E2B18F581848035E00656E35 /* Play-Icon.png */,
 				E2B18F4F1847FDF600656E35 /* Manage-Icon.png */,
@@ -1167,6 +1183,8 @@
 				174EA96E1830635800A2503C /* LevelParser.h */,
 				174EA96F1830635800A2503C /* LevelParser.m */,
 				7CF19059181A3B0900528907 /* TextToSpeech.m */,
+				7C05C8521849FC4A00F43836 /* StateText.h */,
+				7C05C8531849FC4A00F43836 /* StateText.m */,
 			);
 			name = Helpers;
 			path = "Sound Out Phonics/Helpers";
@@ -1274,6 +1292,7 @@
 				7C5DDA94183182200047A808 /* Selected-Portrait.png in Resources */,
 				7C5DDAC1183183B70047A808 /* Lvl16-Bench-Sprite.png in Resources */,
 				7CF0983F1818BD280043FD9F /* iTunesArtwork in Resources */,
+				7C05C858184A010B00F43836 /* Exit-Button.png in Resources */,
 				7C5DDAC4183183B70047A808 /* Lvl19-Lung-Sprite.png in Resources */,
 				7C0394DB18457F5800947CF3 /* Arrow.png in Resources */,
 				7C5DDAB4183183B70047A808 /* Lvl3-Drum-Sprite.png in Resources */,
@@ -1353,6 +1372,7 @@
 				7CF099A01818BD310043FD9F /* mat3.c in Sources */,
 				7CF099BA1818BD310043FD9F /* AppDelegate.m in Sources */,
 				7CF0992A1818BD2E0043FD9F /* CCES2Renderer.m in Sources */,
+				7C736C531848718400A4ED10 /* EditAccountLayer.m in Sources */,
 				7CF0989C1818BD2A0043FD9F /* CCLabelAtlas.m in Sources */,
 				7CF098B81818BD2B0043FD9F /* CCParallaxNode.m in Sources */,
 				7CF098501818BD280043FD9F /* CCActionGrid.m in Sources */,
@@ -1363,6 +1383,7 @@
 				7CF098621818BD290043FD9F /* CCActionProgressTimer.m in Sources */,
 				7CF098441818BD280043FD9F /* CCAction.m in Sources */,
 				7CF0997C1818BD300043FD9F /* CocosDenshion.m in Sources */,
+				7C736C50184862B600A4ED10 /* ManageAccountLayer.m in Sources */,
 				7CF099011818BD2D0043FD9F /* CCTextureCache.m in Sources */,
 				7CF099A41818BD310043FD9F /* neon_matrix_impl.c in Sources */,
 				7CF9526E182F194600FE1DDC /* Statistics.m in Sources */,
@@ -1383,6 +1404,7 @@
 				7CF099B01818BD310043FD9F /* vec3.c in Sources */,
 				7C398C1E1841B5CF00877AC2 /* StateButton.m in Sources */,
 				7CF099621818BD2F0043FD9F /* TGAlib.m in Sources */,
+				7C05C8541849FC4A00F43836 /* StateText.m in Sources */,
 				7CF0986B1818BD290043FD9F /* CCAnimation.m in Sources */,
 				7CF099961818BD310043FD9F /* aabb.c in Sources */,
 				7CF0990D1818BD2D0043FD9F /* CCTMXObjectGroup.m in Sources */,

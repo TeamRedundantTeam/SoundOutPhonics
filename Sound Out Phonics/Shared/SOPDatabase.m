@@ -164,6 +164,62 @@ static SOPDatabase *_database;
     }
     return lastAccountId;
 }
+
+- (int)getAdminAccountId {
+    NSString *query = @"SELECT accountID FROM Accounts WHERE (type = 1) LIMIT 1;";
+    sqlite3_stmt *statement = nil;
+    int lastAccountId = 0;
+    
+    if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        // continue while there is a result
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            lastAccountId = sqlite3_column_int(statement, 0);
+        }
+        sqlite3_finalize(statement);
+    }
+    return lastAccountId;
+}
+
+// Update a specific account with the new provided information
+- (BOOL)updateAccount:(int)accountId withName:(NSString *)name withPassword:(NSString *)password {
+    NSString *query = @"UPDATE Accounts SET name = ?, password = ? WHERE (accountId = ?);";
+    
+    sqlite3_stmt *statement = nil;
+    if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        sqlite3_bind_text(statement, 1, [name UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(statement, 2, [password UTF8String], -1, SQLITE_TRANSIENT);
+        sqlite3_bind_int(statement, 3, accountId);
+        
+        if (sqlite3_step(statement) != SQLITE_DONE) {
+            NSLog(@"error: %s", sqlite3_errmsg(_database));
+            sqlite3_reset(statement);
+            return false;
+        }
+        
+        sqlite3_finalize(statement);
+    }
+    return true;
+}
+
+// Delete a specific account from the database
+- (BOOL)deleteAccount:(int)accountId {
+    NSString *query = @"DELETE FROM Accounts WHERE (accountId = ?);";
+    
+    sqlite3_stmt *statement = nil;
+    if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        sqlite3_bind_int(statement, 1, accountId);
+        
+        if (sqlite3_step(statement) != SQLITE_DONE) {
+            NSLog(@"error: %s", sqlite3_errmsg(_database));
+            sqlite3_reset(statement);
+            return false;
+        }
+        
+        sqlite3_finalize(statement);
+    }
+    return true;
+}
+
 // update a specific statistic in the Statistic table based on the input
 - (void)updateStatistic:(int)accountId withLevel:(int)level withStatistic:(Statistics *)statistic {
     NSString *query = @"UPDATE Statistics SET score = ?, min_victory_time = ?, max_victory_time = ? WHERE (accountId = ? AND level = ?);";

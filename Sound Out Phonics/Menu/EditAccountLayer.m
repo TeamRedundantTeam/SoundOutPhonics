@@ -1,67 +1,48 @@
 //
-//  CreateAccountLayer.m
+//  EditAccountLayer.m
 //  Sound Out Phonics
 //
-//  Purpose: Create account layer that allows to create an account based on the user inputs
-//
-//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/CreateAccountLevel.m
-//
-//  Style: The source code will follow the general apple coding standard described
-//         here: https://tinyurl.com/n8jtvj3
-//         Furthermore, the source code will be self descriptive and the formating
-//         will be consistent through the project. Long methods will be broken down
-//         and will have description of what the method does. The variable names and
-//         methods will follow the lower camel style (ex: selectedGraphemePosition),
-//         the classes will follow the upper camel style (ex: GameLayer) and the
-//         files will use the Cocos2d-iphone file name convention (ex: Lvl1-Apple-
-//         Sprite.png). Finally, the code will have comments throughout various non
-//         trivial operations.
-//
-//  Created on 2013-11-23.
+//  Created by Oleg M on 2013-11-28.
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
-#import "CreateAccountLayer.h"
+#import "EditAccountLayer.h"
+#import "cocos2d.h"
+#import "StateButton.h"
 
-#pragma mark - CreateAccountLayer
-
-@implementation CreateAccountLayer
+@implementation EditAccountLayer
 @synthesize nameTextBox = _nameTextBox;
 @synthesize passwordTextBox = _passwordTextBox;
 @synthesize confirmPasswordTextBox = _confirmPasswordTextBox;
 
 // on "init" you need to initialize your instance
-- (id)initWithColor:(ccColor4B)color withLevel:(int)accountLevel {
+- (id)initWithColor:(ccColor4B)color withAccount:(Account *)account {
 	if((self = [super initWithColor:color])) {
-        
-        // store the account level into the class
-        _accountLevel = accountLevel;
         
         // enable touch for this layer
         [self setTouchEnabled:YES];
         
         // get the screen size of the device
-        _size = [[CCDirector sharedDirector] winSize];
+        CGSize size = [[CCDirector sharedDirector] winSize];
+        
+        self.account = account;
         
         // create and initialize a background
         CCSprite *background = [CCSprite spriteWithFile:@"Default-Background.png"];
-        background.position = ccp(_size.width/2, _size.height/2);
         background.scale = 0.75;
+        background.position = ccp(size.width/2, size.height/2);
         [self addChild:background];
         
         // create header text
-        CCLabelTTF *layerName;
-        if (accountLevel == 1)
-            layerName = [CCLabelTTF labelWithString:@"Create Admin Account" fontName:@"KBPlanetEarth" fontSize:48];
-        else
-            layerName = [CCLabelTTF labelWithString:@"Create Player Account" fontName:@"KBPlanetEarth" fontSize:48];
-        layerName.position = ccp(_size.width/2, _size.height-150);
-        [self addChild:layerName];
+        NSMutableString *name = [NSMutableString stringWithFormat:@"Editing: %@", account.name ];
+        _layerName = [CCLabelTTF labelWithString:name fontName:@"KBPlanetEarth" fontSize:48];
+        _layerName.position = ccp(size.width/2, size.height-150);
+        [self addChild:_layerName];
         
         //
         // create the name textbox
         //
-        self.nameTextBox = [[UITextField alloc] initWithFrame:CGRectMake(_size.width/2-100, _size.height/2-175, 200, 50)];
+        self.nameTextBox = [[UITextField alloc] initWithFrame:CGRectMake(size.width/2-100, size.height/2-175, 200, 50)];
         self.nameTextBox.backgroundColor = [UIColor whiteColor];
         self.nameTextBox.delegate = self;
         self.nameTextBox.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -70,17 +51,20 @@
         // grey text inside the box
         NSAttributedString *nameText = [[NSAttributedString alloc] initWithString:@"Name"];
         self.nameTextBox.attributedPlaceholder = nameText;
+        [nameText release];
+        
+        // Display the current account
+        self.nameTextBox.text = self.account.name;
         
         // disable spellchecker
         self.nameTextBox.spellCheckingType = UITextSpellCheckingTypeNo;
         
-        [nameText release];
         [[CCDirector sharedDirector].view addSubview:self.nameTextBox];
         
         //
         // create the password textbox
         //
-        self.passwordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(_size.width/2-100, _size.height/2-100, 200, 50)];
+        self.passwordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(size.width/2-100, size.height/2-100, 200, 50)];
         self.passwordTextBox.backgroundColor = [UIColor whiteColor];
         self.passwordTextBox.delegate = self;
         self.passwordTextBox.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -89,17 +73,21 @@
         // grey text inside the box
         NSAttributedString *passwordName = [[NSAttributedString alloc] initWithString:@"Password"];
         self.passwordTextBox.attributedPlaceholder = passwordName;
+        [passwordName release];
+        
+        // Display the current password
+        self.passwordTextBox.text = self.account.password;
         
         // no spellchecker and make the input text display as ****
         self.passwordTextBox.spellCheckingType = UITextSpellCheckingTypeNo;
         self.passwordTextBox.secureTextEntry = true;
-        [passwordName release];
+
         [[CCDirector sharedDirector].view addSubview:self.passwordTextBox];
         
         //
         // create the confirm password textbox
         //
-        self.confirmPasswordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(_size.width/2-100, _size.height/2-25, 200, 50)];
+        self.confirmPasswordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(size.width/2-100, size.height/2-25, 200, 50)];
         self.confirmPasswordTextBox.backgroundColor = [UIColor whiteColor];
         self.confirmPasswordTextBox.delegate = self;
         self.confirmPasswordTextBox.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -108,32 +96,33 @@
         // grey text inside the box
         NSAttributedString *confirmPasswordName = [[NSAttributedString alloc] initWithString:@"Confirm Password"];
         self.confirmPasswordTextBox.attributedPlaceholder = confirmPasswordName;
+        [confirmPasswordName release];
+        
+        // Display the current password
+        self.confirmPasswordTextBox.text = self.account.password;
         
         // no spellchecker and make the input text display as ****
         self.confirmPasswordTextBox.spellCheckingType = UITextSpellCheckingTypeNo;
         self.confirmPasswordTextBox.secureTextEntry = true;
-        [confirmPasswordName release];
+
         [[CCDirector sharedDirector].view addSubview:self.confirmPasswordTextBox];
         
-        // Add create account button
-        _createAccountButton = [[StateText alloc] initWithString:@"Create Account" fontName:@"KBPlanetEarth" fontSize:48
-                                                        position:ccp(_size.width/2, _size.height/2 - 125)];
-        [self addChild:_createAccountButton];
-
-        // Add exit only if we are creating the user account
-        if (accountLevel == 0) {
-            _exitButton = [CCSprite spriteWithFile:@"Exit-Button.png"];
-            _exitButton.position = ccp(_size.width/2 + 375, _size.height/2 + 290);
-            [self addChild:_exitButton];
-        }
+        // Add Update Account Button
+        _updateAccountButton = [[StateText alloc] initWithString:@"Update" fontName:@"KBPlanetEarth" fontSize:48
+                                                  position:ccp(size.width/2, size.height/2 - 125)];
+        [self addChild:_updateAccountButton];
         
         // error message which used to display any errors that might of occured
         _errorMessage = [CCLabelTTF labelWithString:@"" fontName:@"KBPlanetEarth" fontSize:24];
-        _errorMessage.position = ccp(_size.width/2, _size.height/2 + 195);
+        _errorMessage.position = ccp(size.width/2, size.height/2 + 195);
         ccColor3B c = {255, 0, 0}; // red color
         _errorMessage.color = c;
         _errorMessage.visible = false;
         [self addChild:_errorMessage];
+        
+        _exitButton = [CCSprite spriteWithFile:@"Exit-Button.png"];
+        _exitButton.position = ccp(size.width/2 + 375, size.height/2 + 290);
+        [self addChild:_exitButton];
     }
     return self;
 }
@@ -152,52 +141,58 @@
 
 // occurs when the editin is ended on the text field
 - (void)textFieldDidEndEditing:(UITextField*)textField {
-    // if the input text is empty then disable the submit button
+    // If the input text is empty then disable the submit button
     if ([self validateTextBoxes])
-        _createAccountButton.state = true;
+        _updateAccountButton.state = true;
     else
-        _createAccountButton.state = false;
+        _updateAccountButton.state = false;
 }
 
-// handles the events that happen when the release occurs at a specific location
+// Handles the events that happen when the release occurs at a specific location
 - (void)tapReleaseAt:(CGPoint)releaseLocation {
     
-    // occurs when the user presses the createe account button
-    if (_createAccountButton.state && CGRectContainsPoint(_createAccountButton.boundingBox, releaseLocation)) {
+    // Occurs when the user presses the update account button
+    if (_updateAccountButton.state && CGRectContainsPoint(_updateAccountButton.boundingBox, releaseLocation)) {
         
-        int accountId = [[SOPDatabase database] getLastAccountId] + 1;
-        if ([[SOPDatabase database] createAccount:accountId withName:self.nameTextBox.text withPassword:self.passwordTextBox.text withLevel:_accountLevel]) {
+        if ([[SOPDatabase database] updateAccount:self.account.accountId withName:self.nameTextBox.text withPassword:self.passwordTextBox.text]) {
             
-            // remove all the text boxes. TO-DO make transition more smooth
-            [self.nameTextBox removeFromSuperview];
-            [self.passwordTextBox removeFromSuperview];
-            [self.confirmPasswordTextBox removeFromSuperview];
+            // Update the account with the new information
+            self.account.name = self.nameTextBox.text;
+            self.account.password = self.passwordTextBox.text;
             
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Account has been created!"
+            // Update the loggedInAccount in-case it was logged in
+            Account * loggedInAccount = [Singleton sharedSingleton].loggedInAccount;
+            if (loggedInAccount.accountId == self.account.accountId) {
+                loggedInAccount.name = self.nameTextBox.text;
+                loggedInAccount.name = self.passwordTextBox.text;
+            }
+            
+            // Update the layer title
+            NSMutableString *name = [NSMutableString stringWithFormat:@"Editing: %@", self.account.name];
+            _layerName.string = name;
+            
+            // Send an alert indicating that the update was successful
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Account has been updated"
                                                            delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alert show];
             [alert release];
-            
-            // Cleanup when the layer is removed
-            [self.parent scheduleOnce:@selector(updateAccounts) delay:0];
-            [self.parent removeChild:self cleanup:YES];
         }
         else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not create the account at this time!"
-                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            // Send an alert indicating that the update didn't go throug
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not update the account at this time!"
+                                                           delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
             [alert show];
             [alert release];
         }
     }
-    
-    if (_exitButton && CGRectContainsPoint(_exitButton.boundingBox, releaseLocation)) {
+    if (CGRectContainsPoint(_exitButton.boundingBox, releaseLocation)) {
         
         // remove all the text boxes
         [self.nameTextBox removeFromSuperview];
         [self.passwordTextBox removeFromSuperview];
         [self.confirmPasswordTextBox removeFromSuperview];
         
-        [self.parent scheduleOnce:@selector(updateAccounts) delay:0];
+        [self.parent scheduleOnce:@selector(updateAccountsSprites) delay:0];
         [self.parent removeChild:self cleanup:YES];
     }
 }
@@ -223,7 +218,7 @@
     if (![self.nameTextBox.text isEqualToString:@""] && self.nameTextBox.text != nil) {
         validTextBoxes++;
     }
-
+    
     // make sure that the password input box has a value in there
     if (![self.passwordTextBox.text isEqualToString:@""] && self.passwordTextBox.text != nil)
         validTextBoxes++;
@@ -249,7 +244,8 @@
 }
 
 - (void)dealloc {
-    [_createAccountButton release];
+    [self.account release];
+    [_updateAccountButton release];
     [super dealloc];
 }
 

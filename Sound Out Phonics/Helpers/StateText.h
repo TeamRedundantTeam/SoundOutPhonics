@@ -1,10 +1,11 @@
 //
-//  MenuLayer.h
+//  StateText.h
 //  Sound Out Phonics
 //
-//  Purpose: Menu layer and scene that has verious menu items based on the user type.
+//  Purpose: Helper class that handles the text creation that has states
+//           which indicate if the text is enabled or not
 //
-//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Menu/MenuLayer.h
+//  History: History of the file can be found here: https://github.com/TeamRedundantTeam/SoundOutPhonics/commits/master/Sound%20Out%20Phonics/Helpers/StateText.h
 //
 //  Style: The source code will follow the general apple coding standard described
 //         here: https://tinyurl.com/n8jtvj3
@@ -17,26 +18,16 @@
 //         Sprite.png). Finally, the code will have comments throughout various non
 //         trivial operations.
 //
-//  Created on 2013-10-24.
+//  Created on 2013-11-23.
 //  Copyright (c) 2013 Team Redundant Team. All rights reserved.
 //
 
+#import "CCLabelTTF.h"
 
-#import "cocos2d.h"
-
-// Needed to obtain the Navigation Controller
-#import "AppDelegate.h"
-#import "LevelSelectLayer.h"
-#import "LoginLayer.h"
-#import "StatisticLayer.h"
-#import "ManageAccountLayer.h"
-
-@interface MenuLayer : CCLayer {
-
+@interface StateText : CCLabelTTF {
+    bool state;
 }
-
-// returns a CCScene that contains the MenuLayer as the only child
-+ (CCScene *)scene;
-
+- (id)initWithString:(NSString *)string fontName:(NSString *)name fontSize:(CGFloat)size position:(CGPoint) pos;
+- (bool)state;
+- (void)setState:(bool)input;
 @end
-
