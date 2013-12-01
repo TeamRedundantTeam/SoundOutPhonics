@@ -33,6 +33,7 @@
 #import "Level.h"
 #import "Statistics.h"
 #import "SOPDatabase.h"
+#import "PauseLayer.h"
 
 @interface GameLayer : CCLayer {
     
@@ -41,6 +42,7 @@
     Level *_level;
     
     CGSize _size; // Used to store the screen size
+    bool _pause; // Determins if the game is paused
     
     // Game variable declaration
     NSMutableArray *_graphemes; // Graphemes that the player will move around in the game layer
@@ -49,6 +51,7 @@
     NSMutableArray *_slots; // Slots array in which the user will be putting the graphemes in
     StateButton *_submitButton; // Submit button that will become enabled when all the slots are filled in
     CCSprite *_resetButton; // Reset button that resets the level
+    CCSprite *_pauseButton; // Pause button that pauses the level
     CCLayerColor * _wrongAnswerLayer; // Layer that will display when the player doesn't spell the word correctly
     
     // Statistic Variables
@@ -60,6 +63,6 @@
 
     // returns a CCScene that contains the GameBoard as the only child and takes paramater level which has information about the level and number of tries the user attempted to play this level. The attempts are used when the player decides to refresh the level before completing it.
 
-+(CCScene *)sceneWithLevel:(Level *)level withAttempts:(int)attempts;
-
++ (CCScene *)sceneWithLevel:(Level *)level withAttempts:(int)attempts;
+- (void)unpause;
 @end

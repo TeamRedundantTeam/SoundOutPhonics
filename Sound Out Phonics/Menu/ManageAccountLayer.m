@@ -115,11 +115,6 @@
     return self;
 }
 
-// function called by pressing HOME button to return to main menu
-- (void)goHome:(id)sender {
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
-}
-
 // create the account avatars and names
 - (void) displayAccounts {
 
