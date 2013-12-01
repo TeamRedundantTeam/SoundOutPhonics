@@ -74,8 +74,6 @@
         // information about the current level
         _level = level;
         
-        [Singleton sharedSingleton].selectedLevel = level;
-        
         // add picture sprite object
         [_level createSprite];
         _level.sprite.position = ccp(_size.width/2, _size.height/2+200);
@@ -146,8 +144,13 @@
         _resetButton.position = ccp(_size.width - 50, _size.height - 50);
         [self addChild:_resetButton];
         
+        _pauseButton = [CCSprite spriteWithFile:@"Pause-IconFinal.png"];
+        _pauseButton.position = ccp(_size.width - 100, _size.height - 50);
+        [self addChild:_pauseButton];
+        
         // initialize the schedular to calculate time since the level has started
         [self schedule: @selector(tick:)];
+        _pause = false;
         
         // play level name at the start
         [[TextToSpeech tts] playWord:_level.name];
@@ -361,7 +364,7 @@
         
         // put all graphemes in the original position
         for (CCSprite *grapheme in _graphemes) {
-            CGFloat xpos = _size.width/2 + 140 - (_graphemes.count - 1 ) * 40 + i * 80;
+            CGFloat xpos = _size.width/2 - (_graphemes.count - 1 ) * 40 + i * 80;
             CGFloat ypos = _size.height/2-25;
             grapheme.position = ccp(xpos, ypos);
             i++;
@@ -373,14 +376,14 @@
             slot.scale = 1.0; // reset the size of the slot
             [_submitButton setState:false];
         }
-        
-        _attempts++;
-        
-        // Change the old score to the new score
-        NSString *score = [NSString stringWithFormat:@"score: %d", [self generateScore:_attempts]];
-        [_levelScore setString:score];
     }
-
+    
+    if (CGRectContainsPoint(_pauseButton.boundingBox, releaseLocation)) {
+        ccColor4B color = {100,100,0,100};
+        PauseLayer *layer = [[[PauseLayer alloc] initWithColor:color] autorelease];
+        _pause = true;
+        [self addChild:layer];
+    }
 }
 
 // event that is called when the touch begins
@@ -495,14 +498,21 @@
             return 100;
         case 1:
             return 10;
-        default:
+        case 2:
             return 1;
+        default:
+            return 0;
     }
 }
 
+- (void)unpause {
+    _pause = false;
+}
+
 // Used to determine for how long the player has been playing this level
--(void)tick:(ccTime)dt {
-    _elapsedTime += dt;
+- (void)tick:(ccTime)dt {
+    if (!_pause)
+        _elapsedTime += dt;
 }
 
 // on "dealloc" you need to release all your retained objects
