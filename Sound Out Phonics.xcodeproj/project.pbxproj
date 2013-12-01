@@ -214,6 +214,7 @@
 		E2EB9A08184A7EF70069AA61 /* Trash-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99FA184A7EF70069AA61 /* Trash-IconFinal.png */; };
 		E2EB9A09184A7EF70069AA61 /* Home-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99FB184A7EF70069AA61 /* Home-IconFinal.png */; };
 		E2FB221B184ACF9100125633 /* Login-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB221A184ACF9100125633 /* Login-Button.png */; };
+		E2FB221D184AD25D00125633 /* Border-Play.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB221C184AD25D00125633 /* Border-Play.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -586,6 +587,7 @@
 		E2EB99FA184A7EF70069AA61 /* Trash-IconFinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trash-IconFinal.png"; sourceTree = "<group>"; };
 		E2EB99FB184A7EF70069AA61 /* Home-IconFinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-IconFinal.png"; sourceTree = "<group>"; };
 		E2FB221A184ACF9100125633 /* Login-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login-Button.png"; sourceTree = "<group>"; };
+		E2FB221C184AD25D00125633 /* Border-Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Border-Play.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -656,6 +658,7 @@
 		7CAF16B9183070F800243C4B /* GameSprites */ = {
 			isa = PBXGroup;
 			children = (
+				E2FB221C184AD25D00125633 /* Border-Play.png */,
 				E2B18F491847BD9100656E35 /* Slot-Sprite.png */,
 				7C5DDA87183180A90047A808 /* Submit-Button.png */,
 				7C5DDA851831808C0047A808 /* Reset-Button.png */,
@@ -719,7 +722,6 @@
 		7CAF16CB183070F900243C4B /* MenuSprites */ = {
 			isa = PBXGroup;
 			children = (
-				E2FB221A184ACF9100125633 /* Login-Button.png */,
 				E2EB99ED184A7E560069AA61 /* [NEW] Final Icons */,
 				E2B18F571848035E00656E35 /* Back-Icon.png */,
 				E2B18F581848035E00656E35 /* Play-Icon.png */,
@@ -1204,6 +1206,7 @@
 		E2EB99ED184A7E560069AA61 /* [NEW] Final Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E2FB221A184ACF9100125633 /* Login-Button.png */,
 				E2EB99EE184A7EF70069AA61 /* Statistic-IconFinal.png */,
 				E2EB99EF184A7EF70069AA61 /* Back-IconFinal.png */,
 				E2EB99F0184A7EF70069AA61 /* Manage-IconFinal.png */,
@@ -1349,6 +1352,7 @@
 				7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */,
 				7C5DDAC9183183B70047A808 /* Lvl24-Doll-Sprite.png in Resources */,
 				E2EB9A06184A7EF70069AA61 /* Profile-IconFinal.png in Resources */,
+				E2FB221D184AD25D00125633 /* Border-Play.png in Resources */,
 				E2B18F5A1848035E00656E35 /* Play-Icon.png in Resources */,
 				7C5DDABD183183B70047A808 /* Lvl12-Trash-Sprite.png in Resources */,
 			);
