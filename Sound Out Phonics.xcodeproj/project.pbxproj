@@ -17,7 +17,6 @@
 		7C5DDA84183180740047A808 /* Default-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA83183180740047A808 /* Default-Background.png */; };
 		7C5DDA861831808C0047A808 /* Reset-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA851831808C0047A808 /* Reset-Button.png */; };
 		7C5DDA88183180A90047A808 /* Submit-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA87183180A90047A808 /* Submit-Button.png */; };
-		7C5DDA93183182200047A808 /* Empty-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA91183182200047A808 /* Empty-Portrait.png */; };
 		7C5DDA94183182200047A808 /* Selected-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA92183182200047A808 /* Selected-Portrait.png */; };
 		7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
 		7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
@@ -221,6 +220,7 @@
 		7CF6BEF9184AFAF90054E471 /* Lvl50-Leaf-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC7184AFAF90054E471 /* Lvl50-Leaf-Sprite.png */; };
 		7CF9526E182F194600FE1DDC /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9526D182F194600FE1DDC /* Statistics.m */; };
 		7CFCBE72183172A200EF6233 /* KBPlanetEarth.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */; };
+		E25DFEB3184B1A9100991902 /* Empty-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E25DFEB2184B1A9100991902 /* Empty-Portrait.png */; };
 		E2B18F461847B9C300656E35 /* Background-No-Gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F451847B9C300656E35 /* Background-No-Gradient.png */; };
 		E2B18F4A1847BD9100656E35 /* Slot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F491847BD9100656E35 /* Slot-Sprite.png */; };
 		E2B18F531847FDF600656E35 /* Manage-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F4F1847FDF600656E35 /* Manage-Icon.png */; };
@@ -261,7 +261,6 @@
 		7C5DDA83183180740047A808 /* Default-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Background.png"; sourceTree = "<group>"; };
 		7C5DDA851831808C0047A808 /* Reset-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reset-Button.png"; sourceTree = "<group>"; };
 		7C5DDA87183180A90047A808 /* Submit-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Submit-Button.png"; sourceTree = "<group>"; };
-		7C5DDA91183182200047A808 /* Empty-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty-Portrait.png"; sourceTree = "<group>"; };
 		7C5DDA92183182200047A808 /* Selected-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Selected-Portrait.png"; sourceTree = "<group>"; };
 		7C6851111819FC8200A52AAA /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		7C6851121819FC8200A52AAA /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
@@ -625,6 +624,7 @@
 		7CF9526C182F194600FE1DDC /* Statistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Statistics.h; sourceTree = "<group>"; };
 		7CF9526D182F194600FE1DDC /* Statistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statistics.m; sourceTree = "<group>"; };
 		7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = KBPlanetEarth.ttf; path = Resources/KBPlanetEarth.ttf; sourceTree = "<group>"; };
+		E25DFEB2184B1A9100991902 /* Empty-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty-Portrait.png"; sourceTree = "<group>"; };
 		E2B18F451847B9C300656E35 /* Background-No-Gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background-No-Gradient.png"; sourceTree = "<group>"; };
 		E2B18F491847BD9100656E35 /* Slot-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slot-Sprite.png"; sourceTree = "<group>"; };
 		E2B18F4F1847FDF600656E35 /* Manage-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Manage-Icon.png"; sourceTree = "<group>"; };
@@ -810,6 +810,7 @@
 		7CAF16CB183070F900243C4B /* MenuSprites */ = {
 			isa = PBXGroup;
 			children = (
+				E25DFEB2184B1A9100991902 /* Empty-Portrait.png */,
 				E2EB99ED184A7E560069AA61 /* [NEW] Final Icons */,
 				E2B18F571848035E00656E35 /* Back-Icon.png */,
 				E2B18F581848035E00656E35 /* Play-Icon.png */,
@@ -817,7 +818,6 @@
 				E2B18F501847FDF600656E35 /* Statistic-Icon.png */,
 				E2B18F451847B9C300656E35 /* Background-No-Gradient.png */,
 				7C0394DA18457F5800947CF3 /* Arrow.png */,
-				7C5DDA91183182200047A808 /* Empty-Portrait.png */,
 				7C5DDA92183182200047A808 /* Selected-Portrait.png */,
 			);
 			name = MenuSprites;
@@ -1428,7 +1428,6 @@
 				7CAF16DD183070F900243C4B /* Icon.png in Resources */,
 				7CAF16DB183070F900243C4B /* Icon-Small.png in Resources */,
 				7CAF16D9183070F900243C4B /* Icon-72.png in Resources */,
-				7C5DDA93183182200047A808 /* Empty-Portrait.png in Resources */,
 				7CF6BEC8184AFAF90054E471 /* Lvl1-Can-Sprite.png in Resources */,
 				E2EB9A04184A7EF70069AA61 /* Plus-IconFinal.png in Resources */,
 				7CF6BEE9184AFAF90054E471 /* Lvl34-Star-Sprite.png in Resources */,
@@ -1447,6 +1446,7 @@
 				7CF6BECA184AFAF90054E471 /* Lvl3-Drum-Sprite.png in Resources */,
 				E2EB9A05184A7EF70069AA61 /* Minus-IconFinal.png in Resources */,
 				7CF6BED3184AFAF90054E471 /* Lvl12-Trash-Sprite.png in Resources */,
+				E25DFEB3184B1A9100991902 /* Empty-Portrait.png in Resources */,
 				7CF6BEDD184AFAF90054E471 /* Lvl22-Cliff-Sprite.png in Resources */,
 				7CF6BEDF184AFAF90054E471 /* Lvl24-Doll-Sprite.png in Resources */,
 				7CF6BEDB184AFAF90054E471 /* Lvl20-Swing-Sprite.png in Resources */,

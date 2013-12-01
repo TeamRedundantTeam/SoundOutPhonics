@@ -57,36 +57,27 @@
         [self setTouchEnabled:YES];
         
         // Initialize and add the background sprites
-        CCSprite *background = [CCSprite spriteWithFile:@"Default-Background.png"]; // create and initialize the background sprite (png)
-        CCSprite *backButton = [CCSprite spriteWithFile:@"Back-Icon.png"];
+        CCSprite *background = [CCSprite spriteWithFile:@"Default-Background.png"];
         CCLabelTTF *titleName = [CCLabelTTF labelWithString:@"Level Select" fontName:@"KBPlanetEarth" fontSize:48];
         
         background.position = ccp(_size.width/2, _size.height/2);
-        backButton.position = ccp(_size.width - 180, _size.height - _size.height + 50);
         titleName.position = ccp(_size.width/2, _size.height-75);
         
         [self addChild:background];
         [self addChild:titleName];
-        [self addChild:backButton];
-        
         
         // add the back text which will make the user go back to the menu when pressed
-        [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
-        [CCMenuItemFont setFontSize:48]; // set the default CCMenuItemFont size
-        
-        CCMenuItem *itemBack = [CCMenuItemFont itemWithString:@"back" block:^(id sender) {
-            
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                       transitionWithDuration:1.0
-                                                       scene:[MenuLayer scene]]];
-        }];
-        
-        CCMenu *menu = [CCMenu menuWithItems:itemBack, nil];
+        [CCMenuItemFont setFontName:@"KBPlanetEarth"];                                      // set the default CCMenuItemFont to our custom font, KBPlanetEarth
+        [CCMenuItemFont setFontSize:48];                                                    // set the default CCMenuItemFont size
+         
+        CCMenuItemImage *itemHome = [CCMenuItemImage itemWithNormalImage:@"Home-IconFinal.png" selectedImage:@"Home-IconFinal.png" target:self selector:@selector(goHome:)];
+             
+        CCMenu *menu = [CCMenu menuWithItems:itemHome, nil];
 		[menu setPosition:ccp(_size.width - 100, _size.height - _size.height + 40)];
         
 		// add the menu to the layer
 		[self addChild:menu];
-
+        
         _lastLevelsPage = [CCSprite spriteWithFile:@"Arrow.png"];
         _nextLevelsPage = [CCSprite spriteWithFile:@"Arrow.png"];
         
@@ -111,6 +102,10 @@
         [self displayLevels];
 	}
 	return self;
+}
+
+- (void)goHome:(id)sender {
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
 }
 
 - (void) displayLevels {
