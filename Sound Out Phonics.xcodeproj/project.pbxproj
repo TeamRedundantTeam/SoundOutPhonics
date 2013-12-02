@@ -10,7 +10,6 @@
 		1708C003184C6695003028AE /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1708C002184C6695003028AE /* BugSense-iOS.framework */; };
 		1708C005184C66FD003028AE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1708C004184C66FD003028AE /* SystemConfiguration.framework */; };
 		174EA97E1830672F00A2503C /* LevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 174EA96F1830635800A2503C /* LevelParser.m */; };
-		7C025C4F184C72F800FB3B90 /* .fuse_hidden000331cc00000108 in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C2E184C72F800FB3B90 /* .fuse_hidden000331cc00000108 */; };
 		7C025C50184C72F800FB3B90 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C2F184C72F800FB3B90 /* Default-568h@2x.png */; };
 		7C025C51184C72F800FB3B90 /* Default-Landscape~ipad-cocos2d.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C30184C72F800FB3B90 /* Default-Landscape~ipad-cocos2d.png */; };
 		7C025C52184C72F800FB3B90 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C31184C72F800FB3B90 /* Default-Landscape~ipad.png */; };
@@ -262,7 +261,6 @@
 		171818DB184C3FE800587FD1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		174EA96E1830635800A2503C /* LevelParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelParser.h; sourceTree = "<group>"; };
 		174EA96F1830635800A2503C /* LevelParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LevelParser.m; sourceTree = "<group>"; };
-		7C025C2E184C72F800FB3B90 /* .fuse_hidden000331cc00000108 */ = {isa = PBXFileReference; lastKnownFileType = file; path = .fuse_hidden000331cc00000108; sourceTree = "<group>"; };
 		7C025C2F184C72F800FB3B90 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		7C025C30184C72F800FB3B90 /* Default-Landscape~ipad-cocos2d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad-cocos2d.png"; sourceTree = "<group>"; };
 		7C025C31184C72F800FB3B90 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
@@ -694,7 +692,6 @@
 		7C025C2D184C72F800FB3B90 /* IntroSprites */ = {
 			isa = PBXGroup;
 			children = (
-				7C025C2E184C72F800FB3B90 /* .fuse_hidden000331cc00000108 */,
 				7C025C2F184C72F800FB3B90 /* Default-568h@2x.png */,
 				7C025C30184C72F800FB3B90 /* Default-Landscape~ipad-cocos2d.png */,
 				7C025C31184C72F800FB3B90 /* Default-Landscape~ipad.png */,
@@ -1488,7 +1485,6 @@
 				7CF6BEF3184AFAF90054E471 /* Lvl44-Queen-Sprite.png in Resources */,
 				7CF6BEEF184AFAF90054E471 /* Lvl40-Saint-Sprite.png in Resources */,
 				7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */,
-				7C025C4F184C72F800FB3B90 /* .fuse_hidden000331cc00000108 in Resources */,
 				7CF6BEEE184AFAF90054E471 /* Lvl39-Rain-Sprite.png in Resources */,
 				7CF6BED1184AFAF90054E471 /* Lvl10-Pen-Sprite.png in Resources */,
 				7CF6BED5184AFAF90054E471 /* Lvl14-Cloth-Sprite.png in Resources */,
