@@ -33,7 +33,7 @@
 // on "init" you need to initialize your instance
 - (id)initWithColor:(ccColor4B)color withLevel:(int)accountLevel {
 	if((self = [super initWithColor:color])) {
-        filePath = [NSString stringWithString:@""];
+        filePath = @"";
         // store the account level into the class
         _accountLevel = accountLevel;
         
