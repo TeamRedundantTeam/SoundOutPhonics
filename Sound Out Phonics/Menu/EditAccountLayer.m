@@ -226,11 +226,10 @@
 				picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 				picker.delegate = self;
                 UIPopoverController *popoverController=[[UIPopoverController alloc] initWithContentViewController:picker];
-                popoverController.delegate=self;
                 CGSize winsize = [[CCDirector sharedDirector] winSize];
                 //Show gallery bar
                 [popoverController setPopoverContentSize:CGSizeMake(winsize.width,winsize.height) animated:NO];
-                [popoverController presentPopoverFromRect:CGRectMake(0,0,10,10)  inView:[[CCDirector sharedDirector]openGLView]
+                [popoverController presentPopoverFromRect:CGRectMake(0,0,10,10)  inView:[[CCDirector sharedDirector] view]
                 permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
 				[picker release];
             }
