@@ -98,8 +98,8 @@
         [self addChild:_loginButton];
             
         // Initialize and add the paging button sprites
-        _lastAccountsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
-        _nextAccountsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
+        _lastAccountsPage = [CCSprite spriteWithFile:@"Backward-Icon.png"];
+        _nextAccountsPage = [CCSprite spriteWithFile:@"Backward-Icon.png"];
             
         _lastAccountsPage.position = ccp(_size.width/2 - 375, _size.height - 230);
         _nextAccountsPage.position = ccp(_size.width/2 + 375, _size.height - 230);

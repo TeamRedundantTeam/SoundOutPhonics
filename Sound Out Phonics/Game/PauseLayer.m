@@ -41,12 +41,12 @@
         [self addChild:background];
         
         // add level select icon to victory layer
-        CCSprite *levelSelect = [CCSprite spriteWithFile:@"Game-IconFinal.png"];
+        CCSprite *levelSelect = [CCSprite spriteWithFile:@"Game-Icon.png"];
         levelSelect.position = ccp(_size.width/2-130, _size.height - 365);
         [self addChild: levelSelect];
         
         // add resume icon to victory layer
-        CCSprite *resumeLevel = [CCSprite spriteWithFile:@"Forward-IconFinal.png"];
+        CCSprite *resumeLevel = [CCSprite spriteWithFile:@"Forward-Icon.png"];
         resumeLevel.position = ccp(_size.width/2-130, _size.height - 445);
         [self addChild: resumeLevel];
         

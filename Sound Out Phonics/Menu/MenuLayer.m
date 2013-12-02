@@ -55,10 +55,10 @@
         background.position = ccp(size.width/2, size.height/2);                             // center background layer
         [self addChild: background];
         
-        CCSprite *playIcon = [CCSprite spriteWithFile:@"Game-IconFinal.png"];               // create and initialize the playIcon sprite (png)
-        CCSprite *statisticIcon = [CCSprite spriteWithFile:@"Statistic-IconFinal.png"];     // create and initialize the statisticIcon sprite (png)
-        CCSprite *logoutIcon = [CCSprite spriteWithFile:@"Cancel-IconFinal.png"];           // create and initialize the logoutIcon sprite (png)
-        CCSprite *manageIcon = [CCSprite spriteWithFile:@"Manage-IconFinal.png"];           // create and initialize the manageIcon sprite (png)
+        CCSprite *playIcon = [CCSprite spriteWithFile:@"Game-Icon.png"];               // create and initialize the playIcon sprite (png)
+        CCSprite *statisticIcon = [CCSprite spriteWithFile:@"Statistic-Icon.png"];     // create and initialize the statisticIcon sprite (png)
+        CCSprite *logoutIcon = [CCSprite spriteWithFile:@"Cancel-Icon.png"];           // create and initialize the logoutIcon sprite (png)
+        CCSprite *manageIcon = [CCSprite spriteWithFile:@"Manage-Icon.png"];           // create and initialize the manageIcon sprite (png)
         
         playIcon.position = ccp((size.width/2)-88, size.height/2+52);                       // set playIcon screen position
         statisticIcon.position = ccp((size.width/2)-89, size.height/2-23);                  // set statisticIcon screen position

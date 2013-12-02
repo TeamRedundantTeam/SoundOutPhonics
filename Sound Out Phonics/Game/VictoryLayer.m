@@ -42,17 +42,17 @@
         [self addChild:background];
         
         // add play again icon to victory layer
-        CCSprite *playAgain = [CCSprite spriteWithFile:@"Refresh-IconFinal.png"];
+        CCSprite *playAgain = [CCSprite spriteWithFile:@"Refresh-Icon.png"];
         playAgain.position = ccp(_size.width/2-130, _size.height - 320);
         [self addChild: playAgain];
         
         // add next level icon to victory layer
-        CCSprite *nextLevel = [CCSprite spriteWithFile:@"Forward-IconFinal.png"];
+        CCSprite *nextLevel = [CCSprite spriteWithFile:@"Forward-Icon.png"];
         nextLevel.position = ccp(_size.width/2-130, _size.height - 395);
         [self addChild: nextLevel];
         
         // add level select icon to victory layer
-        CCSprite *levelSelect = [CCSprite spriteWithFile:@"Game-IconFinal.png"];
+        CCSprite *levelSelect = [CCSprite spriteWithFile:@"Game-Icon.png"];
         levelSelect.position = ccp(_size.width/2-130, _size.height - 470);
         [self addChild: levelSelect];
         

@@ -50,7 +50,7 @@
         [self addChild:background];
         
         // add CREATE account icon to victory layer
-        CCSprite *createAccount = [CCSprite spriteWithFile:@"Plus-IconFinal.png"];
+        CCSprite *createAccount = [CCSprite spriteWithFile:@"Plus-Icon.png"];
         createAccount.position = ccp(_size.width/2-185, _size.height-505);
         [self addChild: createAccount];
         
@@ -127,7 +127,7 @@
 
         // Add exit only if we are creating the user account
         if (accountLevel == 0) {
-            _exitButton = [CCSprite spriteWithFile:@"Cancel-IconFinal-White.png"];
+            _exitButton = [CCSprite spriteWithFile:@"Cancel-Icon-White.png"];
             _exitButton.position = ccp(_size.width/2 + 375, _size.height/2 + 290);
             [self addChild:_exitButton];
         }

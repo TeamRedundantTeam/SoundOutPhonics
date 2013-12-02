@@ -143,11 +143,11 @@
         _levelScore.position = ccp(_size.width/2, _size.height - 24);
         [self addChild:_levelScore];
         
-        _resetButton = [CCSprite spriteWithFile:@"Refresh-IconFinal.png"];
+        _resetButton = [CCSprite spriteWithFile:@"Refresh-Icon.png"];
         _resetButton.position = ccp(_size.width - 50, _size.height - 50);
         [self addChild:_resetButton];
         
-        _pauseButton = [CCSprite spriteWithFile:@"Pause-IconFinal.png"];
+        _pauseButton = [CCSprite spriteWithFile:@"Pause-Icon.png"];
         _pauseButton.position = ccp(_size.width - 100, _size.height - 50);
         [self addChild:_pauseButton];
         

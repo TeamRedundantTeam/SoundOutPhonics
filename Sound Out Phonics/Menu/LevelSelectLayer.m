@@ -68,7 +68,7 @@
         [CCMenuItemFont setFontName:@"KBPlanetEarth"];                                      // set the default CCMenuItemFont to our custom font, KBPlanetEarth
         [CCMenuItemFont setFontSize:48];                                                    // set the default CCMenuItemFont size
          
-        CCMenuItemImage *itemHome = [CCMenuItemImage itemWithNormalImage:@"Home-IconFinal.png" selectedImage:@"Home-IconFinal.png" target:self selector:@selector(goHome:)];
+        CCMenuItemImage *itemHome = [CCMenuItemImage itemWithNormalImage:@"Home-Icon.png" selectedImage:@"Home-Icon.png" target:self selector:@selector(goHome:)];
              
         CCMenu *menu = [CCMenu menuWithItems:itemHome, nil];
 		[menu setPosition:ccp(_size.width - 100, _size.height - _size.height + 40)];
@@ -76,8 +76,8 @@
 		// add the menu to the layer
 		[self addChild:menu];
         
-        _lastLevelsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
-        _nextLevelsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
+        _lastLevelsPage = [CCSprite spriteWithFile:@"Backward-Icon.png"];
+        _nextLevelsPage = [CCSprite spriteWithFile:@"Backward-Icon.png"];
         
         _lastLevelsPage.position = ccp(_size.width/4 + 225, _size.height/3 - 200);
         _nextLevelsPage.position = ccp(_size.width/4 + 325, _size.height/3 - 200);

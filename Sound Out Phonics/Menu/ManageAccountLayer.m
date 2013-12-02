@@ -64,21 +64,21 @@
         [self addChild:titleName];
         
         // add EDIT account icon to victory layer
-        CCSprite *editAccount = [CCSprite spriteWithFile:@"Manage-IconFinal.png"];
+        CCSprite *editAccount = [CCSprite spriteWithFile:@"Manage-Icon.png"];
         editAccount.position = ccp(_size.width/2-170, _size.height - 425);
         [self addChild: editAccount];
         
         // add DELETE account icon to victory layer
-        CCSprite *deleteAccount = [CCSprite spriteWithFile:@"Minus-IconFinal.png"];
+        CCSprite *deleteAccount = [CCSprite spriteWithFile:@"Minus-Icon.png"];
         deleteAccount.position = ccp(_size.width/2-170, _size.height - 500);
         [self addChild: deleteAccount];
         
         // add CREATE account icon to victory layer
-        CCSprite *createAccount = [CCSprite spriteWithFile:@"Plus-IconFinal.png"];
+        CCSprite *createAccount = [CCSprite spriteWithFile:@"Plus-Icon.png"];
         createAccount.position = ccp(_size.width/2-170, _size.height - 580);
         [self addChild: createAccount];
         
-        _homeButton = [CCSprite spriteWithFile:@"Home-IconFinal.png"];
+        _homeButton = [CCSprite spriteWithFile:@"Home-Icon.png"];
         _homeButton.position = ccp(_size.width - 100, _size.height - _size.height + 40);
         [self addChild:_homeButton];
         
@@ -93,8 +93,8 @@
         [self addChild:_selectedAvatarBorder];
         
         // Initialize and add the paging button sprites
-        _lastAccountsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
-        _nextAccountsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
+        _lastAccountsPage = [CCSprite spriteWithFile:@"Backward-Icon.png"];
+        _nextAccountsPage = [CCSprite spriteWithFile:@"Backward-Icon.png"];
         
         _lastAccountsPage.position = ccp(_size.width/2 - 375, _size.height - 230);
         _nextAccountsPage.position = ccp(_size.width/2 + 375, _size.height - 230);

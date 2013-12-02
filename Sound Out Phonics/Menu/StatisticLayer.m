@@ -73,10 +73,10 @@
         [self addChild:titleName];
 
         // Initialize and add the paging button sprites
-        _lastStatisticsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
-        _nextStatisticsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
-        _lastAccountsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
-        _nextAccountsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
+        _lastStatisticsPage = [CCSprite spriteWithFile:@"Backward-Icon.png"];
+        _nextStatisticsPage = [CCSprite spriteWithFile:@"Backward-Icon.png"];
+        _lastAccountsPage = [CCSprite spriteWithFile:@"Backward-Icon.png"];
+        _nextAccountsPage = [CCSprite spriteWithFile:@"Backward-Icon.png"];
         
         _lastStatisticsPage.position = ccp(_size.width/4 + 225, _size.height/3 - 200);
         _nextStatisticsPage.position = ccp(_size.width/4 + 325, _size.height/3 - 200);
@@ -102,7 +102,7 @@
         [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
         [CCMenuItemFont setFontSize:48]; // set the default CCMenuItemFont size
         
-        CCMenuItemImage *itemHome = [CCMenuItemImage itemWithNormalImage:@"Home-IconFinal.png" selectedImage:@"Home-IconFinal.png" target:self selector:@selector(goHome:)];
+        CCMenuItemImage *itemHome = [CCMenuItemImage itemWithNormalImage:@"Home-Icon.png" selectedImage:@"Home-Icon.png" target:self selector:@selector(goHome:)];
         
         CCMenu *menu = [CCMenu menuWithItems:itemHome, nil];
 		

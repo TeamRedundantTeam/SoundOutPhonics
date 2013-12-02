@@ -34,12 +34,12 @@
         [self addChild:background];
         
         // add update icon to edit account layer
-        CCSprite *editAccount = [CCSprite spriteWithFile:@"Refresh-IconFinal.png"];
+        CCSprite *editAccount = [CCSprite spriteWithFile:@"Refresh-Icon.png"];
         editAccount.position = ccp(size.width/2-145, size.height - 553);
         [self addChild: editAccount];
         
         // add update icon to edit account layer
-        CCSprite *takePicture = [CCSprite spriteWithFile:@"Camera-IconFinal.png"];
+        CCSprite *takePicture = [CCSprite spriteWithFile:@"Camera-Icon.png"];
         takePicture.position = ccp(size.width/2-145, size.height - 471);
         [self addChild: takePicture];
         
@@ -136,7 +136,7 @@
         _errorMessage.visible = false;
         [self addChild:_errorMessage];
         
-        _exitButton = [CCSprite spriteWithFile:@"Cancel-IconFinal-White.png"];
+        _exitButton = [CCSprite spriteWithFile:@"Cancel-Icon-White.png"];
         _exitButton.position = ccp(size.width/2 + 375, size.height/2 + 290);
         [self addChild:_exitButton];
     }
