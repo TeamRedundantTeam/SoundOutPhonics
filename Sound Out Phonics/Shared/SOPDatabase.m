@@ -203,9 +203,25 @@ static SOPDatabase *_database;
 
 // Delete a specific account from the database
 - (BOOL)deleteAccount:(int)accountId {
+    sqlite3_stmt *statement = nil;
+    
+    // Delete account
     NSString *query = @"DELETE FROM Accounts WHERE (accountId = ?);";
     
-    sqlite3_stmt *statement = nil;
+    if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        sqlite3_bind_int(statement, 1, accountId);
+        
+        if (sqlite3_step(statement) != SQLITE_DONE) {
+            NSLog(@"error: %s", sqlite3_errmsg(_database));
+            sqlite3_reset(statement);
+            return false;
+        }
+        
+        sqlite3_finalize(statement);
+    }
+    
+    // Delete accounts statistics
+    query = @"DELETE FROM Statistics WHERE (accountId = ?);";
     if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
         sqlite3_bind_int(statement, 1, accountId);
         
