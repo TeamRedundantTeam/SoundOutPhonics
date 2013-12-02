@@ -26,6 +26,9 @@
 #import "AppDelegate.h"
 #import "IntroLayer.h"
 
+#import <BugSense-iOS/BugSenseController.h>
+
+
 @implementation MyNavigationController
 
 // The available orientations should be defined in the Info.plist file.
@@ -102,7 +105,8 @@
 	// Create the main window
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
-	
+    [BugSenseController sharedControllerWithBugSenseAPIKey:@"ef37f196"];
+
 	// CCGLView creation
 	// viewWithFrame: size of the OpenGL view. For full screen use [_window bounds]
 	//  - Possible values: any CGRect

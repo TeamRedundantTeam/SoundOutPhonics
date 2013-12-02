@@ -1,256 +1,260 @@
 // !$*UTF8*$!
 {
-        archiveVersion = 1;
-        classes = {
-        };
-        objectVersion = 46;
-        objects = {
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
 
 /* Begin PBXBuildFile section */
-                174EA97E1830672F00A2503C /* LevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 174EA96F1830635800A2503C /* LevelParser.m */; };
-                7C0394DB18457F5800947CF3 /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0394DA18457F5800947CF3 /* Arrow.png */; };
-                7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
-                7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C039AC1182A326B00E38FA1 /* Singleton.m */; };
-                7C2636EF182C71BF00EA972F /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2636EE182C71BF00EA972F /* Level.m */; };
-                7C398C181841AF0300877AC2 /* CreateAccountLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C398C171841AF0300877AC2 /* CreateAccountLayer.m */; };
-                7C398C1E1841B5CF00877AC2 /* StateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C398C1D1841B5CF00877AC2 /* StateButton.m */; };
-                7C5DDA84183180740047A808 /* Default-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA83183180740047A808 /* Default-Background.png */; };
-                7C5DDA861831808C0047A808 /* Reset-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA851831808C0047A808 /* Reset-Button.png */; };
-                7C5DDA88183180A90047A808 /* Submit-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA87183180A90047A808 /* Submit-Button.png */; };
-                7C5DDA94183182200047A808 /* Selected-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA92183182200047A808 /* Selected-Portrait.png */; };
-                7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
-                7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
-                7C736C4D184829B000A4ED10 /* LevelSelectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C736C4C184829B000A4ED10 /* LevelSelectLayer.m */; };
-                7C753E22181A41650081BC90 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C753E21181A41650081BC90 /* GameLayer.m */; };
-                7C7D35E6181CF91100CC2C02 /* VictoryLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D35E5181CF91100CC2C02 /* VictoryLayer.m */; };
-                7CAF16B6183069B100243C4B /* Levels.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16B5183069B100243C4B /* Levels.xml */; };
-                7CAF16D5183070F900243C4B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16BE183070F800243C4B /* Default-568h@2x.png */; };
-                7CAF16D6183070F900243C4B /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16BF183070F800243C4B /* Default-Landscape~ipad.png */; };
-                7CAF16D7183070F900243C4B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16C0183070F800243C4B /* Default.png */; };
-                7CAF16D8183070F900243C4B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16C1183070F800243C4B /* Default@2x.png */; };
-                7CAF16DD183070F900243C4B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16C6183070F800243C4B /* Icon.png */; };
-                7CAF16DE183070F900243C4B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16C7183070F900243C4B /* Icon@2x.png */; };
-                7CAF16E91830852900243C4B /* StatisticLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF16E81830852900243C4B /* StatisticLayer.m */; };
-                7CED9B271829908E008BA73B /* LoginLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CED9B261829908E008BA73B /* LoginLayer.m */; };
-                7CED9B2918299DBC008BA73B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CED9B2818299DBC008BA73B /* libsqlite3.dylib */; };
-                7CED9B381829AA9D008BA73B /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CED9B351829AA9D008BA73B /* Account.m */; };
-                7CED9B391829AA9D008BA73B /* SOPDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CED9B371829AA9D008BA73B /* SOPDatabase.m */; };
-                7CF098141818BD280043FD9F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098131818BD280043FD9F /* QuartzCore.framework */; };
-                7CF098161818BD280043FD9F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098151818BD280043FD9F /* OpenGLES.framework */; };
-                7CF098181818BD280043FD9F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098171818BD280043FD9F /* OpenAL.framework */; };
-                7CF0981A1818BD280043FD9F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098191818BD280043FD9F /* AudioToolbox.framework */; };
-                7CF0981C1818BD280043FD9F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF0981B1818BD280043FD9F /* AVFoundation.framework */; };
-                7CF0981E1818BD280043FD9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF0981D1818BD280043FD9F /* UIKit.framework */; };
-                7CF098201818BD280043FD9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF0981F1818BD280043FD9F /* Foundation.framework */; };
-                7CF098221818BD280043FD9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098211818BD280043FD9F /* CoreGraphics.framework */; };
-                7CF098241818BD280043FD9F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098231818BD280043FD9F /* CoreText.framework */; };
-                7CF0983F1818BD280043FD9F /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 7CF0983E1818BD280043FD9F /* iTunesArtwork */; };
-                7CF098441818BD280043FD9F /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098431818BD280043FD9F /* CCAction.m */; };
-                7CF098471818BD280043FD9F /* CCActionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098461818BD280043FD9F /* CCActionCamera.m */; };
-                7CF0984A1818BD280043FD9F /* CCActionCatmullRom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098491818BD280043FD9F /* CCActionCatmullRom.m */; };
-                7CF0984D1818BD280043FD9F /* CCActionEase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0984C1818BD280043FD9F /* CCActionEase.m */; };
-                7CF098501818BD280043FD9F /* CCActionGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0984F1818BD280043FD9F /* CCActionGrid.m */; };
-                7CF098531818BD290043FD9F /* CCActionGrid3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098521818BD290043FD9F /* CCActionGrid3D.m */; };
-                7CF098561818BD290043FD9F /* CCActionInstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098551818BD290043FD9F /* CCActionInstant.m */; };
-                7CF098591818BD290043FD9F /* CCActionInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098581818BD290043FD9F /* CCActionInterval.m */; };
-                7CF0985C1818BD290043FD9F /* CCActionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0985B1818BD290043FD9F /* CCActionManager.m */; };
-                7CF0985F1818BD290043FD9F /* CCActionPageTurn3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0985E1818BD290043FD9F /* CCActionPageTurn3D.m */; };
-                7CF098621818BD290043FD9F /* CCActionProgressTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098611818BD290043FD9F /* CCActionProgressTimer.m */; };
-                7CF098651818BD290043FD9F /* CCActionTiledGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098641818BD290043FD9F /* CCActionTiledGrid.m */; };
-                7CF098681818BD290043FD9F /* CCActionTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098671818BD290043FD9F /* CCActionTween.m */; };
-                7CF0986B1818BD290043FD9F /* CCAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0986A1818BD290043FD9F /* CCAnimation.m */; };
-                7CF0986E1818BD290043FD9F /* CCAnimationCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0986D1818BD290043FD9F /* CCAnimationCache.m */; };
-                7CF098711818BD290043FD9F /* CCAtlasNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098701818BD290043FD9F /* CCAtlasNode.m */; };
-                7CF098741818BD290043FD9F /* CCCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098731818BD290043FD9F /* CCCamera.m */; };
-                7CF098771818BD290043FD9F /* CCClippingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098761818BD290043FD9F /* CCClippingNode.m */; };
-                7CF0987B1818BD290043FD9F /* CCConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0987A1818BD290043FD9F /* CCConfiguration.m */; };
-                7CF0987E1818BD2A0043FD9F /* ccDeprecated.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0987D1818BD2A0043FD9F /* ccDeprecated.m */; };
-                7CF098811818BD2A0043FD9F /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098801818BD2A0043FD9F /* CCDirector.m */; };
-                7CF098841818BD2A0043FD9F /* CCDrawingPrimitives.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098831818BD2A0043FD9F /* CCDrawingPrimitives.m */; };
-                7CF098871818BD2A0043FD9F /* CCDrawNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098861818BD2A0043FD9F /* CCDrawNode.m */; };
-                7CF0988A1818BD2A0043FD9F /* CCFontDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098891818BD2A0043FD9F /* CCFontDefinition.m */; };
-                7CF0988D1818BD2A0043FD9F /* ccFPSImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0988C1818BD2A0043FD9F /* ccFPSImages.m */; };
-                7CF098901818BD2A0043FD9F /* CCGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0988F1818BD2A0043FD9F /* CCGLProgram.m */; };
-                7CF098931818BD2A0043FD9F /* ccGLStateCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098921818BD2A0043FD9F /* ccGLStateCache.m */; };
-                7CF098961818BD2A0043FD9F /* CCGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098951818BD2A0043FD9F /* CCGrabber.m */; };
-                7CF098991818BD2A0043FD9F /* CCGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098981818BD2A0043FD9F /* CCGrid.m */; };
-                7CF0989C1818BD2A0043FD9F /* CCLabelAtlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0989B1818BD2A0043FD9F /* CCLabelAtlas.m */; };
-                7CF0989F1818BD2B0043FD9F /* CCLabelBMFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0989E1818BD2B0043FD9F /* CCLabelBMFont.m */; };
-                7CF098A21818BD2B0043FD9F /* CCLabelTTF.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098A11818BD2B0043FD9F /* CCLabelTTF.m */; };
-                7CF098A51818BD2B0043FD9F /* CCLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098A41818BD2B0043FD9F /* CCLayer.m */; };
-                7CF098A91818BD2B0043FD9F /* CCMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098A81818BD2B0043FD9F /* CCMenu.m */; };
-                7CF098AC1818BD2B0043FD9F /* CCMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098AB1818BD2B0043FD9F /* CCMenuItem.m */; };
-                7CF098AF1818BD2B0043FD9F /* CCMotionStreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098AE1818BD2B0043FD9F /* CCMotionStreak.m */; };
-                7CF098B21818BD2B0043FD9F /* CCNode+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098B11818BD2B0043FD9F /* CCNode+Debug.m */; };
-                7CF098B51818BD2B0043FD9F /* CCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098B41818BD2B0043FD9F /* CCNode.m */; };
-                7CF098B81818BD2B0043FD9F /* CCParallaxNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098B71818BD2B0043FD9F /* CCParallaxNode.m */; };
-                7CF098BB1818BD2B0043FD9F /* CCParticleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098BA1818BD2B0043FD9F /* CCParticleBatchNode.m */; };
-                7CF098BE1818BD2B0043FD9F /* CCParticleExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098BD1818BD2B0043FD9F /* CCParticleExamples.m */; };
-                7CF098C11818BD2B0043FD9F /* CCParticleSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098C01818BD2B0043FD9F /* CCParticleSystem.m */; };
-                7CF098C41818BD2B0043FD9F /* CCParticleSystemQuad.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098C31818BD2B0043FD9F /* CCParticleSystemQuad.m */; };
-                7CF098C71818BD2C0043FD9F /* CCPhysicsDebugNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098C61818BD2C0043FD9F /* CCPhysicsDebugNode.m */; };
-                7CF098CA1818BD2C0043FD9F /* CCPhysicsSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098C91818BD2C0043FD9F /* CCPhysicsSprite.mm */; };
-                7CF098CD1818BD2C0043FD9F /* CCProgressTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098CC1818BD2C0043FD9F /* CCProgressTimer.m */; };
-                7CF098D11818BD2C0043FD9F /* CCRenderTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098D01818BD2C0043FD9F /* CCRenderTexture.m */; };
-                7CF098D41818BD2C0043FD9F /* CCScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098D31818BD2C0043FD9F /* CCScene.m */; };
-                7CF098D71818BD2C0043FD9F /* CCScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098D61818BD2C0043FD9F /* CCScheduler.m */; };
-                7CF098E91818BD2C0043FD9F /* CCShaderCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098E81818BD2C0043FD9F /* CCShaderCache.m */; };
-                7CF098EC1818BD2C0043FD9F /* ccShaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098EB1818BD2C0043FD9F /* ccShaders.m */; };
-                7CF098EF1818BD2D0043FD9F /* CCSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098EE1818BD2D0043FD9F /* CCSprite.m */; };
-                7CF098F21818BD2D0043FD9F /* CCSpriteBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098F11818BD2D0043FD9F /* CCSpriteBatchNode.m */; };
-                7CF098F51818BD2D0043FD9F /* CCSpriteFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098F41818BD2D0043FD9F /* CCSpriteFrame.m */; };
-                7CF098F81818BD2D0043FD9F /* CCSpriteFrameCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098F71818BD2D0043FD9F /* CCSpriteFrameCache.m */; };
-                7CF098FB1818BD2D0043FD9F /* CCTexture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098FA1818BD2D0043FD9F /* CCTexture2D.m */; };
-                7CF098FE1818BD2D0043FD9F /* CCTextureAtlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098FD1818BD2D0043FD9F /* CCTextureAtlas.m */; };
-                7CF099011818BD2D0043FD9F /* CCTextureCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099001818BD2D0043FD9F /* CCTextureCache.m */; };
-                7CF099041818BD2D0043FD9F /* CCTexturePVR.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099031818BD2D0043FD9F /* CCTexturePVR.m */; };
-                7CF099071818BD2D0043FD9F /* CCTileMapAtlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099061818BD2D0043FD9F /* CCTileMapAtlas.m */; };
-                7CF0990A1818BD2D0043FD9F /* CCTMXLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099091818BD2D0043FD9F /* CCTMXLayer.m */; };
-                7CF0990D1818BD2D0043FD9F /* CCTMXObjectGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0990C1818BD2D0043FD9F /* CCTMXObjectGroup.m */; };
-                7CF099101818BD2D0043FD9F /* CCTMXTiledMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0990F1818BD2D0043FD9F /* CCTMXTiledMap.m */; };
-                7CF099131818BD2D0043FD9F /* CCTMXXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099121818BD2D0043FD9F /* CCTMXXMLParser.m */; };
-                7CF099161818BD2E0043FD9F /* CCTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099151818BD2E0043FD9F /* CCTransition.m */; };
-                7CF099191818BD2E0043FD9F /* CCTransitionPageTurn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099181818BD2E0043FD9F /* CCTransitionPageTurn.m */; };
-                7CF0991C1818BD2E0043FD9F /* CCTransitionProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0991B1818BD2E0043FD9F /* CCTransitionProgress.m */; };
-                7CF099201818BD2E0043FD9F /* cocos2d.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0991F1818BD2E0043FD9F /* cocos2d.m */; };
-                7CF099271818BD2E0043FD9F /* CCDirectorIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099261818BD2E0043FD9F /* CCDirectorIOS.m */; };
-                7CF0992A1818BD2E0043FD9F /* CCES2Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099291818BD2E0043FD9F /* CCES2Renderer.m */; };
-                7CF0992E1818BD2E0043FD9F /* CCGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0992D1818BD2E0043FD9F /* CCGLView.m */; };
-                7CF099321818BD2E0043FD9F /* CCTouchDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099311818BD2E0043FD9F /* CCTouchDispatcher.m */; };
-                7CF099351818BD2E0043FD9F /* CCTouchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099341818BD2E0043FD9F /* CCTouchHandler.m */; };
-                7CF099391818BD2E0043FD9F /* CCDirectorMac.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099381818BD2E0043FD9F /* CCDirectorMac.m */; };
-                7CF0993C1818BD2E0043FD9F /* CCEventDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0993B1818BD2E0043FD9F /* CCEventDispatcher.m */; };
-                7CF0993F1818BD2F0043FD9F /* CCGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0993E1818BD2F0043FD9F /* CCGLView.m */; };
-                7CF099421818BD2F0043FD9F /* CCWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099411818BD2F0043FD9F /* CCWindow.m */; };
-                7CF099451818BD2F0043FD9F /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099441818BD2F0043FD9F /* base64.c */; };
-                7CF099491818BD2F0043FD9F /* CCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099481818BD2F0043FD9F /* CCArray.m */; };
-                7CF0994C1818BD2F0043FD9F /* ccCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0994B1818BD2F0043FD9F /* ccCArray.m */; };
-                7CF0994F1818BD2F0043FD9F /* CCFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0994E1818BD2F0043FD9F /* CCFileUtils.m */; };
-                7CF099521818BD2F0043FD9F /* CCProfiling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099511818BD2F0043FD9F /* CCProfiling.m */; };
-                7CF099541818BD2F0043FD9F /* ccUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099531818BD2F0043FD9F /* ccUtils.c */; };
-                7CF099581818BD2F0043FD9F /* CCVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099571818BD2F0043FD9F /* CCVertex.m */; };
-                7CF0995B1818BD2F0043FD9F /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0995A1818BD2F0043FD9F /* CGPointExtension.m */; };
-                7CF0995E1818BD2F0043FD9F /* NSThread+performBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0995D1818BD2F0043FD9F /* NSThread+performBlock.m */; };
-                7CF099621818BD2F0043FD9F /* TGAlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099611818BD2F0043FD9F /* TGAlib.m */; };
-                7CF099651818BD2F0043FD9F /* TransformUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099641818BD2F0043FD9F /* TransformUtils.m */; };
-                7CF0996A1818BD300043FD9F /* ZipUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099691818BD300043FD9F /* ZipUtils.m */; };
-                7CF0996F1818BD300043FD9F /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0996E1818BD300043FD9F /* CDAudioManager.m */; };
-                7CF099731818BD300043FD9F /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099721818BD300043FD9F /* CDOpenALSupport.m */; };
-                7CF099761818BD300043FD9F /* CDXMacOSXSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099751818BD300043FD9F /* CDXMacOSXSupport.m */; };
-                7CF099791818BD300043FD9F /* CDXPropertyModifierAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099781818BD300043FD9F /* CDXPropertyModifierAction.m */; };
-                7CF0997C1818BD300043FD9F /* CocosDenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0997B1818BD300043FD9F /* CocosDenshion.m */; };
-                7CF099801818BD300043FD9F /* SimpleAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0997F1818BD300043FD9F /* SimpleAudioEngine.m */; };
-                7CF099961818BD310043FD9F /* aabb.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099951818BD310043FD9F /* aabb.c */; };
-                7CF099981818BD310043FD9F /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 7CF099971818BD310043FD9F /* ChangeLog */; };
-                7CF0999C1818BD310043FD9F /* mat4stack.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0999B1818BD310043FD9F /* mat4stack.c */; };
-                7CF0999E1818BD310043FD9F /* matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0999D1818BD310043FD9F /* matrix.c */; };
-                7CF099A01818BD310043FD9F /* mat3.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0999F1818BD310043FD9F /* mat3.c */; };
-                7CF099A21818BD310043FD9F /* mat4.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099A11818BD310043FD9F /* mat4.c */; };
-                7CF099A41818BD310043FD9F /* neon_matrix_impl.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099A31818BD310043FD9F /* neon_matrix_impl.c */; };
-                7CF099A61818BD310043FD9F /* plane.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099A51818BD310043FD9F /* plane.c */; };
-                7CF099A81818BD310043FD9F /* quaternion.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099A71818BD310043FD9F /* quaternion.c */; };
-                7CF099AA1818BD310043FD9F /* ray2.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099A91818BD310043FD9F /* ray2.c */; };
-                7CF099AC1818BD310043FD9F /* utility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099AB1818BD310043FD9F /* utility.c */; };
-                7CF099AE1818BD310043FD9F /* vec2.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099AD1818BD310043FD9F /* vec2.c */; };
-                7CF099B01818BD310043FD9F /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099AF1818BD310043FD9F /* vec3.c */; };
-                7CF099B21818BD310043FD9F /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099B11818BD310043FD9F /* vec4.c */; };
-                7CF099B71818BD310043FD9F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099B61818BD310043FD9F /* main.m */; };
-                7CF099BA1818BD310043FD9F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099B91818BD310043FD9F /* AppDelegate.m */; };
-                7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7CF19051181A3AE000528907 /* AcousticModelEnglish.bundle */; };
-                7CF19055181A3AE000528907 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF19052181A3AE000528907 /* OpenEars.framework */; };
-                7CF19056181A3AE000528907 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF19053181A3AE000528907 /* Slt.framework */; };
-                7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF19059181A3B0900528907 /* TextToSpeech.m */; };
-                7CF3D9D4181C73A4003DC0E5 /* Slot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3D9D3181C73A4003DC0E5 /* Slot.m */; };
-                7CF6BE2B184AE2B70054E471 /* StateText.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6BE2A184AE2B70054E471 /* StateText.m */; };
-                7CF6BE30184AE2CA0054E471 /* EditAccountLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6BE2D184AE2CA0054E471 /* EditAccountLayer.m */; };
-                7CF6BE31184AE2CA0054E471 /* ManageAccountLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6BE2F184AE2CA0054E471 /* ManageAccountLayer.m */; };
-                7CF6BEC8184AFAF90054E471 /* Lvl1-Can-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE96184AFAF90054E471 /* Lvl1-Can-Sprite.png */; };
-                7CF6BEC9184AFAF90054E471 /* Lvl2-Map-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE97184AFAF90054E471 /* Lvl2-Map-Sprite.png */; };
-                7CF6BECA184AFAF90054E471 /* Lvl3-Drum-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE98184AFAF90054E471 /* Lvl3-Drum-Sprite.png */; };
-                7CF6BECB184AFAF90054E471 /* Lvl4-Bus-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE99184AFAF90054E471 /* Lvl4-Bus-Sprite.png */; };
-                7CF6BECC184AFAF90054E471 /* Lvl5-Slug-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9A184AFAF90054E471 /* Lvl5-Slug-Sprite.png */; };
-                7CF6BECD184AFAF90054E471 /* Lvl6-Dig-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9B184AFAF90054E471 /* Lvl6-Dig-Sprite.png */; };
-                7CF6BECE184AFAF90054E471 /* Lvl7-Six-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9C184AFAF90054E471 /* Lvl7-Six-Sprite.png */; };
-                7CF6BECF184AFAF90054E471 /* Lvl8-Fox-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9D184AFAF90054E471 /* Lvl8-Fox-Sprite.png */; };
-                7CF6BED0184AFAF90054E471 /* Lvl9-Frog-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9E184AFAF90054E471 /* Lvl9-Frog-Sprite.png */; };
-                7CF6BED1184AFAF90054E471 /* Lvl10-Pen-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9F184AFAF90054E471 /* Lvl10-Pen-Sprite.png */; };
-                7CF6BED2184AFAF90054E471 /* Lvl11-Tent-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA0184AFAF90054E471 /* Lvl11-Tent-Sprite.png */; };
-                7CF6BED3184AFAF90054E471 /* Lvl12-Trash-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA1184AFAF90054E471 /* Lvl12-Trash-Sprite.png */; };
-                7CF6BED4184AFAF90054E471 /* Lvl13-Fish-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA2184AFAF90054E471 /* Lvl13-Fish-Sprite.png */; };
-                7CF6BED5184AFAF90054E471 /* Lvl14-Cloth-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA3184AFAF90054E471 /* Lvl14-Cloth-Sprite.png */; };
-                7CF6BED6184AFAF90054E471 /* Lvl15-Branch-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA4184AFAF90054E471 /* Lvl15-Branch-Sprite.png */; };
-                7CF6BED7184AFAF90054E471 /* Lvl16-Bench-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA5184AFAF90054E471 /* Lvl16-Bench-Sprite.png */; };
-                7CF6BED8184AFAF90054E471 /* Lvl17-Chin-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA6184AFAF90054E471 /* Lvl17-Chin-Sprite.png */; };
-                7CF6BED9184AFAF90054E471 /* Lvl18-Whip-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA7184AFAF90054E471 /* Lvl18-Whip-Sprite.png */; };
-                7CF6BEDA184AFAF90054E471 /* Lvl19-Lung-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA8184AFAF90054E471 /* Lvl19-Lung-Sprite.png */; };
-                7CF6BEDB184AFAF90054E471 /* Lvl20-Swing-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA9184AFAF90054E471 /* Lvl20-Swing-Sprite.png */; };
-                7CF6BEDC184AFAF90054E471 /* Lvl21-Pink-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAA184AFAF90054E471 /* Lvl21-Pink-Sprite.png */; };
-                7CF6BEDD184AFAF90054E471 /* Lvl22-Cliff-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAB184AFAF90054E471 /* Lvl22-Cliff-Sprite.png */; };
-                7CF6BEDE184AFAF90054E471 /* Lvl23-Skull-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAC184AFAF90054E471 /* Lvl23-Skull-Sprite.png */; };
-                7CF6BEDF184AFAF90054E471 /* Lvl24-Doll-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAD184AFAF90054E471 /* Lvl24-Doll-Sprite.png */; };
-                7CF6BEE0184AFAF90054E471 /* Lvl25-Grass-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAE184AFAF90054E471 /* Lvl25-Grass-Sprite.png */; };
-                7CF6BEE1184AFAF90054E471 /* Lvl26-Duck-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAF184AFAF90054E471 /* Lvl26-Duck-Sprite.png */; };
-                7CF6BEE2184AFAF90054E471 /* Lvl27-Lock-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB0184AFAF90054E471 /* Lvl27-Lock-Sprite.png */; };
-                7CF6BEE3184AFAF90054E471 /* Lvl28-Bridge-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB1184AFAF90054E471 /* Lvl28-Bridge-Sprite.png */; };
-                7CF6BEE4184AFAF90054E471 /* Lvl29-Witch-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB2184AFAF90054E471 /* Lvl29-Witch-Sprite.png */; };
-                7CF6BEE5184AFAF90054E471 /* Lvl30-Ball-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB3184AFAF90054E471 /* Lvl30-Ball-Sprite.png */; };
-                7CF6BEE6184AFAF90054E471 /* Lvl31-Child-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB4184AFAF90054E471 /* Lvl31-Child-Sprite.png */; };
-                7CF6BEE7184AFAF90054E471 /* Lvl32-Coin-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB5184AFAF90054E471 /* Lvl32-Coin-Sprite.png */; };
-                7CF6BEE8184AFAF90054E471 /* Lvl33-Toy-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB6184AFAF90054E471 /* Lvl33-Toy-Sprite.png */; };
-                7CF6BEE9184AFAF90054E471 /* Lvl34-Star-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB7184AFAF90054E471 /* Lvl34-Star-Sprite.png */; };
-                7CF6BEEA184AFAF90054E471 /* Lvl35-Feet-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB8184AFAF90054E471 /* Lvl35-Feet-Sprite.png */; };
-                7CF6BEEB184AFAF90054E471 /* Lvl36-Teeth-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB9184AFAF90054E471 /* Lvl36-Teeth-Sprite.png */; };
-                7CF6BEEC184AFAF90054E471 /* Lvl37-Horn-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBA184AFAF90054E471 /* Lvl37-Horn-Sprite.png */; };
-                7CF6BEED184AFAF90054E471 /* Lvl38-Sail-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBB184AFAF90054E471 /* Lvl38-Sail-Sprite.png */; };
-                7CF6BEEE184AFAF90054E471 /* Lvl39-Rain-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBC184AFAF90054E471 /* Lvl39-Rain-Sprite.png */; };
-                7CF6BEEF184AFAF90054E471 /* Lvl40-Saint-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBD184AFAF90054E471 /* Lvl40-Saint-Sprite.png */; };
-                7CF6BEF0184AFAF90054E471 /* Lvl41-Hay-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBE184AFAF90054E471 /* Lvl41-Hay-Sprite.png */; };
-                7CF6BEF1184AFAF90054E471 /* Lvl42-Fern-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBF184AFAF90054E471 /* Lvl42-Fern-Sprite.png */; };
-                7CF6BEF2184AFAF90054E471 /* Lvl43-Boat-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC0184AFAF90054E471 /* Lvl43-Boat-Sprite.png */; };
-                7CF6BEF3184AFAF90054E471 /* Lvl44-Queen-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC1184AFAF90054E471 /* Lvl44-Queen-Sprite.png */; };
-                7CF6BEF4184AFAF90054E471 /* Lvl45-Moon-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC2184AFAF90054E471 /* Lvl45-Moon-Sprite.png */; };
-                7CF6BEF5184AFAF90054E471 /* Lvl46-Boot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC3184AFAF90054E471 /* Lvl46-Boot-Sprite.png */; };
-                7CF6BEF6184AFAF90054E471 /* Lvl47-Goose-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC4184AFAF90054E471 /* Lvl47-Goose-Sprite.png */; };
-                7CF6BEF7184AFAF90054E471 /* Lvl48-Foot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC5184AFAF90054E471 /* Lvl48-Foot-Sprite.png */; };
-                7CF6BEF8184AFAF90054E471 /* Lvl49-Wood-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC6184AFAF90054E471 /* Lvl49-Wood-Sprite.png */; };
-                7CF6BEF9184AFAF90054E471 /* Lvl50-Leaf-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC7184AFAF90054E471 /* Lvl50-Leaf-Sprite.png */; };
-                7CF6BF02184B46EC0054E471 /* PauseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6BF01184B46EC0054E471 /* PauseLayer.m */; };
-                7CF9526E182F194600FE1DDC /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9526D182F194600FE1DDC /* Statistics.m */; };
-                7CFCBE72183172A200EF6233 /* KBPlanetEarth.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */; };
-                7CFF74CF184BEDD400832DDB /* Splash-SOP-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFF74CE184BEDD400832DDB /* Splash-SOP-Default.png */; };
-                E2B18F461847B9C300656E35 /* Background-No-Gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F451847B9C300656E35 /* Background-No-Gradient.png */; };
-                E2B18F4A1847BD9100656E35 /* Slot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F491847BD9100656E35 /* Slot-Sprite.png */; };
-                E2B18F531847FDF600656E35 /* Manage-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F4F1847FDF600656E35 /* Manage-Icon.png */; };
-                E2B18F541847FDF600656E35 /* Statistic-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F501847FDF600656E35 /* Statistic-Icon.png */; };
-                E2B18F591848035E00656E35 /* Back-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F571848035E00656E35 /* Back-Icon.png */; };
-                E2B18F5A1848035E00656E35 /* Play-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F581848035E00656E35 /* Play-Icon.png */; };
-                E2D97919184B4D9D00765A14 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D97915184B4D9D00765A14 /* Icon-Small@2x.png */; };
-                E2D9791A184B4D9D00765A14 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D97916184B4D9D00765A14 /* Icon-Small.png */; };
-                E2D9791B184B4D9D00765A14 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D97917184B4D9D00765A14 /* Icon-Small-50.png */; };
-                E2D9791C184B4D9D00765A14 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D97918184B4D9D00765A14 /* Icon-72.png */; };
-                E2D9B556184B31FF00B02510 /* Credits-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D9B554184B31FF00B02510 /* Credits-Icon.png */; };
-                E2D9B558184B354600B02510 /* Help-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D9B557184B354600B02510 /* Help-Icon.png */; };
-                E2D9B55C184B37C100B02510 /* Background-Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D9B55B184B37C100B02510 /* Background-Menu.png */; };
-                E2EB99FD184A7EF70069AA61 /* Back-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99EF184A7EF70069AA61 /* Back-IconFinal.png */; };
-                E2EB99FE184A7EF70069AA61 /* Manage-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99F0184A7EF70069AA61 /* Manage-IconFinal.png */; };
-                E2EB9A04184A7EF70069AA61 /* Plus-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99F6184A7EF70069AA61 /* Plus-IconFinal.png */; };
-                E2EB9A05184A7EF70069AA61 /* Minus-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99F7184A7EF70069AA61 /* Minus-IconFinal.png */; };
-                E2EB9A06184A7EF70069AA61 /* Profile-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99F8184A7EF70069AA61 /* Profile-IconFinal.png */; };
-                E2EB9A08184A7EF70069AA61 /* Trash-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99FA184A7EF70069AA61 /* Trash-IconFinal.png */; };
-                E2EB9A09184A7EF70069AA61 /* Home-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99FB184A7EF70069AA61 /* Home-IconFinal.png */; };
-                E2FB221B184ACF9100125633 /* Login-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB221A184ACF9100125633 /* Login-Button.png */; };
-                E2FB221D184AD25D00125633 /* Border-Play.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB221C184AD25D00125633 /* Border-Play.png */; };
-                E2FC4655184C3F43003E78AE /* Game-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FC4652184C3F43003E78AE /* Game-IconFinal.png */; };
-                E2FC4656184C3F43003E78AE /* Cancel-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FC4653184C3F43003E78AE /* Cancel-IconFinal.png */; };
-                E2FC465A184C4050003E78AE /* Empty-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FC4657184C4050003E78AE /* Empty-Portrait.png */; };
-                E2FC465C184C4050003E78AE /* Statistic-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FC4659184C4050003E78AE /* Statistic-IconFinal.png */; };
-                E2FC4661184C41AD003E78AE /* Pause-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FC465E184C41AD003E78AE /* Pause-IconFinal.png */; };
-                E2FC4662184C41AD003E78AE /* Backward-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FC465F184C41AD003E78AE /* Backward-IconFinal.png */; };
-                E2FC4665184C4361003E78AE /* Refresh-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FC4663184C4361003E78AE /* Refresh-IconFinal.png */; };
-                E2FC4666184C4361003E78AE /* Forward-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FC4664184C4361003E78AE /* Forward-IconFinal.png */; };
+		1708C003184C6695003028AE /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1708C002184C6695003028AE /* BugSense-iOS.framework */; };
+		1708C005184C66FD003028AE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1708C004184C66FD003028AE /* SystemConfiguration.framework */; };
+		174EA97E1830672F00A2503C /* LevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 174EA96F1830635800A2503C /* LevelParser.m */; };
+		7C0394DB18457F5800947CF3 /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0394DA18457F5800947CF3 /* Arrow.png */; };
+		7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
+		7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C039AC1182A326B00E38FA1 /* Singleton.m */; };
+		7C2636EF182C71BF00EA972F /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2636EE182C71BF00EA972F /* Level.m */; };
+		7C398C181841AF0300877AC2 /* CreateAccountLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C398C171841AF0300877AC2 /* CreateAccountLayer.m */; };
+		7C398C1E1841B5CF00877AC2 /* StateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C398C1D1841B5CF00877AC2 /* StateButton.m */; };
+		7C5DDA84183180740047A808 /* Default-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA83183180740047A808 /* Default-Background.png */; };
+		7C5DDA861831808C0047A808 /* Reset-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA851831808C0047A808 /* Reset-Button.png */; };
+		7C5DDA88183180A90047A808 /* Submit-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA87183180A90047A808 /* Submit-Button.png */; };
+		7C5DDA94183182200047A808 /* Selected-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA92183182200047A808 /* Selected-Portrait.png */; };
+		7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
+		7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
+		7C736C4D184829B000A4ED10 /* LevelSelectLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C736C4C184829B000A4ED10 /* LevelSelectLayer.m */; };
+		7C753E22181A41650081BC90 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C753E21181A41650081BC90 /* GameLayer.m */; };
+		7C7D35E6181CF91100CC2C02 /* VictoryLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7D35E5181CF91100CC2C02 /* VictoryLayer.m */; };
+		7CAF16B6183069B100243C4B /* Levels.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16B5183069B100243C4B /* Levels.xml */; };
+		7CAF16D5183070F900243C4B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16BE183070F800243C4B /* Default-568h@2x.png */; };
+		7CAF16D6183070F900243C4B /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16BF183070F800243C4B /* Default-Landscape~ipad.png */; };
+		7CAF16D7183070F900243C4B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16C0183070F800243C4B /* Default.png */; };
+		7CAF16D8183070F900243C4B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16C1183070F800243C4B /* Default@2x.png */; };
+		7CAF16DD183070F900243C4B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16C6183070F800243C4B /* Icon.png */; };
+		7CAF16DE183070F900243C4B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF16C7183070F900243C4B /* Icon@2x.png */; };
+		7CAF16E91830852900243C4B /* StatisticLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF16E81830852900243C4B /* StatisticLayer.m */; };
+		7CED9B271829908E008BA73B /* LoginLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CED9B261829908E008BA73B /* LoginLayer.m */; };
+		7CED9B2918299DBC008BA73B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CED9B2818299DBC008BA73B /* libsqlite3.dylib */; };
+		7CED9B381829AA9D008BA73B /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CED9B351829AA9D008BA73B /* Account.m */; };
+		7CED9B391829AA9D008BA73B /* SOPDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CED9B371829AA9D008BA73B /* SOPDatabase.m */; };
+		7CF098141818BD280043FD9F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098131818BD280043FD9F /* QuartzCore.framework */; };
+		7CF098161818BD280043FD9F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098151818BD280043FD9F /* OpenGLES.framework */; };
+		7CF098181818BD280043FD9F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098171818BD280043FD9F /* OpenAL.framework */; };
+		7CF0981A1818BD280043FD9F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098191818BD280043FD9F /* AudioToolbox.framework */; };
+		7CF0981C1818BD280043FD9F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF0981B1818BD280043FD9F /* AVFoundation.framework */; };
+		7CF0981E1818BD280043FD9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF0981D1818BD280043FD9F /* UIKit.framework */; };
+		7CF098201818BD280043FD9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF0981F1818BD280043FD9F /* Foundation.framework */; };
+		7CF098221818BD280043FD9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098211818BD280043FD9F /* CoreGraphics.framework */; };
+		7CF098241818BD280043FD9F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF098231818BD280043FD9F /* CoreText.framework */; };
+		7CF0983F1818BD280043FD9F /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 7CF0983E1818BD280043FD9F /* iTunesArtwork */; };
+		7CF098441818BD280043FD9F /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098431818BD280043FD9F /* CCAction.m */; };
+		7CF098471818BD280043FD9F /* CCActionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098461818BD280043FD9F /* CCActionCamera.m */; };
+		7CF0984A1818BD280043FD9F /* CCActionCatmullRom.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098491818BD280043FD9F /* CCActionCatmullRom.m */; };
+		7CF0984D1818BD280043FD9F /* CCActionEase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0984C1818BD280043FD9F /* CCActionEase.m */; };
+		7CF098501818BD280043FD9F /* CCActionGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0984F1818BD280043FD9F /* CCActionGrid.m */; };
+		7CF098531818BD290043FD9F /* CCActionGrid3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098521818BD290043FD9F /* CCActionGrid3D.m */; };
+		7CF098561818BD290043FD9F /* CCActionInstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098551818BD290043FD9F /* CCActionInstant.m */; };
+		7CF098591818BD290043FD9F /* CCActionInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098581818BD290043FD9F /* CCActionInterval.m */; };
+		7CF0985C1818BD290043FD9F /* CCActionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0985B1818BD290043FD9F /* CCActionManager.m */; };
+		7CF0985F1818BD290043FD9F /* CCActionPageTurn3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0985E1818BD290043FD9F /* CCActionPageTurn3D.m */; };
+		7CF098621818BD290043FD9F /* CCActionProgressTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098611818BD290043FD9F /* CCActionProgressTimer.m */; };
+		7CF098651818BD290043FD9F /* CCActionTiledGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098641818BD290043FD9F /* CCActionTiledGrid.m */; };
+		7CF098681818BD290043FD9F /* CCActionTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098671818BD290043FD9F /* CCActionTween.m */; };
+		7CF0986B1818BD290043FD9F /* CCAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0986A1818BD290043FD9F /* CCAnimation.m */; };
+		7CF0986E1818BD290043FD9F /* CCAnimationCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0986D1818BD290043FD9F /* CCAnimationCache.m */; };
+		7CF098711818BD290043FD9F /* CCAtlasNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098701818BD290043FD9F /* CCAtlasNode.m */; };
+		7CF098741818BD290043FD9F /* CCCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098731818BD290043FD9F /* CCCamera.m */; };
+		7CF098771818BD290043FD9F /* CCClippingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098761818BD290043FD9F /* CCClippingNode.m */; };
+		7CF0987B1818BD290043FD9F /* CCConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0987A1818BD290043FD9F /* CCConfiguration.m */; };
+		7CF0987E1818BD2A0043FD9F /* ccDeprecated.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0987D1818BD2A0043FD9F /* ccDeprecated.m */; };
+		7CF098811818BD2A0043FD9F /* CCDirector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098801818BD2A0043FD9F /* CCDirector.m */; };
+		7CF098841818BD2A0043FD9F /* CCDrawingPrimitives.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098831818BD2A0043FD9F /* CCDrawingPrimitives.m */; };
+		7CF098871818BD2A0043FD9F /* CCDrawNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098861818BD2A0043FD9F /* CCDrawNode.m */; };
+		7CF0988A1818BD2A0043FD9F /* CCFontDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098891818BD2A0043FD9F /* CCFontDefinition.m */; };
+		7CF0988D1818BD2A0043FD9F /* ccFPSImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0988C1818BD2A0043FD9F /* ccFPSImages.m */; };
+		7CF098901818BD2A0043FD9F /* CCGLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0988F1818BD2A0043FD9F /* CCGLProgram.m */; };
+		7CF098931818BD2A0043FD9F /* ccGLStateCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098921818BD2A0043FD9F /* ccGLStateCache.m */; };
+		7CF098961818BD2A0043FD9F /* CCGrabber.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098951818BD2A0043FD9F /* CCGrabber.m */; };
+		7CF098991818BD2A0043FD9F /* CCGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098981818BD2A0043FD9F /* CCGrid.m */; };
+		7CF0989C1818BD2A0043FD9F /* CCLabelAtlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0989B1818BD2A0043FD9F /* CCLabelAtlas.m */; };
+		7CF0989F1818BD2B0043FD9F /* CCLabelBMFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0989E1818BD2B0043FD9F /* CCLabelBMFont.m */; };
+		7CF098A21818BD2B0043FD9F /* CCLabelTTF.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098A11818BD2B0043FD9F /* CCLabelTTF.m */; };
+		7CF098A51818BD2B0043FD9F /* CCLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098A41818BD2B0043FD9F /* CCLayer.m */; };
+		7CF098A91818BD2B0043FD9F /* CCMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098A81818BD2B0043FD9F /* CCMenu.m */; };
+		7CF098AC1818BD2B0043FD9F /* CCMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098AB1818BD2B0043FD9F /* CCMenuItem.m */; };
+		7CF098AF1818BD2B0043FD9F /* CCMotionStreak.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098AE1818BD2B0043FD9F /* CCMotionStreak.m */; };
+		7CF098B21818BD2B0043FD9F /* CCNode+Debug.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098B11818BD2B0043FD9F /* CCNode+Debug.m */; };
+		7CF098B51818BD2B0043FD9F /* CCNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098B41818BD2B0043FD9F /* CCNode.m */; };
+		7CF098B81818BD2B0043FD9F /* CCParallaxNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098B71818BD2B0043FD9F /* CCParallaxNode.m */; };
+		7CF098BB1818BD2B0043FD9F /* CCParticleBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098BA1818BD2B0043FD9F /* CCParticleBatchNode.m */; };
+		7CF098BE1818BD2B0043FD9F /* CCParticleExamples.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098BD1818BD2B0043FD9F /* CCParticleExamples.m */; };
+		7CF098C11818BD2B0043FD9F /* CCParticleSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098C01818BD2B0043FD9F /* CCParticleSystem.m */; };
+		7CF098C41818BD2B0043FD9F /* CCParticleSystemQuad.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098C31818BD2B0043FD9F /* CCParticleSystemQuad.m */; };
+		7CF098C71818BD2C0043FD9F /* CCPhysicsDebugNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098C61818BD2C0043FD9F /* CCPhysicsDebugNode.m */; };
+		7CF098CA1818BD2C0043FD9F /* CCPhysicsSprite.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098C91818BD2C0043FD9F /* CCPhysicsSprite.mm */; };
+		7CF098CD1818BD2C0043FD9F /* CCProgressTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098CC1818BD2C0043FD9F /* CCProgressTimer.m */; };
+		7CF098D11818BD2C0043FD9F /* CCRenderTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098D01818BD2C0043FD9F /* CCRenderTexture.m */; };
+		7CF098D41818BD2C0043FD9F /* CCScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098D31818BD2C0043FD9F /* CCScene.m */; };
+		7CF098D71818BD2C0043FD9F /* CCScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098D61818BD2C0043FD9F /* CCScheduler.m */; };
+		7CF098E91818BD2C0043FD9F /* CCShaderCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098E81818BD2C0043FD9F /* CCShaderCache.m */; };
+		7CF098EC1818BD2C0043FD9F /* ccShaders.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098EB1818BD2C0043FD9F /* ccShaders.m */; };
+		7CF098EF1818BD2D0043FD9F /* CCSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098EE1818BD2D0043FD9F /* CCSprite.m */; };
+		7CF098F21818BD2D0043FD9F /* CCSpriteBatchNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098F11818BD2D0043FD9F /* CCSpriteBatchNode.m */; };
+		7CF098F51818BD2D0043FD9F /* CCSpriteFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098F41818BD2D0043FD9F /* CCSpriteFrame.m */; };
+		7CF098F81818BD2D0043FD9F /* CCSpriteFrameCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098F71818BD2D0043FD9F /* CCSpriteFrameCache.m */; };
+		7CF098FB1818BD2D0043FD9F /* CCTexture2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098FA1818BD2D0043FD9F /* CCTexture2D.m */; };
+		7CF098FE1818BD2D0043FD9F /* CCTextureAtlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF098FD1818BD2D0043FD9F /* CCTextureAtlas.m */; };
+		7CF099011818BD2D0043FD9F /* CCTextureCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099001818BD2D0043FD9F /* CCTextureCache.m */; };
+		7CF099041818BD2D0043FD9F /* CCTexturePVR.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099031818BD2D0043FD9F /* CCTexturePVR.m */; };
+		7CF099071818BD2D0043FD9F /* CCTileMapAtlas.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099061818BD2D0043FD9F /* CCTileMapAtlas.m */; };
+		7CF0990A1818BD2D0043FD9F /* CCTMXLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099091818BD2D0043FD9F /* CCTMXLayer.m */; };
+		7CF0990D1818BD2D0043FD9F /* CCTMXObjectGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0990C1818BD2D0043FD9F /* CCTMXObjectGroup.m */; };
+		7CF099101818BD2D0043FD9F /* CCTMXTiledMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0990F1818BD2D0043FD9F /* CCTMXTiledMap.m */; };
+		7CF099131818BD2D0043FD9F /* CCTMXXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099121818BD2D0043FD9F /* CCTMXXMLParser.m */; };
+		7CF099161818BD2E0043FD9F /* CCTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099151818BD2E0043FD9F /* CCTransition.m */; };
+		7CF099191818BD2E0043FD9F /* CCTransitionPageTurn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099181818BD2E0043FD9F /* CCTransitionPageTurn.m */; };
+		7CF0991C1818BD2E0043FD9F /* CCTransitionProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0991B1818BD2E0043FD9F /* CCTransitionProgress.m */; };
+		7CF099201818BD2E0043FD9F /* cocos2d.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0991F1818BD2E0043FD9F /* cocos2d.m */; };
+		7CF099271818BD2E0043FD9F /* CCDirectorIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099261818BD2E0043FD9F /* CCDirectorIOS.m */; };
+		7CF0992A1818BD2E0043FD9F /* CCES2Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099291818BD2E0043FD9F /* CCES2Renderer.m */; };
+		7CF0992E1818BD2E0043FD9F /* CCGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0992D1818BD2E0043FD9F /* CCGLView.m */; };
+		7CF099321818BD2E0043FD9F /* CCTouchDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099311818BD2E0043FD9F /* CCTouchDispatcher.m */; };
+		7CF099351818BD2E0043FD9F /* CCTouchHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099341818BD2E0043FD9F /* CCTouchHandler.m */; };
+		7CF099391818BD2E0043FD9F /* CCDirectorMac.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099381818BD2E0043FD9F /* CCDirectorMac.m */; };
+		7CF0993C1818BD2E0043FD9F /* CCEventDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0993B1818BD2E0043FD9F /* CCEventDispatcher.m */; };
+		7CF0993F1818BD2F0043FD9F /* CCGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0993E1818BD2F0043FD9F /* CCGLView.m */; };
+		7CF099421818BD2F0043FD9F /* CCWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099411818BD2F0043FD9F /* CCWindow.m */; };
+		7CF099451818BD2F0043FD9F /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099441818BD2F0043FD9F /* base64.c */; };
+		7CF099491818BD2F0043FD9F /* CCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099481818BD2F0043FD9F /* CCArray.m */; };
+		7CF0994C1818BD2F0043FD9F /* ccCArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0994B1818BD2F0043FD9F /* ccCArray.m */; };
+		7CF0994F1818BD2F0043FD9F /* CCFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0994E1818BD2F0043FD9F /* CCFileUtils.m */; };
+		7CF099521818BD2F0043FD9F /* CCProfiling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099511818BD2F0043FD9F /* CCProfiling.m */; };
+		7CF099541818BD2F0043FD9F /* ccUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099531818BD2F0043FD9F /* ccUtils.c */; };
+		7CF099581818BD2F0043FD9F /* CCVertex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099571818BD2F0043FD9F /* CCVertex.m */; };
+		7CF0995B1818BD2F0043FD9F /* CGPointExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0995A1818BD2F0043FD9F /* CGPointExtension.m */; };
+		7CF0995E1818BD2F0043FD9F /* NSThread+performBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0995D1818BD2F0043FD9F /* NSThread+performBlock.m */; };
+		7CF099621818BD2F0043FD9F /* TGAlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099611818BD2F0043FD9F /* TGAlib.m */; };
+		7CF099651818BD2F0043FD9F /* TransformUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099641818BD2F0043FD9F /* TransformUtils.m */; };
+		7CF0996A1818BD300043FD9F /* ZipUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099691818BD300043FD9F /* ZipUtils.m */; };
+		7CF0996F1818BD300043FD9F /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0996E1818BD300043FD9F /* CDAudioManager.m */; };
+		7CF099731818BD300043FD9F /* CDOpenALSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099721818BD300043FD9F /* CDOpenALSupport.m */; };
+		7CF099761818BD300043FD9F /* CDXMacOSXSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099751818BD300043FD9F /* CDXMacOSXSupport.m */; };
+		7CF099791818BD300043FD9F /* CDXPropertyModifierAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099781818BD300043FD9F /* CDXPropertyModifierAction.m */; };
+		7CF0997C1818BD300043FD9F /* CocosDenshion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0997B1818BD300043FD9F /* CocosDenshion.m */; };
+		7CF099801818BD300043FD9F /* SimpleAudioEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0997F1818BD300043FD9F /* SimpleAudioEngine.m */; };
+		7CF099961818BD310043FD9F /* aabb.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099951818BD310043FD9F /* aabb.c */; };
+		7CF099981818BD310043FD9F /* ChangeLog in Resources */ = {isa = PBXBuildFile; fileRef = 7CF099971818BD310043FD9F /* ChangeLog */; };
+		7CF0999C1818BD310043FD9F /* mat4stack.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0999B1818BD310043FD9F /* mat4stack.c */; };
+		7CF0999E1818BD310043FD9F /* matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0999D1818BD310043FD9F /* matrix.c */; };
+		7CF099A01818BD310043FD9F /* mat3.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF0999F1818BD310043FD9F /* mat3.c */; };
+		7CF099A21818BD310043FD9F /* mat4.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099A11818BD310043FD9F /* mat4.c */; };
+		7CF099A41818BD310043FD9F /* neon_matrix_impl.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099A31818BD310043FD9F /* neon_matrix_impl.c */; };
+		7CF099A61818BD310043FD9F /* plane.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099A51818BD310043FD9F /* plane.c */; };
+		7CF099A81818BD310043FD9F /* quaternion.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099A71818BD310043FD9F /* quaternion.c */; };
+		7CF099AA1818BD310043FD9F /* ray2.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099A91818BD310043FD9F /* ray2.c */; };
+		7CF099AC1818BD310043FD9F /* utility.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099AB1818BD310043FD9F /* utility.c */; };
+		7CF099AE1818BD310043FD9F /* vec2.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099AD1818BD310043FD9F /* vec2.c */; };
+		7CF099B01818BD310043FD9F /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099AF1818BD310043FD9F /* vec3.c */; };
+		7CF099B21818BD310043FD9F /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099B11818BD310043FD9F /* vec4.c */; };
+		7CF099B71818BD310043FD9F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099B61818BD310043FD9F /* main.m */; };
+		7CF099BA1818BD310043FD9F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF099B91818BD310043FD9F /* AppDelegate.m */; };
+		7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7CF19051181A3AE000528907 /* AcousticModelEnglish.bundle */; };
+		7CF19055181A3AE000528907 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF19052181A3AE000528907 /* OpenEars.framework */; };
+		7CF19056181A3AE000528907 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF19053181A3AE000528907 /* Slt.framework */; };
+		7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF19059181A3B0900528907 /* TextToSpeech.m */; };
+		7CF3D9D4181C73A4003DC0E5 /* Slot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF3D9D3181C73A4003DC0E5 /* Slot.m */; };
+		7CF6BE2B184AE2B70054E471 /* StateText.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6BE2A184AE2B70054E471 /* StateText.m */; };
+		7CF6BE30184AE2CA0054E471 /* EditAccountLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6BE2D184AE2CA0054E471 /* EditAccountLayer.m */; };
+		7CF6BE31184AE2CA0054E471 /* ManageAccountLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6BE2F184AE2CA0054E471 /* ManageAccountLayer.m */; };
+		7CF6BEC8184AFAF90054E471 /* Lvl1-Can-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE96184AFAF90054E471 /* Lvl1-Can-Sprite.png */; };
+		7CF6BEC9184AFAF90054E471 /* Lvl2-Map-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE97184AFAF90054E471 /* Lvl2-Map-Sprite.png */; };
+		7CF6BECA184AFAF90054E471 /* Lvl3-Drum-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE98184AFAF90054E471 /* Lvl3-Drum-Sprite.png */; };
+		7CF6BECB184AFAF90054E471 /* Lvl4-Bus-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE99184AFAF90054E471 /* Lvl4-Bus-Sprite.png */; };
+		7CF6BECC184AFAF90054E471 /* Lvl5-Slug-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9A184AFAF90054E471 /* Lvl5-Slug-Sprite.png */; };
+		7CF6BECD184AFAF90054E471 /* Lvl6-Dig-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9B184AFAF90054E471 /* Lvl6-Dig-Sprite.png */; };
+		7CF6BECE184AFAF90054E471 /* Lvl7-Six-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9C184AFAF90054E471 /* Lvl7-Six-Sprite.png */; };
+		7CF6BECF184AFAF90054E471 /* Lvl8-Fox-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9D184AFAF90054E471 /* Lvl8-Fox-Sprite.png */; };
+		7CF6BED0184AFAF90054E471 /* Lvl9-Frog-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9E184AFAF90054E471 /* Lvl9-Frog-Sprite.png */; };
+		7CF6BED1184AFAF90054E471 /* Lvl10-Pen-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9F184AFAF90054E471 /* Lvl10-Pen-Sprite.png */; };
+		7CF6BED2184AFAF90054E471 /* Lvl11-Tent-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA0184AFAF90054E471 /* Lvl11-Tent-Sprite.png */; };
+		7CF6BED3184AFAF90054E471 /* Lvl12-Trash-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA1184AFAF90054E471 /* Lvl12-Trash-Sprite.png */; };
+		7CF6BED4184AFAF90054E471 /* Lvl13-Fish-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA2184AFAF90054E471 /* Lvl13-Fish-Sprite.png */; };
+		7CF6BED5184AFAF90054E471 /* Lvl14-Cloth-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA3184AFAF90054E471 /* Lvl14-Cloth-Sprite.png */; };
+		7CF6BED6184AFAF90054E471 /* Lvl15-Branch-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA4184AFAF90054E471 /* Lvl15-Branch-Sprite.png */; };
+		7CF6BED7184AFAF90054E471 /* Lvl16-Bench-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA5184AFAF90054E471 /* Lvl16-Bench-Sprite.png */; };
+		7CF6BED8184AFAF90054E471 /* Lvl17-Chin-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA6184AFAF90054E471 /* Lvl17-Chin-Sprite.png */; };
+		7CF6BED9184AFAF90054E471 /* Lvl18-Whip-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA7184AFAF90054E471 /* Lvl18-Whip-Sprite.png */; };
+		7CF6BEDA184AFAF90054E471 /* Lvl19-Lung-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA8184AFAF90054E471 /* Lvl19-Lung-Sprite.png */; };
+		7CF6BEDB184AFAF90054E471 /* Lvl20-Swing-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEA9184AFAF90054E471 /* Lvl20-Swing-Sprite.png */; };
+		7CF6BEDC184AFAF90054E471 /* Lvl21-Pink-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAA184AFAF90054E471 /* Lvl21-Pink-Sprite.png */; };
+		7CF6BEDD184AFAF90054E471 /* Lvl22-Cliff-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAB184AFAF90054E471 /* Lvl22-Cliff-Sprite.png */; };
+		7CF6BEDE184AFAF90054E471 /* Lvl23-Skull-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAC184AFAF90054E471 /* Lvl23-Skull-Sprite.png */; };
+		7CF6BEDF184AFAF90054E471 /* Lvl24-Doll-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAD184AFAF90054E471 /* Lvl24-Doll-Sprite.png */; };
+		7CF6BEE0184AFAF90054E471 /* Lvl25-Grass-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAE184AFAF90054E471 /* Lvl25-Grass-Sprite.png */; };
+		7CF6BEE1184AFAF90054E471 /* Lvl26-Duck-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEAF184AFAF90054E471 /* Lvl26-Duck-Sprite.png */; };
+		7CF6BEE2184AFAF90054E471 /* Lvl27-Lock-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB0184AFAF90054E471 /* Lvl27-Lock-Sprite.png */; };
+		7CF6BEE3184AFAF90054E471 /* Lvl28-Bridge-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB1184AFAF90054E471 /* Lvl28-Bridge-Sprite.png */; };
+		7CF6BEE4184AFAF90054E471 /* Lvl29-Witch-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB2184AFAF90054E471 /* Lvl29-Witch-Sprite.png */; };
+		7CF6BEE5184AFAF90054E471 /* Lvl30-Ball-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB3184AFAF90054E471 /* Lvl30-Ball-Sprite.png */; };
+		7CF6BEE6184AFAF90054E471 /* Lvl31-Child-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB4184AFAF90054E471 /* Lvl31-Child-Sprite.png */; };
+		7CF6BEE7184AFAF90054E471 /* Lvl32-Coin-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB5184AFAF90054E471 /* Lvl32-Coin-Sprite.png */; };
+		7CF6BEE8184AFAF90054E471 /* Lvl33-Toy-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB6184AFAF90054E471 /* Lvl33-Toy-Sprite.png */; };
+		7CF6BEE9184AFAF90054E471 /* Lvl34-Star-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB7184AFAF90054E471 /* Lvl34-Star-Sprite.png */; };
+		7CF6BEEA184AFAF90054E471 /* Lvl35-Feet-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB8184AFAF90054E471 /* Lvl35-Feet-Sprite.png */; };
+		7CF6BEEB184AFAF90054E471 /* Lvl36-Teeth-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEB9184AFAF90054E471 /* Lvl36-Teeth-Sprite.png */; };
+		7CF6BEEC184AFAF90054E471 /* Lvl37-Horn-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBA184AFAF90054E471 /* Lvl37-Horn-Sprite.png */; };
+		7CF6BEED184AFAF90054E471 /* Lvl38-Sail-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBB184AFAF90054E471 /* Lvl38-Sail-Sprite.png */; };
+		7CF6BEEE184AFAF90054E471 /* Lvl39-Rain-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBC184AFAF90054E471 /* Lvl39-Rain-Sprite.png */; };
+		7CF6BEEF184AFAF90054E471 /* Lvl40-Saint-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBD184AFAF90054E471 /* Lvl40-Saint-Sprite.png */; };
+		7CF6BEF0184AFAF90054E471 /* Lvl41-Hay-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBE184AFAF90054E471 /* Lvl41-Hay-Sprite.png */; };
+		7CF6BEF1184AFAF90054E471 /* Lvl42-Fern-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEBF184AFAF90054E471 /* Lvl42-Fern-Sprite.png */; };
+		7CF6BEF2184AFAF90054E471 /* Lvl43-Boat-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC0184AFAF90054E471 /* Lvl43-Boat-Sprite.png */; };
+		7CF6BEF3184AFAF90054E471 /* Lvl44-Queen-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC1184AFAF90054E471 /* Lvl44-Queen-Sprite.png */; };
+		7CF6BEF4184AFAF90054E471 /* Lvl45-Moon-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC2184AFAF90054E471 /* Lvl45-Moon-Sprite.png */; };
+		7CF6BEF5184AFAF90054E471 /* Lvl46-Boot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC3184AFAF90054E471 /* Lvl46-Boot-Sprite.png */; };
+		7CF6BEF6184AFAF90054E471 /* Lvl47-Goose-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC4184AFAF90054E471 /* Lvl47-Goose-Sprite.png */; };
+		7CF6BEF7184AFAF90054E471 /* Lvl48-Foot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC5184AFAF90054E471 /* Lvl48-Foot-Sprite.png */; };
+		7CF6BEF8184AFAF90054E471 /* Lvl49-Wood-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC6184AFAF90054E471 /* Lvl49-Wood-Sprite.png */; };
+		7CF6BEF9184AFAF90054E471 /* Lvl50-Leaf-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BEC7184AFAF90054E471 /* Lvl50-Leaf-Sprite.png */; };
+		7CF6BF02184B46EC0054E471 /* PauseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6BF01184B46EC0054E471 /* PauseLayer.m */; };
+		7CF9526E182F194600FE1DDC /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9526D182F194600FE1DDC /* Statistics.m */; };
+		7CFCBE72183172A200EF6233 /* KBPlanetEarth.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */; };
+		7CFF74CF184BEDD400832DDB /* Splash-SOP-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFF74CE184BEDD400832DDB /* Splash-SOP-Default.png */; };
+		E2B18F461847B9C300656E35 /* Background-No-Gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F451847B9C300656E35 /* Background-No-Gradient.png */; };
+		E2B18F4A1847BD9100656E35 /* Slot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F491847BD9100656E35 /* Slot-Sprite.png */; };
+		E2B18F531847FDF600656E35 /* Manage-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F4F1847FDF600656E35 /* Manage-Icon.png */; };
+		E2B18F541847FDF600656E35 /* Statistic-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F501847FDF600656E35 /* Statistic-Icon.png */; };
+		E2B18F591848035E00656E35 /* Back-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F571848035E00656E35 /* Back-Icon.png */; };
+		E2B18F5A1848035E00656E35 /* Play-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F581848035E00656E35 /* Play-Icon.png */; };
+		E2D97919184B4D9D00765A14 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D97915184B4D9D00765A14 /* Icon-Small@2x.png */; };
+		E2D9791A184B4D9D00765A14 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D97916184B4D9D00765A14 /* Icon-Small.png */; };
+		E2D9791B184B4D9D00765A14 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D97917184B4D9D00765A14 /* Icon-Small-50.png */; };
+		E2D9791C184B4D9D00765A14 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D97918184B4D9D00765A14 /* Icon-72.png */; };
+		E2D9B556184B31FF00B02510 /* Credits-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D9B554184B31FF00B02510 /* Credits-Icon.png */; };
+		E2D9B558184B354600B02510 /* Help-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D9B557184B354600B02510 /* Help-Icon.png */; };
+		E2D9B55C184B37C100B02510 /* Background-Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = E2D9B55B184B37C100B02510 /* Background-Menu.png */; };
+		E2EB99FD184A7EF70069AA61 /* Back-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99EF184A7EF70069AA61 /* Back-IconFinal.png */; };
+		E2EB99FE184A7EF70069AA61 /* Manage-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99F0184A7EF70069AA61 /* Manage-IconFinal.png */; };
+		E2EB9A04184A7EF70069AA61 /* Plus-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99F6184A7EF70069AA61 /* Plus-IconFinal.png */; };
+		E2EB9A05184A7EF70069AA61 /* Minus-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99F7184A7EF70069AA61 /* Minus-IconFinal.png */; };
+		E2EB9A06184A7EF70069AA61 /* Profile-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99F8184A7EF70069AA61 /* Profile-IconFinal.png */; };
+		E2EB9A08184A7EF70069AA61 /* Trash-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99FA184A7EF70069AA61 /* Trash-IconFinal.png */; };
+		E2EB9A09184A7EF70069AA61 /* Home-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99FB184A7EF70069AA61 /* Home-IconFinal.png */; };
+		E2FB221B184ACF9100125633 /* Login-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB221A184ACF9100125633 /* Login-Button.png */; };
+		E2FB221D184AD25D00125633 /* Border-Play.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB221C184AD25D00125633 /* Border-Play.png */; };
+		E2FC4655184C3F43003E78AE /* (null) in Resources */ = {isa = PBXBuildFile; };
+		E2FC4656184C3F43003E78AE /* (null) in Resources */ = {isa = PBXBuildFile; };
+		E2FC465A184C4050003E78AE /* (null) in Resources */ = {isa = PBXBuildFile; };
+		E2FC465C184C4050003E78AE /* (null) in Resources */ = {isa = PBXBuildFile; };
+		E2FC4661184C41AD003E78AE /* (null) in Resources */ = {isa = PBXBuildFile; };
+		E2FC4662184C41AD003E78AE /* (null) in Resources */ = {isa = PBXBuildFile; };
+		E2FC4665184C4361003E78AE /* (null) in Resources */ = {isa = PBXBuildFile; };
+		E2FC4666184C4361003E78AE /* (null) in Resources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1708C002184C6695003028AE /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "BugSense-iOS.framework"; sourceTree = "<group>"; };
+		1708C004184C66FD003028AE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		171818DB184C3FE800587FD1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		174EA96E1830635800A2503C /* LevelParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelParser.h; sourceTree = "<group>"; };
 		174EA96F1830635800A2503C /* LevelParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LevelParser.m; sourceTree = "<group>"; };
@@ -678,7 +682,8 @@
 				7CF098201818BD280043FD9F /* Foundation.framework in Frameworks */,
 				7CF19055181A3AE000528907 /* OpenEars.framework in Frameworks */,
 				7CF0981A1818BD280043FD9F /* AudioToolbox.framework in Frameworks */,
-				171818DC184C3FE800587FD1 /* AssetsLibrary.framework in Frameworks */,
+				1708C003184C6695003028AE /* BugSense-iOS.framework in Frameworks */,
+				1708C005184C66FD003028AE /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,6 +883,8 @@
 		7CF098121818BD280043FD9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1708C004184C66FD003028AE /* SystemConfiguration.framework */,
+				1708C002184C6695003028AE /* BugSense-iOS.framework */,
 				171818DB184C3FE800587FD1 /* AssetsLibrary.framework */,
 				7CED9B2818299DBC008BA73B /* libsqlite3.dylib */,
 				7CF19051181A3AE000528907 /* AcousticModelEnglish.bundle */,
@@ -1338,306 +1345,306 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-                7CF0980F1818BD280043FD9F /* Sound Out Phonics */ = {
-                        isa = PBXNativeTarget;
-                        buildConfigurationList = 7CF099C31818BD310043FD9F /* Build configuration list for PBXNativeTarget "Sound Out Phonics" */;
-                        buildPhases = (
-                                7CF0980C1818BD280043FD9F /* Sources */,
-                                7CF0980D1818BD280043FD9F /* Frameworks */,
-                                7CF0980E1818BD280043FD9F /* Resources */,
-                        );
-                        buildRules = (
-                        );
-                        dependencies = (
-                        );
-                        name = "Sound Out Phonics";
-                        productName = "Sound Out Phonics";
-                        productReference = 7CF098101818BD280043FD9F /* Sound Out Phonics.app */;
-                        productType = "com.apple.product-type.application";
-                };
+		7CF0980F1818BD280043FD9F /* Sound Out Phonics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CF099C31818BD310043FD9F /* Build configuration list for PBXNativeTarget "Sound Out Phonics" */;
+			buildPhases = (
+				7CF0980C1818BD280043FD9F /* Sources */,
+				7CF0980D1818BD280043FD9F /* Frameworks */,
+				7CF0980E1818BD280043FD9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sound Out Phonics";
+			productName = "Sound Out Phonics";
+			productReference = 7CF098101818BD280043FD9F /* Sound Out Phonics.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-                7CF098081818BD280043FD9F /* Project object */ = {
-                        isa = PBXProject;
-                        attributes = {
-                                LastUpgradeCheck = 0460;
-                                ORGANIZATIONNAME = "Team Redundant Team";
-                                TargetAttributes = {
-                                        7CF0980F1818BD280043FD9F = {
-                                                DevelopmentTeam = XM6475YHW9;
-                                                SystemCapabilities = {
-                                                        com.apple.GameCenter = {
-                                                                enabled = 0;
-                                                        };
-                                                };
-                                        };
-                                };
-                        };
-                        buildConfigurationList = 7CF0980B1818BD280043FD9F /* Build configuration list for PBXProject "Sound Out Phonics" */;
-                        compatibilityVersion = "Xcode 3.2";
-                        developmentRegion = English;
-                        hasScannedForEncodings = 0;
-                        knownRegions = (
-                                en,
-                        );
-                        mainGroup = 7CF098071818BD280043FD9F;
-                        productRefGroup = 7CF098111818BD280043FD9F /* Products */;
-                        projectDirPath = "";
-                        projectRoot = "";
-                        targets = (
-                                7CF0980F1818BD280043FD9F /* Sound Out Phonics */,
-                        );
-                };
+		7CF098081818BD280043FD9F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Team Redundant Team";
+				TargetAttributes = {
+					7CF0980F1818BD280043FD9F = {
+						DevelopmentTeam = XM6475YHW9;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 7CF0980B1818BD280043FD9F /* Build configuration list for PBXProject "Sound Out Phonics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7CF098071818BD280043FD9F;
+			productRefGroup = 7CF098111818BD280043FD9F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7CF0980F1818BD280043FD9F /* Sound Out Phonics */,
+			);
+		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-                7CF0980E1818BD280043FD9F /* Resources */ = {
-                        isa = PBXResourcesBuildPhase;
-                        buildActionMask = 2147483647;
-                        files = (
-                                7CF6BEE1184AFAF90054E471 /* Lvl26-Duck-Sprite.png in Resources */,
-                                7CF099981818BD310043FD9F /* ChangeLog in Resources */,
-                                E2B18F541847FDF600656E35 /* Statistic-Icon.png in Resources */,
-                                7CF6BEF2184AFAF90054E471 /* Lvl43-Boat-Sprite.png in Resources */,
-                                7CF6BEF8184AFAF90054E471 /* Lvl49-Wood-Sprite.png in Resources */,
-                                7CF6BECB184AFAF90054E471 /* Lvl4-Bus-Sprite.png in Resources */,
-                                E2D9B556184B31FF00B02510 /* Credits-Icon.png in Resources */,
-                                7CAF16D5183070F900243C4B /* Default-568h@2x.png in Resources */,
-                                7CF6BECD184AFAF90054E471 /* Lvl6-Dig-Sprite.png in Resources */,
-                                7CF6BECC184AFAF90054E471 /* Lvl5-Slug-Sprite.png in Resources */,
-                                E2FC4662184C41AD003E78AE /* Backward-IconFinal.png in Resources */,
-                                E2D9791B184B4D9D00765A14 /* Icon-Small-50.png in Resources */,
-                                7CF6BED7184AFAF90054E471 /* Lvl16-Bench-Sprite.png in Resources */,
-                                7CF6BEE7184AFAF90054E471 /* Lvl32-Coin-Sprite.png in Resources */,
-                                E2B18F591848035E00656E35 /* Back-Icon.png in Resources */,
-                                7CF6BEF1184AFAF90054E471 /* Lvl42-Fern-Sprite.png in Resources */,
-                                7CF6BEE6184AFAF90054E471 /* Lvl31-Child-Sprite.png in Resources */,
-                                7CAF16B6183069B100243C4B /* Levels.xml in Resources */,
-                                7C5DDA88183180A90047A808 /* Submit-Button.png in Resources */,
-                                7CF6BEED184AFAF90054E471 /* Lvl38-Sail-Sprite.png in Resources */,
-                                7CF6BEF4184AFAF90054E471 /* Lvl45-Moon-Sprite.png in Resources */,
-                                7CF6BEF7184AFAF90054E471 /* Lvl48-Foot-Sprite.png in Resources */,
-                                7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */,
-                                E2FC465A184C4050003E78AE /* Empty-Portrait.png in Resources */,
-                                7C5DDA861831808C0047A808 /* Reset-Button.png in Resources */,
-                                E2FC465C184C4050003E78AE /* Statistic-IconFinal.png in Resources */,
-                                7CF6BEEA184AFAF90054E471 /* Lvl35-Feet-Sprite.png in Resources */,
-                                7CF6BEF0184AFAF90054E471 /* Lvl41-Hay-Sprite.png in Resources */,
-                                E2FB221B184ACF9100125633 /* Login-Button.png in Resources */,
-                                E2FC4665184C4361003E78AE /* Refresh-IconFinal.png in Resources */,
-                                7CF6BECE184AFAF90054E471 /* Lvl7-Six-Sprite.png in Resources */,
-                                7CF6BEC9184AFAF90054E471 /* Lvl2-Map-Sprite.png in Resources */,
-                                E2EB99FE184A7EF70069AA61 /* Manage-IconFinal.png in Resources */,
-                                7CF6BEE0184AFAF90054E471 /* Lvl25-Grass-Sprite.png in Resources */,
-                                7CF6BEF6184AFAF90054E471 /* Lvl47-Goose-Sprite.png in Resources */,
-                                7CAF16D6183070F900243C4B /* Default-Landscape~ipad.png in Resources */,
-                                7CF6BEEC184AFAF90054E471 /* Lvl37-Horn-Sprite.png in Resources */,
-                                7CF6BED0184AFAF90054E471 /* Lvl9-Frog-Sprite.png in Resources */,
-                                7CF6BEEB184AFAF90054E471 /* Lvl36-Teeth-Sprite.png in Resources */,
-                                7C5DDA84183180740047A808 /* Default-Background.png in Resources */,
-                                E2FC4656184C3F43003E78AE /* Cancel-IconFinal.png in Resources */,
-                                7CFCBE72183172A200EF6233 /* KBPlanetEarth.ttf in Resources */,
-                                E2EB99FD184A7EF70069AA61 /* Back-IconFinal.png in Resources */,
-                                7CAF16DE183070F900243C4B /* Icon@2x.png in Resources */,
-                                7CAF16D7183070F900243C4B /* Default.png in Resources */,
-                                7CF6BEE8184AFAF90054E471 /* Lvl33-Toy-Sprite.png in Resources */,
-                                E2B18F4A1847BD9100656E35 /* Slot-Sprite.png in Resources */,
-                                7CF6BEE3184AFAF90054E471 /* Lvl28-Bridge-Sprite.png in Resources */,
-                                E2B18F461847B9C300656E35 /* Background-No-Gradient.png in Resources */,
-                                E2D9B55C184B37C100B02510 /* Background-Menu.png in Resources */,
-                                7CAF16DD183070F900243C4B /* Icon.png in Resources */,
-                                7CF6BEC8184AFAF90054E471 /* Lvl1-Can-Sprite.png in Resources */,
-                                E2EB9A04184A7EF70069AA61 /* Plus-IconFinal.png in Resources */,
-                                7CF6BEE9184AFAF90054E471 /* Lvl34-Star-Sprite.png in Resources */,
-                                E2B18F531847FDF600656E35 /* Manage-Icon.png in Resources */,
-                                7CF6BED8184AFAF90054E471 /* Lvl17-Chin-Sprite.png in Resources */,
-                                7CF6BEDA184AFAF90054E471 /* Lvl19-Lung-Sprite.png in Resources */,
-                                E2EB9A09184A7EF70069AA61 /* Home-IconFinal.png in Resources */,
-                                7CF6BED9184AFAF90054E471 /* Lvl18-Whip-Sprite.png in Resources */,
-                                7CF6BEE5184AFAF90054E471 /* Lvl30-Ball-Sprite.png in Resources */,
-                                7CF6BEDE184AFAF90054E471 /* Lvl23-Skull-Sprite.png in Resources */,
-                                7CF6BEF5184AFAF90054E471 /* Lvl46-Boot-Sprite.png in Resources */,
-                                7C5DDA94183182200047A808 /* Selected-Portrait.png in Resources */,
-                                7CF0983F1818BD280043FD9F /* iTunesArtwork in Resources */,
-                                E2EB9A08184A7EF70069AA61 /* Trash-IconFinal.png in Resources */,
-                                E2FC4655184C3F43003E78AE /* Game-IconFinal.png in Resources */,
-                                7CF6BECA184AFAF90054E471 /* Lvl3-Drum-Sprite.png in Resources */,
-                                E2EB9A05184A7EF70069AA61 /* Minus-IconFinal.png in Resources */,
-                                7CF6BED3184AFAF90054E471 /* Lvl12-Trash-Sprite.png in Resources */,
-                                7CF6BEDD184AFAF90054E471 /* Lvl22-Cliff-Sprite.png in Resources */,
-                                7CF6BEDF184AFAF90054E471 /* Lvl24-Doll-Sprite.png in Resources */,
-                                7CF6BEDB184AFAF90054E471 /* Lvl20-Swing-Sprite.png in Resources */,
-                                7CF6BEDC184AFAF90054E471 /* Lvl21-Pink-Sprite.png in Resources */,
-                                E2D9791C184B4D9D00765A14 /* Icon-72.png in Resources */,
-                                7CF6BED6184AFAF90054E471 /* Lvl15-Branch-Sprite.png in Resources */,
-                                7CF6BEE4184AFAF90054E471 /* Lvl29-Witch-Sprite.png in Resources */,
-                                7C0394DB18457F5800947CF3 /* Arrow.png in Resources */,
-                                E2FC4661184C41AD003E78AE /* Pause-IconFinal.png in Resources */,
-                                E2D97919184B4D9D00765A14 /* Icon-Small@2x.png in Resources */,
-                                7CF6BED4184AFAF90054E471 /* Lvl13-Fish-Sprite.png in Resources */,
-                                E2D9791A184B4D9D00765A14 /* Icon-Small.png in Resources */,
-                                E2FC4666184C4361003E78AE /* Forward-IconFinal.png in Resources */,
-                                7CF6BEE2184AFAF90054E471 /* Lvl27-Lock-Sprite.png in Resources */,
-                                7CF6BECF184AFAF90054E471 /* Lvl8-Fox-Sprite.png in Resources */,
-                                7CF6BEF9184AFAF90054E471 /* Lvl50-Leaf-Sprite.png in Resources */,
-                                7CFF74CF184BEDD400832DDB /* Splash-SOP-Default.png in Resources */,
-                                7CAF16D8183070F900243C4B /* Default@2x.png in Resources */,
-                                7CF6BEF3184AFAF90054E471 /* Lvl44-Queen-Sprite.png in Resources */,
-                                7CF6BEEF184AFAF90054E471 /* Lvl40-Saint-Sprite.png in Resources */,
-                                7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */,
-                                7CF6BEEE184AFAF90054E471 /* Lvl39-Rain-Sprite.png in Resources */,
-                                7CF6BED1184AFAF90054E471 /* Lvl10-Pen-Sprite.png in Resources */,
-                                7CF6BED5184AFAF90054E471 /* Lvl14-Cloth-Sprite.png in Resources */,
-                                E2EB9A06184A7EF70069AA61 /* Profile-IconFinal.png in Resources */,
-                                7CF6BED2184AFAF90054E471 /* Lvl11-Tent-Sprite.png in Resources */,
-                                E2FB221D184AD25D00125633 /* Border-Play.png in Resources */,
-                                E2B18F5A1848035E00656E35 /* Play-Icon.png in Resources */,
-                                E2D9B558184B354600B02510 /* Help-Icon.png in Resources */,
-                        );
-                        runOnlyForDeploymentPostprocessing = 0;
-                };
+		7CF0980E1818BD280043FD9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CF6BEE1184AFAF90054E471 /* Lvl26-Duck-Sprite.png in Resources */,
+				7CF099981818BD310043FD9F /* ChangeLog in Resources */,
+				E2B18F541847FDF600656E35 /* Statistic-Icon.png in Resources */,
+				7CF6BEF2184AFAF90054E471 /* Lvl43-Boat-Sprite.png in Resources */,
+				7CF6BEF8184AFAF90054E471 /* Lvl49-Wood-Sprite.png in Resources */,
+				7CF6BECB184AFAF90054E471 /* Lvl4-Bus-Sprite.png in Resources */,
+				E2D9B556184B31FF00B02510 /* Credits-Icon.png in Resources */,
+				7CAF16D5183070F900243C4B /* Default-568h@2x.png in Resources */,
+				7CF6BECD184AFAF90054E471 /* Lvl6-Dig-Sprite.png in Resources */,
+				7CF6BECC184AFAF90054E471 /* Lvl5-Slug-Sprite.png in Resources */,
+				E2FC4662184C41AD003E78AE /* (null) in Resources */,
+				E2D9791B184B4D9D00765A14 /* Icon-Small-50.png in Resources */,
+				7CF6BED7184AFAF90054E471 /* Lvl16-Bench-Sprite.png in Resources */,
+				7CF6BEE7184AFAF90054E471 /* Lvl32-Coin-Sprite.png in Resources */,
+				E2B18F591848035E00656E35 /* Back-Icon.png in Resources */,
+				7CF6BEF1184AFAF90054E471 /* Lvl42-Fern-Sprite.png in Resources */,
+				7CF6BEE6184AFAF90054E471 /* Lvl31-Child-Sprite.png in Resources */,
+				7CAF16B6183069B100243C4B /* Levels.xml in Resources */,
+				7C5DDA88183180A90047A808 /* Submit-Button.png in Resources */,
+				7CF6BEED184AFAF90054E471 /* Lvl38-Sail-Sprite.png in Resources */,
+				7CF6BEF4184AFAF90054E471 /* Lvl45-Moon-Sprite.png in Resources */,
+				7CF6BEF7184AFAF90054E471 /* Lvl48-Foot-Sprite.png in Resources */,
+				7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */,
+				E2FC465A184C4050003E78AE /* (null) in Resources */,
+				7C5DDA861831808C0047A808 /* Reset-Button.png in Resources */,
+				E2FC465C184C4050003E78AE /* (null) in Resources */,
+				7CF6BEEA184AFAF90054E471 /* Lvl35-Feet-Sprite.png in Resources */,
+				7CF6BEF0184AFAF90054E471 /* Lvl41-Hay-Sprite.png in Resources */,
+				E2FB221B184ACF9100125633 /* Login-Button.png in Resources */,
+				E2FC4665184C4361003E78AE /* (null) in Resources */,
+				7CF6BECE184AFAF90054E471 /* Lvl7-Six-Sprite.png in Resources */,
+				7CF6BEC9184AFAF90054E471 /* Lvl2-Map-Sprite.png in Resources */,
+				E2EB99FE184A7EF70069AA61 /* Manage-IconFinal.png in Resources */,
+				7CF6BEE0184AFAF90054E471 /* Lvl25-Grass-Sprite.png in Resources */,
+				7CF6BEF6184AFAF90054E471 /* Lvl47-Goose-Sprite.png in Resources */,
+				7CAF16D6183070F900243C4B /* Default-Landscape~ipad.png in Resources */,
+				7CF6BEEC184AFAF90054E471 /* Lvl37-Horn-Sprite.png in Resources */,
+				7CF6BED0184AFAF90054E471 /* Lvl9-Frog-Sprite.png in Resources */,
+				7CF6BEEB184AFAF90054E471 /* Lvl36-Teeth-Sprite.png in Resources */,
+				7C5DDA84183180740047A808 /* Default-Background.png in Resources */,
+				E2FC4656184C3F43003E78AE /* (null) in Resources */,
+				7CFCBE72183172A200EF6233 /* KBPlanetEarth.ttf in Resources */,
+				E2EB99FD184A7EF70069AA61 /* Back-IconFinal.png in Resources */,
+				7CAF16DE183070F900243C4B /* Icon@2x.png in Resources */,
+				7CAF16D7183070F900243C4B /* Default.png in Resources */,
+				7CF6BEE8184AFAF90054E471 /* Lvl33-Toy-Sprite.png in Resources */,
+				E2B18F4A1847BD9100656E35 /* Slot-Sprite.png in Resources */,
+				7CF6BEE3184AFAF90054E471 /* Lvl28-Bridge-Sprite.png in Resources */,
+				E2B18F461847B9C300656E35 /* Background-No-Gradient.png in Resources */,
+				E2D9B55C184B37C100B02510 /* Background-Menu.png in Resources */,
+				7CAF16DD183070F900243C4B /* Icon.png in Resources */,
+				7CF6BEC8184AFAF90054E471 /* Lvl1-Can-Sprite.png in Resources */,
+				E2EB9A04184A7EF70069AA61 /* Plus-IconFinal.png in Resources */,
+				7CF6BEE9184AFAF90054E471 /* Lvl34-Star-Sprite.png in Resources */,
+				E2B18F531847FDF600656E35 /* Manage-Icon.png in Resources */,
+				7CF6BED8184AFAF90054E471 /* Lvl17-Chin-Sprite.png in Resources */,
+				7CF6BEDA184AFAF90054E471 /* Lvl19-Lung-Sprite.png in Resources */,
+				E2EB9A09184A7EF70069AA61 /* Home-IconFinal.png in Resources */,
+				7CF6BED9184AFAF90054E471 /* Lvl18-Whip-Sprite.png in Resources */,
+				7CF6BEE5184AFAF90054E471 /* Lvl30-Ball-Sprite.png in Resources */,
+				7CF6BEDE184AFAF90054E471 /* Lvl23-Skull-Sprite.png in Resources */,
+				7CF6BEF5184AFAF90054E471 /* Lvl46-Boot-Sprite.png in Resources */,
+				7C5DDA94183182200047A808 /* Selected-Portrait.png in Resources */,
+				7CF0983F1818BD280043FD9F /* iTunesArtwork in Resources */,
+				E2EB9A08184A7EF70069AA61 /* Trash-IconFinal.png in Resources */,
+				E2FC4655184C3F43003E78AE /* (null) in Resources */,
+				7CF6BECA184AFAF90054E471 /* Lvl3-Drum-Sprite.png in Resources */,
+				E2EB9A05184A7EF70069AA61 /* Minus-IconFinal.png in Resources */,
+				7CF6BED3184AFAF90054E471 /* Lvl12-Trash-Sprite.png in Resources */,
+				7CF6BEDD184AFAF90054E471 /* Lvl22-Cliff-Sprite.png in Resources */,
+				7CF6BEDF184AFAF90054E471 /* Lvl24-Doll-Sprite.png in Resources */,
+				7CF6BEDB184AFAF90054E471 /* Lvl20-Swing-Sprite.png in Resources */,
+				7CF6BEDC184AFAF90054E471 /* Lvl21-Pink-Sprite.png in Resources */,
+				E2D9791C184B4D9D00765A14 /* Icon-72.png in Resources */,
+				7CF6BED6184AFAF90054E471 /* Lvl15-Branch-Sprite.png in Resources */,
+				7CF6BEE4184AFAF90054E471 /* Lvl29-Witch-Sprite.png in Resources */,
+				7C0394DB18457F5800947CF3 /* Arrow.png in Resources */,
+				E2FC4661184C41AD003E78AE /* (null) in Resources */,
+				E2D97919184B4D9D00765A14 /* Icon-Small@2x.png in Resources */,
+				7CF6BED4184AFAF90054E471 /* Lvl13-Fish-Sprite.png in Resources */,
+				E2D9791A184B4D9D00765A14 /* Icon-Small.png in Resources */,
+				E2FC4666184C4361003E78AE /* (null) in Resources */,
+				7CF6BEE2184AFAF90054E471 /* Lvl27-Lock-Sprite.png in Resources */,
+				7CF6BECF184AFAF90054E471 /* Lvl8-Fox-Sprite.png in Resources */,
+				7CF6BEF9184AFAF90054E471 /* Lvl50-Leaf-Sprite.png in Resources */,
+				7CFF74CF184BEDD400832DDB /* Splash-SOP-Default.png in Resources */,
+				7CAF16D8183070F900243C4B /* Default@2x.png in Resources */,
+				7CF6BEF3184AFAF90054E471 /* Lvl44-Queen-Sprite.png in Resources */,
+				7CF6BEEF184AFAF90054E471 /* Lvl40-Saint-Sprite.png in Resources */,
+				7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */,
+				7CF6BEEE184AFAF90054E471 /* Lvl39-Rain-Sprite.png in Resources */,
+				7CF6BED1184AFAF90054E471 /* Lvl10-Pen-Sprite.png in Resources */,
+				7CF6BED5184AFAF90054E471 /* Lvl14-Cloth-Sprite.png in Resources */,
+				E2EB9A06184A7EF70069AA61 /* Profile-IconFinal.png in Resources */,
+				7CF6BED2184AFAF90054E471 /* Lvl11-Tent-Sprite.png in Resources */,
+				E2FB221D184AD25D00125633 /* Border-Play.png in Resources */,
+				E2B18F5A1848035E00656E35 /* Play-Icon.png in Resources */,
+				E2D9B558184B354600B02510 /* Help-Icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-                7CF0980C1818BD280043FD9F /* Sources */ = {
-                        isa = PBXSourcesBuildPhase;
-                        buildActionMask = 2147483647;
-                        files = (
-                                7CF099041818BD2D0043FD9F /* CCTexturePVR.m in Sources */,
-                                7CF099541818BD2F0043FD9F /* ccUtils.c in Sources */,
-                                7CF098A51818BD2B0043FD9F /* CCLayer.m in Sources */,
-                                7CF099071818BD2D0043FD9F /* CCTileMapAtlas.m in Sources */,
-                                7CF0990A1818BD2D0043FD9F /* CCTMXLayer.m in Sources */,
-                                7CF099A21818BD310043FD9F /* mat4.c in Sources */,
-                                7CF0987E1818BD2A0043FD9F /* ccDeprecated.m in Sources */,
-                                7CF099391818BD2E0043FD9F /* CCDirectorMac.m in Sources */,
-                                7CF098931818BD2A0043FD9F /* ccGLStateCache.m in Sources */,
-                                7CF099651818BD2F0043FD9F /* TransformUtils.m in Sources */,
-                                7CF098B21818BD2B0043FD9F /* CCNode+Debug.m in Sources */,
-                                7CF0988D1818BD2A0043FD9F /* ccFPSImages.m in Sources */,
-                                7CF6BF02184B46EC0054E471 /* PauseLayer.m in Sources */,
-                                7C753E22181A41650081BC90 /* GameLayer.m in Sources */,
-                                7C7D35E6181CF91100CC2C02 /* VictoryLayer.m in Sources */,
-                                7CF099131818BD2D0043FD9F /* CCTMXXMLParser.m in Sources */,
-                                7C736C4D184829B000A4ED10 /* LevelSelectLayer.m in Sources */,
-                                7CF099AA1818BD310043FD9F /* ray2.c in Sources */,
-                                7CF3D9D4181C73A4003DC0E5 /* Slot.m in Sources */,
-                                7CF099451818BD2F0043FD9F /* base64.c in Sources */,
-                                7CF098681818BD290043FD9F /* CCActionTween.m in Sources */,
-                                7CF0989F1818BD2B0043FD9F /* CCLabelBMFont.m in Sources */,
-                                7CED9B271829908E008BA73B /* LoginLayer.m in Sources */,
-                                7C2636EF182C71BF00EA972F /* Level.m in Sources */,
-                                7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */,
-                                7CF0994C1818BD2F0043FD9F /* ccCArray.m in Sources */,
-                                7CF099761818BD300043FD9F /* CDXMacOSXSupport.m in Sources */,
-                                7CF0996A1818BD300043FD9F /* ZipUtils.m in Sources */,
-                                7CF0985C1818BD290043FD9F /* CCActionManager.m in Sources */,
-                                7CF098C41818BD2B0043FD9F /* CCParticleSystemQuad.m in Sources */,
-                                7CF098871818BD2A0043FD9F /* CCDrawNode.m in Sources */,
-                                7CF099191818BD2E0043FD9F /* CCTransitionPageTurn.m in Sources */,
-                                7CF0984A1818BD280043FD9F /* CCActionCatmullRom.m in Sources */,
-                                7CF098C11818BD2B0043FD9F /* CCParticleSystem.m in Sources */,
-                                7CF099161818BD2E0043FD9F /* CCTransition.m in Sources */,
-                                7CED9B381829AA9D008BA73B /* Account.m in Sources */,
-                                7CF098BE1818BD2B0043FD9F /* CCParticleExamples.m in Sources */,
-                                7CF098BB1818BD2B0043FD9F /* CCParticleBatchNode.m in Sources */,
-                                7CF098FE1818BD2D0043FD9F /* CCTextureAtlas.m in Sources */,
-                                7CF099AC1818BD310043FD9F /* utility.c in Sources */,
-                                7CF099581818BD2F0043FD9F /* CCVertex.m in Sources */,
-                                7CF0995E1818BD2F0043FD9F /* NSThread+performBlock.m in Sources */,
-                                7CF098651818BD290043FD9F /* CCActionTiledGrid.m in Sources */,
-                                7CF098AC1818BD2B0043FD9F /* CCMenuItem.m in Sources */,
-                                7CAF16E91830852900243C4B /* StatisticLayer.m in Sources */,
-                                7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */,
-                                7CF098471818BD280043FD9F /* CCActionCamera.m in Sources */,
-                                7CF099791818BD300043FD9F /* CDXPropertyModifierAction.m in Sources */,
-                                7CF099491818BD2F0043FD9F /* CCArray.m in Sources */,
-                                7CF099A61818BD310043FD9F /* plane.c in Sources */,
-                                7CF099521818BD2F0043FD9F /* CCProfiling.m in Sources */,
-                                7CF098E91818BD2C0043FD9F /* CCShaderCache.m in Sources */,
-                                7CF098EF1818BD2D0043FD9F /* CCSprite.m in Sources */,
-                                7CF098961818BD2A0043FD9F /* CCGrabber.m in Sources */,
-                                7CF099A01818BD310043FD9F /* mat3.c in Sources */,
-                                7CF099BA1818BD310043FD9F /* AppDelegate.m in Sources */,
-                                7CF0992A1818BD2E0043FD9F /* CCES2Renderer.m in Sources */,
-                                7CF6BE30184AE2CA0054E471 /* EditAccountLayer.m in Sources */,
-                                7CF0989C1818BD2A0043FD9F /* CCLabelAtlas.m in Sources */,
-                                7CF098B81818BD2B0043FD9F /* CCParallaxNode.m in Sources */,
-                                7CF098501818BD280043FD9F /* CCActionGrid.m in Sources */,
-                                7CED9B391829AA9D008BA73B /* SOPDatabase.m in Sources */,
-                                7CF098991818BD2A0043FD9F /* CCGrid.m in Sources */,
-                                7CF099A81818BD310043FD9F /* quaternion.c in Sources */,
-                                7CF098F51818BD2D0043FD9F /* CCSpriteFrame.m in Sources */,
-                                7CF098621818BD290043FD9F /* CCActionProgressTimer.m in Sources */,
-                                7CF098441818BD280043FD9F /* CCAction.m in Sources */,
-                                7CF0997C1818BD300043FD9F /* CocosDenshion.m in Sources */,
-                                7CF099011818BD2D0043FD9F /* CCTextureCache.m in Sources */,
-                                7CF099A41818BD310043FD9F /* neon_matrix_impl.c in Sources */,
-                                7CF9526E182F194600FE1DDC /* Statistics.m in Sources */,
-                                7CF098D41818BD2C0043FD9F /* CCScene.m in Sources */,
-                                7CF098531818BD290043FD9F /* CCActionGrid3D.m in Sources */,
-                                7CF0999C1818BD310043FD9F /* mat4stack.c in Sources */,
-                                7CF098F81818BD2D0043FD9F /* CCSpriteFrameCache.m in Sources */,
-                                7CF6BE31184AE2CA0054E471 /* ManageAccountLayer.m in Sources */,
-                                7CF098811818BD2A0043FD9F /* CCDirector.m in Sources */,
-                                7CF098711818BD290043FD9F /* CCAtlasNode.m in Sources */,
-                                7CF099B71818BD310043FD9F /* main.m in Sources */,
-                                7CF6BE2B184AE2B70054E471 /* StateText.m in Sources */,
-                                7C398C181841AF0300877AC2 /* CreateAccountLayer.m in Sources */,
-                                7CF099351818BD2E0043FD9F /* CCTouchHandler.m in Sources */,
-                                7CF098AF1818BD2B0043FD9F /* CCMotionStreak.m in Sources */,
-                                7CF0992E1818BD2E0043FD9F /* CCGLView.m in Sources */,
-                                7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */,
-                                7CF0995B1818BD2F0043FD9F /* CGPointExtension.m in Sources */,
-                                7CF0985F1818BD290043FD9F /* CCActionPageTurn3D.m in Sources */,
-                                7CF099B01818BD310043FD9F /* vec3.c in Sources */,
-                                7C398C1E1841B5CF00877AC2 /* StateButton.m in Sources */,
-                                7CF099621818BD2F0043FD9F /* TGAlib.m in Sources */,
-                                7CF0986B1818BD290043FD9F /* CCAnimation.m in Sources */,
-                                7CF099961818BD310043FD9F /* aabb.c in Sources */,
-                                7CF0990D1818BD2D0043FD9F /* CCTMXObjectGroup.m in Sources */,
-                                7CF0996F1818BD300043FD9F /* CDAudioManager.m in Sources */,
-                                7CF0991C1818BD2E0043FD9F /* CCTransitionProgress.m in Sources */,
-                                7CF0993F1818BD2F0043FD9F /* CCGLView.m in Sources */,
-                                7CF099731818BD300043FD9F /* CDOpenALSupport.m in Sources */,
-                                7CF098561818BD290043FD9F /* CCActionInstant.m in Sources */,
-                                7CF098771818BD290043FD9F /* CCClippingNode.m in Sources */,
-                                7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */,
-                                7CF098FB1818BD2D0043FD9F /* CCTexture2D.m in Sources */,
-                                7CF099101818BD2D0043FD9F /* CCTMXTiledMap.m in Sources */,
-                                7CF098D11818BD2C0043FD9F /* CCRenderTexture.m in Sources */,
-                                7CF098591818BD290043FD9F /* CCActionInterval.m in Sources */,
-                                7CF098C71818BD2C0043FD9F /* CCPhysicsDebugNode.m in Sources */,
-                                7CF0984D1818BD280043FD9F /* CCActionEase.m in Sources */,
-                                7CF0988A1818BD2A0043FD9F /* CCFontDefinition.m in Sources */,
-                                7CF098CA1818BD2C0043FD9F /* CCPhysicsSprite.mm in Sources */,
-                                7CF099AE1818BD310043FD9F /* vec2.c in Sources */,
-                                7CF0999E1818BD310043FD9F /* matrix.c in Sources */,
-                                7CF098841818BD2A0043FD9F /* CCDrawingPrimitives.m in Sources */,
-                                7CF098EC1818BD2C0043FD9F /* ccShaders.m in Sources */,
-                                7CF099421818BD2F0043FD9F /* CCWindow.m in Sources */,
-                                7CF099201818BD2E0043FD9F /* cocos2d.m in Sources */,
-                                7CF098CD1818BD2C0043FD9F /* CCProgressTimer.m in Sources */,
-                                7CF098A21818BD2B0043FD9F /* CCLabelTTF.m in Sources */,
-                                7CF0994F1818BD2F0043FD9F /* CCFileUtils.m in Sources */,
-                                7CF0993C1818BD2E0043FD9F /* CCEventDispatcher.m in Sources */,
-                                7CF098F21818BD2D0043FD9F /* CCSpriteBatchNode.m in Sources */,
-                                7CF0987B1818BD290043FD9F /* CCConfiguration.m in Sources */,
-                                7CF098D71818BD2C0043FD9F /* CCScheduler.m in Sources */,
-                                7CF099271818BD2E0043FD9F /* CCDirectorIOS.m in Sources */,
-                                7CF098A91818BD2B0043FD9F /* CCMenu.m in Sources */,
-                                7CF099B21818BD310043FD9F /* vec4.c in Sources */,
-                                7CF098741818BD290043FD9F /* CCCamera.m in Sources */,
-                                7CF0986E1818BD290043FD9F /* CCAnimationCache.m in Sources */,
-                                7CF098901818BD2A0043FD9F /* CCGLProgram.m in Sources */,
-                                7CF099801818BD300043FD9F /* SimpleAudioEngine.m in Sources */,
-                                7CF099321818BD2E0043FD9F /* CCTouchDispatcher.m in Sources */,
-                                7CF098B51818BD2B0043FD9F /* CCNode.m in Sources */,
-                                174EA97E1830672F00A2503C /* LevelParser.m in Sources */,
-                        );
-                        runOnlyForDeploymentPostprocessing = 0;
-                };
+		7CF0980C1818BD280043FD9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CF099041818BD2D0043FD9F /* CCTexturePVR.m in Sources */,
+				7CF099541818BD2F0043FD9F /* ccUtils.c in Sources */,
+				7CF098A51818BD2B0043FD9F /* CCLayer.m in Sources */,
+				7CF099071818BD2D0043FD9F /* CCTileMapAtlas.m in Sources */,
+				7CF0990A1818BD2D0043FD9F /* CCTMXLayer.m in Sources */,
+				7CF099A21818BD310043FD9F /* mat4.c in Sources */,
+				7CF0987E1818BD2A0043FD9F /* ccDeprecated.m in Sources */,
+				7CF099391818BD2E0043FD9F /* CCDirectorMac.m in Sources */,
+				7CF098931818BD2A0043FD9F /* ccGLStateCache.m in Sources */,
+				7CF099651818BD2F0043FD9F /* TransformUtils.m in Sources */,
+				7CF098B21818BD2B0043FD9F /* CCNode+Debug.m in Sources */,
+				7CF0988D1818BD2A0043FD9F /* ccFPSImages.m in Sources */,
+				7CF6BF02184B46EC0054E471 /* PauseLayer.m in Sources */,
+				7C753E22181A41650081BC90 /* GameLayer.m in Sources */,
+				7C7D35E6181CF91100CC2C02 /* VictoryLayer.m in Sources */,
+				7CF099131818BD2D0043FD9F /* CCTMXXMLParser.m in Sources */,
+				7C736C4D184829B000A4ED10 /* LevelSelectLayer.m in Sources */,
+				7CF099AA1818BD310043FD9F /* ray2.c in Sources */,
+				7CF3D9D4181C73A4003DC0E5 /* Slot.m in Sources */,
+				7CF099451818BD2F0043FD9F /* base64.c in Sources */,
+				7CF098681818BD290043FD9F /* CCActionTween.m in Sources */,
+				7CF0989F1818BD2B0043FD9F /* CCLabelBMFont.m in Sources */,
+				7CED9B271829908E008BA73B /* LoginLayer.m in Sources */,
+				7C2636EF182C71BF00EA972F /* Level.m in Sources */,
+				7CF1905A181A3B0900528907 /* TextToSpeech.m in Sources */,
+				7CF0994C1818BD2F0043FD9F /* ccCArray.m in Sources */,
+				7CF099761818BD300043FD9F /* CDXMacOSXSupport.m in Sources */,
+				7CF0996A1818BD300043FD9F /* ZipUtils.m in Sources */,
+				7CF0985C1818BD290043FD9F /* CCActionManager.m in Sources */,
+				7CF098C41818BD2B0043FD9F /* CCParticleSystemQuad.m in Sources */,
+				7CF098871818BD2A0043FD9F /* CCDrawNode.m in Sources */,
+				7CF099191818BD2E0043FD9F /* CCTransitionPageTurn.m in Sources */,
+				7CF0984A1818BD280043FD9F /* CCActionCatmullRom.m in Sources */,
+				7CF098C11818BD2B0043FD9F /* CCParticleSystem.m in Sources */,
+				7CF099161818BD2E0043FD9F /* CCTransition.m in Sources */,
+				7CED9B381829AA9D008BA73B /* Account.m in Sources */,
+				7CF098BE1818BD2B0043FD9F /* CCParticleExamples.m in Sources */,
+				7CF098BB1818BD2B0043FD9F /* CCParticleBatchNode.m in Sources */,
+				7CF098FE1818BD2D0043FD9F /* CCTextureAtlas.m in Sources */,
+				7CF099AC1818BD310043FD9F /* utility.c in Sources */,
+				7CF099581818BD2F0043FD9F /* CCVertex.m in Sources */,
+				7CF0995E1818BD2F0043FD9F /* NSThread+performBlock.m in Sources */,
+				7CF098651818BD290043FD9F /* CCActionTiledGrid.m in Sources */,
+				7CF098AC1818BD2B0043FD9F /* CCMenuItem.m in Sources */,
+				7CAF16E91830852900243C4B /* StatisticLayer.m in Sources */,
+				7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */,
+				7CF098471818BD280043FD9F /* CCActionCamera.m in Sources */,
+				7CF099791818BD300043FD9F /* CDXPropertyModifierAction.m in Sources */,
+				7CF099491818BD2F0043FD9F /* CCArray.m in Sources */,
+				7CF099A61818BD310043FD9F /* plane.c in Sources */,
+				7CF099521818BD2F0043FD9F /* CCProfiling.m in Sources */,
+				7CF098E91818BD2C0043FD9F /* CCShaderCache.m in Sources */,
+				7CF098EF1818BD2D0043FD9F /* CCSprite.m in Sources */,
+				7CF098961818BD2A0043FD9F /* CCGrabber.m in Sources */,
+				7CF099A01818BD310043FD9F /* mat3.c in Sources */,
+				7CF099BA1818BD310043FD9F /* AppDelegate.m in Sources */,
+				7CF0992A1818BD2E0043FD9F /* CCES2Renderer.m in Sources */,
+				7CF6BE30184AE2CA0054E471 /* EditAccountLayer.m in Sources */,
+				7CF0989C1818BD2A0043FD9F /* CCLabelAtlas.m in Sources */,
+				7CF098B81818BD2B0043FD9F /* CCParallaxNode.m in Sources */,
+				7CF098501818BD280043FD9F /* CCActionGrid.m in Sources */,
+				7CED9B391829AA9D008BA73B /* SOPDatabase.m in Sources */,
+				7CF098991818BD2A0043FD9F /* CCGrid.m in Sources */,
+				7CF099A81818BD310043FD9F /* quaternion.c in Sources */,
+				7CF098F51818BD2D0043FD9F /* CCSpriteFrame.m in Sources */,
+				7CF098621818BD290043FD9F /* CCActionProgressTimer.m in Sources */,
+				7CF098441818BD280043FD9F /* CCAction.m in Sources */,
+				7CF0997C1818BD300043FD9F /* CocosDenshion.m in Sources */,
+				7CF099011818BD2D0043FD9F /* CCTextureCache.m in Sources */,
+				7CF099A41818BD310043FD9F /* neon_matrix_impl.c in Sources */,
+				7CF9526E182F194600FE1DDC /* Statistics.m in Sources */,
+				7CF098D41818BD2C0043FD9F /* CCScene.m in Sources */,
+				7CF098531818BD290043FD9F /* CCActionGrid3D.m in Sources */,
+				7CF0999C1818BD310043FD9F /* mat4stack.c in Sources */,
+				7CF098F81818BD2D0043FD9F /* CCSpriteFrameCache.m in Sources */,
+				7CF6BE31184AE2CA0054E471 /* ManageAccountLayer.m in Sources */,
+				7CF098811818BD2A0043FD9F /* CCDirector.m in Sources */,
+				7CF098711818BD290043FD9F /* CCAtlasNode.m in Sources */,
+				7CF099B71818BD310043FD9F /* main.m in Sources */,
+				7CF6BE2B184AE2B70054E471 /* StateText.m in Sources */,
+				7C398C181841AF0300877AC2 /* CreateAccountLayer.m in Sources */,
+				7CF099351818BD2E0043FD9F /* CCTouchHandler.m in Sources */,
+				7CF098AF1818BD2B0043FD9F /* CCMotionStreak.m in Sources */,
+				7CF0992E1818BD2E0043FD9F /* CCGLView.m in Sources */,
+				7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */,
+				7CF0995B1818BD2F0043FD9F /* CGPointExtension.m in Sources */,
+				7CF0985F1818BD290043FD9F /* CCActionPageTurn3D.m in Sources */,
+				7CF099B01818BD310043FD9F /* vec3.c in Sources */,
+				7C398C1E1841B5CF00877AC2 /* StateButton.m in Sources */,
+				7CF099621818BD2F0043FD9F /* TGAlib.m in Sources */,
+				7CF0986B1818BD290043FD9F /* CCAnimation.m in Sources */,
+				7CF099961818BD310043FD9F /* aabb.c in Sources */,
+				7CF0990D1818BD2D0043FD9F /* CCTMXObjectGroup.m in Sources */,
+				7CF0996F1818BD300043FD9F /* CDAudioManager.m in Sources */,
+				7CF0991C1818BD2E0043FD9F /* CCTransitionProgress.m in Sources */,
+				7CF0993F1818BD2F0043FD9F /* CCGLView.m in Sources */,
+				7CF099731818BD300043FD9F /* CDOpenALSupport.m in Sources */,
+				7CF098561818BD290043FD9F /* CCActionInstant.m in Sources */,
+				7CF098771818BD290043FD9F /* CCClippingNode.m in Sources */,
+				7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */,
+				7CF098FB1818BD2D0043FD9F /* CCTexture2D.m in Sources */,
+				7CF099101818BD2D0043FD9F /* CCTMXTiledMap.m in Sources */,
+				7CF098D11818BD2C0043FD9F /* CCRenderTexture.m in Sources */,
+				7CF098591818BD290043FD9F /* CCActionInterval.m in Sources */,
+				7CF098C71818BD2C0043FD9F /* CCPhysicsDebugNode.m in Sources */,
+				7CF0984D1818BD280043FD9F /* CCActionEase.m in Sources */,
+				7CF0988A1818BD2A0043FD9F /* CCFontDefinition.m in Sources */,
+				7CF098CA1818BD2C0043FD9F /* CCPhysicsSprite.mm in Sources */,
+				7CF099AE1818BD310043FD9F /* vec2.c in Sources */,
+				7CF0999E1818BD310043FD9F /* matrix.c in Sources */,
+				7CF098841818BD2A0043FD9F /* CCDrawingPrimitives.m in Sources */,
+				7CF098EC1818BD2C0043FD9F /* ccShaders.m in Sources */,
+				7CF099421818BD2F0043FD9F /* CCWindow.m in Sources */,
+				7CF099201818BD2E0043FD9F /* cocos2d.m in Sources */,
+				7CF098CD1818BD2C0043FD9F /* CCProgressTimer.m in Sources */,
+				7CF098A21818BD2B0043FD9F /* CCLabelTTF.m in Sources */,
+				7CF0994F1818BD2F0043FD9F /* CCFileUtils.m in Sources */,
+				7CF0993C1818BD2E0043FD9F /* CCEventDispatcher.m in Sources */,
+				7CF098F21818BD2D0043FD9F /* CCSpriteBatchNode.m in Sources */,
+				7CF0987B1818BD290043FD9F /* CCConfiguration.m in Sources */,
+				7CF098D71818BD2C0043FD9F /* CCScheduler.m in Sources */,
+				7CF099271818BD2E0043FD9F /* CCDirectorIOS.m in Sources */,
+				7CF098A91818BD2B0043FD9F /* CCMenu.m in Sources */,
+				7CF099B21818BD310043FD9F /* vec4.c in Sources */,
+				7CF098741818BD290043FD9F /* CCCamera.m in Sources */,
+				7CF0986E1818BD290043FD9F /* CCAnimationCache.m in Sources */,
+				7CF098901818BD2A0043FD9F /* CCGLProgram.m in Sources */,
+				7CF099801818BD300043FD9F /* SimpleAudioEngine.m in Sources */,
+				7CF099321818BD2E0043FD9F /* CCTouchDispatcher.m in Sources */,
+				7CF098B51818BD2B0043FD9F /* CCNode.m in Sources */,
+				174EA97E1830672F00A2503C /* LevelParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -1706,7 +1713,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
+				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"Sound Out Phonics/libs/OpenEars\"",
@@ -1726,6 +1733,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				STRIP_INSTALLED_PRODUCT = YES;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1756,6 +1764,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				STRIP_INSTALLED_PRODUCT = YES;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -1765,25 +1774,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-                7CF0980B1818BD280043FD9F /* Build configuration list for PBXProject "Sound Out Phonics" */ = {
-                        isa = XCConfigurationList;
-                        buildConfigurations = (
-                                7CF099C11818BD310043FD9F /* Debug */,
-                                7CF099C21818BD310043FD9F /* Release */,
-                        );
-                        defaultConfigurationIsVisible = 0;
-                        defaultConfigurationName = Release;
-                };
-                7CF099C31818BD310043FD9F /* Build configuration list for PBXNativeTarget "Sound Out Phonics" */ = {
-                        isa = XCConfigurationList;
-                        buildConfigurations = (
-                                7CF099C41818BD310043FD9F /* Debug */,
-                                7CF099C51818BD310043FD9F /* Release */,
-                        );
-                        defaultConfigurationIsVisible = 0;
-                        defaultConfigurationName = Release;
-                };
+		7CF0980B1818BD280043FD9F /* Build configuration list for PBXProject "Sound Out Phonics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CF099C11818BD310043FD9F /* Debug */,
+				7CF099C21818BD310043FD9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CF099C31818BD310043FD9F /* Build configuration list for PBXNativeTarget "Sound Out Phonics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CF099C41818BD310043FD9F /* Debug */,
+				7CF099C51818BD310043FD9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
-        };
-        rootObject = 7CF098081818BD280043FD9F /* Project object */;
+	};
+	rootObject = 7CF098081818BD280043FD9F /* Project object */;
 }
