@@ -62,4 +62,7 @@
 
 // Change the image path
 - (BOOL)updateImagePath:(int)accountId withImage:(NSString *)profile_image;
+
+// Receives the percentage of students that have completed a specific level
+- (NSArray *)getCompletedLevelStatistics;
 @end

@@ -180,26 +180,6 @@ static SOPDatabase *_database;
     return lastAccountId;
 }
 
-// Update a specific account with the new image path
-- (BOOL)updateImagePath:(int)accountId withImage:(NSString *)profile_image {
-    NSString *query = @"UPDATE Accounts SET profile_image = ? WHERE (accountId = ?);";
-    
-    sqlite3_stmt *statement = nil;
-    if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
-        sqlite3_bind_text(statement, 1, [profile_image UTF8String], -1, SQLITE_TRANSIENT);
-        sqlite3_bind_int(statement, 2, accountId);
-        
-        if (sqlite3_step(statement) != SQLITE_DONE) {
-            NSLog(@"error: %s", sqlite3_errmsg(_database));
-            sqlite3_reset(statement);
-            return false;
-        }
-        
-        sqlite3_finalize(statement);
-    }
-    return true;
-}
-
 // Update a specific account with the new provided information
 - (BOOL)updateAccount:(int)accountId withName:(NSString *)name withPassword:(NSString *)password {
     NSString *query = @"UPDATE Accounts SET name = ?, password = ? WHERE (accountId = ?);";
