@@ -1298,10 +1298,10 @@
 				7CF6BE2A184AE2B70054E471 /* StateText.m */,
 				7C398C1C1841B5CF00877AC2 /* StateButton.h */,
 				7C398C1D1841B5CF00877AC2 /* StateButton.m */,
-				7CF19058181A3B0900528907 /* TextToSpeech.h */,
 				174EA96E1830635800A2503C /* LevelParser.h */,
 				174EA96F1830635800A2503C /* LevelParser.m */,
 				7CF19059181A3B0900528907 /* TextToSpeech.m */,
+				7CF19058181A3B0900528907 /* TextToSpeech.h */,
 			);
 			name = Helpers;
 			path = "Sound Out Phonics/Helpers";

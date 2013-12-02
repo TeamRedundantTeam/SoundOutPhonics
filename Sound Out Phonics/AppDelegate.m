@@ -65,6 +65,32 @@
 		[director runWithScene: [IntroLayer scene]];
 	}
 }
+
+// Add ability for controller to become a first responder
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+// Make the controller a first responder
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
+// Event that occurs when motion has ended
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if ( event.subtype == UIEventSubtypeMotionShake ) {
+        CCLOG(@"Receoved shake event from MyNavigationController");
+        // send a message to the notification service where components can listen to
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ShakeEvent" object:nil];
+    }
+    
+    if ( [super respondsToSelector:@selector(motionEnded:withEvent:)] ){
+        [super motionEnded:motion withEvent:event];
+    }
+    
+}
+
 @end
 
 

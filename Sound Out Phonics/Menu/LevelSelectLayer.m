@@ -200,7 +200,6 @@
     
     for (Level *level in _levels) {
         if (level.sprite.visible && CGRectContainsPoint(level.sprite.boundingBox, releaseLocation)) {
-            [Singleton sharedSingleton].selectedLevel = level;
             
             // Create the level scene
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade

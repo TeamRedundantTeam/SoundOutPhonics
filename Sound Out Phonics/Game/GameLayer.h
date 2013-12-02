@@ -43,6 +43,7 @@
     
     CGSize _size; // Used to store the screen size
     bool _pause; // Determins if the game is paused
+    TextToSpeech *_tts; // Reference to TTS Library
     
     // Game variable declaration
     NSMutableArray *_graphemes; // Graphemes that the player will move around in the game layer
@@ -58,11 +59,13 @@
     int _attempts; // Stores number of times the user wasn't able to get the word correctly. Will be used to determine level Score.
     CCLabelTTF *_levelScore; // text display of the level score
     double _elapsedTime; // how long the user has attempted to play the level
-    
 }
 
-    // returns a CCScene that contains the GameBoard as the only child and takes paramater level which has information about the level and number of tries the user attempted to play this level. The attempts are used when the player decides to refresh the level before completing it.
+// returns a CCScene that contains the GameBoard as the only child and takes paramater level which has information about
+// the level and number of tries the user attempted to play this level. The attempts are used when the player decides to
+// refresh the level before completing it.
 
 + (CCScene *)sceneWithLevel:(Level *)level withAttempts:(int)attempts;
 - (void)unpause;
+
 @end

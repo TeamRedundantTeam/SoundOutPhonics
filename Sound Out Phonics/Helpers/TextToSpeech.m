@@ -32,29 +32,6 @@
 @synthesize fliteController;
 @synthesize slt;
 
-static TextToSpeech *_tts = nil;
-
-// create a shared accessor
-+ (TextToSpeech *)tts {
-	@synchronized([TextToSpeech class]) {
-		if (!_tts)
-			[[self alloc] init];
-        
-		return _tts;
-	}
-	return nil;
-}
-
-// allow only one instance of TextToSpeech to be allocated at a time
-+ (id)alloc {
-	@synchronized([TextToSpeech class]) {
-		NSAssert(_tts == nil, @"Attempted to allocate a second instance of a TextToSpeech.");
-		_tts = [super alloc];
-		return _tts;
-	}
-	return nil;
-}
-
 // on "init" you need to initialize your instance
 - (id)init
 {

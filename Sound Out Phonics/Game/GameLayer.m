@@ -74,6 +74,9 @@
         // information about the current level
         _level = level;
         
+        // add this level as the new selected level
+        [Singleton sharedSingleton].selectedLevel = level;
+        
         // add picture sprite object
         [_level createSprite];
         _level.sprite.position = ccp(_size.width/2, _size.height/2+200);
@@ -153,7 +156,13 @@
         _pause = false;
         
         // play level name at the start
-        [[TextToSpeech tts] playWord:_level.name];
+        _tts = [[TextToSpeech alloc] init];
+        [_tts playWord:_level.name];
+        
+        // Add a notification center that will execute a specific selector when shake event occurs
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                              selector:@selector(resetGame)
+                                              name:@"ShakeEvent" object:nil];
     }
     return self;
 }
@@ -224,7 +233,7 @@
     
     // if the picture is selected the level name will be played out
     if (_selectedGrapheme == nil && CGRectContainsPoint(_level.sprite.boundingBox, touchLocation)) {
-        [[TextToSpeech tts] playWord:_level.name];
+        [_tts playWord:_level.name];
     }
     
     // if submit button is selected and it is enabled
@@ -244,7 +253,7 @@
     if ([userInput isEqualToString:_level.name]) {
 
         // play the right spelled out word to the player
-        [[TextToSpeech tts] playWord:userInput];
+        [_tts playWord:userInput];
 
         // sprite object must be removed from the selected level since we are sharing this perticular level between layers and CCSprite can only be attached to one scene at a time. We are not removing the child from the layer because it makes the sprite dissapear before the transition ends. This also assures that each sprite is assign to one scene at a time.
         [_level removeSprite];
@@ -263,7 +272,7 @@
     }
     else {
         // play the wrong spelled out word to the player
-        [[TextToSpeech tts] playWord:userInput];
+        [_tts playWord:userInput];
         
         // attempts increase since the player wasn't able to get the word right at this time. Used to decrease the score
         _attempts++;
@@ -360,22 +369,7 @@
     }
     
     if (CGRectContainsPoint(_resetButton.boundingBox, releaseLocation)) {
-        int i = 0;
-        
-        // put all graphemes in the original position
-        for (CCSprite *grapheme in _graphemes) {
-            CGFloat xpos = _size.width/2 - (_graphemes.count - 1 ) * 40 + i * 80;
-            CGFloat ypos = _size.height/2-25;
-            grapheme.position = ccp(xpos, ypos);
-            i++;
-        }
-        
-        // remove all graphemes from the slots
-        for (Slot *slot in _slots) {
-            slot.grapheme = nil;
-            slot.scale = 1.0; // reset the size of the slot
-            [_submitButton setState:false];
-        }
+        [self resetGame];
     }
     
     if (CGRectContainsPoint(_pauseButton.boundingBox, releaseLocation)) {
@@ -505,6 +499,7 @@
     }
 }
 
+// Used to unpause the game once the pause button layer is removed
 - (void)unpause {
     _pause = false;
 }
@@ -515,11 +510,42 @@
         _elapsedTime += dt;
 }
 
+// Resets the game sprites and
+- (void) resetGame {
+    int i = 0;
+    
+    // Put all graphemes in the original position
+    for (CCSprite *grapheme in _graphemes) {
+        CGFloat xpos = _size.width/2 - (_graphemes.count - 1 ) * 40 + i * 80;
+        CGFloat ypos = _size.height/2-25;
+        grapheme.position = ccp(xpos, ypos);
+        i++;
+    }
+    
+    // Remove all graphemes from the slots
+    for (Slot *slot in _slots) {
+        slot.grapheme = nil;
+        slot.scale = 1.0; // reset the size of the slot
+        [_submitButton setState:false];
+    }
+    
+    // Play the level name again
+    [_tts playWord:_level.name];
+}
+
+// Called when the layer is removed
+- (void)onExit {
+    
+    // Remove the layer as an observer from notification center
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 // on "dealloc" you need to release all your retained objects
 - (void)dealloc {
     [_slots release];
     [_submitButton release];
     [_graphemes release];
+    [_tts release];
 	[super dealloc];
 }
 @end
