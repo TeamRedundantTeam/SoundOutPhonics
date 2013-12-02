@@ -40,17 +40,27 @@
         background.scale = 0.50;
         [self addChild:background];
         
+        // add level select icon to victory layer
+        CCSprite *levelSelect = [CCSprite spriteWithFile:@"Game-IconFinal.png"];
+        levelSelect.position = ccp(_size.width/2-130, _size.height - 365);
+        [self addChild: levelSelect];
+        
+        // add resume icon to victory layer
+        CCSprite *resumeLevel = [CCSprite spriteWithFile:@"Forward-IconFinal.png"];
+        resumeLevel.position = ccp(_size.width/2-130, _size.height - 445);
+        [self addChild: resumeLevel];
+        
         // create header text
-        CCLabelTTF *layerName = [CCLabelTTF labelWithString:@"Pause!" fontName:@"KBPlanetEarth" fontSize:64];
+        CCLabelTTF *layerName = [CCLabelTTF labelWithString:@"paused!" fontName:@"KBPlanetEarth" fontSize:64];
         layerName.position = ccp(_size.width/2, _size.height - 250);
         [self addChild:layerName];
         
-        _levelSelectButton = [CCLabelTTF labelWithString:@"Level Select" fontName:@"KBPlanetEarth" fontSize:48];
-        [_levelSelectButton setPosition:ccp(_size.width/2, _size.height - 375)];
+        _levelSelectButton = [CCLabelTTF labelWithString:@"level select" fontName:@"KBPlanetEarth" fontSize:48];
+        [_levelSelectButton setPosition:ccp(_size.width/2+30, _size.height - 375)];
         [self addChild:_levelSelectButton];
         
-        _resumeButton = [CCLabelTTF labelWithString:@"Resume" fontName:@"KBPlanetEarth" fontSize:48];
-        [_resumeButton setPosition:ccp(_size.width/2, _size.height - 450)];
+        _resumeButton = [CCLabelTTF labelWithString:@"resume" fontName:@"KBPlanetEarth" fontSize:48];
+        [_resumeButton setPosition:ccp(_size.width/2-10, _size.height - 450)];
         [self addChild:_resumeButton];
     }
     return self;

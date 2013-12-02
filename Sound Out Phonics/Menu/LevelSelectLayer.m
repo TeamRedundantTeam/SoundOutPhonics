@@ -151,7 +151,7 @@
     for (Level *level in _levels) {
         if (i >= (_currentLevelsPage - 1) * resultsPerRow * maxNumOfRows && i < _currentLevelsPage * resultsPerRow * maxNumOfRows) {
             // display the level name and set its position
-            CCLabelTTF *levelName = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Level: %d",level.levelId] fontName:@"KBPlanetEarth" fontSize:24];
+            CCLabelTTF *levelName = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"level: %d",level.levelId] fontName:@"KBPlanetEarth" fontSize:24];
             levelName.position = ccp(_size.width/7 + column * 140, _size.height - 160 + row * -180);
             levelName.tag = 0;
             [self addChild:levelName];

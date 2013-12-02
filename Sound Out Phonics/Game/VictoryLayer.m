@@ -41,21 +41,36 @@
         background.scale = 0.75;
         [self addChild:background];
         
+        // add play again icon to victory layer
+        CCSprite *playAgain = [CCSprite spriteWithFile:@"Refresh-IconFinal.png"];
+        playAgain.position = ccp(_size.width/2-130, _size.height - 320);
+        [self addChild: playAgain];
+        
+        // add next level icon to victory layer
+        CCSprite *nextLevel = [CCSprite spriteWithFile:@"Forward-IconFinal.png"];
+        nextLevel.position = ccp(_size.width/2-130, _size.height - 395);
+        [self addChild: nextLevel];
+        
+        // add level select icon to victory layer
+        CCSprite *levelSelect = [CCSprite spriteWithFile:@"Game-IconFinal.png"];
+        levelSelect.position = ccp(_size.width/2-130, _size.height - 470);
+        [self addChild: levelSelect];
+        
         // create header text
         CCLabelTTF *layerName = [CCLabelTTF labelWithString:@"YOU WIN!" fontName:@"KBPlanetEarth" fontSize:48];
         layerName.position = ccp(_size.width/2, _size.height - 150);
         [self addChild:layerName];
         
-        CCLabelTTF *scoreMessage = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Score: %@", score] fontName:@"KBPlanetEarth" fontSize:48];
+        CCLabelTTF *scoreMessage = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"score: %@", score] fontName:@"KBPlanetEarth" fontSize:48];
         [scoreMessage setPosition:ccp(_size.width/2, _size.height - 225)];
         [self addChild:scoreMessage];
         
-        _playAgainButton = [CCLabelTTF labelWithString:@"Play Again?" fontName:@"KBPlanetEarth" fontSize:48];
-        [_playAgainButton setPosition:ccp(_size.width/2, _size.height - 325)];
+        _playAgainButton = [CCLabelTTF labelWithString:@"play again?" fontName:@"KBPlanetEarth" fontSize:48];
+        [_playAgainButton setPosition:ccp(_size.width/2+25, _size.height - 325)];
         [self addChild:_playAgainButton];
         
-        _nextLevelButton = [StateText labelWithString:@"Next Level" fontName:@"KBPlanetEarth" fontSize:48];
-        [_nextLevelButton setPosition:ccp(_size.width/2, _size.height - 400)];
+        _nextLevelButton = [StateText labelWithString:@"next level" fontName:@"KBPlanetEarth" fontSize:48];
+        [_nextLevelButton setPosition:ccp(_size.width/2+10, _size.height - 400)];
         
         // Check if there is a next level and set the next level button accordingly
         if ([Singleton sharedSingleton].selectedLevel.nextLevel)
@@ -64,8 +79,8 @@
             [_nextLevelButton setState:false];
         [self addChild:_nextLevelButton];
         
-        _levelSelectButton = [CCLabelTTF labelWithString:@"Level Select" fontName:@"KBPlanetEarth" fontSize:48];
-        [_levelSelectButton setPosition:ccp(_size.width/2, _size.height - 475)];
+        _levelSelectButton = [CCLabelTTF labelWithString:@"level select" fontName:@"KBPlanetEarth" fontSize:48];
+        [_levelSelectButton setPosition:ccp(_size.width/2+30, _size.height - 475)];
         [self addChild:_levelSelectButton];
         
     }

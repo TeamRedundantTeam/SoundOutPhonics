@@ -80,8 +80,8 @@
         
         _lastStatisticsPage.position = ccp(_size.width/4 + 225, _size.height/3 - 200);
         _nextStatisticsPage.position = ccp(_size.width/4 + 325, _size.height/3 - 200);
-        _lastAccountsPage.position = ccp(_size.width/2 - 375, _size.height-250);
-        _nextAccountsPage.position = ccp(_size.width/2 + 375, _size.height-250);
+        _lastAccountsPage.position = ccp(_size.width/2 - 375, _size.height-230);
+        _nextAccountsPage.position = ccp(_size.width/2 + 375, _size.height-230);
         
         // Rotate the sprite by 180 degrees CW
         _nextStatisticsPage.rotation = 180;

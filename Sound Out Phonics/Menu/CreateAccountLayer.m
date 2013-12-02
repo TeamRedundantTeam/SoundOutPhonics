@@ -49,12 +49,17 @@
         background.scale = 0.75;
         [self addChild:background];
         
+        // add CREATE account icon to victory layer
+        CCSprite *createAccount = [CCSprite spriteWithFile:@"Plus-IconFinal.png"];
+        createAccount.position = ccp(_size.width/2-185, _size.height-505);
+        [self addChild: createAccount];
+        
         // create header text
         CCLabelTTF *layerName;
         if (accountLevel == 1)
-            layerName = [CCLabelTTF labelWithString:@"Create Admin Account" fontName:@"KBPlanetEarth" fontSize:48];
+            layerName = [CCLabelTTF labelWithString:@"create admin account" fontName:@"KBPlanetEarth" fontSize:48];
         else
-            layerName = [CCLabelTTF labelWithString:@"Create Player Account" fontName:@"KBPlanetEarth" fontSize:48];
+            layerName = [CCLabelTTF labelWithString:@"create player account" fontName:@"KBPlanetEarth" fontSize:48];
         layerName.position = ccp(_size.width/2, _size.height-150);
         [self addChild:layerName];
         
@@ -116,8 +121,8 @@
         [[CCDirector sharedDirector].view addSubview:self.confirmPasswordTextBox];
         
         // Add create account button
-        _createAccountButton = [[StateText alloc] initWithString:@"Create Account" fontName:@"KBPlanetEarth" fontSize:48
-                                                        position:ccp(_size.width/2, _size.height/2 - 125)];
+        _createAccountButton = [[StateText alloc] initWithString:@"create account" fontName:@"KBPlanetEarth" fontSize:48
+                                                        position:ccp(_size.width/2+10, _size.height/2 - 125)];
         [self addChild:_createAccountButton];
 
         // Add exit only if we are creating the user account

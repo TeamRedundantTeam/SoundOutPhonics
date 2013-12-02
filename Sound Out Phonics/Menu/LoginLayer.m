@@ -98,11 +98,11 @@
         [self addChild:_loginButton];
             
         // Initialize and add the paging button sprites
-        _lastAccountsPage = [CCSprite spriteWithFile:@"Arrow.png"];
-        _nextAccountsPage = [CCSprite spriteWithFile:@"Arrow.png"];
+        _lastAccountsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
+        _nextAccountsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
             
-        _lastAccountsPage.position = ccp(_size.width/2 - 375, _size.height - 250);
-        _nextAccountsPage.position = ccp(_size.width/2 + 375, _size.height - 250);
+        _lastAccountsPage.position = ccp(_size.width/2 - 375, _size.height - 230);
+        _nextAccountsPage.position = ccp(_size.width/2 + 375, _size.height - 230);
             
         // Rotate the sprite by 180 degrees CW
         _nextAccountsPage.rotation = 180;
@@ -170,9 +170,9 @@
             
             // determine the position dynamicly based on how many objects are present in the array
             if (_currentAccountPage == 1)
-                accountType.position = ccp(_size.width/2 - (accountsOnPage - 1) * 70 + i % results * 140, _size.height-135);
+                accountType.position = ccp(_size.width/2 - (accountsOnPage - 1) * 70 + i % results * 140, _size.height-133);
             else
-                accountType.position = ccp(_size.width/2 - (results - 1) * 70 + i % results * 140, _size.height-135);
+                accountType.position = ccp(_size.width/2 - (results - 1) * 70 + i % results * 140, _size.height-133);
             
             accountType.tag = 0;
             [self addChild:accountType];
