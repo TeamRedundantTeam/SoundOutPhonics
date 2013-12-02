@@ -127,7 +127,7 @@
 
         // Add exit only if we are creating the user account
         if (accountLevel == 0) {
-            _exitButton = [CCSprite spriteWithFile:@"Cancel-IconFinal.png"];
+            _exitButton = [CCSprite spriteWithFile:@"Cancel-IconFinal-White.png"];
             _exitButton.position = ccp(_size.width/2 + 375, _size.height/2 + 290);
             [self addChild:_exitButton];
         }
