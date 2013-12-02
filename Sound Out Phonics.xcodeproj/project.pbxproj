@@ -191,7 +191,6 @@
 		7CF6BEC8184AFAF90054E471 /* Lvl1-Can-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE96184AFAF90054E471 /* Lvl1-Can-Sprite.png */; };
 		7CF6BEC9184AFAF90054E471 /* Lvl2-Map-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE97184AFAF90054E471 /* Lvl2-Map-Sprite.png */; };
 		7CF6BECA184AFAF90054E471 /* Lvl3-Drum-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE98184AFAF90054E471 /* Lvl3-Drum-Sprite.png */; };
-		7CF6BECB184AFAF90054E471 /* Lvl4-Bus-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE99184AFAF90054E471 /* Lvl4-Bus-Sprite.png */; };
 		7CF6BECC184AFAF90054E471 /* Lvl5-Slug-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9A184AFAF90054E471 /* Lvl5-Slug-Sprite.png */; };
 		7CF6BECD184AFAF90054E471 /* Lvl6-Dig-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9B184AFAF90054E471 /* Lvl6-Dig-Sprite.png */; };
 		7CF6BECE184AFAF90054E471 /* Lvl7-Six-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF6BE9C184AFAF90054E471 /* Lvl7-Six-Sprite.png */; };
@@ -242,6 +241,7 @@
 		7CF9526E182F194600FE1DDC /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9526D182F194600FE1DDC /* Statistics.m */; };
 		7CFCBE72183172A200EF6233 /* KBPlanetEarth.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */; };
 		E2B18F4A1847BD9100656E35 /* Slot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F491847BD9100656E35 /* Slot-Sprite.png */; };
+		E2E005C6184C83F700DFF922 /* Lvl4-Bus-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = E2E005C5184C83F700DFF922 /* Lvl4-Bus-Sprite.png */; };
 		E2FB221D184AD25D00125633 /* Border-Play.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB221C184AD25D00125633 /* Border-Play.png */; };
 		E2FC4655184C3F43003E78AE /* (null) in Resources */ = {isa = PBXBuildFile; };
 		E2FC4656184C3F43003E78AE /* (null) in Resources */ = {isa = PBXBuildFile; };
@@ -603,7 +603,6 @@
 		7CF6BE96184AFAF90054E471 /* Lvl1-Can-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl1-Can-Sprite.png"; sourceTree = "<group>"; };
 		7CF6BE97184AFAF90054E471 /* Lvl2-Map-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl2-Map-Sprite.png"; sourceTree = "<group>"; };
 		7CF6BE98184AFAF90054E471 /* Lvl3-Drum-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl3-Drum-Sprite.png"; sourceTree = "<group>"; };
-		7CF6BE99184AFAF90054E471 /* Lvl4-Bus-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl4-Bus-Sprite.png"; sourceTree = "<group>"; };
 		7CF6BE9A184AFAF90054E471 /* Lvl5-Slug-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl5-Slug-Sprite.png"; sourceTree = "<group>"; };
 		7CF6BE9B184AFAF90054E471 /* Lvl6-Dig-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl6-Dig-Sprite.png"; sourceTree = "<group>"; };
 		7CF6BE9C184AFAF90054E471 /* Lvl7-Six-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl7-Six-Sprite.png"; sourceTree = "<group>"; };
@@ -656,6 +655,7 @@
 		7CF9526D182F194600FE1DDC /* Statistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statistics.m; sourceTree = "<group>"; };
 		7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = KBPlanetEarth.ttf; path = Resources/KBPlanetEarth.ttf; sourceTree = "<group>"; };
 		E2B18F491847BD9100656E35 /* Slot-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slot-Sprite.png"; sourceTree = "<group>"; };
+		E2E005C5184C83F700DFF922 /* Lvl4-Bus-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lvl4-Bus-Sprite.png"; sourceTree = "<group>"; };
 		E2FB221C184AD25D00125633 /* Border-Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Border-Play.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -797,7 +797,7 @@
 				7CF6BE96184AFAF90054E471 /* Lvl1-Can-Sprite.png */,
 				7CF6BE97184AFAF90054E471 /* Lvl2-Map-Sprite.png */,
 				7CF6BE98184AFAF90054E471 /* Lvl3-Drum-Sprite.png */,
-				7CF6BE99184AFAF90054E471 /* Lvl4-Bus-Sprite.png */,
+				E2E005C5184C83F700DFF922 /* Lvl4-Bus-Sprite.png */,
 				7CF6BE9A184AFAF90054E471 /* Lvl5-Slug-Sprite.png */,
 				7CF6BE9B184AFAF90054E471 /* Lvl6-Dig-Sprite.png */,
 				7CF6BE9C184AFAF90054E471 /* Lvl7-Six-Sprite.png */,
@@ -1388,7 +1388,6 @@
 				7C025C5F184C72F800FB3B90 /* Camera-Icon.png in Resources */,
 				7CF6BEF2184AFAF90054E471 /* Lvl43-Boat-Sprite.png in Resources */,
 				7CF6BEF8184AFAF90054E471 /* Lvl49-Wood-Sprite.png in Resources */,
-				7CF6BECB184AFAF90054E471 /* Lvl4-Bus-Sprite.png in Resources */,
 				7CF6BECD184AFAF90054E471 /* Lvl6-Dig-Sprite.png in Resources */,
 				7CF6BECC184AFAF90054E471 /* Lvl5-Slug-Sprite.png in Resources */,
 				E2FC4662184C41AD003E78AE /* (null) in Resources */,
@@ -1464,6 +1463,7 @@
 				7CF6BED6184AFAF90054E471 /* Lvl15-Branch-Sprite.png in Resources */,
 				7CF6BEE4184AFAF90054E471 /* Lvl29-Witch-Sprite.png in Resources */,
 				E2FC4661184C41AD003E78AE /* (null) in Resources */,
+				E2E005C6184C83F700DFF922 /* Lvl4-Bus-Sprite.png in Resources */,
 				7C025C6D184C72F800FB3B90 /* Selected-Portrait.png in Resources */,
 				7CF6BED4184AFAF90054E471 /* Lvl13-Fish-Sprite.png in Resources */,
 				E2FC4666184C4361003E78AE /* (null) in Resources */,
@@ -1702,9 +1702,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sound Out Phonics/Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"Sound Out Phonics/libs/kazmath/include\"",
-				);
+				HEADER_SEARCH_PATHS = "\"Sound Out Phonics/libs/kazmath/include\"";
 				INFOPLIST_FILE = "Sound Out Phonics/Resources/Info.plist";
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -1733,9 +1731,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sound Out Phonics/Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"Sound Out Phonics/libs/kazmath/include\"",
-				);
+				HEADER_SEARCH_PATHS = "\"Sound Out Phonics/libs/kazmath/include\"";
 				INFOPLIST_FILE = "Sound Out Phonics/Resources/Info.plist";
 				OTHER_LDFLAGS = (
 					"-lz",
