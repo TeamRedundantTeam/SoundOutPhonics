@@ -35,8 +35,13 @@
         
         // add update icon to edit account layer
         CCSprite *editAccount = [CCSprite spriteWithFile:@"Refresh-IconFinal.png"];
-        editAccount.position = ccp(size.width/2-115, size.height - 503);
+        editAccount.position = ccp(size.width/2-145, size.height - 553);
         [self addChild: editAccount];
+        
+        // add update icon to edit account layer
+        CCSprite *takePicture = [CCSprite spriteWithFile:@"Camera-IconFinal.png"];
+        takePicture.position = ccp(size.width/2-145, size.height - 471);
+        [self addChild: takePicture];
         
         // create header text
         NSMutableString *name = [NSMutableString stringWithFormat:@"editing: %@", account.name ];
@@ -114,12 +119,12 @@
         
         // Add Update Account Button
         _updateAccountButton = [[StateText alloc] initWithString:@"update" fontName:@"KBPlanetEarth" fontSize:48
-                                                  position:ccp(size.width/2, size.height/2 - 125)];
+                                                  position:ccp(size.width/2-30, size.height/2-174)];
         [self addChild:_updateAccountButton];
         
         // Add Update Picture Button
-        _updatePictureButton = [[StateText alloc] initWithString:@"Change Picture" fontName:@"KBPlanetEarth" fontSize:48
-                                                        position:ccp(size.width/2, size.height/2 - 65)];
+        _updatePictureButton = [[StateText alloc] initWithString:@"change picture" fontName:@"KBPlanetEarth" fontSize:48
+                                                        position:ccp(size.width/2+60, size.height/2 - 94)];
         [self addChild:_updatePictureButton];
         _updatePictureButton.state = true;
         
@@ -131,7 +136,7 @@
         _errorMessage.visible = false;
         [self addChild:_errorMessage];
         
-        _exitButton = [CCSprite spriteWithFile:@"Cancel-IconFinal.png"];
+        _exitButton = [CCSprite spriteWithFile:@"Cancel-IconFinal-White.png"];
         _exitButton.position = ccp(size.width/2 + 375, size.height/2 + 290);
         [self addChild:_exitButton];
     }
