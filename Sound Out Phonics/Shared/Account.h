@@ -33,6 +33,7 @@
     NSString *_image;
     CCSprite *_avatar;
     NSArray *_statistics;
+    UIImage *_imageFromFile;
 }
 
 @property (nonatomic, assign) int accountId;
@@ -41,6 +42,7 @@
 @property (nonatomic, assign) int type;
 @property (nonatomic, copy) NSString *image;
 @property (nonatomic, retain) NSArray *statistics;
+@property (nonatomic, retain) UIImage *imageFromFile;
 
 // returns the reference of the avatar
 - (CCSprite *)avatar;

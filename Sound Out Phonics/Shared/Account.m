@@ -31,6 +31,7 @@
 @synthesize type = _type;
 @synthesize image = _image;
 @synthesize statistics = _statistics;
+@synthesize imageFromFile = _imageFromFile;
 
 // initializes the object with parameters received from the database
 - (id)initWithId:(int)accountId withName:(NSString *)name withPassword:(NSString *)password withType:(int)type withImage:(NSString *) image withStatistics:(NSArray *)statistics {
@@ -45,12 +46,21 @@
     return self;
 }
 
+
 // creates the avatar based of the current image set in the class
 - (void) createAvatar {
-    if ([self.image isEqualToString:@""])
+    if ([self.image isEqualToString:@""]){
         _avatar = [CCSprite spriteWithFile:@"Empty-Portrait.png"];
-    else
-        _avatar = [CCSprite spriteWithFile:self.image];
+    }else{
+        //Check if it is a valid path
+        _imageFromFile = [UIImage imageWithContentsOfFile:self.image];
+        if(_imageFromFile == nil){
+            //Not a valid image so load the default one
+            _avatar = [CCSprite spriteWithFile:@"Empty-Portrait.png"];
+        } else {
+            _avatar = [CCSprite spriteWithCGImage:[_imageFromFile CGImage] key:nil];
+        }
+    }
 }
 
 // returns the reference of the avatar

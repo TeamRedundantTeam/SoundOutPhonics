@@ -112,6 +112,12 @@
                                                   position:ccp(size.width/2, size.height/2 - 125)];
         [self addChild:_updateAccountButton];
         
+        // Add Update Picture Button
+        _updatePictureButton = [[StateText alloc] initWithString:@"Change Picture" fontName:@"KBPlanetEarth" fontSize:48
+                                                        position:ccp(size.width/2, size.height/2 - 65)];
+        [self addChild:_updatePictureButton];
+        _updatePictureButton.state = true;
+        
         // error message which used to display any errors that might of occured
         _errorMessage = [CCLabelTTF labelWithString:@"" fontName:@"KBPlanetEarth" fontSize:24];
         _errorMessage.position = ccp(size.width/2, size.height/2 + 195);
@@ -148,9 +154,90 @@
         _updateAccountButton.state = false;
 }
 
+-(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info
+{
+    // Original Image
+    UIImage *OriginalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    // Write out our image to the SOP directory
+    NSString *docDirPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *filePath =  [docDirPath stringByAppendingPathComponent:@"SOP"];
+    
+    //Create the SOP Directory if it doesn't exist
+    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])
+        [[NSFileManager defaultManager] createDirectoryAtPath:filePath withIntermediateDirectories:NO attributes:nil error:nil];
+    //Create and store our image
+    filePath =  [filePath stringByAppendingPathComponent:self.account.name];
+    filePath =  [NSString stringWithFormat:@"%@%@", filePath, @".png"];
+    NSLog (@"File Path = %@", filePath);
+    
+    //Resize our image to a power of 2
+    CGRect rect = CGRectMake(0,0,128,128);
+    UIGraphicsBeginImageContext( rect.size );
+    [OriginalImage drawInRect:rect];
+    UIImage *picture1 = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    //[self.imageFromFile release];
+    
+    // Get PNG data from following method
+    NSData *myData =     UIImagePNGRepresentation(picture1);
+    // It is better to get JPEG data because jpeg data will store the location and other related information of image.
+    [myData writeToFile:filePath atomically:YES];
+
+    
+    if ([[SOPDatabase database] updateImagePath:self.account.accountId withImage:filePath]) {
+    } else {
+        // Send an alert indicating that the update didn't go throug
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not update the account at this time!"
+                                                       delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+        [alert release];
+    }
+    
+        self.account.image = filePath;
+        // Update the loggedInAccount in-case it was logged in
+        Account * loggedInAccount = [Singleton sharedSingleton].loggedInAccount;
+        if (loggedInAccount.accountId == self.account.accountId) {
+            loggedInAccount.image = filePath;
+        }
+        
+        // Send an alert indicating that the update was successful
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Picture added!"
+                                                       delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        [alert release];
+}
+
+
+
 // Handles the events that happen when the release occurs at a specific location
 - (void)tapReleaseAt:(CGPoint)releaseLocation {
-    
+    // Occurs when the user presses the update Picture button
+    if (_updatePictureButton.state && CGRectContainsPoint(_updatePictureButton.boundingBox, releaseLocation)) {
+        
+            if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+                //Create a way to browse the gallery
+                UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+				picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+				picker.delegate = self;
+                UIPopoverController *popoverController=[[UIPopoverController alloc] initWithContentViewController:picker];
+                popoverController.delegate=self;
+                CGSize winsize = [[CCDirector sharedDirector] winSize];
+                //Show gallery bar
+                [popoverController setPopoverContentSize:CGSizeMake(winsize.width,winsize.height) animated:NO];
+                [popoverController presentPopoverFromRect:CGRectMake(0,0,10,10)  inView:[[CCDirector sharedDirector]openGLView]
+                permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+				[picker release];
+            }
+            else {
+                UIAlertView *alert;
+                alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                   message:@"This device doesn't support photo libraries."
+                                                  delegate:self cancelButtonTitle:@"Ok"
+                                         otherButtonTitles:nil];
+                [alert show];
+            }
+    }
     // Occurs when the user presses the update account button
     if (_updateAccountButton.state && CGRectContainsPoint(_updateAccountButton.boundingBox, releaseLocation)) {
         
@@ -245,6 +332,7 @@
 
 - (void)dealloc {
     [self.account release];
+    [_updatePictureButton release];
     [_updateAccountButton release];
     [super dealloc];
 }

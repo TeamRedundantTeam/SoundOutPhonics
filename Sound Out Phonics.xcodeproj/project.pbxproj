@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171818DC184C3FE800587FD1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171818DB184C3FE800587FD1 /* AssetsLibrary.framework */; };
 		174EA97E1830672F00A2503C /* LevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 174EA96F1830635800A2503C /* LevelParser.m */; };
 		7C0394DB18457F5800947CF3 /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0394DA18457F5800947CF3 /* Arrow.png */; };
 		7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
@@ -251,6 +252,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		171818DB184C3FE800587FD1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		174EA96E1830635800A2503C /* LevelParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelParser.h; sourceTree = "<group>"; };
 		174EA96F1830635800A2503C /* LevelParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LevelParser.m; sourceTree = "<group>"; };
 		7C0394DA18457F5800947CF3 /* Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrow.png; sourceTree = "<group>"; };
@@ -677,6 +679,7 @@
 				7CF098201818BD280043FD9F /* Foundation.framework in Frameworks */,
 				7CF19055181A3AE000528907 /* OpenEars.framework in Frameworks */,
 				7CF0981A1818BD280043FD9F /* AudioToolbox.framework in Frameworks */,
+				171818DC184C3FE800587FD1 /* AssetsLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +879,7 @@
 		7CF098121818BD280043FD9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				171818DB184C3FE800587FD1 /* AssetsLibrary.framework */,
 				7CED9B2818299DBC008BA73B /* libsqlite3.dylib */,
 				7CF19051181A3AE000528907 /* AcousticModelEnglish.bundle */,
 				7CF19052181A3AE000528907 /* OpenEars.framework */,
@@ -1707,11 +1711,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"Sound Out Phonics/libs/OpenEars\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sound Out Phonics/Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"Sound Out Phonics/libs/kazmath/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"Sound Out Phonics/libs/kazmath/include\"",
+				);
 				INFOPLIST_FILE = "Sound Out Phonics/Resources/Info.plist";
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -1735,10 +1742,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"Sound Out Phonics/libs/OpenEars\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sound Out Phonics/Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"Sound Out Phonics/libs/kazmath/include\"";
+				HEADER_SEARCH_PATHS = (
+					"\"Sound Out Phonics/libs/kazmath/include\"",
+				);
 				INFOPLIST_FILE = "Sound Out Phonics/Resources/Info.plist";
 				OTHER_LDFLAGS = (
 					"-lz",
