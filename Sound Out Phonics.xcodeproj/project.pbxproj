@@ -17,7 +17,6 @@
 		7C025C57184C72F800FB3B90 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C36184C72F800FB3B90 /* Icon-Small.png */; };
 		7C025C58184C72F800FB3B90 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C37184C72F800FB3B90 /* Icon-Small@2x.png */; };
 		7C025C5C184C72F800FB3B90 /* Game-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C3C184C72F800FB3B90 /* Game-Icon.png */; };
-		7C025C5D184C72F800FB3B90 /* Background-Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C3D184C72F800FB3B90 /* Background-Menu.png */; };
 		7C025C5E184C72F800FB3B90 /* Backward-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C3E184C72F800FB3B90 /* Backward-Icon.png */; };
 		7C025C5F184C72F800FB3B90 /* Camera-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C3F184C72F800FB3B90 /* Camera-Icon.png */; };
 		7C025C60184C72F800FB3B90 /* Cancel-Icon-White.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C40184C72F800FB3B90 /* Cancel-Icon-White.png */; };
@@ -46,7 +45,6 @@
 		7C2636EF182C71BF00EA972F /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2636EE182C71BF00EA972F /* Level.m */; };
 		7C398C181841AF0300877AC2 /* CreateAccountLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C398C171841AF0300877AC2 /* CreateAccountLayer.m */; };
 		7C398C1E1841B5CF00877AC2 /* StateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C398C1D1841B5CF00877AC2 /* StateButton.m */; };
-		7C5DDA84183180740047A808 /* Default-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA83183180740047A808 /* Default-Background.png */; };
 		7C5DDA861831808C0047A808 /* Reset-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5DDA851831808C0047A808 /* Reset-Button.png */; };
 		7C6851181819FC8200A52AAA /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851121819FC8200A52AAA /* IntroLayer.m */; };
 		7C6851191819FC8200A52AAA /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6851151819FC8200A52AAA /* MenuLayer.m */; };
@@ -242,6 +240,8 @@
 		7CF9526E182F194600FE1DDC /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9526D182F194600FE1DDC /* Statistics.m */; };
 		7CFCBE72183172A200EF6233 /* KBPlanetEarth.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */; };
 		E2B18F4A1847BD9100656E35 /* Slot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F491847BD9100656E35 /* Slot-Sprite.png */; };
+		E2CF74D6184D0E8E00C3AEFA /* Background-Menu.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CF74D5184D0E8E00C3AEFA /* Background-Menu.png */; };
+		E2CF74D8184D0E9A00C3AEFA /* Default-Background.png in Resources */ = {isa = PBXBuildFile; fileRef = E2CF74D7184D0E9A00C3AEFA /* Default-Background.png */; };
 		E2FB221D184AD25D00125633 /* Border-Play.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB221C184AD25D00125633 /* Border-Play.png */; };
 		E2FC4655184C3F43003E78AE /* (null) in Resources */ = {isa = PBXBuildFile; };
 		E2FC4656184C3F43003E78AE /* (null) in Resources */ = {isa = PBXBuildFile; };
@@ -266,7 +266,6 @@
 		7C025C36184C72F800FB3B90 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		7C025C37184C72F800FB3B90 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		7C025C3C184C72F800FB3B90 /* Game-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Game-Icon.png"; sourceTree = "<group>"; };
-		7C025C3D184C72F800FB3B90 /* Background-Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background-Menu.png"; sourceTree = "<group>"; };
 		7C025C3E184C72F800FB3B90 /* Backward-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Backward-Icon.png"; sourceTree = "<group>"; };
 		7C025C3F184C72F800FB3B90 /* Camera-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera-Icon.png"; sourceTree = "<group>"; };
 		7C025C40184C72F800FB3B90 /* Cancel-Icon-White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cancel-Icon-White.png"; sourceTree = "<group>"; };
@@ -301,7 +300,6 @@
 		7C398C171841AF0300877AC2 /* CreateAccountLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountLayer.m; sourceTree = "<group>"; };
 		7C398C1C1841B5CF00877AC2 /* StateButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateButton.h; sourceTree = "<group>"; };
 		7C398C1D1841B5CF00877AC2 /* StateButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateButton.m; sourceTree = "<group>"; };
-		7C5DDA83183180740047A808 /* Default-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Background.png"; sourceTree = "<group>"; };
 		7C5DDA851831808C0047A808 /* Reset-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reset-Button.png"; sourceTree = "<group>"; };
 		7C6851111819FC8200A52AAA /* IntroLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		7C6851121819FC8200A52AAA /* IntroLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
@@ -658,6 +656,8 @@
 		7CF9526D182F194600FE1DDC /* Statistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statistics.m; sourceTree = "<group>"; };
 		7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = KBPlanetEarth.ttf; path = Resources/KBPlanetEarth.ttf; sourceTree = "<group>"; };
 		E2B18F491847BD9100656E35 /* Slot-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slot-Sprite.png"; sourceTree = "<group>"; };
+		E2CF74D5184D0E8E00C3AEFA /* Background-Menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background-Menu.png"; sourceTree = "<group>"; };
+		E2CF74D7184D0E9A00C3AEFA /* Default-Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Background.png"; sourceTree = "<group>"; };
 		E2FB221C184AD25D00125633 /* Border-Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Border-Play.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -705,10 +705,10 @@
 		7C025C3B184C72F800FB3B90 /* MenuSprites */ = {
 			isa = PBXGroup;
 			children = (
+				E2CF74D5184D0E8E00C3AEFA /* Background-Menu.png */,
 				7C025C78184CB2BA00FB3B90 /* Profile-Icon.png */,
 				7C025C6F184C75A800FB3B90 /* Graph-Overlay.png */,
 				7C025C3C184C72F800FB3B90 /* Game-Icon.png */,
-				7C025C3D184C72F800FB3B90 /* Background-Menu.png */,
 				7C025C3E184C72F800FB3B90 /* Backward-Icon.png */,
 				7C025C3F184C72F800FB3B90 /* Camera-Icon.png */,
 				7C025C40184C72F800FB3B90 /* Cancel-Icon-White.png */,
@@ -786,10 +786,10 @@
 		7CAF16B9183070F800243C4B /* GameSprites */ = {
 			isa = PBXGroup;
 			children = (
+				E2CF74D7184D0E9A00C3AEFA /* Default-Background.png */,
 				E2FB221C184AD25D00125633 /* Border-Play.png */,
 				E2B18F491847BD9100656E35 /* Slot-Sprite.png */,
 				7C5DDA851831808C0047A808 /* Reset-Button.png */,
-				7C5DDA83183180740047A808 /* Default-Background.png */,
 			);
 			name = GameSprites;
 			path = Resources/GameSprites;
@@ -1427,10 +1427,10 @@
 				7CF6BEEC184AFAF90054E471 /* Lvl37-Horn-Sprite.png in Resources */,
 				7CF6BED0184AFAF90054E471 /* Lvl9-Frog-Sprite.png in Resources */,
 				7CF6BEEB184AFAF90054E471 /* Lvl36-Teeth-Sprite.png in Resources */,
-				7C5DDA84183180740047A808 /* Default-Background.png in Resources */,
 				E2FC4656184C3F43003E78AE /* (null) in Resources */,
 				7CFCBE72183172A200EF6233 /* KBPlanetEarth.ttf in Resources */,
 				7CF6BEE8184AFAF90054E471 /* Lvl33-Toy-Sprite.png in Resources */,
+				E2CF74D6184D0E8E00C3AEFA /* Background-Menu.png in Resources */,
 				E2B18F4A1847BD9100656E35 /* Slot-Sprite.png in Resources */,
 				7C025C53184C72F800FB3B90 /* Default.png in Resources */,
 				7CF6BEE3184AFAF90054E471 /* Lvl28-Bridge-Sprite.png in Resources */,
@@ -1454,6 +1454,7 @@
 				E2FC4655184C3F43003E78AE /* (null) in Resources */,
 				7C025C6E184C72F800FB3B90 /* Statistic-Icon.png in Resources */,
 				7CF6BECA184AFAF90054E471 /* Lvl3-Drum-Sprite.png in Resources */,
+				E2CF74D8184D0E9A00C3AEFA /* Default-Background.png in Resources */,
 				7CF6BED3184AFAF90054E471 /* Lvl12-Trash-Sprite.png in Resources */,
 				7CF6BEDD184AFAF90054E471 /* Lvl22-Cliff-Sprite.png in Resources */,
 				7CF6BEDF184AFAF90054E471 /* Lvl24-Doll-Sprite.png in Resources */,
@@ -1474,7 +1475,6 @@
 				7CF6BEF9184AFAF90054E471 /* Lvl50-Leaf-Sprite.png in Resources */,
 				7C025C5E184C72F800FB3B90 /* Backward-Icon.png in Resources */,
 				7C025C68184C72F800FB3B90 /* Manage-Icon.png in Resources */,
-				7C025C5D184C72F800FB3B90 /* Background-Menu.png in Resources */,
 				7CF6BEF3184AFAF90054E471 /* Lvl44-Queen-Sprite.png in Resources */,
 				7CF6BEEF184AFAF90054E471 /* Lvl40-Saint-Sprite.png in Resources */,
 				7CF19054181A3AE000528907 /* AcousticModelEnglish.bundle in Resources */,

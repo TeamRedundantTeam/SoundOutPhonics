@@ -142,19 +142,19 @@
     // Add the icons
     CCSprite *playIcon = [CCSprite spriteWithFile:@"Game-Icon.png"];               // create and initialize the playIcon sprite (png)
     CCSprite *statisticIcon = [CCSprite spriteWithFile:@"Statistic-Icon.png"];     // create and initialize the statisticIcon sprite (png)
-    CCSprite *accountIcon = [CCSprite spriteWithFile:@"Manage-Icon.png"];           // create and initialize the manageIcon sprite (png)
+    CCSprite *accountIcon = [CCSprite spriteWithFile:@"Manage-Icon.png"];          // create and initialize the accountIcon sprite (png)
     CCSprite *logoutIcon = [CCSprite spriteWithFile:@"Cancel-Icon.png"];           // create and initialize the logoutIcon sprite (png)
 
     
-    playIcon.position = ccp(_size.width/2 - 88, _size.height/2 + 45);                       // set playIcon screen position
-    statisticIcon.position = ccp(_size.width/2 - 89, _size.height/2 - 15);                  // set statisticIcon screen position
-    accountIcon.position = ccp(_size.width/2 - 89, _size.height/2 - 75);                    // set manageIcon screen position
-    logoutIcon.position = ccp(_size.width/2 - 88, _size.height/2 - 135);                    // set logoutIcon screen position
+    playIcon.position = ccp(_size.width/2 - 88, _size.height/2 + 45);              // set playIcon screen position
+    statisticIcon.position = ccp(_size.width/2 - 89, _size.height/2 - 15);         // set statisticIcon screen position
+    accountIcon.position = ccp(_size.width/2 - 89, _size.height/2 - 75);           // set accountIcon screen position
+    logoutIcon.position = ccp(_size.width/2 - 88, _size.height/2 - 140);           // set logoutIcon screen position
     
-    [self addChild: playIcon];                                                          // add the playIcon to the scene
-    [self addChild: statisticIcon];                                                     // add the statisticIcon to the scene
-    [self addChild: accountIcon];
-    [self addChild: logoutIcon];
+    [self addChild: playIcon];                                                     // add the playIcon to the scene
+    [self addChild: statisticIcon];                                                // add the statisticIcon to the scene
+    [self addChild: accountIcon];                                                  // add the accountIcon to the scene
+    [self addChild: logoutIcon];                                                   // add the logoutIcon to the scene
     
 }
 
@@ -165,8 +165,8 @@
     accountType.position = ccp(_size.width/2, _size.height/2+229);
     [self addChild:accountType];
     
-    [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
-    [CCMenuItemFont setFontSize:50]; // set the default CCMenuItemFont size
+    [CCMenuItemFont setFontName:@"KBPlanetEarth"];                                 // set the default CCMenuItemFont to our custom font, KBPlanetEarth
+    [CCMenuItemFont setFontSize:50];                                               // set the default CCMenuItemFont size
     
     CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"play" target:self selector:@selector(play)];
     CCMenuItem *itemStatistic = [CCMenuItemFont itemWithString:@"statistics" target:self selector:@selector(statistics)];
@@ -191,13 +191,13 @@
     CCSprite *statisticIcon = [CCSprite spriteWithFile:@"Statistic-Icon.png"];     // create and initialize the statisticIcon sprite (png)
     CCSprite *logoutIcon = [CCSprite spriteWithFile:@"Cancel-Icon.png"];           // create and initialize the logoutIcon sprite (png)
     
-    playIcon.position = ccp(_size.width/2 - 88, _size.height/2 + 40);                       // set playIcon screen position
-    statisticIcon.position = ccp(_size.width/2 - 89, _size.height/2 - 20);                  // set statisticIcon screen position
-    logoutIcon.position = ccp(_size.width/2 - 88, _size.height/2 - 90);                    // set logoutIcon screen position
+    playIcon.position = ccp(_size.width/2 - 88, _size.height/2 + 40);              // set playIcon screen position
+    statisticIcon.position = ccp(_size.width/2 - 89, _size.height/2 - 20);         // set statisticIcon screen position
+    logoutIcon.position = ccp(_size.width/2 - 88, _size.height/2 - 87);            // set logoutIcon screen position
     
-    [self addChild: playIcon];                                                          // add the playIcon to the scene
-    [self addChild: statisticIcon];                                                     // add the statisticIcon to the scene
-    [self addChild: logoutIcon];
+    [self addChild: playIcon];                                                     // add the playIcon to the scene
+    [self addChild: statisticIcon];                                                // add the statisticIcon to the scene
+    [self addChild: logoutIcon];                                                   // add the logoutIcon to the scene
 }
 
 - (void)initGuestMenu {

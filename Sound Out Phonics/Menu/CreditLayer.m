@@ -57,7 +57,7 @@
         CCLabelTTF *projectManager = [CCLabelTTF labelWithString:@"Project Manager" fontName:@"KBPlanetEarth" fontSize:24];
         CCLabelTTF *morgan = [CCLabelTTF labelWithString:@"Morgan Jenkins" fontName:@"KBPlanetEarth" fontSize:16];
         
-        CCLabelTTF *headTechnicalWriter = [CCLabelTTF labelWithString:@"Head Technical Write" fontName:@"KBPlanetEarth" fontSize:24];
+        CCLabelTTF *headTechnicalWriter = [CCLabelTTF labelWithString:@"Head Technical Writer" fontName:@"KBPlanetEarth" fontSize:24];
         CCLabelTTF *ian = [CCLabelTTF labelWithString:@"Ian Stewart" fontName:@"KBPlanetEarth" fontSize:16];
         
         CCLabelTTF *technicalWriter = [CCLabelTTF labelWithString:@"Technical Writer/QA" fontName:@"KBPlanetEarth" fontSize:24];
@@ -69,7 +69,7 @@
         CCLabelTTF *developer = [CCLabelTTF labelWithString:@"Developer" fontName:@"KBPlanetEarth" fontSize:24];
         CCLabelTTF *jordan = [CCLabelTTF labelWithString:@"Jordan Yap" fontName:@"KBPlanetEarth" fontSize:16];
         
-        CCLabelTTF *uiDesigener = [CCLabelTTF labelWithString:@"UI Designer" fontName:@"KBPlanetEarth" fontSize:24];
+        CCLabelTTF *uiDesigener = [CCLabelTTF labelWithString:@"UI Developer" fontName:@"KBPlanetEarth" fontSize:24];
         CCLabelTTF *erik = [CCLabelTTF labelWithString:@"Erik Schultz" fontName:@"KBPlanetEarth" fontSize:16];
         
         CCLabelTTF *consultant = [CCLabelTTF labelWithString:@"Consultant" fontName:@"KBPlanetEarth" fontSize:24];

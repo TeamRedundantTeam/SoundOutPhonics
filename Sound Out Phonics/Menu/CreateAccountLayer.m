@@ -51,12 +51,12 @@
         
         // add CREATE account icon to victory layer
         CCSprite *createAccount = [CCSprite spriteWithFile:@"Plus-Icon.png"];
-        createAccount.position = ccp(_size.width/2-185, _size.height-505);
+        createAccount.position = ccp(_size.width/2-145, _size.height-553);
         [self addChild: createAccount];
         
         // add update icon to edit account layer
         CCSprite *takePicture = [CCSprite spriteWithFile:@"Camera-Icon.png"];
-        takePicture.position = ccp(_size.width/2-160, _size.height - 450);
+        takePicture.position = ccp(_size.width/2-145, _size.height-471);
         [self addChild: takePicture];
         
         // create header text
@@ -127,13 +127,13 @@
         
         // Add create account button
         _createAccountButton = [[StateText alloc] initWithString:@"create account" fontName:@"KBPlanetEarth" fontSize:48
-                                                        position:ccp(_size.width/2+10, _size.height/2 - 125)];
+                                                        position:ccp(_size.width/2+55, _size.height/2-174)];
         [self addChild:_createAccountButton];
         
         
         // Add Update Picture Button
-        _updatePictureButton = [[StateText alloc] initWithString:@"Add picture" fontName:@"KBPlanetEarth" fontSize:48
-                                                        position:ccp(_size.width/2+20, _size.height - 460)];
+        _updatePictureButton = [[StateText alloc] initWithString:@"add picture" fontName:@"KBPlanetEarth" fontSize:48
+                                                        position:ccp(_size.width/2+23, _size.height-479)];
         [self addChild:_updatePictureButton];
         _updatePictureButton.state = true;
 

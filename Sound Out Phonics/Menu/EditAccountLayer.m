@@ -137,7 +137,7 @@
         
         // Add Update Picture Button
         _updatePictureButton = [[StateText alloc] initWithString:@"change picture" fontName:@"KBPlanetEarth" fontSize:48
-                                                        position:ccp(size.width/2+60, size.height/2 - 94)];
+                                                        position:ccp(size.width/2+60, size.height/2-94)];
         [self addChild:_updatePictureButton];
         _updatePictureButton.state = true;
         
