@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1708C003184C6695003028AE /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1708C002184C6695003028AE /* BugSense-iOS.framework */; };
 		1708C005184C66FD003028AE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1708C004184C66FD003028AE /* SystemConfiguration.framework */; };
+		1708C007184C6AB8003028AE /* Camera-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1708C006184C6AB8003028AE /* Camera-IconFinal.png */; };
+		1708C009184C6ADE003028AE /* Cancel-IconFinal-White.png in Resources */ = {isa = PBXBuildFile; fileRef = 1708C008184C6ADE003028AE /* Cancel-IconFinal-White.png */; };
 		174EA97E1830672F00A2503C /* LevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 174EA96F1830635800A2503C /* LevelParser.m */; };
 		7C0394DB18457F5800947CF3 /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0394DA18457F5800947CF3 /* Arrow.png */; };
 		7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
@@ -255,6 +257,8 @@
 /* Begin PBXFileReference section */
 		1708C002184C6695003028AE /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "BugSense-iOS.framework"; sourceTree = "<group>"; };
 		1708C004184C66FD003028AE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1708C006184C6AB8003028AE /* Camera-IconFinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera-IconFinal.png"; sourceTree = "<group>"; };
+		1708C008184C6ADE003028AE /* Cancel-IconFinal-White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cancel-IconFinal-White.png"; sourceTree = "<group>"; };
 		171818DB184C3FE800587FD1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		174EA96E1830635800A2503C /* LevelParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelParser.h; sourceTree = "<group>"; };
 		174EA96F1830635800A2503C /* LevelParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LevelParser.m; sourceTree = "<group>"; };
@@ -906,15 +910,15 @@
 		7CF098281818BD280043FD9F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */,
 				7CAF16B9183070F800243C4B /* GameSprites */,
+				7CF0983D1818BD280043FD9F /* Info.plist */,
 				7CAF16BD183070F800243C4B /* IntroSprites */,
+				7CF0983E1818BD280043FD9F /* iTunesArtwork */,
+				7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */,
+				7CAF16B5183069B100243C4B /* Levels.xml */,
 				7CAF16C8183070F900243C4B /* LevelSprites */,
 				7CAF16CB183070F900243C4B /* MenuSprites */,
-				7CAF16B5183069B100243C4B /* Levels.xml */,
 				7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */,
-				7CF0983D1818BD280043FD9F /* Info.plist */,
-				7CF0983E1818BD280043FD9F /* iTunesArtwork */,
 			);
 			name = Resources;
 			path = "Sound Out Phonics";
@@ -1320,24 +1324,26 @@
 		E2EB99ED184A7E560069AA61 /* [NEW] Final Icons */ = {
 			isa = PBXGroup;
 			children = (
-				E2D9B55B184B37C100B02510 /* Background-Menu.png */,
-				E2D9B557184B354600B02510 /* Help-Icon.png */,
-				E2D9B554184B31FF00B02510 /* Credits-Icon.png */,
-				E2FB221A184ACF9100125633 /* Login-Button.png */,
-				E2EB99EE184A7EF70069AA61 /* Statistic-IconFinal.png */,
 				E2EB99EF184A7EF70069AA61 /* Back-IconFinal.png */,
-				E2EB99F0184A7EF70069AA61 /* Manage-IconFinal.png */,
-				E2EB99F1184A7EF70069AA61 /* Cancel-IconFinal.png */,
-				E2EB99F2184A7EF70069AA61 /* Pause-IconFinal.png */,
-				E2EB99F3184A7EF70069AA61 /* Refresh-IconFinal.png */,
+				E2D9B55B184B37C100B02510 /* Background-Menu.png */,
 				E2EB99F4184A7EF70069AA61 /* Backward-IconFinal.png */,
+				E2EB99F1184A7EF70069AA61 /* Cancel-IconFinal.png */,
+				E2D9B554184B31FF00B02510 /* Credits-Icon.png */,
 				E2EB99F5184A7EF70069AA61 /* Forward-IconFinal.png */,
-				E2EB99F6184A7EF70069AA61 /* Plus-IconFinal.png */,
-				E2EB99F7184A7EF70069AA61 /* Minus-IconFinal.png */,
-				E2EB99F8184A7EF70069AA61 /* Profile-IconFinal.png */,
+				1708C008184C6ADE003028AE /* Cancel-IconFinal-White.png */,
+				1708C006184C6AB8003028AE /* Camera-IconFinal.png */,
 				E2EB99F9184A7EF70069AA61 /* Game-IconFinal.png */,
-				E2EB99FA184A7EF70069AA61 /* Trash-IconFinal.png */,
+				E2D9B557184B354600B02510 /* Help-Icon.png */,
 				E2EB99FB184A7EF70069AA61 /* Home-IconFinal.png */,
+				E2FB221A184ACF9100125633 /* Login-Button.png */,
+				E2EB99F0184A7EF70069AA61 /* Manage-IconFinal.png */,
+				E2EB99F7184A7EF70069AA61 /* Minus-IconFinal.png */,
+				E2EB99F2184A7EF70069AA61 /* Pause-IconFinal.png */,
+				E2EB99F6184A7EF70069AA61 /* Plus-IconFinal.png */,
+				E2EB99F8184A7EF70069AA61 /* Profile-IconFinal.png */,
+				E2EB99F3184A7EF70069AA61 /* Refresh-IconFinal.png */,
+				E2EB99EE184A7EF70069AA61 /* Statistic-IconFinal.png */,
+				E2EB99FA184A7EF70069AA61 /* Trash-IconFinal.png */,
 			);
 			name = "[NEW] Final Icons";
 			sourceTree = "<group>";
@@ -1501,6 +1507,8 @@
 				E2FB221D184AD25D00125633 /* Border-Play.png in Resources */,
 				E2B18F5A1848035E00656E35 /* Play-Icon.png in Resources */,
 				E2D9B558184B354600B02510 /* Help-Icon.png in Resources */,
+				1708C007184C6AB8003028AE /* Camera-IconFinal.png in Resources */,
+				1708C009184C6ADE003028AE /* Cancel-IconFinal-White.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
