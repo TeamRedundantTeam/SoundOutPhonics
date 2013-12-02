@@ -59,4 +59,7 @@
 
 // insert a new statistic into the Statistic table based on the input
 - (void)createStatistic:(int)accountId withLevel:(int)level withScore:(int)score witTime:(double)time;
+
+// Receives the percentage of students that have completed a specific level
+- (NSArray *)getCompletedLevelStatistics;
 @end

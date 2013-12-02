@@ -1713,6 +1713,10 @@
 				GCC_PREFIX_HEADER = "Sound Out Phonics/Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"Sound Out Phonics/libs/kazmath/include\"";
 				INFOPLIST_FILE = "Sound Out Phonics/Resources/Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Storage/Git/SoundOutPhonics/Sound\\ Out\\ Phonics/libs",
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
@@ -1740,6 +1744,10 @@
 				GCC_PREFIX_HEADER = "Sound Out Phonics/Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"Sound Out Phonics/libs/kazmath/include\"";
 				INFOPLIST_FILE = "Sound Out Phonics/Resources/Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Storage/Git/SoundOutPhonics/Sound\\ Out\\ Phonics/libs",
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
