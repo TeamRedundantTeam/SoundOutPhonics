@@ -177,7 +177,7 @@
     NSLog (@"File Path = %@", filePath);
     
     //Resize our image to a power of 2
-    CGRect rect = CGRectMake(0,0,128,128);
+    CGRect rect = CGRectMake(0,0,100,150);
     UIGraphicsBeginImageContext( rect.size );
     [OriginalImage drawInRect:rect];
     UIImage *picture1 = UIGraphicsGetImageFromCurrentImageContext();
