@@ -175,28 +175,6 @@
     }
 }
 
-// dispatcher to catch the touch events
-- (void)registerWithTouchDispatcher {
-	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
-}
-
-// Handles the events that happen when the release occurs at a specific location
-- (void)tapReleaseAt:(CGPoint)releaseLocation {
-}
-
-// event that is called when the touch has ended
-- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
-    
-    CGPoint releaseLocation = [touch locationInView:[touch view]];
-    releaseLocation = [[CCDirector sharedDirector] convertToGL:releaseLocation];
-    [self tapReleaseAt:releaseLocation];
-}
-
-// event that is called when the touch begins
-- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    return YES;
-}
-
 - (void) dealloc {
     [super dealloc];
 }

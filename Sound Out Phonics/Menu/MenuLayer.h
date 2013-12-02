@@ -32,7 +32,7 @@
 #import "ManageAccountLayer.h"
 
 @interface MenuLayer : CCLayer {
-
+    CCLabelTTF *_helpButton; // Reference to the help button
 }
 
 // returns a CCScene that contains the MenuLayer as the only child

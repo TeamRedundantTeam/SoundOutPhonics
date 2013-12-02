@@ -50,6 +50,7 @@
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if((self = [super init])) {
 		CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
+        [self setTouchEnabled:YES];
         
         CCSprite *background = [CCSprite spriteWithFile:@"Background-Menu.png"];            // create and initialize the background sprite (png)
         background.position = ccp(size.width/2, size.height/2);                             // center background layer
@@ -146,11 +147,39 @@
         itemStatistic.position = ccp(size.width/2-450, size.height/2-413);
         itemLogout.position = ccp(size.width/2-507, size.height/2-485);
         itemManageAccount.position = ccp(size.width/2-357, size.height/2-560);
-		
 		// add the menu to the layer
 		[self addChild:menu];
+        
+        _helpButton = [CCSprite spriteWithFile:@"Help-Icon.png"];
+        _helpButton.position = ccp(size.width - 150, size.height - 150);
+        [self addChild:_helpButton];
 	}
 	return self;
+}
+
+// dispatcher to catch the touch events
+- (void)registerWithTouchDispatcher {
+	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+}
+
+// Handles the events that happen when the release occurs at a specific location
+- (void)tapReleaseAt:(CGPoint)releaseLocation {
+    if (CGRectContainsPoint(_helpButton.boundingBox, releaseLocation)) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://teamredundant.com/tutorial/"]];
+    }
+}
+
+// event that is called when the touch has ended
+- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event {
+    
+    CGPoint releaseLocation = [touch locationInView:[touch view]];
+    releaseLocation = [[CCDirector sharedDirector] convertToGL:releaseLocation];
+    [self tapReleaseAt:releaseLocation];
+}
+
+// event that is called when the touch begins
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
+    return YES;
 }
 
 // on "dealloc" you need to release all your retained objects
