@@ -11,6 +11,7 @@
 #import "Singleton.h"
 #import "SOPDatabase.h"
 #import "MenuLayer.h"
+#import "ClassStatisticsLayer.h"
 
 @interface StatisticLayer : CCLayer {
     CGSize _size; // Used to store the screen size
@@ -26,8 +27,9 @@
     int _currentAccountsPage; // Keeps track of the current statistic page
     CCSprite *_lastAccountsPage; // Sprite that allows users to move to the previous account page
     CCSprite *_nextAccountsPage; // Sprite that allows users to move to the next account page
-
+    CCLabelTTF *_viewClassStatisticButton; // A button that takes the user to class statistics when pressed
 }
+
 // returns a CCScene that contains the StatisticLayer as the only child
 + (CCScene *)scene;
 

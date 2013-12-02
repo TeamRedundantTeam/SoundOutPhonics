@@ -42,6 +42,8 @@
 		7C025C6C184C72F800FB3B90 /* Refresh-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C4C184C72F800FB3B90 /* Refresh-Icon.png */; };
 		7C025C6D184C72F800FB3B90 /* Selected-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C4D184C72F800FB3B90 /* Selected-Portrait.png */; };
 		7C025C6E184C72F800FB3B90 /* Statistic-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C4E184C72F800FB3B90 /* Statistic-Icon.png */; };
+		7C025C70184C75A800FB3B90 /* Graph-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C6F184C75A800FB3B90 /* Graph-Overlay.png */; };
+		7C025C73184C78C100FB3B90 /* ClassStatisticsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C025C72184C78C100FB3B90 /* ClassStatisticsLayer.m */; };
 		7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
 		7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C039AC1182A326B00E38FA1 /* Singleton.m */; };
 		7C2636EF182C71BF00EA972F /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2636EE182C71BF00EA972F /* Level.m */; };
@@ -292,6 +294,9 @@
 		7C025C4C184C72F800FB3B90 /* Refresh-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Refresh-Icon.png"; sourceTree = "<group>"; };
 		7C025C4D184C72F800FB3B90 /* Selected-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Selected-Portrait.png"; sourceTree = "<group>"; };
 		7C025C4E184C72F800FB3B90 /* Statistic-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Statistic-Icon.png"; sourceTree = "<group>"; };
+		7C025C6F184C75A800FB3B90 /* Graph-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Graph-Overlay.png"; sourceTree = "<group>"; };
+		7C025C71184C78C100FB3B90 /* ClassStatisticsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassStatisticsLayer.h; sourceTree = "<group>"; };
+		7C025C72184C78C100FB3B90 /* ClassStatisticsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassStatisticsLayer.m; sourceTree = "<group>"; };
 		7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = sop.sqlite3; path = Resources/sop.sqlite3; sourceTree = "<group>"; };
 		7C039AC0182A326B00E38FA1 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		7C039AC1182A326B00E38FA1 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
@@ -710,6 +715,7 @@
 		7C025C3B184C72F800FB3B90 /* MenuSprites */ = {
 			isa = PBXGroup;
 			children = (
+				7C025C6F184C75A800FB3B90 /* Graph-Overlay.png */,
 				7C025C3C184C72F800FB3B90 /* Game-Icon.png */,
 				7C025C3D184C72F800FB3B90 /* Background-Menu.png */,
 				7C025C3E184C72F800FB3B90 /* Backward-Icon.png */,
@@ -777,6 +783,8 @@
 				7CF6BE2D184AE2CA0054E471 /* EditAccountLayer.m */,
 				7C398C161841AF0300877AC2 /* CreateAccountLayer.h */,
 				7C398C171841AF0300877AC2 /* CreateAccountLayer.m */,
+				7C025C71184C78C100FB3B90 /* ClassStatisticsLayer.h */,
+				7C025C72184C78C100FB3B90 /* ClassStatisticsLayer.m */,
 			);
 			name = Menu;
 			path = "Sound Out Phonics/Menu";
@@ -1444,6 +1452,7 @@
 				7C025C6C184C72F800FB3B90 /* Refresh-Icon.png in Resources */,
 				7C025C61184C72F800FB3B90 /* Cancel-Icon.png in Resources */,
 				7C025C5B184C72F800FB3B90 /* Splash-SOP-Default.png in Resources */,
+				7C025C70184C75A800FB3B90 /* Graph-Overlay.png in Resources */,
 				7CF6BEE5184AFAF90054E471 /* Lvl30-Ball-Sprite.png in Resources */,
 				7C025C69184C72F800FB3B90 /* Minus-Icon.png in Resources */,
 				7CF6BEDE184AFAF90054E471 /* Lvl23-Skull-Sprite.png in Resources */,
@@ -1606,6 +1615,7 @@
 				7CF099AE1818BD310043FD9F /* vec2.c in Sources */,
 				7CF0999E1818BD310043FD9F /* matrix.c in Sources */,
 				7CF098841818BD2A0043FD9F /* CCDrawingPrimitives.m in Sources */,
+				7C025C73184C78C100FB3B90 /* ClassStatisticsLayer.m in Sources */,
 				7CF098EC1818BD2C0043FD9F /* ccShaders.m in Sources */,
 				7CF099421818BD2F0043FD9F /* CCWindow.m in Sources */,
 				7CF099201818BD2E0043FD9F /* cocos2d.m in Sources */,

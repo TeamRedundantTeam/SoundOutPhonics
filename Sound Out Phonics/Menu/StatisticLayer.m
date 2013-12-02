@@ -116,7 +116,10 @@
         // then load all the students from the database. Otherwise, only add the student itself.
         if (_loggedInAccount.type == 1) {
             self.accounts = [[SOPDatabase database] loadAccounts];
-            [self drawClassStatistics];
+            
+            _viewClassStatisticButton = [CCLabelTTF labelWithString:@"VIEW CLASS" fontName:@"KBPlanetEarth" fontSize:32];
+            _viewClassStatisticButton.position = ccp(150, _size.height - _size.height + 40);
+            [self addChild:_viewClassStatisticButton];
         }
         else
             self.accounts = [NSArray arrayWithObject:_loggedInAccount];
@@ -126,79 +129,6 @@
     }
     return self;
 }
-
-// Creates a rectangle with a specified size and colors
-- (CCSprite *) rectangleOfSize:(CGSize)size withRed:(uint8_t)red green:(uint8_t)green blue:(uint8_t)blue andAlpha:(uint8_t)alpha {
-    
-    // Sprite reference
-    CCSprite *sprite = [CCSprite node];
-    
-    // Initialize the color buffer
-    GLubyte *buffer = (GLubyte *) malloc(sizeof(GLubyte)*4);
-    
-    buffer[0] = red;
-    buffer[1] = green;
-    buffer[2] = blue;
-    buffer[3] = alpha;
-    
-    // Create new solid texture with the specified size and color
-    CCTexture2D *texture = [[CCTexture2D alloc] initWithData:buffer pixelFormat:kCCTexture2DPixelFormat_Default pixelsWide:1 pixelsHigh:1 contentSize:size];
-    
-    // Add rectangular texture to the sprite
-    [sprite setTexture:texture];
-    [sprite setTextureRect:CGRectMake(0, 0, size.width, size.height)];
-    
-    // release memory
-    [texture release];
-    free(buffer);
-    return sprite;
-}
-
-// Draws the class statistcs graph with the data pulled from the database
--(void)drawClassStatistics {
-    
-    // Pull the data from the database
-    NSArray *studentLevelStatistics = [[SOPDatabase database] getCompletedLevelStatistics];
-    
-    // Loop through everysingle level (this value should be pulled from the XML file due to time
-    // constraint we will use a magic number instead)
-    for (int i = 1; i <= 50; i ++) {
-        
-        // Loop through the statistics
-        for (int j = 0; j < [studentLevelStatistics count]; j++) {
-            
-            // Levels are stored at every second value
-            if (j % 2 == 0) {
-                NSNumber *level = [studentLevelStatistics objectAtIndex:j];
-                if ([level integerValue] == i) {
-                    
-                    // Percent is stored in the next field
-                    NSNumber *percent = [studentLevelStatistics objectAtIndex:j+1];
-                    
-                    // Create the graph object background with with the size based on percent of students completing the level
-                    CCSprite *objectBackground = [self rectangleOfSize:CGSizeMake(8, (150 * [percent doubleValue]) + 1)
-                                                   withRed:0 green:0 blue:0 andAlpha:255];
-                    objectBackground.anchorPoint = ccp(0,0);
-                    objectBackground.position = ccp(199 + (i - 1) * 12, 200);
-                    
-                    [self addChild:objectBackground];
-
-                    // Create the graph object background with with the size based on percent of students completing the level
-                    CCSprite *object = [self rectangleOfSize:CGSizeMake(6, 150 * [percent doubleValue])
-                                                     withRed:255 green:255 blue:255 andAlpha:255];
-                    
-                    object.anchorPoint = ccp(0,0);
-                    object.position = ccp(200 + (i - 1) * 12, 200);
-                    [self addChild:object];
-                    break;
-                }
-            }
-        }
-    }
-}
-
-
-
 
 // function called by pressing HOME button to return to main menu
 - (void)goHome:(id)sender {
@@ -211,7 +141,6 @@
     // create the selected avatar frame
     _selectedAvatarBorder = [CCSprite spriteWithFile:@"Selected-Portrait.png"];
     _selectedAvatarBorder.visible = false;
-    //_selectedAvatarBorder.tag = 1;
     [self addChild:_selectedAvatarBorder];
     
 
@@ -352,6 +281,11 @@
             // display the new account page
             [self displayAccounts:_currentAccountsPage];
         }
+    }
+    
+    if (_viewClassStatisticButton && CGRectContainsPoint(_viewClassStatisticButton.boundingBox, releaseLocation)) {
+        [self.parent removeChild:self cleanup:YES];
+        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[ClassStatisticsLayer scene]]];
     }
 }
 
