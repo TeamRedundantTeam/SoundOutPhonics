@@ -51,7 +51,7 @@
 	if((self = [super init])) {
 		CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
         
-        CCSprite *background = [CCSprite spriteWithFile:@"Background-Menu.png"];     // create and initialize the background sprite (png)
+        CCSprite *background = [CCSprite spriteWithFile:@"Background-Menu.png"];            // create and initialize the background sprite (png)
         background.position = ccp(size.width/2, size.height/2);                             // center background layer
         [self addChild: background];
         
@@ -84,7 +84,7 @@
                 accountType = [CCLabelTTF labelWithString:@"Student" fontName:@"KBPlanetEarth" fontSize:24];
             }
             
-            accountType.position = ccp(size.width/2, size.height/2+225);
+            accountType.position = ccp(size.width/2, size.height/2+229);
             
             [self addChild:accountType];
             
@@ -105,7 +105,7 @@
         [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
         [CCMenuItemFont setFontSize:50]; // set the default CCMenuItemFont size
         
-        CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"play." block:^(id sender) {
+        CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"play" block:^(id sender) {
 
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
@@ -113,20 +113,20 @@
             
         }]; // add the 'play' CCMenuItem
         
-        CCMenuItem *itemStatistic = [CCMenuItemFont itemWithString:@"statistics." block:^(id sender) {
+        CCMenuItem *itemStatistic = [CCMenuItemFont itemWithString:@"statistics" block:^(id sender) {
             
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
                                                        scene:[StatisticLayer scene]]];
         }]; // add the 'statistics' CCMenuItem
         
-        CCMenuItem *itemManageAccount = [CCMenuItemFont itemWithString:@"manage accounts." block:^(id sender) {
+        CCMenuItem *itemManageAccount = [CCMenuItemFont itemWithString:@"manage accounts" block:^(id sender) {
                 [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
                                                        scene:[ManageAccountLayer scene]]];
         }]; // add the 'create account' CCMenuItem
         
-        CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"quit." block:^(id sender) {
+        CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"quit" block:^(id sender) {
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
                                                        scene:[LoginLayer scene]]];

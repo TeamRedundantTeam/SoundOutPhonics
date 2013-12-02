@@ -63,6 +63,21 @@
         [self addChild:background];
         [self addChild:titleName];
         
+        // add EDIT account icon to victory layer
+        CCSprite *editAccount = [CCSprite spriteWithFile:@"Manage-IconFinal.png"];
+        editAccount.position = ccp(_size.width/2-170, _size.height - 425);
+        [self addChild: editAccount];
+        
+        // add DELETE account icon to victory layer
+        CCSprite *deleteAccount = [CCSprite spriteWithFile:@"Minus-IconFinal.png"];
+        deleteAccount.position = ccp(_size.width/2-170, _size.height - 500);
+        [self addChild: deleteAccount];
+        
+        // add CREATE account icon to victory layer
+        CCSprite *createAccount = [CCSprite spriteWithFile:@"Plus-IconFinal.png"];
+        createAccount.position = ccp(_size.width/2-170, _size.height - 580);
+        [self addChild: createAccount];
+        
         _homeButton = [CCSprite spriteWithFile:@"Home-IconFinal.png"];
         _homeButton.position = ccp(_size.width - 100, _size.height - _size.height + 40);
         [self addChild:_homeButton];
@@ -78,11 +93,11 @@
         [self addChild:_selectedAvatarBorder];
         
         // Initialize and add the paging button sprites
-        _lastAccountsPage = [CCSprite spriteWithFile:@"Arrow.png"];
-        _nextAccountsPage = [CCSprite spriteWithFile:@"Arrow.png"];
+        _lastAccountsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
+        _nextAccountsPage = [CCSprite spriteWithFile:@"Backward-IconFinal.png"];
         
-        _lastAccountsPage.position = ccp(_size.width/2 - 375, _size.height - 250);
-        _nextAccountsPage.position = ccp(_size.width/2 + 375, _size.height - 250);
+        _lastAccountsPage.position = ccp(_size.width/2 - 375, _size.height - 230);
+        _nextAccountsPage.position = ccp(_size.width/2 + 375, _size.height - 230);
         
         // Rotate the sprite by 180 degrees CW
         _nextAccountsPage.rotation = 180;
@@ -97,19 +112,19 @@
         [self displayAccounts];
         
         // Add edit account button.
-        _editAccountButton = [[StateText alloc] initWithString:@"Edit Account" fontName:@"KBPlanetEarth" fontSize:48 position:ccp(_size.width/2, _size.height/2 - 50)];
+        _editAccountButton = [[StateText alloc] initWithString:@"edit account" fontName:@"KBPlanetEarth" fontSize:48 position:ccp(_size.width/2, _size.height/2 - 50)];
         [_editAccountButton setState:false];
         [self addChild:_editAccountButton];
         
         // Add delete account button
-        _deleteAccountButton = [[StateText alloc] initWithString:@"Delete Account" fontName:@"KBPlanetEarth" fontSize:48
-                                                        position:ccp(_size.width/2, _size.height/2 - 125)];
+        _deleteAccountButton = [[StateText alloc] initWithString:@"delete account" fontName:@"KBPlanetEarth" fontSize:48
+                                                        position:ccp(_size.width/2+25, _size.height/2 - 125)];
         [_deleteAccountButton setState:false];
         [self addChild:_deleteAccountButton];
         
         // add create account button
-        _createAccountButton = [CCLabelTTF labelWithString:@"Create Account" fontName:@"KBPlanetEarth" fontSize:48];
-        _createAccountButton.position = ccp(_size.width/2, _size.height/2 - 200);
+        _createAccountButton = [CCLabelTTF labelWithString:@"create account" fontName:@"KBPlanetEarth" fontSize:48];
+        _createAccountButton.position = ccp(_size.width/2+25, _size.height/2 - 200);
         [self addChild:_createAccountButton];
     }
     return self;

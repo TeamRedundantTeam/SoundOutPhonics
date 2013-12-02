@@ -33,8 +33,13 @@
         background.position = ccp(size.width/2, size.height/2);
         [self addChild:background];
         
+        // add update icon to edit account layer
+        CCSprite *editAccount = [CCSprite spriteWithFile:@"Refresh-IconFinal.png"];
+        editAccount.position = ccp(size.width/2-115, size.height - 503);
+        [self addChild: editAccount];
+        
         // create header text
-        NSMutableString *name = [NSMutableString stringWithFormat:@"Editing: %@", account.name ];
+        NSMutableString *name = [NSMutableString stringWithFormat:@"editing: %@", account.name ];
         _layerName = [CCLabelTTF labelWithString:name fontName:@"KBPlanetEarth" fontSize:48];
         _layerName.position = ccp(size.width/2, size.height-150);
         [self addChild:_layerName];
@@ -108,7 +113,7 @@
         [[CCDirector sharedDirector].view addSubview:self.confirmPasswordTextBox];
         
         // Add Update Account Button
-        _updateAccountButton = [[StateText alloc] initWithString:@"Update" fontName:@"KBPlanetEarth" fontSize:48
+        _updateAccountButton = [[StateText alloc] initWithString:@"update" fontName:@"KBPlanetEarth" fontSize:48
                                                   position:ccp(size.width/2, size.height/2 - 125)];
         [self addChild:_updateAccountButton];
         
@@ -255,7 +260,7 @@
             }
             
             // Update the layer title
-            NSMutableString *name = [NSMutableString stringWithFormat:@"Editing: %@", self.account.name];
+            NSMutableString *name = [NSMutableString stringWithFormat:@"editing: %@", self.account.name];
             _layerName.string = name;
             
             // Send an alert indicating that the update was successful

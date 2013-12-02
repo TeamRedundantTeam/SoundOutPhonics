@@ -223,9 +223,25 @@ static SOPDatabase *_database;
 
 // Delete a specific account from the database
 - (BOOL)deleteAccount:(int)accountId {
+    sqlite3_stmt *statement = nil;
+    
+    // Delete account
     NSString *query = @"DELETE FROM Accounts WHERE (accountId = ?);";
     
-    sqlite3_stmt *statement = nil;
+    if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        sqlite3_bind_int(statement, 1, accountId);
+        
+        if (sqlite3_step(statement) != SQLITE_DONE) {
+            NSLog(@"error: %s", sqlite3_errmsg(_database));
+            sqlite3_reset(statement);
+            return false;
+        }
+        
+        sqlite3_finalize(statement);
+    }
+    
+    // Delete accounts statistics
+    query = @"DELETE FROM Statistics WHERE (accountId = ?);";
     if (sqlite3_prepare_v2(_database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
         sqlite3_bind_int(statement, 1, accountId);
         
@@ -284,7 +300,41 @@ static SOPDatabase *_database;
     }
 }
 
-
+// Receives the percentage of students that have completed a specific level
+- (NSArray *)getCompletedLevelStatistics {
+    int value = 0;
+    NSString *query1 = @"SELECT count(AccountId) FROM Accounts WHERE type = 0;";
+    
+    sqlite3_stmt *statement;
+    
+    // check if the query executed
+    if (sqlite3_prepare_v2(_database, [query1 UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        
+        // continue while there is a result
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            value = sqlite3_column_int(statement, 0);
+        }
+        sqlite3_finalize(statement);
+    }
+        
+    NSMutableArray *retrievedValue = [[[NSMutableArray alloc] init] autorelease];
+    NSString *query2 = @"SELECT level, count(level) FROM Statistics S, Accounts C WHERE S.accountId = C.accountId AND C.type == 0 GROUP BY level;";
+        
+    // check if the query executed
+    if (sqlite3_prepare_v2(_database, [query2 UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        
+        // continue while there is a result
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            int level = sqlite3_column_int(statement, 0);
+            int levelCount = sqlite3_column_int(statement, 1);
+            double percent = (double)levelCount/(double)value;
+            [retrievedValue addObject:[NSNumber numberWithInt:level]];
+            [retrievedValue addObject:[NSNumber numberWithDouble:percent]];
+        }
+        sqlite3_finalize(statement);
+    }
+    return retrievedValue;
+}
 
 // releasing all retained objects
 - (void)dealloc {
