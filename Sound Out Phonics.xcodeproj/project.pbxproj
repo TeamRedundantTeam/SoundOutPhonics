@@ -218,7 +218,6 @@
 		7CF9526E182F194600FE1DDC /* Statistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF9526D182F194600FE1DDC /* Statistics.m */; };
 		7CFCBE72183172A200EF6233 /* KBPlanetEarth.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */; };
 		7CFF74CF184BEDD400832DDB /* Splash-SOP-Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFF74CE184BEDD400832DDB /* Splash-SOP-Default.png */; };
-		E25DFEB3184B1A9100991902 /* Empty-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E25DFEB2184B1A9100991902 /* Empty-Portrait.png */; };
 		E2B18F461847B9C300656E35 /* Background-No-Gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F451847B9C300656E35 /* Background-No-Gradient.png */; };
 		E2B18F4A1847BD9100656E35 /* Slot-Sprite.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F491847BD9100656E35 /* Slot-Sprite.png */; };
 		E2B18F531847FDF600656E35 /* Manage-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B18F4F1847FDF600656E35 /* Manage-Icon.png */; };
@@ -248,6 +247,7 @@
 		E2EB9A09184A7EF70069AA61 /* Home-IconFinal.png in Resources */ = {isa = PBXBuildFile; fileRef = E2EB99FB184A7EF70069AA61 /* Home-IconFinal.png */; };
 		E2FB221B184ACF9100125633 /* Login-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB221A184ACF9100125633 /* Login-Button.png */; };
 		E2FB221D184AD25D00125633 /* Border-Play.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FB221C184AD25D00125633 /* Border-Play.png */; };
+		E2FC4650184C3B78003E78AE /* Empty-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = E2FC464F184C3B78003E78AE /* Empty-Portrait.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -628,7 +628,6 @@
 		7CF9526D182F194600FE1DDC /* Statistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Statistics.m; sourceTree = "<group>"; };
 		7CFCBE71183172A200EF6233 /* KBPlanetEarth.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = KBPlanetEarth.ttf; path = Resources/KBPlanetEarth.ttf; sourceTree = "<group>"; };
 		7CFF74CE184BEDD400832DDB /* Splash-SOP-Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash-SOP-Default.png"; sourceTree = "<group>"; };
-		E25DFEB2184B1A9100991902 /* Empty-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty-Portrait.png"; sourceTree = "<group>"; };
 		E2B18F451847B9C300656E35 /* Background-No-Gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background-No-Gradient.png"; sourceTree = "<group>"; };
 		E2B18F491847BD9100656E35 /* Slot-Sprite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slot-Sprite.png"; sourceTree = "<group>"; };
 		E2B18F4F1847FDF600656E35 /* Manage-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Manage-Icon.png"; sourceTree = "<group>"; };
@@ -658,6 +657,7 @@
 		E2EB99FB184A7EF70069AA61 /* Home-IconFinal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-IconFinal.png"; sourceTree = "<group>"; };
 		E2FB221A184ACF9100125633 /* Login-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login-Button.png"; sourceTree = "<group>"; };
 		E2FB221C184AD25D00125633 /* Border-Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Border-Play.png"; sourceTree = "<group>"; };
+		E2FC464F184C3B78003E78AE /* Empty-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty-Portrait.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -824,7 +824,7 @@
 		7CAF16CB183070F900243C4B /* MenuSprites */ = {
 			isa = PBXGroup;
 			children = (
-				E25DFEB2184B1A9100991902 /* Empty-Portrait.png */,
+				E2FC464F184C3B78003E78AE /* Empty-Portrait.png */,
 				E2EB99ED184A7E560069AA61 /* [NEW] Final Icons */,
 				E2B18F571848035E00656E35 /* Back-Icon.png */,
 				E2B18F581848035E00656E35 /* Play-Icon.png */,
@@ -1395,6 +1395,7 @@
 			files = (
 				7CF6BEE1184AFAF90054E471 /* Lvl26-Duck-Sprite.png in Resources */,
 				7CF099981818BD310043FD9F /* ChangeLog in Resources */,
+				E2FC4650184C3B78003E78AE /* Empty-Portrait.png in Resources */,
 				E2EB99FF184A7EF70069AA61 /* Cancel-IconFinal.png in Resources */,
 				E2B18F541847FDF600656E35 /* Statistic-Icon.png in Resources */,
 				7CF6BEF2184AFAF90054E471 /* Lvl43-Boat-Sprite.png in Resources */,
@@ -1462,7 +1463,6 @@
 				7CF6BECA184AFAF90054E471 /* Lvl3-Drum-Sprite.png in Resources */,
 				E2EB9A05184A7EF70069AA61 /* Minus-IconFinal.png in Resources */,
 				7CF6BED3184AFAF90054E471 /* Lvl12-Trash-Sprite.png in Resources */,
-				E25DFEB3184B1A9100991902 /* Empty-Portrait.png in Resources */,
 				7CF6BEDD184AFAF90054E471 /* Lvl22-Cliff-Sprite.png in Resources */,
 				7CF6BEDF184AFAF90054E471 /* Lvl24-Doll-Sprite.png in Resources */,
 				7CF6BEDB184AFAF90054E471 /* Lvl20-Swing-Sprite.png in Resources */,
