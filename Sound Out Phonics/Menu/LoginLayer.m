@@ -60,8 +60,6 @@
         CCSprite *background = [CCSprite spriteWithFile:@"Background-Menu.png"];
         background.position = ccp(_size.width/2, _size.height/2);
         [self addChild: background];
-
-
             
         // load the accounts from the database
         self.accounts = [[SOPDatabase database] loadAccounts];
@@ -74,7 +72,7 @@
         [self addChild:_selectedAvatarBorder];
         
         // create the password textbox
-        self.passwordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(_size.width/2-100, _size.height/2 - 25, 200, 50)];
+        self.passwordTextBox = [[UITextField alloc] initWithFrame:CGRectMake(_size.width/2 - 100, _size.height/2 - 25, 200, 50)];
         self.passwordTextBox.backgroundColor = [UIColor whiteColor];
         self.passwordTextBox.delegate = self;
         self.passwordTextBox.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -91,6 +89,10 @@
         [password release];
         [[CCDirector sharedDirector].view addSubview:self.passwordTextBox];
 
+        // Initialize and add the guest account button
+        _guestAccountButton = [[CCSprite alloc] initWithFile:@"Profile-Icon.png"];
+        _guestAccountButton.position = ccp(_size.width/2 + 130, _size.height/2);
+        [self addChild:_guestAccountButton];
         
         // Initialize and add the login button
         _loginButton = [[StateButton alloc] initWithFile:@"Login-Button.png" withPosition:ccp(_size.width/2, _size.height/2 - 75)];
@@ -202,17 +204,18 @@
 
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    // Create Account Option
     if (buttonIndex == 0) {
         
         ccColor4B color = {100,100,0,100};
         CreateAccountLayer *layer = [[[CreateAccountLayer alloc] initWithColor:color withLevel:1] autorelease];
         [self addChild:layer];
     }
+    
+    // Play as guest option
     else {
-        [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
-        
-        // cleanup after the transition
-        [self.parent removeChild:self cleanup:YES];
+        [self goToMenuWithGuestAccount];
     }
 }
 // dispatcher to catch the touch events
@@ -294,6 +297,10 @@
             [alert release];
         }
     }
+    
+    if (_guestAccountButton && CGRectContainsPoint(_guestAccountButton.boundingBox, releaseLocation)) {
+        [self goToMenuWithGuestAccount];
+    }
 }
 
 // event that is called when the touch has ended
@@ -323,6 +330,25 @@
         _loginButton.state = false;
     else
         _loginButton.state = true;
+}
+
+// Transition to the menu with the guest account
+- (void)goToMenuWithGuestAccount {
+    
+    // password TextBox transition. TO-DO: make it smooth to match the layer transition
+    [self.passwordTextBox removeFromSuperview];
+    
+    // Create guest account
+    Account *guest = [[Account alloc] initWithId:0 withName:@"Guest" withPassword:@"" withType:-1 withImage:@"" withStatistics:nil];
+    
+    // we now have a logged in account pass it onto the Singleton class
+    [[Singleton sharedSingleton] setLoggedInAccount:guest];
+    
+    // Cleanup before the transition
+    [self.parent removeChild:self cleanup:YES];
+    
+    // Nove to the menu screen
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
 }
 
 // Updates current accounts sprites

@@ -309,6 +309,10 @@
     // get the currently logged in account
     Account *account = [Singleton sharedSingleton].loggedInAccount;
     
+    // Do not save statistics to guest account
+    if (account.type == -1)
+        return;
+    
     // get the accounts statistics
     NSArray *statistics = account.statistics;
     

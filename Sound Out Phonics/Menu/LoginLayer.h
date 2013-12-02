@@ -43,6 +43,7 @@
     int _currentAccountPage;                                    // the account page that the user has currently selected
     CCSprite *_lastAccountsPage;                                // sprite that allows users to move to the previous account page
     CCSprite *_nextAccountsPage;                                // sprite that allows users to move to the next account page
+    CCSprite *_guestAccountButton;                              // reference to guest account button
 }
 
 @property (retain, nonatomic) UITextField *passwordTextBox;

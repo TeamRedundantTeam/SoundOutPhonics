@@ -32,7 +32,10 @@
 #import "ManageAccountLayer.h"
 
 @interface MenuLayer : CCLayer {
+    CGSize _size; // Size of the screen
     CCLabelTTF *_helpButton; // Reference to the help button
+    CCMenu *_menu; // Reference to the Menu
+    
 }
 
 // returns a CCScene that contains the MenuLayer as the only child

@@ -39,6 +39,7 @@
 		7C025C73184C78C100FB3B90 /* ClassStatisticsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C025C72184C78C100FB3B90 /* ClassStatisticsLayer.m */; };
 		7C025C75184C98AA00FB3B90 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C74184C98AA00FB3B90 /* Icon@2x.png */; };
 		7C025C77184C98B000FB3B90 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C76184C98B000FB3B90 /* Icon.png */; };
+		7C025C79184CB2BA00FB3B90 /* Profile-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C78184CB2BA00FB3B90 /* Profile-Icon.png */; };
 		7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
 		7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C039AC1182A326B00E38FA1 /* Singleton.m */; };
 		7C2636EF182C71BF00EA972F /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2636EE182C71BF00EA972F /* Level.m */; };
@@ -287,6 +288,7 @@
 		7C025C72184C78C100FB3B90 /* ClassStatisticsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassStatisticsLayer.m; sourceTree = "<group>"; };
 		7C025C74184C98AA00FB3B90 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		7C025C76184C98B000FB3B90 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		7C025C78184CB2BA00FB3B90 /* Profile-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Profile-Icon.png"; sourceTree = "<group>"; };
 		7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = sop.sqlite3; path = Resources/sop.sqlite3; sourceTree = "<group>"; };
 		7C039AC0182A326B00E38FA1 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		7C039AC1182A326B00E38FA1 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
@@ -700,6 +702,7 @@
 		7C025C3B184C72F800FB3B90 /* MenuSprites */ = {
 			isa = PBXGroup;
 			children = (
+				7C025C78184CB2BA00FB3B90 /* Profile-Icon.png */,
 				7C025C6F184C75A800FB3B90 /* Graph-Overlay.png */,
 				7C025C3C184C72F800FB3B90 /* Game-Icon.png */,
 				7C025C3D184C72F800FB3B90 /* Background-Menu.png */,
@@ -1414,6 +1417,7 @@
 				7CF6BEE0184AFAF90054E471 /* Lvl25-Grass-Sprite.png in Resources */,
 				7C025C75184C98AA00FB3B90 /* Icon@2x.png in Resources */,
 				7CF6BEF6184AFAF90054E471 /* Lvl47-Goose-Sprite.png in Resources */,
+				7C025C79184CB2BA00FB3B90 /* Profile-Icon.png in Resources */,
 				7C025C77184C98B000FB3B90 /* Icon.png in Resources */,
 				7CF6BEEC184AFAF90054E471 /* Lvl37-Horn-Sprite.png in Resources */,
 				7CF6BED0184AFAF90054E471 /* Lvl9-Frog-Sprite.png in Resources */,

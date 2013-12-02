@@ -23,6 +23,7 @@
 
 // Import the interfaces
 #import "MenuLayer.h"
+#import "CreateAccountLayer.h"
 
 #pragma mark - MenuLayer
 
@@ -49,112 +50,209 @@
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if((self = [super init])) {
-		CGSize size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
+        
+		_size = [[CCDirector sharedDirector] winSize]; // ask the director for the window size
         [self setTouchEnabled:YES];
         
         CCSprite *background = [CCSprite spriteWithFile:@"Background-Menu.png"];            // create and initialize the background sprite (png)
-        background.position = ccp(size.width/2, size.height/2);                             // center background layer
+        background.position = ccp(_size.width/2, _size.height/2);                             // center background layer
         [self addChild: background];
         
-        CCSprite *playIcon = [CCSprite spriteWithFile:@"Game-Icon.png"];               // create and initialize the playIcon sprite (png)
-        CCSprite *statisticIcon = [CCSprite spriteWithFile:@"Statistic-Icon.png"];     // create and initialize the statisticIcon sprite (png)
-        CCSprite *logoutIcon = [CCSprite spriteWithFile:@"Cancel-Icon.png"];           // create and initialize the logoutIcon sprite (png)
-        CCSprite *manageIcon = [CCSprite spriteWithFile:@"Manage-Icon.png"];           // create and initialize the manageIcon sprite (png)
+        // Create the help Icon
+        _helpButton = [CCSprite spriteWithFile:@"Help-Icon.png"];
+        _helpButton.position = ccp(_size.width - 150, _size.height - 150);
+        [self addChild:_helpButton];
         
-        playIcon.position = ccp((size.width/2)-88, size.height/2+52);                       // set playIcon screen position
-        statisticIcon.position = ccp((size.width/2)-89, size.height/2-23);                  // set statisticIcon screen position
-        logoutIcon.position = ccp((size.width/2)-88, size.height/2-100);                    // set logoutIcon screen position
-        manageIcon.position = ccp((size.width/2)-89, size.height/2-175);                    // set manageIcon screen position
-
-        [self addChild: playIcon];                                                          // add the playIcon to the scene
-        [self addChild: statisticIcon];                                                     // add the statisticIcon to the scene
-        [self addChild: logoutIcon];                                                        // add the logoutIcon to the scene
-        
-        // add the avatar to the menu
+        // Reference to the logged in account
         Account *loggedInAccount = [Singleton sharedSingleton].loggedInAccount;
-        if (loggedInAccount != nil) {
-            
-            // display what type of account it is.
-            CCLabelTTF *accountType;
-            
-            // determine which string should be displayed based on the account type
-            if (loggedInAccount.type == 1){
-                accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
-            }
-            else {
-                accountType = [CCLabelTTF labelWithString:@"Student" fontName:@"KBPlanetEarth" fontSize:24];
-            }
-            
-            accountType.position = ccp(size.width/2, size.height/2+229);
-            
-            [self addChild:accountType];
-            
-            // create the avatar
-            [loggedInAccount createAvatar];
-            loggedInAccount.avatar.scale = 0.5;
-            loggedInAccount.avatar.position = ccp(size.width/2, size.height/2+175);
-            
-            // create Name
-            CCLabelTTF *portaitName = [CCLabelTTF labelWithString:loggedInAccount.name fontName:@"KBPlanetEarth" fontSize:24];
-            portaitName.position = ccp(size.width/2, size.height-275);
-            [self addChild:portaitName];
-            
-            [self addChild:loggedInAccount.avatar];
-        }
         
-        // create Menu
-        [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
-        [CCMenuItemFont setFontSize:50]; // set the default CCMenuItemFont size
+        // Create the avatar
+        [loggedInAccount createAvatar];
+        loggedInAccount.avatar.scale = 0.5;
+        loggedInAccount.avatar.position = ccp(_size.width/2, _size.height/2+175);
+        [self addChild:loggedInAccount.avatar];
         
-        CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"play" block:^(id sender) {
+        // Create Name
+        CCLabelTTF *portaitName = [CCLabelTTF labelWithString:loggedInAccount.name fontName:@"KBPlanetEarth" fontSize:24];
+        portaitName.position = ccp(_size.width/2, _size.height-275);
+        [self addChild:portaitName];
+        
 
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                       transitionWithDuration:1.0
-                                                       scene:[LevelSelectLayer scene]]];
-            
-        }]; // add the 'play' CCMenuItem
-        
-        CCMenuItem *itemStatistic = [CCMenuItemFont itemWithString:@"statistics" block:^(id sender) {
-            
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                       transitionWithDuration:1.0
-                                                       scene:[StatisticLayer scene]]];
-        }]; // add the 'statistics' CCMenuItem
-        
-        CCMenuItem *itemManageAccount = [CCMenuItemFont itemWithString:@"manage accounts" block:^(id sender) {
-                [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                       transitionWithDuration:1.0
-                                                       scene:[ManageAccountLayer scene]]];
-        }]; // add the 'create account' CCMenuItem
-        
-        CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"quit" block:^(id sender) {
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
-                                                       transitionWithDuration:1.0
-                                                       scene:[LoginLayer scene]]];
-        }]; // add the 'quit' CCMenuItem
-        
-        CCMenu *menu;
-        // admin menu has different options from the student menus
+        // Determine which menu to initialize based on the account type
         if (loggedInAccount.type == 1) {
-            menu = [CCMenu menuWithItems:itemPlay, itemStatistic, itemManageAccount, itemLogout, nil];
-            [self addChild: manageIcon];
+            // Create Admin Menu Items
+            [self initAdminMenu];
+        }
+        else if (loggedInAccount.type == 0) {
+            // Create Student Menu Items
+            [self initStudentMenu];
         }
         else {
-            menu = [CCMenu menuWithItems:itemPlay, itemStatistic, itemLogout, nil];
+            // Create Guest Menu Items
+            [self initGuestMenu];
         }
-        
-        itemPlay.position = ccp(size.width/2-500, size.height/2-335);
-        itemStatistic.position = ccp(size.width/2-450, size.height/2-413);
-        itemLogout.position = ccp(size.width/2-507, size.height/2-485);
-        itemManageAccount.position = ccp(size.width/2-357, size.height/2-560);
-		// add the menu to the layer
-		[self addChild:menu];
-        
-        _helpButton = [CCSprite spriteWithFile:@"Help-Icon.png"];
-        _helpButton.position = ccp(size.width - 150, size.height - 150);
-        [self addChild:_helpButton];
 	}
 	return self;
+}
+
+- (void)initAdminMenu {
+    
+    // Add the account type
+    CCLabelTTF *accountType = [CCLabelTTF labelWithString:@"Teacher" fontName:@"KBPlanetEarth" fontSize:24];
+    accountType.position = ccp(_size.width/2, _size.height/2+229);
+    [self addChild:accountType];
+    
+    [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
+    [CCMenuItemFont setFontSize:50]; // set the default CCMenuItemFont size
+    
+    CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"play" target:self selector:@selector(play)];
+    CCMenuItem *itemStatistic = [CCMenuItemFont itemWithString:@"statistics" target:self selector:@selector(statistics)];
+    CCMenuItem *itemManageAccount = [CCMenuItemFont itemWithString:@"accounts" target:self selector:@selector(accounts)];
+    CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"quit" target:self selector:@selector(quit)];
+    
+    // Align all items left
+    itemPlay.anchorPoint = ccp(0, 0.5f);
+    itemStatistic.anchorPoint = ccp(0, 0.5f);
+    itemManageAccount.anchorPoint = ccp(0, 0.5f);
+    itemLogout.anchorPoint = ccp(0, 0.5f);
+
+    // Add all the items to the menu
+    _menu = [CCMenu menuWithItems:itemPlay, itemStatistic,itemManageAccount, itemLogout, nil];
+    _menu.position = ccp(_size.width/2 - 50, _size.height/2 - 50);
+    
+    // Align all items vertically
+    [_menu alignItemsVertically];
+
+    [self addChild:_menu];
+    
+    // Add the icons
+    CCSprite *playIcon = [CCSprite spriteWithFile:@"Game-Icon.png"];               // create and initialize the playIcon sprite (png)
+    CCSprite *statisticIcon = [CCSprite spriteWithFile:@"Statistic-Icon.png"];     // create and initialize the statisticIcon sprite (png)
+    CCSprite *accountIcon = [CCSprite spriteWithFile:@"Manage-Icon.png"];           // create and initialize the manageIcon sprite (png)
+    CCSprite *logoutIcon = [CCSprite spriteWithFile:@"Cancel-Icon.png"];           // create and initialize the logoutIcon sprite (png)
+
+    
+    playIcon.position = ccp(_size.width/2 - 88, _size.height/2 + 45);                       // set playIcon screen position
+    statisticIcon.position = ccp(_size.width/2 - 89, _size.height/2 - 15);                  // set statisticIcon screen position
+    accountIcon.position = ccp(_size.width/2 - 89, _size.height/2 - 75);                    // set manageIcon screen position
+    logoutIcon.position = ccp(_size.width/2 - 88, _size.height/2 - 135);                    // set logoutIcon screen position
+    
+    [self addChild: playIcon];                                                          // add the playIcon to the scene
+    [self addChild: statisticIcon];                                                     // add the statisticIcon to the scene
+    [self addChild: accountIcon];
+    [self addChild: logoutIcon];
+    
+}
+
+- (void)initStudentMenu {
+    
+    // Add the account type
+    CCLabelTTF *accountType = [CCLabelTTF labelWithString:@"Student" fontName:@"KBPlanetEarth" fontSize:24];
+    accountType.position = ccp(_size.width/2, _size.height/2+229);
+    [self addChild:accountType];
+    
+    [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
+    [CCMenuItemFont setFontSize:50]; // set the default CCMenuItemFont size
+    
+    CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"play" target:self selector:@selector(play)];
+    CCMenuItem *itemStatistic = [CCMenuItemFont itemWithString:@"statistics" target:self selector:@selector(statistics)];
+    CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"quit" target:self selector:@selector(quit)];
+    
+    // Align all items left
+    itemPlay.anchorPoint = ccp(0, 0.5f);
+    itemStatistic.anchorPoint = ccp(0, 0.5f);
+    itemLogout.anchorPoint = ccp(0, 0.5f);
+    
+    // Add all the items to the menu
+    _menu = [CCMenu menuWithItems:itemPlay, itemStatistic, itemLogout, nil];
+    _menu.position = ccp(_size.width/2 - 50, _size.height/2 - 25);
+    
+    // Align all items vertically
+    [_menu alignItemsVertically];
+    
+    [self addChild:_menu];
+    
+    // Add the icons
+    CCSprite *playIcon = [CCSprite spriteWithFile:@"Game-Icon.png"];               // create and initialize the playIcon sprite (png)
+    CCSprite *statisticIcon = [CCSprite spriteWithFile:@"Statistic-Icon.png"];     // create and initialize the statisticIcon sprite (png)
+    CCSprite *logoutIcon = [CCSprite spriteWithFile:@"Cancel-Icon.png"];           // create and initialize the logoutIcon sprite (png)
+    
+    playIcon.position = ccp(_size.width/2 - 88, _size.height/2 + 40);                       // set playIcon screen position
+    statisticIcon.position = ccp(_size.width/2 - 89, _size.height/2 - 20);                  // set statisticIcon screen position
+    logoutIcon.position = ccp(_size.width/2 - 88, _size.height/2 - 90);                    // set logoutIcon screen position
+    
+    [self addChild: playIcon];                                                          // add the playIcon to the scene
+    [self addChild: statisticIcon];                                                     // add the statisticIcon to the scene
+    [self addChild: logoutIcon];
+}
+
+- (void)initGuestMenu {
+    
+    [CCMenuItemFont setFontName:@"KBPlanetEarth"]; // set the default CCMenuItemFont to our custom font, KBPlanetEarth
+    [CCMenuItemFont setFontSize:50]; // set the default CCMenuItemFont size
+    
+    CCMenuItem *itemPlay = [CCMenuItemFont itemWithString:@"play" target:self selector:@selector(play)];
+    CCMenuItem *itemLogout = [CCMenuItemFont itemWithString:@"quit" target:self selector:@selector(quit)];
+    
+    // Align all items left
+    itemPlay.anchorPoint = ccp(0, 0.5f);
+    itemLogout.anchorPoint = ccp(0, 0.5f);
+    
+    // Add all the items to the menu
+    _menu = [CCMenu menuWithItems:itemPlay, itemLogout, nil];
+    _menu.position = ccp(_size.width/2 - 50, _size.height/2);
+    
+    // Align all items vertically
+    [_menu alignItemsVertically];
+    
+    [self addChild:_menu];
+    
+    // Add the icons
+    CCSprite *playIcon = [CCSprite spriteWithFile:@"Game-Icon.png"];               // create and initialize the playIcon sprite (png)
+    CCSprite *logoutIcon = [CCSprite spriteWithFile:@"Cancel-Icon.png"];           // create and initialize the logoutIcon sprite (png)
+    
+    playIcon.position = ccp(_size.width/2 - 88, _size.height/2 + 40);                       // set playIcon screen position
+    logoutIcon.position = ccp(_size.width/2 - 88, _size.height/2 - 25);                    // set logoutIcon screen position
+    
+    [self addChild: playIcon];                                                          // add the playIcon to the scene
+    [self addChild: logoutIcon];
+
+}
+
+- (void)play {
+    
+    // Cleanup the layer
+    [self.parent removeChild:self cleanup:YES];
+    
+    // Transition to the level select screen
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LevelSelectLayer scene]]];
+}
+
+- (void)statistics {
+    
+    // Cleanup the layer
+    [self.parent removeChild:self cleanup:YES];
+    
+    // Transition to the statistics screen
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[StatisticLayer scene]]];
+}
+
+- (void)accounts {
+    
+    // Cleanup the layer
+    [self.parent removeChild:self cleanup:YES];
+    
+    // Transition to the manage account screen
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[ManageAccountLayer scene]]];
+}
+
+- (void)quit {
+    
+    // Cleanup the layer
+    [self.parent removeChild:self cleanup:YES];
+    
+    // Transition to the log-in screen
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[LoginLayer scene]]];
 }
 
 // dispatcher to catch the touch events
