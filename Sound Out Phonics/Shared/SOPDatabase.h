@@ -40,7 +40,7 @@
 - (NSArray *)loadAccountStatistics:(int)accountId;
 
 // create account with the provided input
-- (BOOL)createAccount:(int)accountId withName:(NSString*)name withPassword:(NSString*)password withLevel:(int)type;
+-(BOOL)createAccount:(int)accountId withName:(NSString*)name withPassword:(NSString*)password withLevel:(int)type withImage:(NSString*)profile_image;
 
 // returns the last accounts id and 0 if no accounts are present
 - (int)getLastAccountId;
