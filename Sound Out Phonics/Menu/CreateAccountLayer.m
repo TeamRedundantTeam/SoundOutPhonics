@@ -33,7 +33,7 @@
 // on "init" you need to initialize your instance
 - (id)initWithColor:(ccColor4B)color withLevel:(int)accountLevel {
 	if((self = [super initWithColor:color])) {
-        
+        filePath = [NSString stringWithString:@""];
         // store the account level into the class
         _accountLevel = accountLevel;
         
@@ -124,6 +124,13 @@
         _createAccountButton = [[StateText alloc] initWithString:@"create account" fontName:@"KBPlanetEarth" fontSize:48
                                                         position:ccp(_size.width/2+10, _size.height/2 - 125)];
         [self addChild:_createAccountButton];
+        
+        
+        // Add Update Picture Button
+        _updatePictureButton = [[StateText alloc] initWithString:@"Add picture" fontName:@"KBPlanetEarth" fontSize:48
+                                                        position:ccp(_size.width/2+60, _size.height/2 - 94)];
+        [self addChild:_updatePictureButton];
+        _updatePictureButton.state = true;
 
         // Add exit only if we are creating the user account
         if (accountLevel == 0) {
@@ -164,14 +171,82 @@
         _createAccountButton.state = false;
 }
 
+
+-(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info
+{
+    // Original Image
+    UIImage *OriginalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    // Write out our image to the SOP directory
+    NSString *docDirPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    filePath =  [docDirPath stringByAppendingPathComponent:@"SOP"];
+    
+    //Create the SOP Directory if it doesn't exist
+    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath])
+        [[NSFileManager defaultManager] createDirectoryAtPath:filePath withIntermediateDirectories:NO attributes:nil error:nil];
+    //Create and store our image
+    filePath =  [filePath stringByAppendingPathComponent:self.nameTextBox.text];
+    filePath =  [NSString stringWithFormat:@"%@%@", filePath, @".png"];
+    NSLog (@"File Path = %@", filePath);
+    [filePath retain];
+    
+    //Resize our image to a power of 2
+    CGRect rect = CGRectMake(0,0,100,150);
+    UIGraphicsBeginImageContext( rect.size );
+    [OriginalImage drawInRect:rect];
+    UIImage *picture1 = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    //[self.imageFromFile release];
+    
+    // Get PNG data from following method
+    NSData *myData =     UIImagePNGRepresentation(picture1);
+    // It is better to get JPEG data because jpeg data will store the location and other related information of image.
+    [myData writeToFile:filePath atomically:YES];
+    
+    
+    
+    
+    // Send an alert indicating that the update was successful
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Picture added!"
+                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+    [alert release];
+}
+
+
+
+
 // handles the events that happen when the release occurs at a specific location
 - (void)tapReleaseAt:(CGPoint)releaseLocation {
-    
+    if (_updatePictureButton.state && CGRectContainsPoint(_updatePictureButton.boundingBox, releaseLocation)) {
+        
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+            //Create a way to browse the gallery
+            UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            picker.delegate = self;
+            UIPopoverController *popoverController=[[UIPopoverController alloc] initWithContentViewController:picker];
+            CGSize winsize = [[CCDirector sharedDirector] winSize];
+            //Show gallery bar
+            [popoverController setPopoverContentSize:CGSizeMake(winsize.width,winsize.height) animated:NO];
+            [popoverController presentPopoverFromRect:CGRectMake(0,0,10,10)  inView:[[CCDirector sharedDirector] view]
+                             permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+            [picker release];
+        }
+        else {
+            UIAlertView *alert;
+            alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                               message:@"This device doesn't support photo libraries."
+                                              delegate:self cancelButtonTitle:@"Ok"
+                                     otherButtonTitles:nil];
+            [alert show];
+        }
+    }
     // occurs when the user presses the createe account button
     if (_createAccountButton.state && CGRectContainsPoint(_createAccountButton.boundingBox, releaseLocation)) {
         
         int accountId = [[SOPDatabase database] getLastAccountId] + 1;
-        if ([[SOPDatabase database] createAccount:accountId withName:self.nameTextBox.text withPassword:self.passwordTextBox.text withLevel:_accountLevel]) {
+        if ([[SOPDatabase database] createAccount:accountId withName:self.nameTextBox.text withPassword:self.passwordTextBox.text withLevel:_accountLevel withImage:filePath]) {
             
             // remove all the text boxes. TO-DO make transition more smooth
             [self.nameTextBox removeFromSuperview];

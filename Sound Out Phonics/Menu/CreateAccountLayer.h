@@ -30,15 +30,17 @@
 #import "StateText.h"
 #import "SOPDatabase.h"
 
-@interface CreateAccountLayer : CCLayerColor <UITextFieldDelegate> {
+@interface CreateAccountLayer : CCLayerColor <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate>{
     CGSize _size;                           // Size of the screen
     int _accountLevel;                      // Keeps track of what account type should be created
     UITextField *_nameTextBox;              // account name textbox
     UITextField *_passwordTextBox;          // password textbox input field
     UITextField *_confirmPasswordTextBox;   // confirm password textbox input field
     StateText *_createAccountButton;        // Reference to create account button
+    StateText *_updatePictureButton;        // Reference to picture button
     CCLabelTTF *_errorMessage;              // Reference to error message text
     CCSprite *_exitButton;                  // Reference to the exit button
+    NSString *filePath;                     // Reference to path of image
 }
 
 // returns a CCScene that contains the LoginLayer as the only child

@@ -125,7 +125,7 @@ static SOPDatabase *_database;
 }
 
 // create a new account
-- (BOOL)createAccount:(int)accountId withName:(NSString*)name withPassword:(NSString*)password withLevel:(int)type {
+- (BOOL)createAccount:(int)accountId withName:(NSString*)name withPassword:(NSString*)password withLevel:(int)type withImage:(NSString*)profile_image {
     
     NSString *query = [NSString stringWithFormat: @"INSERT INTO Accounts (accountId, name, password, type, profile_image) VALUES (?,?,?,?,?);"];
     
@@ -137,7 +137,7 @@ static SOPDatabase *_database;
         sqlite3_bind_text(statement, 2, [name UTF8String], -1, SQLITE_TRANSIENT);
         sqlite3_bind_text(statement, 3, [password UTF8String], -1, SQLITE_TRANSIENT);
         sqlite3_bind_int(statement, 4, type);
-        sqlite3_bind_text(statement, 5, "", -1, SQLITE_TRANSIENT);
+        sqlite3_bind_text(statement, 5, [profile_image UTF8String], -1, SQLITE_TRANSIENT);
         
         if (sqlite3_step(statement) != SQLITE_DONE) {
             NSLog(@"error: %s", sqlite3_errmsg(_database));
