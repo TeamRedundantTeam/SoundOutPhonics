@@ -54,6 +54,11 @@
         createAccount.position = ccp(_size.width/2-185, _size.height-505);
         [self addChild: createAccount];
         
+        // add update icon to edit account layer
+        CCSprite *takePicture = [CCSprite spriteWithFile:@"Camera-Icon.png"];
+        takePicture.position = ccp(_size.width/2-160, _size.height - 450);
+        [self addChild: takePicture];
+        
         // create header text
         CCLabelTTF *layerName;
         if (accountLevel == 1)
@@ -128,7 +133,7 @@
         
         // Add Update Picture Button
         _updatePictureButton = [[StateText alloc] initWithString:@"Add picture" fontName:@"KBPlanetEarth" fontSize:48
-                                                        position:ccp(_size.width/2+60, _size.height/2 - 94)];
+                                                        position:ccp(_size.width/2+20, _size.height - 460)];
         [self addChild:_updatePictureButton];
         _updatePictureButton.state = true;
 
@@ -330,6 +335,7 @@
 
 - (void)dealloc {
     [_createAccountButton release];
+    [_updatePictureButton release];
     [super dealloc];
 }
 
