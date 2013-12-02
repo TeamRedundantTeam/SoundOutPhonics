@@ -30,10 +30,13 @@
 #import "LoginLayer.h"
 #import "StatisticLayer.h"
 #import "ManageAccountLayer.h"
+#import "CreditLayer.h"
+#import "CreateAccountLayer.h"
 
 @interface MenuLayer : CCLayer {
     CGSize _size; // Size of the screen
     CCLabelTTF *_helpButton; // Reference to the help button
+    CCLabelTTF *_creditsButton; // Reference to the credits button
     CCMenu *_menu; // Reference to the Menu
     
 }
@@ -41,5 +44,7 @@
 // returns a CCScene that contains the MenuLayer as the only child
 + (CCScene *)scene;
 
+// Enables touch on the CCMenu
+- (void)menuEnableTouch;
 @end
 

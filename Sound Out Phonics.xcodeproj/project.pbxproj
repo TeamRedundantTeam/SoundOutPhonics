@@ -40,6 +40,7 @@
 		7C025C75184C98AA00FB3B90 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C74184C98AA00FB3B90 /* Icon@2x.png */; };
 		7C025C77184C98B000FB3B90 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C76184C98B000FB3B90 /* Icon.png */; };
 		7C025C79184CB2BA00FB3B90 /* Profile-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C025C78184CB2BA00FB3B90 /* Profile-Icon.png */; };
+		7C025C7C184CB90C00FB3B90 /* CreditLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C025C7B184CB90C00FB3B90 /* CreditLayer.m */; };
 		7C039ABD182A20CB00E38FA1 /* sop.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */; };
 		7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C039AC1182A326B00E38FA1 /* Singleton.m */; };
 		7C2636EF182C71BF00EA972F /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2636EE182C71BF00EA972F /* Level.m */; };
@@ -289,6 +290,8 @@
 		7C025C74184C98AA00FB3B90 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		7C025C76184C98B000FB3B90 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		7C025C78184CB2BA00FB3B90 /* Profile-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Profile-Icon.png"; sourceTree = "<group>"; };
+		7C025C7A184CB90C00FB3B90 /* CreditLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditLayer.h; sourceTree = "<group>"; };
+		7C025C7B184CB90C00FB3B90 /* CreditLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditLayer.m; sourceTree = "<group>"; };
 		7C039ABC182A20CB00E38FA1 /* sop.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = sop.sqlite3; path = Resources/sop.sqlite3; sourceTree = "<group>"; };
 		7C039AC0182A326B00E38FA1 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		7C039AC1182A326B00E38FA1 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
@@ -773,6 +776,8 @@
 				7C398C171841AF0300877AC2 /* CreateAccountLayer.m */,
 				7C025C71184C78C100FB3B90 /* ClassStatisticsLayer.h */,
 				7C025C72184C78C100FB3B90 /* ClassStatisticsLayer.m */,
+				7C025C7A184CB90C00FB3B90 /* CreditLayer.h */,
+				7C025C7B184CB90C00FB3B90 /* CreditLayer.m */,
 			);
 			name = Menu;
 			path = "Sound Out Phonics/Menu";
@@ -1587,6 +1592,7 @@
 				7CF099731818BD300043FD9F /* CDOpenALSupport.m in Sources */,
 				7CF098561818BD290043FD9F /* CCActionInstant.m in Sources */,
 				7CF098771818BD290043FD9F /* CCClippingNode.m in Sources */,
+				7C025C7C184CB90C00FB3B90 /* CreditLayer.m in Sources */,
 				7C039AC2182A326B00E38FA1 /* Singleton.m in Sources */,
 				7CF098FB1818BD2D0043FD9F /* CCTexture2D.m in Sources */,
 				7CF099101818BD2D0043FD9F /* CCTMXTiledMap.m in Sources */,

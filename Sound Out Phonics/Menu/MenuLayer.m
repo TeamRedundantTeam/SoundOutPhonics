@@ -23,7 +23,6 @@
 
 // Import the interfaces
 #import "MenuLayer.h"
-#import "CreateAccountLayer.h"
 
 #pragma mark - MenuLayer
 
@@ -59,9 +58,24 @@
         [self addChild: background];
         
         // Create the help Icon
-        _helpButton = [CCSprite spriteWithFile:@"Help-Icon.png"];
-        _helpButton.position = ccp(_size.width - 150, _size.height - 150);
+        CCSprite *helpIcon = [CCSprite spriteWithFile:@"Help-Icon.png"];
+        helpIcon.position = ccp(_size.width - 125, 50);
+        [self addChild:helpIcon];
+        
+        // Create the help Icon
+        _helpButton = [CCLabelTTF labelWithString:@"help" fontName:@"KBPlanetEarth" fontSize:24];
+        _helpButton.position = ccp(_size.width - 75, 50);
         [self addChild:_helpButton];
+        
+        // Create the credits Icon
+        CCSprite *creditsIcon = [CCSprite spriteWithFile:@"Credits-Icon.png"];
+        creditsIcon.position = ccp(_size.width/2 - 75, 50);
+        [self addChild:creditsIcon];
+        
+        // Create the credits button
+        _creditsButton = [CCLabelTTF labelWithString:@"credits" fontName:@"KBPlanetEarth" fontSize:24];
+        _creditsButton.position = ccp(_size.width/2, 50);
+        [self addChild:_creditsButton];
         
         // Reference to the logged in account
         Account *loggedInAccount = [Singleton sharedSingleton].loggedInAccount;
@@ -265,6 +279,14 @@
     if (CGRectContainsPoint(_helpButton.boundingBox, releaseLocation)) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://teamredundant.com/tutorial/"]];
     }
+    
+    if (CGRectContainsPoint(_creditsButton.boundingBox, releaseLocation)) {
+        // Disable touch for the menu
+        _menu.touchEnabled = false;
+        ccColor4B color = {100,100,0,100};
+        CreditLayer *layer = [[[CreditLayer alloc] initWithColor:color] autorelease];
+        [self addChild:layer];
+    }
 }
 
 // event that is called when the touch has ended
@@ -278,6 +300,11 @@
 // event that is called when the touch begins
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
     return YES;
+}
+
+// Enables touch on the CCMenu
+- (void)menuEnableTouch {
+    _menu.touchEnabled = true;
 }
 
 // on "dealloc" you need to release all your retained objects
