@@ -119,6 +119,7 @@
 
 // function called by pressing HOME button to return to main menu
 - (void)goHome:(id)sender {
+    [self cleanupAccountsSprites];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MenuLayer scene]]];
 }
 
@@ -200,7 +201,6 @@
     
     for (Level *level in _levels) {
         if (level.sprite.visible && CGRectContainsPoint(level.sprite.boundingBox, releaseLocation)) {
-            
             // Create the level scene
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
