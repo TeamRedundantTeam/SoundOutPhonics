@@ -202,6 +202,7 @@
     for (Level *level in _levels) {
         if (level.sprite.visible && CGRectContainsPoint(level.sprite.boundingBox, releaseLocation)) {
             // Create the level scene
+            [self cleanupAccountsSprites];
             [[CCDirector sharedDirector] replaceScene:[CCTransitionFade
                                                        transitionWithDuration:1.0
                                                        scene:[GameLayer sceneWithLevel:level withAttempts:0]]];
